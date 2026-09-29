@@ -32,7 +32,7 @@ func travel_from_pos_to_pos(start_pos_name : String, end_pos_name : String):
 	if start_pos == end_pos:
 		return
 
-	var roam_direction = 1 if end_pos.get_index() > start_pos.get_index() else -1 if end_pos.get_index() < start_pos.get_index() else 0
+	var roam_direction: int = 1 if end_pos.get_index() > start_pos.get_index() else -1 if end_pos.get_index() < start_pos.get_index() else 0
 	if roam_direction == 0:
 		return
 	
@@ -63,7 +63,7 @@ func travel_from_pos_to_pos(start_pos_name : String, end_pos_name : String):
 
 ## Makes the animatronic directly move to the specified position name.
 func move_to_pos(pos_name : String):
-	var pos : AnimatronicPosition = animatronic_positions_container.get_position_by_name(pos_name)
+	var pos: AnimatronicPosition = animatronic_positions_container.get_position_by_name(pos_name)
 	cam_manager.lose_communication(0.2)
 	current_position = pos
 	apply_position_to_body(current_position)
