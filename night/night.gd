@@ -17,6 +17,9 @@ var night_complete: bool = false
 
 
 func _ready() -> void:
+	left_light.hide()
+	right_light.hide()
+
 	if clock == null:
 		push_error("Night: Clock is not assigned.")
 		return
@@ -25,6 +28,9 @@ func _ready() -> void:
 		clock.six_am_reached.connect(night_done)
 	if clock.has_signal("hour_passed"):
 		clock.hour_passed.connect(_on_hour_passed)
+
+	for node: Node in get_tree().get_nodes_in_group(LightButton.GROUP):
+		(node as LightButton).pressed.connect(_on_light_button_pressed)
 
 	_set_animatronic_ai(blue_animatronic, 4)
 	_set_animatronic_ai(yellow_animatronic, 3)
@@ -98,6 +104,15 @@ func toggle_right_light() -> void:
 	if power <= 0.0:
 		return
 	right_light.visible = not right_light.visible
+
+
+func _on_light_button_pressed(side: String) -> void:
+	if game_over or night_complete:
+		return
+	if side == "Left":
+		toggle_left_light()
+	else:
+		toggle_right_light()
 
 
 func toggle_camera() -> void:

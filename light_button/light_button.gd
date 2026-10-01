@@ -1,25 +1,17 @@
 extends Area3D
+class_name LightButton
 
-@export var connected_light : Light3D
-@export var player : Node3D
+signal pressed(side: String)
 
+const GROUP := "light_buttons"
 
-func _ready():
-	# Hide the light as it should be off at the beginning.
-	connected_light.hide()
-
-func _input(event):
-	# If left mouse button released, turn off light.
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and not event.pressed:
-		connected_light.visible = false
-		
-
-func _on_input_event(camera, event, position, normal, shape_idx):
-	# If left mouse button pressed while hovering over the button, turn on light.
-	if not player.mask.mask_on and event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-		connected_light.visible = true
+@export_enum("Left", "Right") var side: String = "Left"
 
 
-func _on_mouse_exited():
-	# If mouse no longer hovering over the button, turn off light.
-	connected_light.visible = false
+func _ready() -> void:
+	add_to_group(GROUP)
+
+
+func _on_input_event(_camera: Node, event: InputEvent, _position: Vector3, _normal: Vector3, _shape_idx: int) -> void:
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		pressed.emit(side)
