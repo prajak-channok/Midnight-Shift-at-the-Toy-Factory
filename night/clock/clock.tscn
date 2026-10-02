@@ -1,8 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://b8p0plxounngf"]
+[gd_scene format=3 uid="uid://b8p0plxounngf"]
 
-[ext_resource type="Script" path="res://night/clock/clock.gd" id="1_psxnr"]
+[ext_resource type="Script" uid="uid://8kac7u181m7a" path="res://night/clock/clock.gd" id="1_psxnr"]
 
-[node name="Clock" type="Control"]
+[node name="Clock" type="Control" unique_id=400875143]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,7 +12,7 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_psxnr")
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=1104520769]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.984

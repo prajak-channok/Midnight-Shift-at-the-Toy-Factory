@@ -3,10 +3,10 @@ extends Node3D
 signal turned_on
 signal turned_off
 
-var monitor_on = false
-var refuse_requests = false
+var monitor_on: bool = false
+var refuse_requests: bool = false
 
-@onready var anim = $AnimationPlayer
+@onready var anim: AnimationPlayer = $AnimationPlayer
 
 
 func turn_on():

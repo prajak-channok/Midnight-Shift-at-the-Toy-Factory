@@ -1,129 +1,87 @@
 extends Node3D
 class_name Player
 
-
-signal monitor_flipped_up
-
-
 @export_group("Links")
-
-## The GUI node that will tell the player node when, for example, the player is trying to put the mask on.
-@export var gui_node : Control
-@export var cam_manager : Node
+@export var gui_node: Control
+@export var cam_manager: CameraManager
 
 @export_group("Panning Settings")
+@export var panning_curve: Curve = preload("res://panning_curve_presets/smooth.tres")
+@export var max_panning_speed: float = 70.0
 
-## Player view panning mode. 
-## [br][br]When set to [code]Use Curve[/code], the panning speed increases as the mouse moves away from the center of the screen based on [param panning_curve].
-## [br][br]When set to [code]Absolute[/code], all panning parameters except the rotation limits are ignored.
-@export_enum("Use Curve", "Absolute") var panning_mode : String = "Use Curve"
+# ระยะจากขอบจอที่จะเริ่มแพน
+# 0.05 = 5% ของความกว้างหน้าจอ
+@export_range(0.0, 0.5) var edge_threshold: float = 0.05
 
-## Curve that is used to increase the panning speed as the mouse moves away from the center of the screen.
-## [br][br]The left side of the graph represents the center or the screen. 
-## [br][br]The right side of the graph represents the left or right side of the screen.
-## [br][br]The height of the line represents how much of [param max_panning_speed] is used.
-@export var panning_curve : Curve = preload("res://panning_curve_presets/smooth.tres")
+@export_range(0.0, 180.0) var left_rotation_limit: float = 50.0
+@export_range(-180.0, 0.0) var right_rotation_limit: float = -50.0
+@export var allow_360: bool = false
 
-## How fast the player can pan left or right.
-@export var max_panning_speed : float = 70.0
-
-## How far to the left the player can look (in degrees).
-@export_range(0.0, 180.0) var left_rotation_limit : float = 50.0
-
-## How far to the right the player can look (in degrees).
-@export_range(-180.0, 0.0) var right_rotation_limit : float = -50.0
-
-## Turn this on to ignore rotation limits.
-@export var allow_360 : bool = false
-
-@onready var cam = $Camera3D
-@onready var mask = %Mask
+@onready var cam: Camera3D = $Camera3D
 @onready var monitor = $%Monitor
 
 
 func _ready():
-	# Connecting a signal from the GUI to a function in this script
-	# The GUI node will tell us when we have to toggle the mask
 	cam.current = true
-	gui_node.mask_button_mouse_entered.connect(tell_mask_to_toggle)
-	gui_node.monitor_button_mouse_entered.connect(flip_monitor)
 
 
 func _process(delta):
-	# Getting the mouse x position and transforming it into a value between 0 and 1 (left side and right side)
 	var mouse_pos = get_viewport().get_mouse_position()
-	var mouse_pos_x_normalized = (mouse_pos.x / get_viewport().get_visible_rect().size.x)
-	
-	# Call the correct panning function based on the panning mode
-	var panning_function : Callable
-	
-	match panning_mode:
-		"Use Curve":
-			panning_function = Callable(self, "panning_use_curve")
-		"Absolute":
-			panning_function = Callable(self, "panning_absolute")
-	
-	panning_function.call(delta, mouse_pos_x_normalized)
+	var viewport_width = get_viewport().get_visible_rect().size.x
+
+	if viewport_width <= 0:
+		return
+
+	var mouse_x = mouse_pos.x / viewport_width
+
+	panning_edge(delta, mouse_x)
 
 
-func panning_use_curve(delta, mouse_pos_x_normalized):
-	# Getting how far from the center the mouse is (value between 0 and 1) 
-	var distance_from_center = abs(mouse_pos_x_normalized - 0.5) * 2.0
-	
-	# Setting the panning speed multiplier based on that value and the panning_curve
-	var panning_speed_multiplier = panning_curve.sample(distance_from_center)
-	
-	# Inversing the value if the mouse is on the right side of the screen
-	if mouse_pos_x_normalized > 0.5:
-		panning_speed_multiplier *= -1
-	
-	# Rotating the camera
-	cam.rotation_degrees.y += (delta * max_panning_speed * panning_speed_multiplier)
-	
-	# Preventing the camera from going too far left or right if allow_360 is disabled
+func panning_edge(delta: float, mouse_x: float):
+	var speed_multiplier := 0.0
+
+	# เมาส์อยู่ด้านซ้ายของจอ
+	if mouse_x <= edge_threshold:
+		var strength = (edge_threshold - mouse_x) / edge_threshold
+		strength = clampf(strength, 0.0, 1.0)
+
+		speed_multiplier = panning_curve.sample(strength)
+
+	# เมาส์อยู่ด้านขวาของจอ
+	elif mouse_x >= 1.0 - edge_threshold:
+		var strength = (mouse_x - (1.0 - edge_threshold)) / edge_threshold
+		strength = clampf(strength, 0.0, 1.0)
+
+		speed_multiplier = -panning_curve.sample(strength)
+
+	# ถ้าไม่อยู่บริเวณขอบ → speed = 0
+	cam.rotation_degrees.y += delta * max_panning_speed * speed_multiplier
+
 	if not allow_360:
-		cam.rotation_degrees.y = clampf(cam.rotation_degrees.y, right_rotation_limit, left_rotation_limit)
+		cam.rotation_degrees.y = clampf(
+			cam.rotation_degrees.y,
+			right_rotation_limit,
+			left_rotation_limit
+		)
 
 
-func panning_absolute(delta, mouse_pos_x_normalized):
-	# Taking mouse position (0, 1) and applying it directly to the camera rotation (right_rotation_limit, left_rotation_limit)
-	cam.rotation_degrees.y = left_rotation_limit - ((left_rotation_limit - right_rotation_limit) * mouse_pos_x_normalized)
-	cam.rotation_degrees.y = clampf(cam.rotation_degrees.y, right_rotation_limit, left_rotation_limit)
-
-
-func tell_mask_to_toggle():
+func toggle_monitor():
 	if monitor.monitor_on:
-		return
-	
-	mask.toggle_mask()
-	
-
-func is_mask_on() -> bool:
-	return mask.mask_on
-
-func is_monitor_on() -> bool:
-	return monitor.monitor_on
-
-
-func flip_monitor():
-	if mask.mask_on:
-		return
-	
-	if monitor.monitor_on:
-		monitor.turn_off()
+		await monitor.turn_off()
 		cam_manager.disable_camera_display()
 		cam.current = true
 	else:
-		monitor.turn_on()
-		await monitor.turned_on
+		await monitor.turn_on()
 		cam.current = false
 		cam_manager.enable_camera_display()
-		monitor_flipped_up.emit()
 
 
 func force_monitor_down():
 	if monitor.monitor_on:
-		monitor.turn_off()
+		await monitor.turn_off()
 		cam_manager.disable_camera_display()
 		cam.current = true
-		await monitor.turned_off
+
+
+func is_monitor_on() -> bool:
+	return monitor.monitor_on
