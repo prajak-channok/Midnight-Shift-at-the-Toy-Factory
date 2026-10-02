@@ -14,6 +14,7 @@ const MOVEMENT_OPPORTUNITY_WAIT_TIME := 4 ## The time in seconds between each mo
 @export var animation_player_path : String ## A string path to the model's [AnimationPlayer] node (so we can play different pose animations at different positions).
 
 var _animation_player : AnimationPlayer
+var _stopped := false
 var current_position : AnimatronicPosition ## The [AnimatronicPosition] that the animatronic is currently at.
 
 
@@ -44,7 +45,9 @@ func travel_from_pos_to_pos(start_pos_name : String, end_pos_name : String):
 	while true:
 		# wait for a successful movement opportunity
 		await wait_for_successful_movement_opportunity()
-		
+		if _stopped:
+			return
+
 		# select next position in path
 		if roam_direction > 0:
 			current_position = current_position.get_next_position()
@@ -80,7 +83,23 @@ func apply_position_to_body(pos : AnimatronicPosition):
 ## This function ends once a movement opportunity is successful.[br]
 ## Use the "await" keyword to wait until the function is done before making the animatronic do something else.
 func wait_for_successful_movement_opportunity():
-	while true:
-		await get_tree().create_timer(MOVEMENT_OPPORTUNITY_WAIT_TIME).timeout
+	while not _stopped:
+		await wait_seconds(MOVEMENT_OPPORTUNITY_WAIT_TIME)
 		if ai_level >= randi_range(1,MAX_AI_LEVEL):
 			break
+
+
+## Stops all pending and future movement. Waiting functions return immediately afterwards.
+func stop_movement() -> void:
+	_stopped = true
+
+
+## Waits using a timer owned by this node, so freeing the animatronic cancels the wait
+## instead of resuming a coroutine whose instance is gone.
+func wait_seconds(seconds: float) -> void:
+	var timer := Timer.new()
+	timer.one_shot = true
+	add_child(timer)
+	timer.start(seconds)
+	await timer.timeout
+	timer.queue_free()

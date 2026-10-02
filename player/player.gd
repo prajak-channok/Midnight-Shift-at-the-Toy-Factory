@@ -66,6 +66,8 @@ func panning_edge(delta: float, mouse_x: float):
 
 
 func toggle_monitor():
+	if monitor.refuse_requests:
+		return
 	if monitor.monitor_on:
 		await monitor.turn_off()
 		cam_manager.disable_camera_display()
@@ -77,6 +79,8 @@ func toggle_monitor():
 
 
 func force_monitor_down():
+	while monitor.refuse_requests:
+		await get_tree().process_frame
 	if monitor.monitor_on:
 		await monitor.turn_off()
 		cam_manager.disable_camera_display()

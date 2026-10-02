@@ -1,15 +1,14 @@
-[gd_resource type="Resource" script_class="NightDifficulty" format=3]
+[gd_resource type="Resource" script_class="NightDifficulty" format=3 uid="uid://bo4jno1fimw50"]
 
-[ext_resource type="Script" path="res://night/difficulty/night_difficulty.gd" id="1"]
+[ext_resource type="Script" uid="uid://b7t4ttuluvpqw" path="res://night/difficulty/night_difficulty.gd" id="1"]
 
 [resource]
 script = ExtResource("1")
 blue_ai = 7
 yellow_ai = 6
-hour_bonus = 2
 blue_bonus_hours = Array[int]([1, 4])
 yellow_bonus_hours = Array[int]([2, 4])
 base_drain = 0.12
 door_drain = 0.14
 monitor_drain = 0.05
-light_drain = 0.0
+light_drain = 0.15

@@ -100,6 +100,7 @@ func trigger_game_over(animatronic: FnafAnimatronic) -> void:
 	if game_over or night_complete:
 		return
 	game_over = true
+	_stop_animatronics()
 	power_system.stop()
 	left_door.force_open()
 	right_door.force_open()
@@ -115,8 +116,14 @@ func night_done() -> void:
 	if game_over:
 		return
 	night_complete = true
+	_stop_animatronics()
 	power_system.stop()
 	get_tree().change_scene_to_file("res://night/six_am/six_am.tscn")
+
+
+func _stop_animatronics() -> void:
+	blue_animatronic.stop_ai()
+	yellow_animatronic.stop_ai()
 
 
 func _pick_difficulty() -> NightDifficulty:
