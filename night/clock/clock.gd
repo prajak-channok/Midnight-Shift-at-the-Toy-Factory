@@ -1,4 +1,5 @@
 extends Control
+class_name NightClock
 
 signal hour_passed
 signal six_am_reached

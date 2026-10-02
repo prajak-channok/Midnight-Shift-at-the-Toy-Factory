@@ -65,12 +65,6 @@ func panning_edge(delta: float, mouse_x: float):
 		)
 
 
-func _unhandled_input(event):
-	if event is InputEventKey and event.pressed and not event.echo:
-		if event.keycode == KEY_SPACE:
-			toggle_monitor()
-
-
 func toggle_monitor():
 	if monitor.monitor_on:
 		await monitor.turn_off()

@@ -19,12 +19,17 @@
 [ext_resource type="PackedScene" uid="uid://csnv5nuayg5p2" path="res://vent_lights/vent_light.tscn" id="17"]
 [ext_resource type="Script" uid="uid://ds33puhymypo5" path="res://animatronics/animatronic_utilities/positions/animatronic_positions_container.gd" id="18"]
 [ext_resource type="Script" uid="uid://mt2gvhceyred" path="res://animatronics/animatronic_utilities/positions/animatronic_position.gd" id="19"]
+[ext_resource type="Script" path="res://night/difficulty/night_difficulty.gd" id="20"]
+[ext_resource type="Script" path="res://night/power/power_system.gd" id="21"]
+[ext_resource type="Resource" path="res://night/difficulty/night_1.tres" id="22"]
+[ext_resource type="Resource" path="res://night/difficulty/night_2.tres" id="23"]
 
 [node name="Night" type="Node3D" unique_id=1457411669 node_paths=PackedStringArray("clock", "blue_animatronic", "yellow_animatronic")]
 script = ExtResource("1")
 clock = NodePath("Clock")
 blue_animatronic = NodePath("Animatronics/BlueAnimatronic")
 yellow_animatronic = NodePath("Animatronics/YellowAnimatronic")
+difficulties = Array[ExtResource("20")]([ExtResource("22"), ExtResource("23")])
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=315348212]
 environment = ExtResource("2")
@@ -141,6 +146,9 @@ side = "Right"
 [node name="PlayerControlsGUI" parent="." unique_id=560756014 instance=ExtResource("5")]
 
 [node name="Clock" parent="." unique_id=380174389 instance=ExtResource("8")]
+
+[node name="PowerSystem" type="Node" parent="." unique_id=905123771]
+script = ExtResource("21")
 
 [node name="Animatronics" type="Node3D" parent="." unique_id=1707243425]
 

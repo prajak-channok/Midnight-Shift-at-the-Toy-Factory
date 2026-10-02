@@ -1,17 +1,22 @@
 extends Node3D
+class_name Night
 
-@export var clock: Control
-@export var blue_animatronic: Node3D
-@export var yellow_animatronic: Node3D
+@export var clock: NightClock
+@export var blue_animatronic: FnafAnimatronic
+@export var yellow_animatronic: FnafAnimatronic
+@export var difficulties: Array[NightDifficulty] ## Index 0 = night 1.
 
-@onready var left_door: Node = $Doors/LeftDoor
-@onready var right_door: Node = $Doors/RightDoor
-@onready var left_light: OmniLight3D = $VentLights/LeftLight
-@onready var right_light: OmniLight3D = $VentLights/RightLight
-@onready var player: Node = $Player
-@onready var gui: Control = $PlayerControlsGUI
+@onready var left_door: FnafDoor = $Doors/LeftDoor
+@onready var right_door: FnafDoor = $Doors/RightDoor
+@onready var left_light: VentLight = $VentLights/LeftLight
+@onready var right_light: VentLight = $VentLights/RightLight
+@onready var player: Player = $Player
+@onready var hud: NightHud = $PlayerControlsGUI
+@onready var power_system: PowerSystem = $PowerSystem
+@onready var blue_jumpscare: AnimatronicJumpscare = $AnimatronicJumpscares/BlueAnimatronicJumpscare
+@onready var yellow_jumpscare: AnimatronicJumpscare = $AnimatronicJumpscares/YellowAnimatronicJumpscare
 
-var power: float = 100.0
+var difficulty: NightDifficulty
 var game_over: bool = false
 var night_complete: bool = false
 
@@ -20,90 +25,104 @@ func _ready() -> void:
 	left_light.hide()
 	right_light.hide()
 
-	if clock == null:
-		push_error("Night: Clock is not assigned.")
+	difficulty = _pick_difficulty()
+	if clock == null or difficulty == null:
+		push_error("Night: Clock or difficulties are not assigned.")
 		return
 
-	if clock.has_signal("six_am_reached"):
-		clock.six_am_reached.connect(night_done)
-	if clock.has_signal("hour_passed"):
-		clock.hour_passed.connect(_on_hour_passed)
+	clock.six_am_reached.connect(night_done)
+	clock.hour_passed.connect(_on_hour_passed)
 
 	for node: Node in get_tree().get_nodes_in_group(LightButton.GROUP):
 		(node as LightButton).pressed.connect(_on_light_button_pressed)
 
-	_set_animatronic_ai(blue_animatronic, 4)
-	_set_animatronic_ai(yellow_animatronic, 3)
+	hud.left_door_pressed.connect(toggle_left_door)
+	hud.right_door_pressed.connect(toggle_right_door)
+	hud.left_light_pressed.connect(toggle_left_light)
+	hud.right_light_pressed.connect(toggle_right_light)
+	hud.camera_pressed.connect(toggle_camera)
 
-	if Global.current_night >= 2:
-		_set_animatronic_ai(blue_animatronic, 7)
-		_set_animatronic_ai(yellow_animatronic, 6)
+	power_system.power_changed.connect(hud.set_power)
+	power_system.power_depleted.connect(_on_power_depleted)
 
-	_start_animatronic_ai(blue_animatronic)
-	_start_animatronic_ai(yellow_animatronic)
+	blue_animatronic.ai_level = difficulty.blue_ai
+	yellow_animatronic.ai_level = difficulty.yellow_ai
 
+	var doors: Array[FnafDoor] = [left_door, right_door]
+	var lights: Array[VentLight] = [left_light, right_light]
+	power_system.start(difficulty, doors, lights, player)
 
-func _process(delta: float) -> void:
-	if game_over or night_complete:
-		return
-
-	var drain: float = 0.10
-	if _door_is_closed(left_door):
-		drain += 0.12
-	if _door_is_closed(right_door):
-		drain += 0.12
-	if _player_monitor_is_on():
-		drain += 0.04
-
-	power = maxf(0.0, power - drain * delta)
-	_set_gui_text("Status", "POWER %d%%" % int(power))
-
-	if clock != null and clock.has_node("Label"):
-		_set_gui_text("Time", str(clock.get_node("Label").text))
-
-	if power <= 0.0:
-		_force_door_open(left_door)
-		_force_door_open(right_door)
-		_set_gui_text("Status", "POWER 0% — DOORS OFF")
+	blue_animatronic.start_ai()
+	yellow_animatronic.start_ai()
 
 
 func _unhandled_input(event: InputEvent) -> void:
 	if game_over or night_complete:
 		return
-	if event is InputEventKey and event.pressed and not event.echo:
-		match event.keycode:
-			KEY_A:
-				toggle_left_door()
-			KEY_D:
-				toggle_right_door()
-			KEY_Z:
-				toggle_left_light()
-			KEY_C:
-				toggle_right_light()
+	if event.is_action_pressed("left_door"):
+		toggle_left_door()
+	elif event.is_action_pressed("right_door"):
+		toggle_right_door()
+	elif event.is_action_pressed("left_light"):
+		toggle_left_light()
+	elif event.is_action_pressed("right_light"):
+		toggle_right_light()
+	elif event.is_action_pressed("toggle_monitor"):
+		toggle_camera()
 
 
 func toggle_left_door() -> void:
-	if power <= 0.0:
-		return
-	_toggle_door(left_door)
+	if power_system.has_power():
+		left_door.toggle()
 
 
 func toggle_right_door() -> void:
-	if power <= 0.0:
-		return
-	_toggle_door(right_door)
+	if power_system.has_power():
+		right_door.toggle()
 
 
 func toggle_left_light() -> void:
-	if power <= 0.0:
-		return
-	left_light.visible = not left_light.visible
+	if power_system.has_power():
+		left_light.visible = not left_light.visible
 
 
 func toggle_right_light() -> void:
-	if power <= 0.0:
+	if power_system.has_power():
+		right_light.visible = not right_light.visible
+
+
+func toggle_camera() -> void:
+	if power_system.has_power():
+		player.toggle_monitor()
+
+
+func trigger_game_over(animatronic: FnafAnimatronic) -> void:
+	if game_over or night_complete:
 		return
-	right_light.visible = not right_light.visible
+	game_over = true
+	power_system.stop()
+	left_door.force_open()
+	right_door.force_open()
+
+	await player.force_monitor_down()
+	await get_tree().create_timer(0.25).timeout
+
+	var jumpscare: AnimatronicJumpscare = blue_jumpscare if animatronic == blue_animatronic else yellow_jumpscare
+	jumpscare.play_jumpscare()
+
+
+func night_done() -> void:
+	if game_over:
+		return
+	night_complete = true
+	power_system.stop()
+	get_tree().change_scene_to_file("res://night/six_am/six_am.tscn")
+
+
+func _pick_difficulty() -> NightDifficulty:
+	if difficulties.is_empty():
+		return null
+	return difficulties[clampi(Global.current_night, 1, difficulties.size()) - 1]
 
 
 func _on_light_button_pressed(side: String) -> void:
@@ -115,95 +134,18 @@ func _on_light_button_pressed(side: String) -> void:
 		toggle_right_light()
 
 
-func toggle_camera() -> void:
-	if power <= 0.0:
-		return
-	if player != null and player.has_method("toggle_monitor"):
-		player.call("toggle_monitor")
-
-
-func trigger_game_over(animatronic: Node) -> void:
-	if game_over or night_complete:
-		return
-	game_over = true
-	_force_door_open(left_door)
-	_force_door_open(right_door)
-
-	if player != null and player.has_method("force_monitor_down"):
-		await player.call("force_monitor_down")
-	await get_tree().create_timer(0.25).timeout
-
-	var jumpscare: Node = null
-	if animatronic == blue_animatronic:
-		jumpscare = get_node_or_null("AnimatronicJumpscares/BlueAnimatronicJumpscare")
-	else:
-		jumpscare = get_node_or_null("AnimatronicJumpscares/YellowAnimatronicJumpscare")
-
-	if jumpscare != null and jumpscare.has_method("play_jumpscare"):
-		jumpscare.call("play_jumpscare")
-
-
 func _on_hour_passed() -> void:
-	if clock == null:
-		return
-
-	var current_hour: int = int(clock.get("current_hour"))
-	if current_hour == 1:
-		_set_animatronic_ai(blue_animatronic, _get_animatronic_ai(blue_animatronic) + 2)
-	elif current_hour == 2:
-		_set_animatronic_ai(yellow_animatronic, _get_animatronic_ai(yellow_animatronic) + 2)
-	elif current_hour == 4:
-		_set_animatronic_ai(blue_animatronic, _get_animatronic_ai(blue_animatronic) + 2)
-		_set_animatronic_ai(yellow_animatronic, _get_animatronic_ai(yellow_animatronic) + 2)
+	var hour: int = clock.current_hour
+	_add_ai(blue_animatronic, difficulty.blue_bonus_for_hour(hour))
+	_add_ai(yellow_animatronic, difficulty.yellow_bonus_for_hour(hour))
 
 
-func night_done() -> void:
-	if game_over:
-		return
-	night_complete = true
-	get_tree().change_scene_to_file("res://night/six_am/six_am.tscn")
+func _add_ai(animatronic: FnafAnimatronic, amount: int) -> void:
+	animatronic.ai_level = clampi(animatronic.ai_level + amount, 0, AnimatronicBase.MAX_AI_LEVEL)
 
 
-func _door_is_closed(door: Node) -> bool:
-	return door != null and bool(door.get("is_closed"))
-
-
-func _toggle_door(door: Node) -> void:
-	if door != null and door.has_method("toggle"):
-		door.call("toggle")
-
-
-func _force_door_open(door: Node) -> void:
-	if door != null and door.has_method("force_open"):
-		door.call("force_open")
-
-
-func _player_monitor_is_on() -> bool:
-	if player == null or not player.has_method("is_monitor_on"):
-		return false
-	return bool(player.call("is_monitor_on"))
-
-
-func _set_animatronic_ai(animatronic: Node, value: int) -> void:
-	if animatronic == null:
-		return
-	animatronic.set("ai_level", clampi(value, 0, 20))
-
-
-func _get_animatronic_ai(animatronic: Node) -> int:
-	if animatronic == null:
-		return 0
-	return int(animatronic.get("ai_level"))
-
-
-func _start_animatronic_ai(animatronic: Node) -> void:
-	if animatronic != null and animatronic.has_method("start_ai"):
-		animatronic.call("start_ai")
-
-
-func _set_gui_text(node_name: String, value: String) -> void:
-	if gui == null:
-		return
-	var node: Node = gui.get_node_or_null(node_name)
-	if node is Label:
-		node.text = value
+func _on_power_depleted() -> void:
+	left_door.force_open()
+	right_door.force_open()
+	hud.show_power_out()
+	player.force_monitor_down()

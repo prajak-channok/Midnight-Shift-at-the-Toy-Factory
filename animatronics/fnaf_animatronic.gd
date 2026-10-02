@@ -4,7 +4,7 @@ class_name FnafAnimatronic
 ## The last position is the vent next to its door; from there it attacks if the door is open.
 
 @export var door: FnafDoor
-@export var night: Node
+@export var night: Night
 
 var active: bool = false
 
