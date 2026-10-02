@@ -8,7 +8,7 @@ signal turned_off
 
 
 func _on_visibility_changed():
-	if visible and not light_sound.playing:
+	if visible:
 		light_sound.play()
 		turned_on.emit()
 	else:

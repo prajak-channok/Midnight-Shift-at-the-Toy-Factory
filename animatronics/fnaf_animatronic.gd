@@ -25,11 +25,20 @@ func start_ai() -> void:
 			await _attack_door()
 
 
+func stop_ai() -> void:
+	active = false
+	stop_movement()
+
+
 func _attack_door() -> void:
 	await wait_for_successful_movement_opportunity()
+	if not active:
+		return
 
 	if door.is_closed:
-		await get_tree().create_timer(randf_range(2.0, 4.0)).timeout
+		await wait_seconds(randf_range(2.0, 4.0))
+		if not active:
+			return
 		if door.is_closed:
 			move_to_pos(current_position.get_previous_position().name)
 			return
