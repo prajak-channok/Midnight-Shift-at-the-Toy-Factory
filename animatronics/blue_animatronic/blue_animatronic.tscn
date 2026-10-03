@@ -1,11 +1,11 @@
-[gd_scene load_steps=2 format=3]
+[gd_scene format=3 uid="uid://b4javqi0s2778"]
 
-[ext_resource type="Script" path="res://animatronics/blue_animatronic/blue_animatronic.gd" id="1"]
-[ext_resource type="PackedScene" path="res://animatronics/blue_animatronic/models/blue_animatronic.glb" id="2"]
+[ext_resource type="Script" uid="uid://bgde3wng7tpjm" path="res://animatronics/blue_animatronic/blue_animatronic.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://bwo3quys0jb0n" path="res://animatronics/blue_animatronic/models/blue_animatronic.glb" id="2"]
 
-[node name="BlueAnimatronic" type="Node3D"]
+[node name="BlueAnimatronic" type="Node3D" unique_id=1076363562]
 script = ExtResource("1")
 animation_player_path = NodePath("blue_animatronic/AnimationPlayer")
 
-[node name="blue_animatronic" parent="." instance=ExtResource("2")]
-rotation_degrees = Vector3(0, 180, 0)
+[node name="blue_animatronic" parent="." unique_id=1625501516 instance=ExtResource("2")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
