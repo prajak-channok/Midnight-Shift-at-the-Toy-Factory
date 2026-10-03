@@ -6,7 +6,6 @@
 
 [node name="Player" type="Node3D"]
 script = ExtResource("1")
-panning_mode = "Absolute"
 
 [node name="Camera3D" type="Camera3D" parent="."]
 position = Vector3(0, 1.8, 0)
