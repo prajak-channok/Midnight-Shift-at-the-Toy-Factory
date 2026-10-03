@@ -6,8 +6,8 @@ class_name Night
 @export var yellow_animatronic: FnafAnimatronic
 @export var difficulties: Array[NightDifficulty] ## Index 0 = night 1.
 
-@onready var left_door: FnafDoor = $Doors/LeftDoor
-@onready var right_door: FnafDoor = $Doors/RightDoor
+@onready var left_door: Door = $Doors/LeftDoor
+@onready var right_door: Door = $Doors/RightDoor
 @onready var left_light: VentLight = $VentLights/LeftLight
 @onready var right_light: VentLight = $VentLights/RightLight
 @onready var player: Player = $Player
@@ -48,7 +48,7 @@ func _ready() -> void:
 	blue_animatronic.ai_level = difficulty.blue_ai
 	yellow_animatronic.ai_level = difficulty.yellow_ai
 
-	var doors: Array[FnafDoor] = [left_door, right_door]
+	var doors: Array[Door] = [left_door, right_door]
 	var lights: Array[VentLight] = [left_light, right_light]
 	power_system.start(difficulty, doors, lights, player)
 

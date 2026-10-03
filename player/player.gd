@@ -18,7 +18,7 @@ class_name Player
 @export var allow_360: bool = false
 
 @onready var cam: Camera3D = $Camera3D
-@onready var monitor = $%Monitor
+@onready var monitor: Monitor = $%Monitor
 
 
 func _ready():

@@ -11,7 +11,7 @@ const MOVEMENT_OPPORTUNITY_WAIT_TIME := 4 ## The time in seconds between each mo
 
 @export var animatronic_positions_container : AnimatronicPositionsContainer ## A link to the animatronic's positions container. It will provide us with positions that the animatronic can go to.
 @export var cam_manager : CameraManager ## A link to the camera manager (to be able to make the monitor lose communication when the animatronic moves).
-@export var animation_player_path : String ## A string path to the model's [AnimationPlayer] node (so we can play different pose animations at different positions).
+@export var animation_player_path : NodePath ## A path to the model's [AnimationPlayer] node (so we can play different pose animations at different positions).
 
 var _animation_player : AnimationPlayer
 var _stopped := false

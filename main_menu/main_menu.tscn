@@ -81,11 +81,11 @@ Nights
 at 
 Robot Thingies"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+[node name="NightButtons" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 
-[node name="NightOneButton" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer"]
-unique_name_in_owner = true
+[node name="NightOneButton" type="Button" parent="MarginContainer/VBoxContainer/NightButtons"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.752941, 0.752941, 0.752941, 1)
@@ -97,8 +97,7 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_g57hx")
 text = "Night 1"
 alignment = 0
 
-[node name="NightTwoButton" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer"]
-unique_name_in_owner = true
+[node name="NightTwoButton" type="Button" parent="MarginContainer/VBoxContainer/NightButtons"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.752941, 0.752941, 0.752941, 1)
@@ -124,6 +123,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.698275, -1.17157, 0.761068)
 
 [node name="yellow_animatronic" parent="Background" instance=ExtResource("8_j61co")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.313401, -1.16383, -0.16573)
-
-[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/NightOneButton" to="." method="_on_night_one_button_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/NightTwoButton" to="." method="_on_night_two_button_pressed"]

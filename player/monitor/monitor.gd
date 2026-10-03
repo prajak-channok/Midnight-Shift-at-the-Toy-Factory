@@ -1,4 +1,5 @@
 extends Node3D
+class_name Monitor
 
 var monitor_on: bool = false
 var refuse_requests: bool = false

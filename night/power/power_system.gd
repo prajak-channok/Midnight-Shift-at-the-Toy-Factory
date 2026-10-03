@@ -7,14 +7,14 @@ signal power_depleted
 var power: float = 100.0
 
 var _difficulty: NightDifficulty
-var _doors: Array[FnafDoor] = []
+var _doors: Array[Door] = []
 var _vent_lights: Array[VentLight] = []
 var _player: Player
 var _running: bool = false
 var _last_percent: int = -1
 
 
-func start(difficulty: NightDifficulty, doors: Array[FnafDoor], vent_lights: Array[VentLight], player: Player) -> void:
+func start(difficulty: NightDifficulty, doors: Array[Door], vent_lights: Array[VentLight], player: Player) -> void:
 	_difficulty = difficulty
 	_doors = doors
 	_vent_lights = vent_lights

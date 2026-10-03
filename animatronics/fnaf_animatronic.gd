@@ -3,7 +3,7 @@ class_name FnafAnimatronic
 ## Walks through the positions of its AnimatronicPositionsContainer (in node order).
 ## The last position is the vent next to its door; from there it attacks if the door is open.
 
-@export var door: FnafDoor
+@export var door: Door
 @export var night: Night
 
 var active: bool = false

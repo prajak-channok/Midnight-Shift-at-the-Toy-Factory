@@ -1,5 +1,5 @@
 extends Node3D
-class_name FnafDoor
+class_name Door
 
 signal state_changed(is_closed: bool)
 
