@@ -1,8 +1,10 @@
 extends TravellingAnimatronic
 class_name FnafAnimatronic
-## Walks through the positions of its AnimatronicPositionsContainer (in node order).
-## The last position is the vent next to its door; from there it attacks if the door is open.
+## Walks the AnimatronicGraph assigned in [member graph]. The position names in the graph
+## must match the AnimatronicPosition markers in the positions container.
+## When the graph picks "Office" the animatronic attacks through [member door].
 
+@export var graph: AnimatronicGraph
 @export var door: Door
 @export var night: Night
 
@@ -10,19 +12,25 @@ var active: bool = false
 
 
 func start_ai() -> void:
-	var positions: Array[AnimatronicPosition] = animatronic_positions_container.get_array_of_positions()
-	if positions.size() < 2:
+	if graph == null:
+		push_error("%s: no AnimatronicGraph assigned." % name)
+		return
+	if not _graph_has_all_markers():
 		return
 
 	active = true
-	var first_pos: AnimatronicPosition = positions[0]
-	var final_pos: AnimatronicPosition = positions[positions.size() - 1]
-	move_to_pos(first_pos.name)
+	move_to_pos(graph.start_position)
 
 	while active:
-		await travel_from_pos_to_pos(current_position.name, final_pos.name)
-		if active:
-			await _attack_door()
+		await wait_for_successful_movement_opportunity(graph.decision_time_min, graph.decision_time_max)
+		if not active:
+			return
+
+		var destination := graph.pick_destination(current_position.name)
+		if destination == AnimatronicGraph.OFFICE:
+			await _attack_office()
+		elif destination != &"":
+			move_to_pos(destination)
 
 
 func stop_ai() -> void:
@@ -30,18 +38,23 @@ func stop_ai() -> void:
 	stop_movement()
 
 
-func _attack_door() -> void:
-	await wait_for_successful_movement_opportunity()
-	if not active:
-		return
-
+func _attack_office() -> void:
 	if door.is_closed:
-		await wait_seconds(randf_range(2.0, 4.0))
+		await wait_seconds(randf_range(graph.blocked_retreat_delay_min, graph.blocked_retreat_delay_max))
 		if not active:
 			return
 		if door.is_closed:
-			move_to_pos(current_position.get_previous_position().name)
+			move_to_pos(graph.start_position)
 			return
 
 	active = false
 	night.trigger_game_over(self)
+
+
+func _graph_has_all_markers() -> bool:
+	var valid := true
+	for pos_name in graph.get_all_position_names():
+		if animatronic_positions_container.get_position_by_name(pos_name) == null:
+			push_error("%s: graph position '%s' has no marker in its positions container." % [name, pos_name])
+			valid = false
+	return valid
