@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dfllx4hjuyydj" path="res://cameras/camera_manager.tscn" id="6"]
 [ext_resource type="PackedScene" uid="uid://buaookq3nlqk5" path="res://cameras/camera.tscn" id="7"]
 [ext_resource type="PackedScene" uid="uid://b8p0plxounngf" path="res://night/clock/clock.tscn" id="8"]
-[ext_resource type="PackedScene" path="res://animatronics/blue_animatronic/blue_animatronic.tscn" id="9"]
+[ext_resource type="PackedScene" uid="uid://b4javqi0s2778" path="res://animatronics/blue_animatronic/blue_animatronic.tscn" id="9"]
 [ext_resource type="PackedScene" uid="uid://bh4nsbfgh1ov7" path="res://light_button/light_button.tscn" id="9_0mj8d"]
 [ext_resource type="PackedScene" path="res://animatronics/yellow_animatronic/yellow_animatronic.tscn" id="10"]
 [ext_resource type="PackedScene" path="res://doors/door.tscn" id="11"]
@@ -19,10 +19,10 @@
 [ext_resource type="PackedScene" uid="uid://csnv5nuayg5p2" path="res://vent_lights/vent_light.tscn" id="17"]
 [ext_resource type="Script" uid="uid://ds33puhymypo5" path="res://animatronics/animatronic_utilities/positions/animatronic_positions_container.gd" id="18"]
 [ext_resource type="Script" uid="uid://mt2gvhceyred" path="res://animatronics/animatronic_utilities/positions/animatronic_position.gd" id="19"]
-[ext_resource type="Script" path="res://night/difficulty/night_difficulty.gd" id="20"]
-[ext_resource type="Script" path="res://night/power/power_system.gd" id="21"]
-[ext_resource type="Resource" path="res://night/difficulty/night_1.tres" id="22"]
-[ext_resource type="Resource" path="res://night/difficulty/night_2.tres" id="23"]
+[ext_resource type="Script" uid="uid://b7t4ttuluvpqw" path="res://night/difficulty/night_difficulty.gd" id="20"]
+[ext_resource type="Script" uid="uid://l4ewuu077p0e" path="res://night/power/power_system.gd" id="21"]
+[ext_resource type="Resource" uid="uid://c7x1f4scsigx2" path="res://night/difficulty/night_1.tres" id="22"]
+[ext_resource type="Resource" uid="uid://bo4jno1fimw50" path="res://night/difficulty/night_2.tres" id="23"]
 
 [node name="Night" type="Node3D" unique_id=1457411669 node_paths=PackedStringArray("clock", "blue_animatronic", "yellow_animatronic")]
 script = ExtResource("1")
@@ -100,23 +100,29 @@ cam_manager = NodePath("../CameraManager")
 
 [node name="CameraManager" parent="." unique_id=200658623 instance=ExtResource("6")]
 
-[node name="Cam1" parent="CameraManager" unique_id=577432613 instance=ExtResource("7")]
+[node name="PartyRoomLeft" parent="CameraManager" unique_id=577432613 instance=ExtResource("7")]
 transform = Transform3D(0.85621685, 0.25830835, -0.4474032, 1.6665247e-08, 0.8660254, 0.49999997, 0.51661676, -0.4281084, 0.7415055, -5.58, 3.23, -8.44)
 
-[node name="Cam2" parent="CameraManager" unique_id=498215079 instance=ExtResource("7")]
+[node name="PartyRoomRight" parent="CameraManager" unique_id=498215079 instance=ExtResource("7")]
 transform = Transform3D(0.90885115, 0.1288974, -0.3967053, 3.6778136e-10, 0.95105654, 0.309017, 0.41712067, -0.28085047, 0.8643688, 5.24, 2.67, -8.98)
 
-[node name="Cam3" parent="CameraManager" unique_id=76010396 instance=ExtResource("7")]
+[node name="SmallHallway" parent="CameraManager" unique_id=76010396 instance=ExtResource("7")]
 transform = Transform3D(0.7670024, 0.100375205, -0.63374424, 0, 0.98768824, 0.15643446, 0.6416439, -0.11998564, 0.7575594, 0.18, 2.76, -22.61)
 
-[node name="Cam4" parent="CameraManager" unique_id=1128993351 instance=ExtResource("7")]
+[node name="Stage" parent="CameraManager" unique_id=1128993351 instance=ExtResource("7")]
 transform = Transform3D(0.39123672, 0.14396513, -0.90895987, -2.1519142e-08, 0.98768836, 0.15643448, 0.9202902, -0.06120289, 0.38641995, 13.64, 2.76, -19.73)
 
-[node name="Cam5" parent="CameraManager" unique_id=100385264 instance=ExtResource("7")]
+[node name="RightVent" parent="CameraManager" unique_id=100385264 instance=ExtResource("7")]
 transform = Transform3D(0.5591929, -0.12969005, 0.8188307, 0, 0.98768836, 0.15643448, -0.82903755, -0.08747705, 0.5523083, 7.24, 0.67, -1.07)
 
-[node name="Cam6" parent="CameraManager" unique_id=174655787 instance=ExtResource("7")]
+[node name="LeftVent" parent="CameraManager" unique_id=174655787 instance=ExtResource("7")]
 transform = Transform3D(0.57357645, 0.12814362, -0.80906695, 0, 0.98768836, 0.15643448, 0.81915206, -0.08972713, 0.5665148, -7.24, 0.67, -0.75)
+
+[node name="HallStart" parent="CameraManager" unique_id=571311911 instance=ExtResource("7")]
+transform = Transform3D(-0.17250124, 0.8098409, -0.56071496, 0.34442613, 0.58290535, 0.73592955, 0.9228295, -0.06617612, -0.37948227, -0.6931572, 2.3327994, -21.194958)
+
+[node name="HallEnd" parent="CameraManager" unique_id=2010186197 instance=ExtResource("7")]
+transform = Transform3D(-4.371139e-08, 1, 4.371139e-08, 0, -4.371139e-08, 1, 1, 4.371139e-08, 1.9106855e-15, -0.05587578, 2.934846, -11.151662)
 
 [node name="Doors" type="Node3D" parent="." unique_id=1787886858]
 
