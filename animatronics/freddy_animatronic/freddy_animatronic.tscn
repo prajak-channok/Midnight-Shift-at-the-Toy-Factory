@@ -1,0 +1,12 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://animatronics/freddy_animatronic/freddy_animatronic.gd" id="1"]
+[ext_resource type="PackedScene" path="res://animatronics/freddy_animatronic/models/freddy_model.tscn" id="2"]
+
+[node name="FreddyAnimatronic" type="Node3D"]
+script = ExtResource("1")
+id = &"freddy"
+animation_player_path = NodePath("freddy_model/AnimationPlayer")
+
+[node name="freddy_model" parent="." instance=ExtResource("2")]
+rotation_degrees = Vector3(0, 180, 0)

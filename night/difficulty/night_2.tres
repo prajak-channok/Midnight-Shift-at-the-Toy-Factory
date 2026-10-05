@@ -15,9 +15,15 @@ animatronic_id = &"yellow"
 base_ai = 6
 bonus_hours = Array[int]([2, 4])
 
+[sub_resource type="Resource" id="Resource_freddy"]
+script = ExtResource("2")
+animatronic_id = &"freddy"
+base_ai = 6
+bonus_hours = Array[int]([3])
+
 [resource]
 script = ExtResource("1")
-ai_profiles = Array[ExtResource("2")]([SubResource("Resource_blue"), SubResource("Resource_yellow")])
+ai_profiles = Array[ExtResource("2")]([SubResource("Resource_blue"), SubResource("Resource_yellow"), SubResource("Resource_freddy")])
 base_drain = 0.12
 door_drain = 0.14
 monitor_drain = 0.05

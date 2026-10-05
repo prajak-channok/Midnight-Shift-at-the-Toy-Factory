@@ -72,6 +72,12 @@ func lose_communication(time_scale : float):
 	ui_animation_player.play("lost_communication")
 
 
+## True while the monitor is up and the selected camera is the one named after [param position_name]
+## (camera node names match AnimatronicPosition names, case-insensitive).
+func is_watching(position_name : StringName) -> bool:
+	return cam_ui.visible and selected_cam != null and selected_cam.name.to_lower() == String(position_name).to_lower()
+
+
 func enable_camera_display():
 	if selected_cam:
 		selected_cam.current = true
