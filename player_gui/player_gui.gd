@@ -17,6 +17,10 @@ signal camera_pressed
 
 
 func _ready() -> void:
+	# Keyboard drives these through input actions; a focused button would also react to ui_accept (Space).
+	for button: Button in [left_door_button, right_door_button, left_light_button, right_light_button, camera_button]:
+		button.focus_mode = Control.FOCUS_NONE
+
 	var left_door := _key_text("left_door")
 	var right_door := _key_text("right_door")
 	var left_light := _key_text("left_light")

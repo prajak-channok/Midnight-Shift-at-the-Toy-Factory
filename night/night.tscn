@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://n3fi56e4gw50" path="res://night/night.gd" id="1"]
 [ext_resource type="Environment" uid="uid://p1xvgykl2dn4" path="res://env.tres" id="2"]
 [ext_resource type="PackedScene" uid="uid://hpn481vlb27v" path="res://building/models/building.glb" id="3"]
-[ext_resource type="PackedScene" path="res://player/player.tscn" id="4"]
+[ext_resource type="PackedScene" uid="uid://bgdjpdhn01cx0" path="res://player/player.tscn" id="4"]
 [ext_resource type="PackedScene" uid="uid://dffgmrhnu0p8m" path="res://player_gui/player_gui.tscn" id="5"]
 [ext_resource type="PackedScene" uid="uid://dfllx4hjuyydj" path="res://cameras/camera_manager.tscn" id="6"]
 [ext_resource type="PackedScene" uid="uid://buaookq3nlqk5" path="res://cameras/camera.tscn" id="7"]
@@ -25,6 +25,13 @@
 [ext_resource type="Resource" uid="uid://bo4jno1fimw50" path="res://night/difficulty/night_2.tres" id="23"]
 [ext_resource type="Resource" uid="uid://bgew3g7ogenij" path="res://animatronics/blue_animatronic/blue_graph.tres" id="24"]
 [ext_resource type="Resource" uid="uid://bhheor0hu4430" path="res://animatronics/yellow_animatronic/yellow_graph.tres" id="25"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0cvp5"]
+albedo_color = Color(0.33163944, 0.33163944, 0.3316394, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_s7wsd"]
+material = SubResource("StandardMaterial3D_0cvp5")
+size = Vector3(3.5, 4.5, 0.05)
 
 [node name="Night" type="Node3D" unique_id=1457411669 node_paths=PackedStringArray("clock", "animatronics")]
 script = ExtResource("1")
@@ -76,12 +83,14 @@ omni_attenuation = 1.93187
 [node name="OmniLight3D6" type="OmniLight3D" parent="building_model" unique_id=1704524786]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.51, 1.202637, -2.48764)
 light_color = Color(0.847059, 0.886275, 0.909804, 1)
+light_energy = 0.5
 omni_range = 9.82
 omni_attenuation = 1.93187
 
 [node name="OmniLight3D7" type="OmniLight3D" parent="building_model" unique_id=399088282]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.404928, 1.202637, -2.48764)
 light_color = Color(0.847059, 0.886275, 0.909804, 1)
+light_energy = 0.5
 omni_range = 9.82
 omni_attenuation = 1.93187
 
@@ -100,14 +109,14 @@ omni_attenuation = 1.93187
 [node name="OfficeLights" type="Node" parent="." unique_id=1141910253]
 
 [node name="OmniLight3D6" type="OmniLight3D" parent="OfficeLights" unique_id=1070163623]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0305705, 3.35922, -0.402373)
-light_energy = 2.066
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0305705, 3.35922, 0.004760146)
+light_energy = 3.0
 omni_range = 4.62927
 omni_attenuation = 2.82842
 
 [node name="OmniLight3D8" type="OmniLight3D" parent="OfficeLights" unique_id=864256399]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0305705, 3.05133, -2.54199)
-light_energy = 1.201
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0305705, 2.1732774, -1.6448333)
+light_energy = 0.4
 omni_range = 5.24392
 omni_attenuation = 2.82842
 
@@ -128,7 +137,7 @@ omni_range = 4.62927
 omni_attenuation = 0.757857
 
 [node name="Player" parent="." unique_id=1159058489 node_paths=PackedStringArray("cam_manager") instance=ExtResource("4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.52852)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.3170265)
 cam_manager = NodePath("../CameraManager")
 
 [node name="CameraManager" parent="." unique_id=200658623 instance=ExtResource("6")]
@@ -157,22 +166,34 @@ transform = Transform3D(-0.13124783, 0.9349087, -0.3297267, 0.12014215, 0.345152
 [node name="HallEnd" parent="CameraManager" unique_id=2010186197 instance=ExtResource("7")]
 transform = Transform3D(-4.371139e-08, 1, 4.371139e-08, 0, -4.371139e-08, 1, 1, 4.371139e-08, 1.9106855e-15, -0.05587578, 4.3068647, -11.151662)
 
+[node name="Wall" type="MeshInstance3D" parent="." unique_id=2069229159]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6868815, -3.3613775)
+mesh = SubResource("BoxMesh_s7wsd")
+
 [node name="Doors" type="Node3D" parent="." unique_id=1787886858]
 
 [node name="LeftDoor" parent="Doors" unique_id=2050366669 instance=ExtResource("11")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -4.130637, -1.9609615, -1.263161)
 
 [node name="RightDoor" parent="Doors" unique_id=540398250 instance=ExtResource("11")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 4.16854, -1.7786412, -1.383394)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 4.169, -1.961, -1.383)
 
 [node name="VentLights" type="Node" parent="." unique_id=872790081]
 
 [node name="RightLight" parent="VentLights" unique_id=1311569324 instance=ExtResource("17")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2254553, 1.00584, -0.902388)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.332897, 1.00584, -1.310255)
+light_energy = 0.3
+
+[node name="RightLight2" parent="VentLights" unique_id=1096222459 instance=ExtResource("17")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.9346232, 1.00584, -1.310255)
 light_energy = 0.3
 
 [node name="LeftLight" parent="VentLights" unique_id=615331612 instance=ExtResource("17")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.260479, 1.006, -1.161)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.335502, 1.006, -1.290018)
+light_energy = 0.3
+
+[node name="LeftLight2" parent="VentLights" unique_id=108959261 instance=ExtResource("17")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.0123343, 1.006, -1.290018)
 light_energy = 0.3
 
 [node name="LightButtonLeft" parent="VentLights" unique_id=1829273767 instance=ExtResource("9_0mj8d")]

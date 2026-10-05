@@ -8,7 +8,9 @@ class_name Night
 @onready var left_door: Door = $Doors/LeftDoor
 @onready var right_door: Door = $Doors/RightDoor
 @onready var left_light: VentLight = $VentLights/LeftLight
+@onready var left_light2: VentLight = $VentLights/LeftLight2
 @onready var right_light: VentLight = $VentLights/RightLight
+@onready var right_light2: VentLight = $VentLights/RightLight2
 @onready var player: Player = $Player
 @onready var hud: NightHud = $PlayerControlsGUI
 @onready var power_system: PowerSystem = $PowerSystem
@@ -20,7 +22,9 @@ var night_complete: bool = false
 
 func _ready() -> void:
 	left_light.hide()
+	left_light2.hide()
 	right_light.hide()
+	right_light2.hide()
 
 	difficulty = _pick_difficulty()
 	if clock == null or difficulty == null:
@@ -84,11 +88,13 @@ func toggle_right_door() -> void:
 func toggle_left_light() -> void:
 	if power_system.has_power():
 		left_light.visible = not left_light.visible
+		left_light2.visible = not left_light2.visible
 
 
 func toggle_right_light() -> void:
 	if power_system.has_power():
 		right_light.visible = not right_light.visible
+		right_light2.visible = not right_light2.visible
 
 
 func toggle_camera() -> void:
