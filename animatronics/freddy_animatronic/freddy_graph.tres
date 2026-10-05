@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="AnimatronicGraph" format=3]
+[gd_resource type="Resource" script_class="AnimatronicGraph" format=3 uid="uid://c4jtnmn0vhf2w"]
 
 [ext_resource type="Script" uid="uid://bw77jafikts7b" path="res://animatronics/animatronic_utilities/graph/animatronic_graph.gd" id="1_graph"]
 [ext_resource type="Script" uid="uid://cm1k1xe1q4uw4" path="res://animatronics/animatronic_utilities/graph/animatronic_graph_node.gd" id="2_node"]
