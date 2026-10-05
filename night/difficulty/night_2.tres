@@ -1,13 +1,23 @@
 [gd_resource type="Resource" script_class="NightDifficulty" format=3 uid="uid://bo4jno1fimw50"]
 
 [ext_resource type="Script" uid="uid://b7t4ttuluvpqw" path="res://night/difficulty/night_difficulty.gd" id="1"]
+[ext_resource type="Script" path="res://night/difficulty/animatronic_ai_profile.gd" id="2"]
+
+[sub_resource type="Resource" id="Resource_blue"]
+script = ExtResource("2")
+animatronic_id = &"blue"
+base_ai = 7
+bonus_hours = Array[int]([1, 4])
+
+[sub_resource type="Resource" id="Resource_yellow"]
+script = ExtResource("2")
+animatronic_id = &"yellow"
+base_ai = 6
+bonus_hours = Array[int]([2, 4])
 
 [resource]
 script = ExtResource("1")
-blue_ai = 7
-yellow_ai = 6
-blue_bonus_hours = Array[int]([1, 4])
-yellow_bonus_hours = Array[int]([2, 4])
+ai_profiles = Array[ExtResource("2")]([SubResource("Resource_blue"), SubResource("Resource_yellow")])
 base_drain = 0.12
 door_drain = 0.14
 monitor_drain = 0.05

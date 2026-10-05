@@ -3,11 +3,8 @@ class_name NightDifficulty
 ## Per-night tuning: animatronic AI and power drain. One .tres per night.
 
 @export_group("Animatronic AI")
-@export_range(0, 20) var blue_ai: int = 4
-@export_range(0, 20) var yellow_ai: int = 3
-@export var hour_bonus: int = 2 ## AI added when an hour in the lists below is reached.
-@export var blue_bonus_hours: Array[int] = []
-@export var yellow_bonus_hours: Array[int] = []
+@export var hour_bonus: int = 2 ## AI added when an hour in a profile's bonus_hours is reached.
+@export var ai_profiles: Array[AnimatronicAIProfile] = []
 
 @export_group("Power drain per second")
 @export var base_drain: float = 0.10
@@ -16,9 +13,19 @@ class_name NightDifficulty
 @export var light_drain: float = 0.0 ## Per vent light turned on.
 
 
-func blue_bonus_for_hour(hour: int) -> int:
-	return hour_bonus if hour in blue_bonus_hours else 0
+## Returns null if the animatronic has no profile this night.
+func get_profile(animatronic_id: StringName) -> AnimatronicAIProfile:
+	for profile in ai_profiles:
+		if profile.animatronic_id == animatronic_id:
+			return profile
+	return null
 
 
-func yellow_bonus_for_hour(hour: int) -> int:
-	return hour_bonus if hour in yellow_bonus_hours else 0
+func base_ai_for(animatronic_id: StringName) -> int:
+	var profile := get_profile(animatronic_id)
+	return profile.base_ai if profile else 0
+
+
+func bonus_for_hour(animatronic_id: StringName, hour: int) -> int:
+	var profile := get_profile(animatronic_id)
+	return hour_bonus if profile and hour in profile.bonus_hours else 0

@@ -5,6 +5,7 @@
 
 [node name="BlueAnimatronic" type="Node3D" unique_id=1076363562]
 script = ExtResource("1")
+id = &"blue"
 animation_player_path = NodePath("blue_animatronic/AnimationPlayer")
 
 [node name="blue_animatronic" parent="." unique_id=1625501516 instance=ExtResource("2")]

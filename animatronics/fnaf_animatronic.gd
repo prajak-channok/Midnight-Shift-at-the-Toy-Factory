@@ -6,7 +6,6 @@ class_name FnafAnimatronic
 
 @export var graph: AnimatronicGraph
 @export var door: Door
-@export var night: Night
 
 var active: bool = false
 
@@ -48,7 +47,7 @@ func _attack_office() -> void:
 			return
 
 	active = false
-	night.trigger_game_over(self)
+	reached_office.emit()
 
 
 func _graph_has_all_markers() -> bool:

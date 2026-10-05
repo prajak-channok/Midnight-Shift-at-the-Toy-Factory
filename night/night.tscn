@@ -26,11 +26,10 @@
 [ext_resource type="Resource" uid="uid://bgew3g7ogenij" path="res://animatronics/blue_animatronic/blue_graph.tres" id="24"]
 [ext_resource type="Resource" uid="uid://bhheor0hu4430" path="res://animatronics/yellow_animatronic/yellow_graph.tres" id="25"]
 
-[node name="Night" type="Node3D" unique_id=1457411669 node_paths=PackedStringArray("clock", "blue_animatronic", "yellow_animatronic")]
+[node name="Night" type="Node3D" unique_id=1457411669 node_paths=PackedStringArray("clock", "animatronics")]
 script = ExtResource("1")
 clock = NodePath("Clock")
-blue_animatronic = NodePath("Animatronics/BlueAnimatronic")
-yellow_animatronic = NodePath("Animatronics/YellowAnimatronic")
+animatronics = [NodePath("Animatronics/BlueAnimatronic"), NodePath("Animatronics/YellowAnimatronic")]
 difficulties = Array[ExtResource("20")]([ExtResource("22"), ExtResource("23")])
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=315348212]
@@ -192,17 +191,17 @@ script = ExtResource("21")
 
 [node name="Animatronics" type="Node3D" parent="." unique_id=1707243425]
 
-[node name="BlueAnimatronic" parent="Animatronics" unique_id=2070157202 node_paths=PackedStringArray("door", "night", "animatronic_positions_container", "cam_manager") instance=ExtResource("9")]
+[node name="BlueAnimatronic" parent="Animatronics" unique_id=2070157202 node_paths=PackedStringArray("jumpscare", "door", "animatronic_positions_container", "cam_manager") instance=ExtResource("9")]
+jumpscare = NodePath("../../AnimatronicJumpscares/BlueAnimatronicJumpscare")
 graph = ExtResource("24")
 door = NodePath("../../Doors/LeftDoor")
-night = NodePath("../..")
 animatronic_positions_container = NodePath("../../AnimatronicPositionsContainers/BlueAnimatronicPositionsContainer")
 cam_manager = NodePath("../../CameraManager")
 
-[node name="YellowAnimatronic" parent="Animatronics" unique_id=1288344575 node_paths=PackedStringArray("door", "night", "animatronic_positions_container", "cam_manager") instance=ExtResource("10")]
+[node name="YellowAnimatronic" parent="Animatronics" unique_id=1288344575 node_paths=PackedStringArray("jumpscare", "door", "animatronic_positions_container", "cam_manager") instance=ExtResource("10")]
+jumpscare = NodePath("../../AnimatronicJumpscares/YellowAnimatronicJumpscare")
 graph = ExtResource("25")
 door = NodePath("../../Doors/RightDoor")
-night = NodePath("../..")
 animatronic_positions_container = NodePath("../../AnimatronicPositionsContainers/YellowAnimatronicPositionsContainer")
 cam_manager = NodePath("../../CameraManager")
 
