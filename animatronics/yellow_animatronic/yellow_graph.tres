@@ -31,8 +31,8 @@ destinations = Dictionary[StringName, float]({
 script = ExtResource("2_node")
 position_name = &"PartyRoomLeft"
 destinations = Dictionary[StringName, float]({
-&"HallEnd": 50.0,
-&"HallStart": 50.0
+&"HallEnd": 30.0,
+&"HallStart": 70.0
 })
 
 [sub_resource type="Resource" id="Resource_hall_start"]
@@ -56,8 +56,8 @@ destinations = Dictionary[StringName, float]({
 script = ExtResource("2_node")
 position_name = &"RightVent"
 destinations = Dictionary[StringName, float]({
-&"PartyRoomRight": 40.0,
-&"RightDoor": 60.0
+&"PartyRoomRight": 25.0,
+&"RightDoor": 75.0
 })
 
 [sub_resource type="Resource" id="Resource_right_door"]

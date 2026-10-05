@@ -92,7 +92,7 @@ omni_range = 9.82
 omni_attenuation = 1.93187
 
 [node name="OmniLight3D9" type="OmniLight3D" parent="building_model" unique_id=78240223]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05533886, 3.3908217, -18.486637)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05533886, 3.3908217, -17.517233)
 light_color = Color(0.847059, 0.886275, 0.909804, 1)
 omni_range = 9.82
 omni_attenuation = 1.93187
@@ -152,10 +152,10 @@ transform = Transform3D(0.9847442, -0.027220853, 0.1718657, 0, 0.98768836, 0.156
 transform = Transform3D(0.99875593, 0.007800892, -0.049252838, 0, 0.98768836, 0.15643448, 0.049866736, -0.15623987, 0.98645955, -8.955352, 0.67, -0.75)
 
 [node name="HallStart" parent="CameraManager" unique_id=571311911 instance=ExtResource("7")]
-transform = Transform3D(-0.17250124, 0.8098409, -0.56071496, 0.34442613, 0.58290535, 0.73592955, 0.9228295, -0.06617612, -0.37948227, -0.6931572, 2.3327994, -21.194958)
+transform = Transform3D(-0.13124783, 0.9349087, -0.3297267, 0.12014215, 0.34515274, 0.93082523, 0.9840426, 0.08255473, -0.1576225, -0.6931572, 4.107167, -20.180859)
 
 [node name="HallEnd" parent="CameraManager" unique_id=2010186197 instance=ExtResource("7")]
-transform = Transform3D(-4.371139e-08, 1, 4.371139e-08, 0, -4.371139e-08, 1, 1, 4.371139e-08, 1.9106855e-15, -0.05587578, 2.934846, -11.151662)
+transform = Transform3D(-4.371139e-08, 1, 4.371139e-08, 0, -4.371139e-08, 1, 1, 4.371139e-08, 1.9106855e-15, -0.05587578, 4.3068647, -11.151662)
 
 [node name="Doors" type="Node3D" parent="." unique_id=1787886858]
 
@@ -191,19 +191,19 @@ script = ExtResource("21")
 
 [node name="Animatronics" type="Node3D" parent="." unique_id=1707243425]
 
-[node name="BlueAnimatronic" parent="Animatronics" unique_id=2070157202 node_paths=PackedStringArray("jumpscare", "door", "animatronic_positions_container", "cam_manager") instance=ExtResource("9")]
-jumpscare = NodePath("../../AnimatronicJumpscares/BlueAnimatronicJumpscare")
+[node name="BlueAnimatronic" parent="Animatronics" unique_id=2070157202 node_paths=PackedStringArray("door", "animatronic_positions_container", "cam_manager", "jumpscare") instance=ExtResource("9")]
 graph = ExtResource("24")
 door = NodePath("../../Doors/LeftDoor")
 animatronic_positions_container = NodePath("../../AnimatronicPositionsContainers/BlueAnimatronicPositionsContainer")
 cam_manager = NodePath("../../CameraManager")
+jumpscare = NodePath("../../AnimatronicJumpscares/BlueAnimatronicJumpscare")
 
-[node name="YellowAnimatronic" parent="Animatronics" unique_id=1288344575 node_paths=PackedStringArray("jumpscare", "door", "animatronic_positions_container", "cam_manager") instance=ExtResource("10")]
-jumpscare = NodePath("../../AnimatronicJumpscares/YellowAnimatronicJumpscare")
+[node name="YellowAnimatronic" parent="Animatronics" unique_id=1288344575 node_paths=PackedStringArray("door", "animatronic_positions_container", "cam_manager", "jumpscare") instance=ExtResource("10")]
 graph = ExtResource("25")
 door = NodePath("../../Doors/RightDoor")
 animatronic_positions_container = NodePath("../../AnimatronicPositionsContainers/YellowAnimatronicPositionsContainer")
 cam_manager = NodePath("../../CameraManager")
+jumpscare = NodePath("../../AnimatronicJumpscares/YellowAnimatronicJumpscare")
 
 [node name="AnimatronicPositionsContainers" type="Node3D" parent="." unique_id=1447842819]
 
@@ -214,22 +214,30 @@ script = ExtResource("18")
 [node name="Stage" type="Marker3D" parent="AnimatronicPositionsContainers/BlueAnimatronicPositionsContainer" unique_id=49352026]
 transform = Transform3D(0.8499222, 0, -0.5269094, 0, 1, 0, 0.5269094, 0, 0.8499222, -14.771994, 1.37, 21.776703)
 script = ExtResource("19")
+animation_to_play = "normal"
 
 [node name="SmallHallway" type="Marker3D" parent="AnimatronicPositionsContainers/BlueAnimatronicPositionsContainer" unique_id=690485443]
 transform = Transform3D(-0.5763872, 0, -0.81717664, 0, 1, 0, 0.81717664, 0, -0.5763872, -5.131052, 1.37, 23.051588)
 script = ExtResource("19")
+animation_to_play = "squatting"
 
 [node name="HallStart" type="Marker3D" parent="AnimatronicPositionsContainers/BlueAnimatronicPositionsContainer" unique_id=1506980591]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03444541, 0.73386586, 18.64646)
 script = ExtResource("19")
+animation_to_play = "normal"
 
 [node name="PartyRoomLeft" type="Marker3D" parent="AnimatronicPositionsContainers/BlueAnimatronicPositionsContainer" unique_id=126555273]
 transform = Transform3D(0.861008, 0.247503, 0.444305, 0.048444, 0.829717, -0.556077, -0.506278, 0.500311, 0.702403, 5.82066, 1.48439, 9.764174)
 script = ExtResource("19")
 animation_to_play = "squatting"
 
+[node name="PartyRoomRight" type="Marker3D" parent="AnimatronicPositionsContainers/BlueAnimatronicPositionsContainer" unique_id=1934823855]
+transform = Transform3D(0.861008, 0.247503, 0.444305, 0.048444, 0.829717, -0.556077, -0.506278, 0.500311, 0.702403, -7.6041913, 1.48439, 10.498885)
+script = ExtResource("19")
+animation_to_play = "normal"
+
 [node name="LeftVent" type="Marker3D" parent="AnimatronicPositionsContainers/BlueAnimatronicPositionsContainer" unique_id=914836388]
-transform = Transform3D(1.0000002, 0, 0, 0, 1.0000006, 0, 0, 0, 0.999999, 8.549163, 0.7, 3.974476)
+transform = Transform3D(1.0000002, 0, 0, 0, 1.0000006, 0, 0, 0, 0.999999, 8.626957, 0.7, 4.572666)
 script = ExtResource("19")
 animation_to_play = "crawling"
 
@@ -245,28 +253,32 @@ script = ExtResource("18")
 [node name="Stage" type="Marker3D" parent="AnimatronicPositionsContainers/YellowAnimatronicPositionsContainer" unique_id=1638314830]
 transform = Transform3D(0.08332622, 0, -0.9965228, 0, 1, 0, 0.9965228, 0, 0.08332622, -23.880232, 1.37, 20.031263)
 script = ExtResource("19")
-
-[node name="HallEnd" type="Marker3D" parent="AnimatronicPositionsContainers/YellowAnimatronicPositionsContainer" unique_id=2046069710]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03444565, 1.37, 8.93248)
-script = ExtResource("19")
-
-[node name="HallStart" type="Marker3D" parent="AnimatronicPositionsContainers/YellowAnimatronicPositionsContainer" unique_id=386262233]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.036049, 1.37, 16.817707)
-script = ExtResource("19")
-
-[node name="PartyRoomRight" type="Marker3D" parent="AnimatronicPositionsContainers/YellowAnimatronicPositionsContainer" unique_id=818854712]
-transform = Transform3D(0.604975, 0, -0.796245, 0, 1, 0, 0.796245, 0, 0.604975, -7.288767, 1.37, 9.590728)
-script = ExtResource("19")
-animation_to_play = "oneleg1"
+animation_to_play = "normal"
 
 [node name="SmallHallway" type="Marker3D" parent="AnimatronicPositionsContainers/YellowAnimatronicPositionsContainer" unique_id=1276343117]
 transform = Transform3D(0.7567391, 0, -0.65371674, 0, 1, 0, 0.65371674, 0, 0.7567391, -1.2000334, 1.37, 24.770006)
 script = ExtResource("19")
 animation_to_play = "oneleg2"
 
+[node name="HallStart" type="Marker3D" parent="AnimatronicPositionsContainers/YellowAnimatronicPositionsContainer" unique_id=386262233]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.036049, 1.37, 16.817707)
+script = ExtResource("19")
+animation_to_play = "oneleg1"
+
+[node name="HallEnd" type="Marker3D" parent="AnimatronicPositionsContainers/YellowAnimatronicPositionsContainer" unique_id=2046069710]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.03444565, 1.37, 8.93248)
+script = ExtResource("19")
+animation_to_play = "vibing"
+
+[node name="PartyRoomRight" type="Marker3D" parent="AnimatronicPositionsContainers/YellowAnimatronicPositionsContainer" unique_id=818854712]
+transform = Transform3D(0.604975, 0, -0.796245, 0, 1, 0, 0.796245, 0, 0.604975, -7.288767, 1.37, 9.590728)
+script = ExtResource("19")
+animation_to_play = "vibing"
+
 [node name="PartyRoomLeft" type="Marker3D" parent="AnimatronicPositionsContainers/YellowAnimatronicPositionsContainer" unique_id=2091702596]
 transform = Transform3D(0.663926, 0, -0.747797, 0, 1, 0, 0.747798, 0, 0.663926, 6.14898, 1.37, 11.551243)
 script = ExtResource("19")
+animation_to_play = "oneleg2"
 
 [node name="RightVent" type="Marker3D" parent="AnimatronicPositionsContainers/YellowAnimatronicPositionsContainer" unique_id=818260709]
 transform = Transform3D(0.99999976, 0, 0, 0, 1, 0, 0, 0, 0.99999946, -8.498199, 0.7, 4.4280453)
