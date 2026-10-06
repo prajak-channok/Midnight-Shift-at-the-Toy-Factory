@@ -26,8 +26,9 @@
 [ext_resource type="Resource" uid="uid://bgew3g7ogenij" path="res://animatronics/blue_animatronic/blue_graph.tres" id="24"]
 [ext_resource type="Resource" uid="uid://bhheor0hu4430" path="res://animatronics/yellow_animatronic/yellow_graph.tres" id="25"]
 [ext_resource type="PackedScene" path="res://animatronics/freddy_animatronic/freddy_animatronic.tscn" id="26"]
-[ext_resource type="Resource" path="res://animatronics/freddy_animatronic/freddy_graph.tres" id="27"]
+[ext_resource type="Resource" uid="uid://c4jtnmn0vhf2w" path="res://animatronics/freddy_animatronic/freddy_graph.tres" id="27"]
 [ext_resource type="PackedScene" path="res://animatronics/freddy_animatronic/models/freddy_model.tscn" id="28"]
+[ext_resource type="PackedScene" path="res://door_button/door_button.tscn" id="door_button"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0cvp5"]
 albedo_color = Color(0.33163944, 0.33163944, 0.3316394, 1)
@@ -179,7 +180,7 @@ mesh = SubResource("BoxMesh_s7wsd")
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -4.130637, -1.9609615, -1.263161)
 
 [node name="RightDoor" parent="Doors" unique_id=540398250 instance=ExtResource("11")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 4.169, -1.961, -1.383)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 4.0956755, -1.8020635, -1.383)
 
 [node name="VentLights" type="Node" parent="." unique_id=872790081]
 
@@ -205,6 +206,15 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.9
 [node name="LightButtonRight" parent="VentLights" unique_id=869361540 instance=ExtResource("9_0mj8d")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3.9329667, 0.7028322, -0.014325321)
 side = "Right"
+
+[node name="DoorButtonLeft" parent="VentLights" unique_id=727255812 node_paths=PackedStringArray("door") instance=ExtResource("door_button")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.93, 1.25, -0.01)
+door = NodePath("../../Doors/LeftDoor")
+
+[node name="DoorButtonRight" parent="VentLights" unique_id=219653460 node_paths=PackedStringArray("door") instance=ExtResource("door_button")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 3.9329667, 1.2528322, -0.014325321)
+side = "Right"
+door = NodePath("../../Doors/RightDoor")
 
 [node name="PlayerControlsGUI" parent="." unique_id=560756014 instance=ExtResource("5")]
 

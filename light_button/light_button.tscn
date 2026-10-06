@@ -6,7 +6,7 @@
 size = Vector3(0.3, 0.3, 0.1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vwfj7"]
-size = Vector3(1.338, 1.342, 0.121)
+size = Vector3(0.45, 0.45, 0.15)
 
 [node name="LightButton" type="Area3D"]
 script = ExtResource("1_usnxp")

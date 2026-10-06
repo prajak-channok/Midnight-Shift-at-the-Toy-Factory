@@ -37,6 +37,9 @@ func _ready() -> void:
 	for node: Node in get_tree().get_nodes_in_group(LightButton.GROUP):
 		(node as LightButton).pressed.connect(_on_light_button_pressed)
 
+	for node: Node in get_tree().get_nodes_in_group(DoorButton.GROUP):
+		(node as DoorButton).pressed.connect(_on_door_button_pressed)
+
 	hud.left_door_pressed.connect(toggle_left_door)
 	hud.right_door_pressed.connect(toggle_right_door)
 	hud.left_light_pressed.connect(toggle_left_light)
@@ -75,24 +78,28 @@ func _unhandled_input(event: InputEvent) -> void:
 		toggle_camera()
 
 
+func can_use_office_controls() -> bool:
+	return power_system.has_power() and not player.is_monitor_on()
+
+
 func toggle_left_door() -> void:
-	if power_system.has_power():
+	if can_use_office_controls():
 		left_door.toggle()
 
 
 func toggle_right_door() -> void:
-	if power_system.has_power():
+	if can_use_office_controls():
 		right_door.toggle()
 
 
 func toggle_left_light() -> void:
-	if power_system.has_power():
+	if can_use_office_controls():
 		left_light.visible = not left_light.visible
 		left_light2.visible = not left_light2.visible
 
 
 func toggle_right_light() -> void:
-	if power_system.has_power():
+	if can_use_office_controls():
 		right_light.visible = not right_light.visible
 		right_light2.visible = not right_light2.visible
 
@@ -147,6 +154,15 @@ func _on_light_button_pressed(side: String) -> void:
 		toggle_left_light()
 	else:
 		toggle_right_light()
+
+
+func _on_door_button_pressed(side: String) -> void:
+	if game_over or night_complete:
+		return
+	if side == "Left":
+		toggle_left_door()
+	else:
+		toggle_right_door()
 
 
 func _on_hour_passed() -> void:
