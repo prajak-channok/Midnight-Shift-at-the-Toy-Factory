@@ -7,39 +7,42 @@
 script = ExtResource("2_node")
 position_name = &"Stage"
 destinations = Dictionary[StringName, float]({
-&"SmallHallway": 1.0
+&"HallEnd": 10.0,
+&"PartyRoomRight": 10.0,
+&"SmallHallway": 80.0
 })
 
 [sub_resource type="Resource" id="Resource_small_hallway"]
 script = ExtResource("2_node")
 position_name = &"SmallHallway"
 destinations = Dictionary[StringName, float]({
-&"HallEnd": 60.0,
-&"Stage": 40.0
+&"HallEnd": 70.0,
+&"Stage": 30.0
 })
 
 [sub_resource type="Resource" id="Resource_hall_end"]
 script = ExtResource("2_node")
 position_name = &"HallEnd"
 destinations = Dictionary[StringName, float]({
-&"PartyRoomRight": 1.0,
-&"SmallHallway": 1.0
+&"PartyRoomRight": 70.0,
+&"SmallHallway": 30.0
 })
 
 [sub_resource type="Resource" id="Resource_party_room_right"]
 script = ExtResource("2_node")
 position_name = &"PartyRoomRight"
 destinations = Dictionary[StringName, float]({
-&"HallEnd": 1.0,
-&"RightVent": 1.0
+&"HallEnd": 20.0,
+&"RightVent": 70.0,
+&"Stage": 10.0
 })
 
 [sub_resource type="Resource" id="Resource_right_vent"]
 script = ExtResource("2_node")
 position_name = &"RightVent"
 destinations = Dictionary[StringName, float]({
-&"Office": 60.0,
-&"PartyRoomRight": 40.0
+&"Office": 70.0,
+&"PartyRoomRight": 30.0
 })
 
 [resource]

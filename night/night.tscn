@@ -25,9 +25,9 @@
 [ext_resource type="Resource" uid="uid://bo4jno1fimw50" path="res://night/difficulty/night_2.tres" id="23"]
 [ext_resource type="Resource" uid="uid://bgew3g7ogenij" path="res://animatronics/blue_animatronic/blue_graph.tres" id="24"]
 [ext_resource type="Resource" uid="uid://bhheor0hu4430" path="res://animatronics/yellow_animatronic/yellow_graph.tres" id="25"]
-[ext_resource type="PackedScene" path="res://animatronics/burned_plush_bot/burned_plush_bot.tscn" id="26"]
+[ext_resource type="PackedScene" uid="uid://b1js2yjkod6d3" path="res://animatronics/burned_plush_bot/burned_plush_bot.tscn" id="26"]
 [ext_resource type="Resource" uid="uid://c4jtnmn0vhf2w" path="res://animatronics/burned_plush_bot/burned_plush_graph.tres" id="27"]
-[ext_resource type="PackedScene" path="res://animatronics/burned_plush_bot/models/burned_plush_model.tscn" id="28"]
+[ext_resource type="PackedScene" uid="uid://ciptxvcinddjg" path="res://animatronics/burned_plush_bot/models/burned_plush_model.tscn" id="28"]
 [ext_resource type="PackedScene" path="res://door_button/door_button.tscn" id="door_button"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0cvp5"]
@@ -57,9 +57,8 @@ omni_range = 6.885
 omni_attenuation = 1.93187
 
 [node name="OmniLight3D3" type="OmniLight3D" parent="building_model" unique_id=1886074633]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.36269, 3.30383, -10.426)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.3260193, 3.643854, -10.426001)
 light_color = Color(0.847059, 0.886275, 0.909804, 1)
-light_energy = 0.5
 omni_range = 6.885
 omni_attenuation = 1.93187
 
@@ -278,7 +277,7 @@ script = ExtResource("19")
 animation_to_play = "normal"
 
 [node name="LeftVent" type="Marker3D" parent="AnimatronicPositionsContainers/BlueAnimatronicPositionsContainer" unique_id=914836388]
-transform = Transform3D(1.0000002, 0, 0, 0, 1.0000006, 0, 0, 0, 0.999999, 8.626957, 0.7, 4.572666)
+transform = Transform3D(1.0000002, 0, 0, 0, 1.0000006, 0, 0, 0, 0.999999, 8.626957, 0.6283898, 4.572666)
 script = ExtResource("19")
 animation_to_play = "crawling"
 
@@ -322,7 +321,7 @@ script = ExtResource("19")
 animation_to_play = "oneleg2"
 
 [node name="RightVent" type="Marker3D" parent="AnimatronicPositionsContainers/YellowAnimatronicPositionsContainer" unique_id=818260709]
-transform = Transform3D(0.99999976, 0, 0, 0, 1, 0, 0, 0, 0.99999946, -8.498199, 0.7, 4.4280453)
+transform = Transform3D(0.99999976, 0, 0, 0, 1, 0, 0, 0, 0.99999946, -8.570805, 0.7414312, 4.4280453)
 script = ExtResource("19")
 animation_to_play = "crawling"
 
@@ -336,27 +335,27 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 
 script = ExtResource("18")
 
 [node name="Stage" type="Marker3D" parent="AnimatronicPositionsContainers/BurnedPlushBotPositionsContainer" unique_id=198596830]
-transform = Transform3D(0.522, 0, -0.853, 0, 1, 0, 0.853, 0, 0.522, -19.3, 1.37, 20.9)
+transform = Transform3D(0.52197576, 0, -0.8529603, 0, 1, 0, 0.8529603, 0, 0.52197576, -19.3, 0, 20.9)
 script = ExtResource("19")
 animation_to_play = "normal"
 
 [node name="SmallHallway" type="Marker3D" parent="AnimatronicPositionsContainers/BurnedPlushBotPositionsContainer" unique_id=1116397037]
-transform = Transform3D(0.7567391, 0, -0.65371674, 0, 1, 0, 0.65371674, 0, 0.7567391, -3.2, 1.37, 24.3)
+transform = Transform3D(0.7567391, 0, -0.65371674, 0, 1, 0, 0.65371674, 0, 0.7567391, -3.2, 0, 24.3)
 script = ExtResource("19")
 animation_to_play = "normal"
 
 [node name="HallEnd" type="Marker3D" parent="AnimatronicPositionsContainers/BurnedPlushBotPositionsContainer" unique_id=975518713]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.9, 1.37, 8.93248)
+transform = Transform3D(-1, -2.2638858e-08, -8.444066e-08, -5.3290705e-15, 0.9658885, -0.25895828, 8.742278e-08, -0.25895828, -0.9658885, -1.020127, 0, 7.8975215)
 script = ExtResource("19")
 animation_to_play = "normal"
 
 [node name="PartyRoomRight" type="Marker3D" parent="AnimatronicPositionsContainers/BurnedPlushBotPositionsContainer" unique_id=1376648822]
-transform = Transform3D(0.604975, 0, -0.796245, 0, 1, 0, 0.796245, 0, 0.604975, -7.288767, 1.37, 8.2)
+transform = Transform3D(0.7806052, 0, -0.625025, 0, 1, 0, 0.625025, 0, 0.7806052, -7.026257, 0, 12.468621)
 script = ExtResource("19")
 animation_to_play = "normal"
 
 [node name="RightVent" type="Marker3D" parent="AnimatronicPositionsContainers/BurnedPlushBotPositionsContainer" unique_id=1391887788]
-transform = Transform3D(0.99999976, 0, 0, 0, 1, 0, 0, 0, 0.99999946, -8.498199, 0.7, 4.4280453)
+transform = Transform3D(0.99999976, 0, 0, 0, 1, 0, 0, 0, 0.99999946, -8.498, 0.1, 4.428)
 script = ExtResource("19")
 animation_to_play = "crawling"
 
@@ -377,6 +376,7 @@ stream = ExtResource("15")
 script = ExtResource("12")
 
 [node name="yellow_animatronic" parent="AnimatronicJumpscares/YellowAnimatronicJumpscare" unique_id=789605806 instance=ExtResource("14")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
 visible = false
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="AnimatronicJumpscares/YellowAnimatronicJumpscare" unique_id=1335167989]
