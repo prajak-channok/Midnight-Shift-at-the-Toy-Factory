@@ -2,19 +2,18 @@ extends Node3D
 class_name Night
 
 @export var clock: NightClock
-@export var blue_animatronic: FnafAnimatronic
-@export var yellow_animatronic: FnafAnimatronic
+@export var animatronics: Array[AnimatronicBase] = []
 @export var difficulties: Array[NightDifficulty] ## Index 0 = night 1.
 
-@onready var left_door: FnafDoor = $Doors/LeftDoor
-@onready var right_door: FnafDoor = $Doors/RightDoor
+@onready var left_door: Door = $Doors/LeftDoor
+@onready var right_door: Door = $Doors/RightDoor
 @onready var left_light: VentLight = $VentLights/LeftLight
+@onready var left_light2: VentLight = $VentLights/LeftLight2
 @onready var right_light: VentLight = $VentLights/RightLight
+@onready var right_light2: VentLight = $VentLights/RightLight2
 @onready var player: Player = $Player
 @onready var hud: NightHud = $PlayerControlsGUI
 @onready var power_system: PowerSystem = $PowerSystem
-@onready var blue_jumpscare: AnimatronicJumpscare = $AnimatronicJumpscares/BlueAnimatronicJumpscare
-@onready var yellow_jumpscare: AnimatronicJumpscare = $AnimatronicJumpscares/YellowAnimatronicJumpscare
 
 var difficulty: NightDifficulty
 var game_over: bool = false
@@ -23,7 +22,9 @@ var night_complete: bool = false
 
 func _ready() -> void:
 	left_light.hide()
+	left_light2.hide()
 	right_light.hide()
+	right_light2.hide()
 
 	difficulty = _pick_difficulty()
 	if clock == null or difficulty == null:
@@ -36,24 +37,26 @@ func _ready() -> void:
 	for node: Node in get_tree().get_nodes_in_group(LightButton.GROUP):
 		(node as LightButton).pressed.connect(_on_light_button_pressed)
 
-	hud.left_door_pressed.connect(toggle_left_door)
-	hud.right_door_pressed.connect(toggle_right_door)
-	hud.left_light_pressed.connect(toggle_left_light)
-	hud.right_light_pressed.connect(toggle_right_light)
+	for node: Node in get_tree().get_nodes_in_group(DoorButton.GROUP):
+		(node as DoorButton).pressed.connect(_on_door_button_pressed)
+
 	hud.camera_pressed.connect(toggle_camera)
 
 	power_system.power_changed.connect(hud.set_power)
 	power_system.power_depleted.connect(_on_power_depleted)
 
-	blue_animatronic.ai_level = difficulty.blue_ai
-	yellow_animatronic.ai_level = difficulty.yellow_ai
+	for animatronic in animatronics:
+		if difficulty.get_profile(animatronic.id) == null:
+			push_warning("Night: no AI profile for animatronic '%s' (id '%s'), AI level stays 0." % [animatronic.name, animatronic.id])
+		animatronic.ai_level = difficulty.base_ai_for(animatronic.id)
+		animatronic.reached_office.connect(trigger_game_over.bind(animatronic))
 
-	var doors: Array[FnafDoor] = [left_door, right_door]
+	var doors: Array[Door] = [left_door, right_door]
 	var lights: Array[VentLight] = [left_light, right_light]
 	power_system.start(difficulty, doors, lights, player)
 
-	blue_animatronic.start_ai()
-	yellow_animatronic.start_ai()
+	for animatronic in animatronics:
+		animatronic.start_ai()
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -71,24 +74,30 @@ func _unhandled_input(event: InputEvent) -> void:
 		toggle_camera()
 
 
+func can_use_office_controls() -> bool:
+	return power_system.has_power() and not player.is_monitor_on()
+
+
 func toggle_left_door() -> void:
-	if power_system.has_power():
+	if can_use_office_controls():
 		left_door.toggle()
 
 
 func toggle_right_door() -> void:
-	if power_system.has_power():
+	if can_use_office_controls():
 		right_door.toggle()
 
 
 func toggle_left_light() -> void:
-	if power_system.has_power():
+	if can_use_office_controls():
 		left_light.visible = not left_light.visible
+		left_light2.visible = not left_light2.visible
 
 
 func toggle_right_light() -> void:
-	if power_system.has_power():
+	if can_use_office_controls():
 		right_light.visible = not right_light.visible
+		right_light2.visible = not right_light2.visible
 
 
 func toggle_camera() -> void:
@@ -96,7 +105,7 @@ func toggle_camera() -> void:
 		player.toggle_monitor()
 
 
-func trigger_game_over(animatronic: FnafAnimatronic) -> void:
+func trigger_game_over(animatronic: AnimatronicBase) -> void:
 	if game_over or night_complete:
 		return
 	game_over = true
@@ -108,8 +117,10 @@ func trigger_game_over(animatronic: FnafAnimatronic) -> void:
 	await player.force_monitor_down()
 	await get_tree().create_timer(0.25).timeout
 
-	var jumpscare: AnimatronicJumpscare = blue_jumpscare if animatronic == blue_animatronic else yellow_jumpscare
-	jumpscare.play_jumpscare()
+	if animatronic.jumpscare == null:
+		push_error("Night: animatronic '%s' has no jumpscare assigned." % animatronic.name)
+		return
+	animatronic.jumpscare.play_jumpscare()
 
 
 func night_done() -> void:
@@ -122,8 +133,8 @@ func night_done() -> void:
 
 
 func _stop_animatronics() -> void:
-	blue_animatronic.stop_ai()
-	yellow_animatronic.stop_ai()
+	for animatronic in animatronics:
+		animatronic.stop_ai()
 
 
 func _pick_difficulty() -> NightDifficulty:
@@ -141,14 +152,20 @@ func _on_light_button_pressed(side: String) -> void:
 		toggle_right_light()
 
 
+func _on_door_button_pressed(side: String) -> void:
+	if game_over or night_complete:
+		return
+	if side == "Left":
+		toggle_left_door()
+	else:
+		toggle_right_door()
+
+
 func _on_hour_passed() -> void:
 	var hour: int = clock.current_hour
-	_add_ai(blue_animatronic, difficulty.blue_bonus_for_hour(hour))
-	_add_ai(yellow_animatronic, difficulty.yellow_bonus_for_hour(hour))
-
-
-func _add_ai(animatronic: FnafAnimatronic, amount: int) -> void:
-	animatronic.ai_level = clampi(animatronic.ai_level + amount, 0, AnimatronicBase.MAX_AI_LEVEL)
+	for animatronic in animatronics:
+		var amount := difficulty.bonus_for_hour(animatronic.id, hour)
+		animatronic.ai_level = clampi(animatronic.ai_level + amount, 0, AnimatronicBase.MAX_AI_LEVEL)
 
 
 func _on_power_depleted() -> void:

@@ -7,6 +7,7 @@ signal cam_button_pressed(cam_node_name:String)
 
 
 func _ready():
+	focus_mode = Control.FOCUS_NONE # a focused button would also react to Space (ui_accept)
 	if camera_node_name.is_empty():
 		camera_node_name = text
 	

@@ -5,7 +5,8 @@
 
 [node name="YellowAnimatronic" type="Node3D"]
 script = ExtResource("1")
-animation_player_path = "yellow_animatronic/AnimationPlayer"
+id = &"yellow"
+animation_player_path = NodePath("yellow_animatronic/AnimationPlayer")
 
 [node name="yellow_animatronic" parent="." instance=ExtResource("2")]
 rotation_degrees = Vector3(0, 180, 0)

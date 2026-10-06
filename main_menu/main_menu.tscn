@@ -1,8 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://47yj0u0iudr2"]
+[gd_scene format=3 uid="uid://47yj0u0iudr2"]
 
 [ext_resource type="Texture2D" uid="uid://cc1t62ptqfiux" path="res://common/static/static_frame_1.png" id="1_djgom"]
 [ext_resource type="PackedScene" uid="uid://bwo3quys0jb0n" path="res://animatronics/blue_animatronic/models/blue_animatronic.glb" id="1_t3jvm"]
-[ext_resource type="Script" path="res://main_menu/main_menu.gd" id="1_wtisl"]
+[ext_resource type="Script" uid="uid://b1ftf4nnkfsfx" path="res://main_menu/main_menu.gd" id="1_wtisl"]
 [ext_resource type="Texture2D" uid="uid://cpkqfqi3f7q3a" path="res://common/static/static_frame_2.png" id="2_1n2bu"]
 [ext_resource type="Texture2D" uid="uid://uttouagqr20b" path="res://common/static/static_frame_3.png" id="3_ydqbx"]
 [ext_resource type="Texture2D" uid="uid://b4nbbl4e36j1d" path="res://common/static/static_frame_4.png" id="4_fd8qq"]
@@ -25,16 +25,82 @@ frame_4/duration = 1.0
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xysr5"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_twn6q"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mvmwq"]
 bg_color = Color(1, 1, 1, 0.0313726)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mvmwq"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_twn6q"]
 bg_color = Color(1, 1, 1, 0.0313726)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g57hx"]
 bg_color = Color(0.0980392, 0.0980392, 0.0980392, 0)
 
-[node name="MainMenu" type="Control"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ctrl_normal"]
+content_margin_left = 18.0
+content_margin_top = 8.0
+content_margin_right = 18.0
+content_margin_bottom = 8.0
+bg_color = Color(0.09, 0.03, 0.04, 0.85)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.55, 0.08, 0.1, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ctrl_pressed"]
+content_margin_left = 18.0
+content_margin_top = 8.0
+content_margin_right = 18.0
+content_margin_bottom = 8.0
+bg_color = Color(0.5, 0.07, 0.08, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.35, 0.3, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ctrl_hover"]
+content_margin_left = 18.0
+content_margin_top = 8.0
+content_margin_right = 18.0
+content_margin_bottom = 8.0
+bg_color = Color(0.3, 0.05, 0.07, 0.95)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.9, 0.18, 0.15, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_popup_panel"]
+content_margin_left = 36.0
+content_margin_top = 28.0
+content_margin_right = 36.0
+content_margin_bottom = 28.0
+bg_color = Color(0.06, 0.05, 0.07, 0.98)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.7, 0.1, 0.1, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+shadow_color = Color(0.5, 0, 0, 0.45)
+shadow_size = 18
+
+[node name="MainMenu" type="Control" unique_id=784828218]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -43,7 +109,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_wtisl")
 
-[node name="Static" type="TextureRect" parent="."]
+[node name="Static" type="TextureRect" parent="." unique_id=1578568325]
 modulate = Color(1, 1, 1, 0.14902)
 z_index = 2
 layout_mode = 1
@@ -56,7 +122,7 @@ mouse_filter = 2
 texture = SubResource("AnimatedTexture_51c3w")
 expand_mode = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1163176310]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -68,62 +134,147 @@ theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 50
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=811325890]
 layout_mode = 2
 size_flags_horizontal = 0
 theme_override_constants/separation = 40
 
-[node name="Title" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1906066862]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
-text = "Five 
-Nights 
-at 
-Robot Thingies"
+text = "Midnight Shift 
+at the 
+Toy Factory"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+[node name="NightButtons" type="VBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=928043123]
+unique_name_in_owner = true
 layout_mode = 2
 
-[node name="NightOneButton" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer"]
-unique_name_in_owner = true
+[node name="NightOneButton" type="Button" parent="MarginContainer/VBoxContainer/NightButtons" unique_id=1234813665]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.752941, 0.752941, 0.752941, 1)
 theme_override_font_sizes/font_size = 31
 theme_override_styles/normal = SubResource("StyleBoxFlat_xysr5")
-theme_override_styles/hover = SubResource("StyleBoxFlat_twn6q")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_mvmwq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_twn6q")
 theme_override_styles/focus = SubResource("StyleBoxFlat_g57hx")
 text = "Night 1"
 alignment = 0
 
-[node name="NightTwoButton" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer"]
-unique_name_in_owner = true
+[node name="NightTwoButton" type="Button" parent="MarginContainer/VBoxContainer/NightButtons" unique_id=359442778]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.752941, 0.752941, 0.752941, 1)
 theme_override_font_sizes/font_size = 31
 theme_override_styles/normal = SubResource("StyleBoxFlat_xysr5")
-theme_override_styles/hover = SubResource("StyleBoxFlat_twn6q")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_mvmwq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_twn6q")
 theme_override_styles/focus = SubResource("StyleBoxFlat_g57hx")
 text = "Night 2"
 alignment = 0
 
-[node name="Background" type="Node3D" parent="."]
+[node name="ControlsButton" type="Button" parent="." unique_id=68116347]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -250.0
+offset_top = -90.0
+offset_right = -50.0
+offset_bottom = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+focus_mode = 0
+theme_override_colors/font_color = Color(0.95, 0.8, 0.78, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.85, 0.8, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_ctrl_normal")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ctrl_pressed")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ctrl_hover")
+text = "CONTROL"
 
-[node name="Camera3D" type="Camera3D" parent="Background"]
+[node name="ControlsPopup" type="Control" parent="." unique_id=814471415]
+unique_name_in_owner = true
+visible = false
+z_index = 4
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Dim" type="ColorRect" parent="ControlsPopup" unique_id=362257736]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.75)
+
+[node name="CenterContainer" type="CenterContainer" parent="ControlsPopup" unique_id=1030580202]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="PanelContainer" parent="ControlsPopup/CenterContainer" unique_id=1494662444]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_popup_panel")
+
+[node name="VBox" type="VBoxContainer" parent="ControlsPopup/CenterContainer/Panel" unique_id=1375138849]
+layout_mode = 2
+theme_override_constants/separation = 22
+
+[node name="Title" type="Label" parent="ControlsPopup/CenterContainer/Panel/VBox" unique_id=892535300]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.18, 0.15, 1)
+theme_override_font_sizes/font_size = 38
+text = "CONTROLS"
+horizontal_alignment = 1
+
+[node name="Rows" type="GridContainer" parent="ControlsPopup/CenterContainer/Panel/VBox" unique_id=2061646519]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/h_separation = 36
+theme_override_constants/v_separation = 12
+columns = 2
+
+[node name="OkButton" type="Button" parent="ControlsPopup/CenterContainer/Panel/VBox" unique_id=1456884977]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+focus_mode = 0
+theme_override_colors/font_color = Color(0.95, 0.8, 0.78, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.85, 0.8, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 26
+theme_override_styles/normal = SubResource("StyleBoxFlat_ctrl_normal")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ctrl_pressed")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ctrl_hover")
+text = "OK"
+
+[node name="Background" type="Node3D" parent="." unique_id=136305059]
+
+[node name="Camera3D" type="Camera3D" parent="Background" unique_id=1078045791]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.26806)
 fov = 38.6
 
-[node name="OmniLight3D" type="OmniLight3D" parent="Background"]
+[node name="OmniLight3D" type="OmniLight3D" parent="Background" unique_id=974690347]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.416245, 0.897024, 2.52208)
 
-[node name="blue_animatronic" parent="Background" instance=ExtResource("1_t3jvm")]
+[node name="blue_animatronic" parent="Background" unique_id=46240764 instance=ExtResource("1_t3jvm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.698275, -1.17157, 0.761068)
 
-[node name="yellow_animatronic" parent="Background" instance=ExtResource("8_j61co")]
+[node name="yellow_animatronic" parent="Background" unique_id=1950470301 instance=ExtResource("8_j61co")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.313401, -1.16383, -0.16573)
-
-[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/NightOneButton" to="." method="_on_night_one_button_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/NightTwoButton" to="." method="_on_night_two_button_pressed"]

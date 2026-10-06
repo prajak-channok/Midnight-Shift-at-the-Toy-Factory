@@ -9,8 +9,6 @@ class_name Player
 @export var panning_curve: Curve = preload("res://panning_curve_presets/smooth.tres")
 @export var max_panning_speed: float = 70.0
 
-# ระยะจากขอบจอที่จะเริ่มแพน
-# 0.05 = 5% ของความกว้างหน้าจอ
 @export_range(0.0, 0.5) var edge_threshold: float = 0.05
 
 @export_range(0.0, 180.0) var left_rotation_limit: float = 50.0
@@ -18,7 +16,7 @@ class_name Player
 @export var allow_360: bool = false
 
 @onready var cam: Camera3D = $Camera3D
-@onready var monitor = $%Monitor
+@onready var monitor: Monitor = $%Monitor
 
 
 func _ready():
@@ -40,21 +38,18 @@ func _process(delta):
 func panning_edge(delta: float, mouse_x: float):
 	var speed_multiplier := 0.0
 
-	# เมาส์อยู่ด้านซ้ายของจอ
 	if mouse_x <= edge_threshold:
 		var strength = (edge_threshold - mouse_x) / edge_threshold
 		strength = clampf(strength, 0.0, 1.0)
 
 		speed_multiplier = panning_curve.sample(strength)
 
-	# เมาส์อยู่ด้านขวาของจอ
 	elif mouse_x >= 1.0 - edge_threshold:
 		var strength = (mouse_x - (1.0 - edge_threshold)) / edge_threshold
 		strength = clampf(strength, 0.0, 1.0)
 
 		speed_multiplier = -panning_curve.sample(strength)
 
-	# ถ้าไม่อยู่บริเวณขอบ → speed = 0
 	cam.rotation_degrees.y += delta * max_panning_speed * speed_multiplier
 
 	if not allow_360:
@@ -69,8 +64,8 @@ func toggle_monitor():
 	if monitor.refuse_requests:
 		return
 	if monitor.monitor_on:
-		await monitor.turn_off()
 		cam_manager.disable_camera_display()
+		await monitor.turn_off()
 		cam.current = true
 	else:
 		await monitor.turn_on()

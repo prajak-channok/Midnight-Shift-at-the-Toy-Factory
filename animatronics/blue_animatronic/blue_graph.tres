@@ -1,0 +1,79 @@
+[gd_resource type="Resource" script_class="AnimatronicGraph" format=3 uid="uid://bgew3g7ogenij"]
+
+[ext_resource type="Script" uid="uid://bw77jafikts7b" path="res://animatronics/animatronic_utilities/graph/animatronic_graph.gd" id="1_graph"]
+[ext_resource type="Script" uid="uid://cm1k1xe1q4uw4" path="res://animatronics/animatronic_utilities/graph/animatronic_graph_node.gd" id="2_node"]
+
+[sub_resource type="Resource" id="Resource_stage"]
+script = ExtResource("2_node")
+position_name = &"Stage"
+destinations = Dictionary[StringName, float]({
+&"HallStart": 5.0,
+&"LeftVent": 5.0,
+&"PartyRoomLeft": 5.0,
+&"PartyRoomRight": 5.0,
+&"SmallHallway": 80.0
+})
+
+[sub_resource type="Resource" id="Resource_small_hallway"]
+script = ExtResource("2_node")
+position_name = &"SmallHallway"
+destinations = Dictionary[StringName, float]({
+&"HallStart": 70.0,
+&"LeftDoor": 5.0,
+&"PartyRoomRight": 5.0,
+&"Stage": 20.0
+})
+
+[sub_resource type="Resource" id="Resource_hall_start"]
+script = ExtResource("2_node")
+position_name = &"HallStart"
+destinations = Dictionary[StringName, float]({
+&"LeftDoor": 5.0,
+&"PartyRoomLeft": 40.0,
+&"PartyRoomRight": 35.0,
+&"SmallHallway": 20.0
+})
+
+[sub_resource type="Resource" id="Resource_party_room_left"]
+script = ExtResource("2_node")
+position_name = &"PartyRoomLeft"
+destinations = Dictionary[StringName, float]({
+&"HallStart": 30.0,
+&"LeftDoor": 10.0,
+&"LeftVent": 40.0,
+&"PartyRoomRight": 20.0
+})
+
+[sub_resource type="Resource" id="Resource_left_vent"]
+script = ExtResource("2_node")
+position_name = &"LeftVent"
+destinations = Dictionary[StringName, float]({
+&"LeftDoor": 75.0,
+&"PartyRoomLeft": 25.0
+})
+
+[sub_resource type="Resource" id="Resource_qfxxi"]
+script = ExtResource("2_node")
+position_name = &"PartyRoomRight"
+destinations = Dictionary[StringName, float]({
+&"HallStart": 40.0,
+&"LeftDoor": 20.0,
+&"PartyRoomLeft": 40.0
+})
+metadata/_custom_type_script = "uid://cm1k1xe1q4uw4"
+
+[sub_resource type="Resource" id="Resource_left_door"]
+script = ExtResource("2_node")
+position_name = &"LeftDoor"
+destinations = Dictionary[StringName, float]({
+&"Office": 100.0
+})
+
+[resource]
+script = ExtResource("1_graph")
+start_position = &"Stage"
+decision_time_min = 4.0
+decision_time_max = 4.1
+blocked_retreat_delay_min = 4.0
+blocked_retreat_delay_max = 6.0
+nodes = Array[ExtResource("2_node")]([SubResource("Resource_stage"), SubResource("Resource_small_hallway"), SubResource("Resource_hall_start"), SubResource("Resource_party_room_left"), SubResource("Resource_left_vent"), SubResource("Resource_qfxxi"), SubResource("Resource_left_door")])

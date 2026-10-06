@@ -1,10 +1,26 @@
 [gd_resource type="Resource" script_class="NightDifficulty" format=3 uid="uid://c7x1f4scsigx2"]
 
 [ext_resource type="Script" uid="uid://b7t4ttuluvpqw" path="res://night/difficulty/night_difficulty.gd" id="1"]
+[ext_resource type="Script" uid="uid://cgjpqc7xfro0y" path="res://night/difficulty/animatronic_ai_profile.gd" id="2"]
+
+[sub_resource type="Resource" id="Resource_blue"]
+script = ExtResource("2")
+animatronic_id = &"blue"
+base_ai = 3
+bonus_hours = Array[int]([1, 4])
+
+[sub_resource type="Resource" id="Resource_yellow"]
+script = ExtResource("2")
+animatronic_id = &"yellow"
+base_ai = 2
+bonus_hours = Array[int]([2, 4])
+
+[sub_resource type="Resource" id="Resource_plush"]
+script = ExtResource("2")
+animatronic_id = &"burned_plush_bot"
+base_ai = 4
+bonus_hours = Array[int]([3])
 
 [resource]
 script = ExtResource("1")
-blue_ai = 3
-yellow_ai = 2
-blue_bonus_hours = Array[int]([1, 4])
-yellow_bonus_hours = Array[int]([2, 4])
+ai_profiles = Array[ExtResource("2")]([SubResource("Resource_blue"), SubResource("Resource_yellow"), SubResource("Resource_plush")])

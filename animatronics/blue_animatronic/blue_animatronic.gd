@@ -1,1 +1,1 @@
-extends FnafAnimatronic
+extends DoorAnimatronic

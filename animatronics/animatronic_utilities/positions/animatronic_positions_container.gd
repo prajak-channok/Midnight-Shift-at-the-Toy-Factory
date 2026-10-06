@@ -26,15 +26,6 @@ func _process(delta):
 			testing_model.global_rotate(animatronic_pos.global_transform.basis.y, deg_to_rad(180))
 
 
-## returns an array of positions that the animatronic will go through on it's path to the office
-func get_array_of_positions() -> Array[AnimatronicPosition]:
-	var positions : Array[AnimatronicPosition] = []
-	for c in get_children():
-		if c is AnimatronicPosition:
-			positions.append(c)
-	return positions
-
-
 func get_position_by_name(pos_name : String) -> AnimatronicPosition:
 	for c in get_children():
 		if c is AnimatronicPosition and c.name == pos_name:
