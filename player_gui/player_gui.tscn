@@ -30,60 +30,6 @@ offset_bottom = 717.0
 theme_override_font_sizes/font_size = 18
 text = "A/D: doors   Z/C: lights   SPACE: cameras"
 
-[node name="LeftDoor" type="Button" parent="." unique_id=1076130563]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 39.0
-offset_top = -77.0
-offset_right = 201.0
-offset_bottom = -22.0
-grow_vertical = 0
-text = "LEFT DOOR [A]"
-
-[node name="LeftLight" type="Button" parent="." unique_id=1915561016]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 205.0
-offset_top = -76.0
-offset_right = 365.0
-offset_bottom = -21.0
-grow_vertical = 0
-text = "LEFT LIGHT [Z]"
-
-[node name="RightLight" type="Button" parent="." unique_id=348330843]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -350.0
-offset_top = -76.0
-offset_right = -190.0
-offset_bottom = -21.0
-grow_horizontal = 0
-grow_vertical = 0
-text = "RIGHT LIGHT [C]"
-
-[node name="RightDoor" type="Button" parent="." unique_id=772959648]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -184.0
-offset_top = -76.0
-offset_right = -22.0
-offset_bottom = -21.0
-grow_horizontal = 0
-grow_vertical = 0
-text = "RIGHT DOOR [D]"
-
 [node name="Camera" type="Button" parent="." unique_id=2037777206]
 layout_mode = 0
 offset_left = 560.0
@@ -92,8 +38,4 @@ offset_right = 720.0
 offset_bottom = 670.0
 text = "CAMERAS [SPACE]"
 
-[connection signal="pressed" from="LeftDoor" to="." method="_on_left_door_pressed"]
-[connection signal="pressed" from="LeftLight" to="." method="_on_left_light_pressed"]
-[connection signal="pressed" from="RightLight" to="." method="_on_right_light_pressed"]
-[connection signal="pressed" from="RightDoor" to="." method="_on_right_door_pressed"]
 [connection signal="pressed" from="Camera" to="." method="_on_camera_pressed"]

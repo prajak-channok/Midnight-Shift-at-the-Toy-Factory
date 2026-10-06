@@ -40,10 +40,6 @@ func _ready() -> void:
 	for node: Node in get_tree().get_nodes_in_group(DoorButton.GROUP):
 		(node as DoorButton).pressed.connect(_on_door_button_pressed)
 
-	hud.left_door_pressed.connect(toggle_left_door)
-	hud.right_door_pressed.connect(toggle_right_door)
-	hud.left_light_pressed.connect(toggle_left_light)
-	hud.right_light_pressed.connect(toggle_right_light)
 	hud.camera_pressed.connect(toggle_camera)
 
 	power_system.power_changed.connect(hud.set_power)
