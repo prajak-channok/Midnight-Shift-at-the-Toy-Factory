@@ -9,6 +9,7 @@ const CONTROLS: Array = [
 ]
 
 @onready var night_buttons: Control = %NightButtons
+@onready var fullscreen_button: TextureButton = $FullScreenButton
 @onready var controls_button: Button = %ControlsButton
 @onready var controls_popup: Control = %ControlsPopup
 @onready var controls_rows: GridContainer = %Rows
@@ -23,6 +24,7 @@ func _ready() -> void:
 	_build_controls_rows()
 	controls_button.pressed.connect(controls_popup.show)
 	ok_button.pressed.connect(controls_popup.hide)
+	fullscreen_button.pressed.connect(Global.toggle_fullscreen)
 
 
 func _unhandled_input(event: InputEvent) -> void:

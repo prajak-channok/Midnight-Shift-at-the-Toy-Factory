@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://b4nbbl4e36j1d" path="res://common/static/static_frame_4.png" id="4_fd8qq"]
 [ext_resource type="Texture2D" uid="uid://brrmh86sbskvw" path="res://common/static/static_frame_5.png" id="5_jpi78"]
 [ext_resource type="PackedScene" uid="uid://clkgsftlw52ta" path="res://animatronics/yellow_animatronic/models/yellow_animatronic.glb" id="8_j61co"]
+[ext_resource type="Texture2D" uid="uid://bwd8mwoawy6iy" path="res://main_menu/FSBtn.png" id="9_6at21"]
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_51c3w"]
 frames = 5
@@ -182,10 +183,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -250.0
-offset_top = -90.0
-offset_right = -50.0
-offset_bottom = -40.0
+offset_left = -308.0
+offset_top = -80.0
+offset_right = -108.0
+offset_bottom = -30.0
 grow_horizontal = 0
 grow_vertical = 0
 focus_mode = 0
@@ -197,6 +198,26 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_ctrl_normal")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_ctrl_pressed")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ctrl_hover")
 text = "CONTROL"
+
+[node name="FullScreenButton" type="TextureButton" parent="." unique_id=1183499191]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -84.0
+offset_top = -87.0
+offset_right = -24.0
+offset_bottom = -27.0
+grow_horizontal = 0
+grow_vertical = 0
+focus_mode = 0
+texture_normal = ExtResource("9_6at21")
+texture_pressed = ExtResource("9_6at21")
+texture_hover = ExtResource("9_6at21")
+ignore_texture_size = true
+stretch_mode = 0
 
 [node name="ControlsPopup" type="Control" parent="." unique_id=814471415]
 unique_name_in_owner = true
