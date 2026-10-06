@@ -1,0 +1,12 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://animatronics/burned_plush_bot/burned_plush_bot.gd" id="1"]
+[ext_resource type="PackedScene" path="res://animatronics/burned_plush_bot/models/burned_plush_model.tscn" id="2"]
+
+[node name="BurnedPlushBot" type="Node3D"]
+script = ExtResource("1")
+id = &"burned_plush_bot"
+animation_player_path = NodePath("burned_plush_model/AnimationPlayer")
+
+[node name="burned_plush_model" parent="." instance=ExtResource("2")]
+rotation_degrees = Vector3(0, 180, 0)

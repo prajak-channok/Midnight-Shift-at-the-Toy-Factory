@@ -142,10 +142,9 @@ theme_override_constants/separation = 40
 [node name="Title" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1906066862]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
-text = "Five 
-Nights 
-at 
-Robot Thingies"
+text = "Midnight Shift 
+at the 
+Toy Factory"
 
 [node name="NightButtons" type="VBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=928043123]
 unique_name_in_owner = true
