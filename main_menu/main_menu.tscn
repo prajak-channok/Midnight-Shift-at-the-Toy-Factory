@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://b4nbbl4e36j1d" path="res://common/static/static_frame_4.png" id="4_fd8qq"]
 [ext_resource type="Texture2D" uid="uid://brrmh86sbskvw" path="res://common/static/static_frame_5.png" id="5_jpi78"]
 [ext_resource type="PackedScene" uid="uid://clkgsftlw52ta" path="res://animatronics/yellow_animatronic/models/yellow_animatronic.glb" id="8_j61co"]
+[ext_resource type="PackedScene" uid="uid://ciptxvcinddjg" path="res://animatronics/burned_plush_bot/models/burned_plush_model.tscn" id="8_og6xe"]
 [ext_resource type="Texture2D" uid="uid://bwd8mwoawy6iy" path="res://main_menu/FSBtn.png" id="9_6at21"]
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_51c3w"]
@@ -294,8 +295,42 @@ fov = 38.6
 [node name="OmniLight3D" type="OmniLight3D" parent="Background" unique_id=974690347]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.416245, 0.897024, 2.52208)
 
+[node name="burned_plush_model" parent="Background" unique_id=161241329 instance=ExtResource("8_og6xe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.32904646, -1.5334349, -0.7098119)
+
+[node name="Body" parent="Background/burned_plush_model" index="0" unique_id=1764290305]
+transform = Transform3D(0.97, 0, 0, 0, 1.0493604, 0.03385251, 0, -0.03664447, 0.96940917, 0, 0, 0)
+
+[node name="EmberLight" parent="Background/burned_plush_model/Body" index="7" unique_id=494664836]
+light_energy = 0.7
+
+[node name="ArmLeft" parent="Background/burned_plush_model/Body" index="13" unique_id=1388499835]
+transform = Transform3D(0.9975641, -0.06975647, 0, 0.06975647, 0.9975641, 0, 0, 0, 1, 0.5, 1.28, 0)
+
+[node name="ArmRight" parent="Background/burned_plush_model/Body" index="14" unique_id=646367527]
+transform = Transform3D(0.9975641, 0.06975647, 0, -0.06975647, 0.9975641, 0, 0, 0, 1, -0.5, 1.28, 0)
+
+[node name="Head" parent="Background/burned_plush_model/Body" index="15" unique_id=2052066722]
+transform = Transform3D(0.88294756, -0.46947157, 0, 0.46689978, 0.8781107, 0.104528464, -0.04907314, -0.09229315, 0.9945219, 0, 1.9, 0.04)
+
+[node name="EyeLeft" parent="Background/burned_plush_model/Body/Head" index="4" unique_id=2112298238]
+transform = Transform3D(1.15, 0, 0, 0, 1.15, 0, 0, 0, 1.15, 0.14, 0.08, 0.31)
+
+[node name="Antenna" parent="Background/burned_plush_model/Body/Head" index="11" unique_id=1058739843]
+transform = Transform3D(0.98480767, 0.17364816, 0, -0.17364816, 0.98480767, 0, 0, 0, 1, 0.06, 0.33, 0)
+
+[node name="Jaw" parent="Background/burned_plush_model/Body/Head" index="17" unique_id=178216194]
+transform = Transform3D(1, 0, 0, 0, 0.9945219, -0.104528464, 0, 0.104528464, 0.9945219, 0, -0.2, 0.2)
+
+[node name="AnimationPlayer" parent="Background/burned_plush_model" index="1" unique_id=545854173]
+autoplay = &"stare"
+
 [node name="blue_animatronic" parent="Background" unique_id=46240764 instance=ExtResource("1_t3jvm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.698275, -1.17157, 0.761068)
+visible = false
 
 [node name="yellow_animatronic" parent="Background" unique_id=1950470301 instance=ExtResource("8_j61co")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.313401, -1.16383, -0.16573)
+visible = false
+
+[editable path="Background/burned_plush_model"]
