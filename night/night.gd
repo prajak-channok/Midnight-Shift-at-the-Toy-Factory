@@ -40,7 +40,7 @@ func _ready() -> void:
 	for node: Node in get_tree().get_nodes_in_group(DoorButton.GROUP):
 		(node as DoorButton).pressed.connect(_on_door_button_pressed)
 
-	hud.camera_pressed.connect(toggle_camera)
+	hud.monitor_requested.connect(toggle_monitor)
 
 	power_system.power_changed.connect(hud.set_power)
 	power_system.power_depleted.connect(_on_power_depleted)
@@ -71,7 +71,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	elif event.is_action_pressed("right_light"):
 		toggle_right_light()
 	elif event.is_action_pressed("toggle_monitor"):
-		toggle_camera()
+		toggle_monitor()
 
 
 func can_use_office_controls() -> bool:
@@ -100,7 +100,9 @@ func toggle_right_light() -> void:
 		right_light2.visible = not right_light2.visible
 
 
-func toggle_camera() -> void:
+func toggle_monitor() -> void:
+	if game_over or night_complete:
+		return
 	if power_system.has_power():
 		player.toggle_monitor()
 
