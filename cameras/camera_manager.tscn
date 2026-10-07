@@ -10,19 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://brrmh86sbskvw" path="res://common/static/static_frame_5.png" id="8_ciquy"]
 [ext_resource type="AudioStream" uid="uid://ch5ikqjcyxkkt" path="res://sounds/cam_click.ogg" id="9_t54n1"]
 [ext_resource type="AudioStream" uid="uid://coremqfsmmlb3" path="res://sounds/337434__ev-dawg__speaker-buzz.wav" id="10_pyw2v"]
-
-[sub_resource type="AnimatedTexture" id="AnimatedTexture_sq8e7"]
-frames = 5
-speed_scale = 20.0
-frame_0/texture = ExtResource("4_im107")
-frame_1/texture = ExtResource("5_al0ie")
-frame_1/duration = 1.0
-frame_2/texture = ExtResource("6_qhegm")
-frame_2/duration = 1.0
-frame_3/texture = ExtResource("7_b4mdr")
-frame_3/duration = 1.0
-frame_4/texture = ExtResource("8_ciquy")
-frame_4/duration = 1.0
+[ext_resource type="Script" path="res://common/static/static_noise.gd" id="11_noise"]
 
 [sub_resource type="Animation" id="Animation_e0ubl"]
 length = 0.001
@@ -84,9 +72,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-texture = SubResource("AnimatedTexture_sq8e7")
 expand_mode = 1
 metadata/_edit_lock_ = true
+script = ExtResource("11_noise")
+frames = Array[Texture2D]([ExtResource("4_im107"), ExtResource("5_al0ie"), ExtResource("6_qhegm"), ExtResource("7_b4mdr"), ExtResource("8_ciquy")])
 
 [node name="Map" type="TextureRect" parent="CameraUI" unique_id=342527094]
 layout_mode = 1

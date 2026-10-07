@@ -8,19 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://brrmh86sbskvw" path="res://common/static/static_frame_5.png" id="5_kcvej"]
 [ext_resource type="AudioStream" uid="uid://bthxbk6k02fo0" path="res://sounds/395804__doty21__hard-static.wav" id="7_3l5ru"]
 [ext_resource type="AudioStream" uid="uid://cadoe6aei8dgi" path="res://sounds/35291__jace__continuous-static.wav" id="8_fvlmk"]
-
-[sub_resource type="AnimatedTexture" id="AnimatedTexture_5jeal"]
-frames = 5
-speed_scale = 20.0
-frame_0/texture = ExtResource("1_05kbr")
-frame_1/texture = ExtResource("2_qp7kf")
-frame_1/duration = 1.0
-frame_2/texture = ExtResource("3_2ilho")
-frame_2/duration = 1.0
-frame_3/texture = ExtResource("4_ntwbu")
-frame_3/duration = 1.0
-frame_4/texture = ExtResource("5_kcvej")
-frame_4/duration = 1.0
+[ext_resource type="Script" path="res://common/static/static_noise.gd" id="9_noise"]
 
 [sub_resource type="Animation" id="Animation_lb46u"]
 length = 0.001
@@ -168,8 +156,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-texture = SubResource("AnimatedTexture_5jeal")
 expand_mode = 1
+script = ExtResource("9_noise")
+frames = Array[Texture2D]([ExtResource("1_05kbr"), ExtResource("2_qp7kf"), ExtResource("3_2ilho"), ExtResource("4_ntwbu"), ExtResource("5_kcvej")])
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "blipbloopbingbong"

@@ -10,19 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://clkgsftlw52ta" path="res://animatronics/yellow_animatronic/models/yellow_animatronic.glb" id="8_j61co"]
 [ext_resource type="PackedScene" uid="uid://ciptxvcinddjg" path="res://animatronics/burned_plush_bot/models/burned_plush_model.tscn" id="8_og6xe"]
 [ext_resource type="Texture2D" uid="uid://bwd8mwoawy6iy" path="res://main_menu/FSBtn.png" id="9_6at21"]
-
-[sub_resource type="AnimatedTexture" id="AnimatedTexture_51c3w"]
-frames = 5
-speed_scale = 20.0
-frame_0/texture = ExtResource("1_djgom")
-frame_1/texture = ExtResource("2_1n2bu")
-frame_1/duration = 1.0
-frame_2/texture = ExtResource("3_ydqbx")
-frame_2/duration = 1.0
-frame_3/texture = ExtResource("4_fd8qq")
-frame_3/duration = 1.0
-frame_4/texture = ExtResource("5_jpi78")
-frame_4/duration = 1.0
+[ext_resource type="Script" path="res://common/static/static_noise.gd" id="10_noise"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xysr5"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -121,8 +109,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-texture = SubResource("AnimatedTexture_51c3w")
 expand_mode = 1
+script = ExtResource("10_noise")
+frames = Array[Texture2D]([ExtResource("1_djgom"), ExtResource("2_1n2bu"), ExtResource("3_ydqbx"), ExtResource("4_fd8qq"), ExtResource("5_jpi78")])
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1163176310]
 layout_mode = 1
