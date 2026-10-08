@@ -23,7 +23,8 @@ func _ready():
 ## Makes the animatronic directly move to the specified position name.
 func move_to_pos(pos_name : String):
 	var pos: AnimatronicPosition = animatronic_positions_container.get_position_by_name(pos_name)
-	if cam_manager.is_watching(pos_name):
+	var watching_origin := current_position != null and cam_manager.is_watching(current_position.name)
+	if watching_origin or cam_manager.is_watching(pos_name):
 		cam_manager.lose_communication(0.2)
 	current_position = pos
 	apply_position_to_body(current_position)
