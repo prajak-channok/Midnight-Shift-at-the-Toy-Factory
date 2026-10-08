@@ -23,6 +23,9 @@
 [ext_resource type="Script" uid="uid://l4ewuu077p0e" path="res://night/power/power_system.gd" id="21"]
 [ext_resource type="Resource" uid="uid://c7x1f4scsigx2" path="res://night/difficulty/night_1.tres" id="22"]
 [ext_resource type="Resource" uid="uid://bo4jno1fimw50" path="res://night/difficulty/night_2.tres" id="23"]
+[ext_resource type="Resource" path="res://night/difficulty/night_3.tres" id="night_3"]
+[ext_resource type="Resource" path="res://night/difficulty/night_4.tres" id="night_4"]
+[ext_resource type="Resource" path="res://night/difficulty/night_5.tres" id="night_5"]
 [ext_resource type="Resource" uid="uid://bgew3g7ogenij" path="res://animatronics/blue_animatronic/blue_graph.tres" id="24"]
 [ext_resource type="Resource" uid="uid://bhheor0hu4430" path="res://animatronics/yellow_animatronic/yellow_graph.tres" id="25"]
 [ext_resource type="PackedScene" uid="uid://b1js2yjkod6d3" path="res://animatronics/burned_plush_bot/burned_plush_bot.tscn" id="26"]
@@ -41,7 +44,7 @@ size = Vector3(3.5, 4.5, 0.05)
 script = ExtResource("1")
 clock = NodePath("Clock")
 animatronics = [NodePath("Animatronics/BlueAnimatronic"), NodePath("Animatronics/YellowAnimatronic"), NodePath("Animatronics/BurnedPlushBot")]
-difficulties = Array[ExtResource("20")]([ExtResource("22"), ExtResource("23")])
+difficulties = Array[ExtResource("20")]([ExtResource("22"), ExtResource("23"), ExtResource("night_3"), ExtResource("night_4"), ExtResource("night_5")])
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=315348212]
 environment = ExtResource("2")

@@ -129,6 +129,7 @@ func night_done() -> void:
 	if game_over:
 		return
 	night_complete = true
+	SaveManager.complete_night(Global.current_night)
 	_stop_animatronics()
 	power_system.stop()
 	get_tree().change_scene_to_file("res://night/six_am/six_am.tscn")

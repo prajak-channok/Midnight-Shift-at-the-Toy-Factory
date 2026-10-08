@@ -1,11 +1,14 @@
 extends Control
 
+## [action or literal key label, description]
 const CONTROLS: Array = [
-	["left_door", "Toggle left door"],
-	["right_door", "Toggle right door"],
-	["left_light", "Toggle left vent light"],
-	["right_light", "Toggle right vent light"],
-	["toggle_monitor", "Open/close monitor"],
+	["left_door", "Close / open the LEFT door"],
+	["right_door", "Close / open the RIGHT door"],
+	["left_light", "Left vent light on / off"],
+	["right_light", "Right vent light on / off"],
+	["toggle_monitor", "Raise / lower the camera monitor"],
+	["flashlight", "Hold to flash the camera you are watching"],
+	["MOUSE", "Move to the screen edge to look around"],
 ]
 
 @onready var night_buttons: Control = %NightButtons
@@ -20,6 +23,8 @@ func _ready() -> void:
 	for i in night_buttons.get_child_count():
 		var button := night_buttons.get_child(i) as Button
 		button.pressed.connect(start_night.bind(i + 1))
+		if not SaveManager.is_night_unlocked(i + 1):
+			button.disabled = true
 
 	_build_controls_rows()
 	controls_button.pressed.connect(controls_popup.show)
@@ -39,41 +44,25 @@ func start_night(night: int) -> void:
 
 
 func _build_controls_rows() -> void:
-	var chip_style := _make_key_chip_style()
 	for entry: Array in CONTROLS:
 		var key_label := Label.new()
-		key_label.text = _key_text(entry[0])
+		key_label.text = _key_text(entry[0]).to_upper()
+		key_label.theme_type_variation = &"KeyLabel"
 		key_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-		key_label.add_theme_font_size_override("font_size", 24)
-		key_label.add_theme_color_override("font_color", Color(1, 0.85, 0.8))
 		var chip := PanelContainer.new()
-		chip.add_theme_stylebox_override("panel", chip_style)
-		chip.custom_minimum_size = Vector2(90, 0)
+		chip.custom_minimum_size = Vector2(110, 0)
 		chip.add_child(key_label)
 		controls_rows.add_child(chip)
 
 		var desc := Label.new()
 		desc.text = entry[1]
 		desc.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
-		desc.add_theme_font_size_override("font_size", 24)
-		desc.add_theme_color_override("font_color", Color(0.85, 0.85, 0.88))
 		controls_rows.add_child(desc)
 
 
-func _make_key_chip_style() -> StyleBoxFlat:
-	var style := StyleBoxFlat.new()
-	style.bg_color = Color(0.16, 0.05, 0.06)
-	style.set_border_width_all(1)
-	style.border_color = Color(0.7, 0.1, 0.1)
-	style.set_corner_radius_all(3)
-	style.content_margin_left = 12.0
-	style.content_margin_right = 12.0
-	style.content_margin_top = 3.0
-	style.content_margin_bottom = 3.0
-	return style
-
-
 func _key_text(action: StringName) -> String:
+	if not InputMap.has_action(action):
+		return action
 	for event in InputMap.action_get_events(action):
 		if event is InputEventKey:
 			if event.physical_keycode != KEY_NONE:
