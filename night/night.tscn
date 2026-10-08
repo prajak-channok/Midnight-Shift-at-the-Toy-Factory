@@ -383,6 +383,7 @@ visible = false
 stream = ExtResource("15")
 
 [node name="BurnedPlushBotJumpscare" type="Node3D" parent="AnimatronicJumpscares" unique_id=599127328]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 0, 0)
 script = ExtResource("12")
 
 [node name="burned_plush_model" parent="AnimatronicJumpscares/BurnedPlushBotJumpscare" unique_id=1145942918 instance=ExtResource("28")]
