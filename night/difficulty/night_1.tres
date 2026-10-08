@@ -18,8 +18,6 @@ bonus_hours = Array[int]([2, 4])
 [sub_resource type="Resource" id="Resource_plush"]
 script = ExtResource("2")
 animatronic_id = &"burned_plush_bot"
-base_ai = 0
-bonus_hours = Array[int]([])
 
 [resource]
 script = ExtResource("1")
@@ -27,4 +25,3 @@ ai_profiles = Array[ExtResource("2")]([SubResource("Resource_blue"), SubResource
 base_drain = 0.06
 door_drain = 0.1
 monitor_drain = 0.03
-light_drain = 0.0
