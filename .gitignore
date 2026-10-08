@@ -1,2 +1,5 @@
 # Godot 4+ specific ignores
 .godot/
+
+# Local/manual web export output (CI builds this fresh on every deploy)
+build/
