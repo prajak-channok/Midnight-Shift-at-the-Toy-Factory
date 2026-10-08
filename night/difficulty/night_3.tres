@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="NightDifficulty" format=3 uid="uid://bo4jno1fimw50"]
+[gd_resource type="Resource" script_class="NightDifficulty" format=3 uid="uid://dhcugt8nq8cnm"]
 
 [ext_resource type="Script" uid="uid://b7t4ttuluvpqw" path="res://night/difficulty/night_difficulty.gd" id="1"]
 [ext_resource type="Script" uid="uid://cgjpqc7xfro0y" path="res://night/difficulty/animatronic_ai_profile.gd" id="2"]
@@ -6,23 +6,25 @@
 [sub_resource type="Resource" id="Resource_blue"]
 script = ExtResource("2")
 animatronic_id = &"blue"
-base_ai = 5
-bonus_hours = Array[int]([1, 4])
+base_ai = 7
+bonus_hours = Array[int]([1, 3, 5])
 
 [sub_resource type="Resource" id="Resource_yellow"]
 script = ExtResource("2")
 animatronic_id = &"yellow"
-base_ai = 4
+base_ai = 6
 bonus_hours = Array[int]([2, 4])
 
 [sub_resource type="Resource" id="Resource_plush"]
 script = ExtResource("2")
 animatronic_id = &"burned_plush_bot"
-base_ai = 3
-bonus_hours = Array[int]([3])
+base_ai = 5
+bonus_hours = Array[int]([2, 4])
 
 [resource]
 script = ExtResource("1")
 ai_profiles = Array[ExtResource("2")]([SubResource("Resource_blue"), SubResource("Resource_yellow"), SubResource("Resource_plush")])
-base_drain = 0.07
-light_drain = 0.08
+base_drain = 0.08
+door_drain = 0.14
+monitor_drain = 0.05
+light_drain = 0.1
