@@ -1,0 +1,51 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" path="res://building/rooms/security_room.tscn" id="1_dmeaj"]
+[ext_resource type="PackedScene" path="res://building/rooms/main_storage_hall.tscn" id="2_rukls"]
+[ext_resource type="PackedScene" path="res://building/rooms/left_hall.tscn" id="3_nqtto"]
+[ext_resource type="PackedScene" path="res://building/rooms/right_hall.tscn" id="4_noqkq"]
+[ext_resource type="PackedScene" path="res://building/rooms/electrical_room.tscn" id="5_cepq1"]
+[ext_resource type="PackedScene" path="res://building/rooms/parts_returns_storage_room.tscn" id="6_5fixo"]
+[ext_resource type="PackedScene" path="res://building/rooms/staff_room.tscn" id="7_g6q8d"]
+[ext_resource type="PackedScene" path="res://building/rooms/packing_room.tscn" id="8_188oo"]
+[ext_resource type="PackedScene" path="res://building/rooms/inventory_check_room.tscn" id="9_v2nrw"]
+[ext_resource type="PackedScene" path="res://building/rooms/loading_bay.tscn" id="10_ieoev"]
+[ext_resource type="PackedScene" path="res://building/rooms/factory_transfer_corridor.tscn" id="11_fgb4f"]
+[ext_resource type="PackedScene" path="res://building/rooms/toy_factory.tscn" id="12_siim8"]
+
+[node name="FactoryMap" type="Node3D" unique_id=1472207156]
+
+[node name="SecurityRoom" type="Node3D" parent="." unique_id=2043193841 instance=ExtResource("1_dmeaj")]
+
+[node name="MainStorageHall" type="Node3D" parent="." unique_id=1812879760 instance=ExtResource("2_rukls")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -21.25)
+
+[node name="LeftHall" type="Node3D" parent="." unique_id=1425369266 instance=ExtResource("3_nqtto")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.25, 0, -3)
+
+[node name="RightHall" type="Node3D" parent="." unique_id=857034964 instance=ExtResource("4_noqkq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.25, 0, -3)
+
+[node name="ElectricalRoom" type="Node3D" parent="." unique_id=1032769796 instance=ExtResource("5_cepq1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.5, 0, -4.5)
+
+[node name="PartsReturnsStorageRoom" type="Node3D" parent="." unique_id=1021523416 instance=ExtResource("6_5fixo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, -26.75)
+
+[node name="StaffRoom" type="Node3D" parent="." unique_id=393643935 instance=ExtResource("7_g6q8d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.5, 0, -15.75)
+
+[node name="PackingRoom" type="Node3D" parent="." unique_id=217845911 instance=ExtResource("8_188oo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, -26.25)
+
+[node name="InventoryCheckRoom" type="Node3D" parent="." unique_id=1283579601 instance=ExtResource("9_v2nrw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, -15.75)
+
+[node name="LoadingBay" type="Node3D" parent="." unique_id=868066877 instance=ExtResource("10_ieoev")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.5, 0, -21.5)
+
+[node name="FactoryTransferCorridor" type="Node3D" parent="." unique_id=799392948 instance=ExtResource("11_fgb4f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -36)
+
+[node name="ToyFactory" type="Node3D" parent="." unique_id=1412871183 instance=ExtResource("12_siim8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -43.5)

@@ -1,0 +1,65 @@
+[gd_scene format=3]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cbt67"]
+albedo_color = Color(0.19, 0.165, 0.15, 1)
+roughness = 0.6
+
+[sub_resource type="BoxMesh" id="BoxMesh_scfiy"]
+material = SubResource("StandardMaterial3D_cbt67")
+size = Vector3(6, 0.2, 7)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b8u5j"]
+albedo_color = Color(0.247, 0.2145, 0.19500001, 1)
+roughness = 0.9
+
+[sub_resource type="BoxMesh" id="BoxMesh_udcyy"]
+material = SubResource("StandardMaterial3D_b8u5j")
+size = Vector3(6, 0.2, 7)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rrigj"]
+albedo_color = Color(0.38, 0.33, 0.3, 1)
+roughness = 0.9
+
+[sub_resource type="BoxMesh" id="BoxMesh_88yil"]
+material = SubResource("StandardMaterial3D_rrigj")
+size = Vector3(6, 3.5, 0.3)
+
+[sub_resource type="BoxMesh" id="BoxMesh_166np"]
+material = SubResource("StandardMaterial3D_rrigj")
+size = Vector3(6, 3.5, 0.3)
+
+[sub_resource type="BoxMesh" id="BoxMesh_atfux"]
+material = SubResource("StandardMaterial3D_rrigj")
+size = Vector3(0.3, 3.5, 6.4)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ec2ky"]
+material = SubResource("StandardMaterial3D_rrigj")
+size = Vector3(0.3, 3.5, 6.4)
+
+[node name="FactoryTransferCorridor" type="Node3D" unique_id=799392948]
+
+[node name="Floor" type="MeshInstance3D" parent="." unique_id=2007053566]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
+mesh = SubResource("BoxMesh_scfiy")
+
+[node name="Ceiling" type="MeshInstance3D" parent="." unique_id=936826990]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.6, 0)
+mesh = SubResource("BoxMesh_udcyy")
+
+[node name="Walls" type="Node3D" parent="." unique_id=1212385811]
+
+[node name="WallN" type="MeshInstance3D" parent="Walls" unique_id=578769040]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.75, -3.35)
+mesh = SubResource("BoxMesh_88yil")
+
+[node name="WallS" type="MeshInstance3D" parent="Walls" unique_id=1325707149]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.75, 3.35)
+mesh = SubResource("BoxMesh_166np")
+
+[node name="WallE" type="MeshInstance3D" parent="Walls" unique_id=1343359005]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.85, 1.75, 0)
+mesh = SubResource("BoxMesh_atfux")
+
+[node name="WallW" type="MeshInstance3D" parent="Walls" unique_id=176483236]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.85, 1.75, 0)
+mesh = SubResource("BoxMesh_ec2ky")
