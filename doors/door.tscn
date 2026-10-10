@@ -1,14 +1,121 @@
-[gd_scene load_steps=3 format=3]
+[gd_scene load_steps=11 format=3]
 
 [ext_resource type="Script" path="res://doors/door.gd" id="1"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_door"]
-size = Vector3(1.4, 3.8, 0.22)
+[sub_resource type="StandardMaterial3D" id="Steel"]
+albedo_color = Color(0.36, 0.38, 0.4, 1)
+roughness = 0.55
+metallic = 0.25
+
+[sub_resource type="StandardMaterial3D" id="DarkSteel"]
+albedo_color = Color(0.16, 0.17, 0.18, 1)
+roughness = 0.7
+
+[sub_resource type="StandardMaterial3D" id="Hazard"]
+albedo_color = Color(0.9, 0.68, 0.08, 1)
+roughness = 0.6
+
+[sub_resource type="BoxMesh" id="PanelMesh"]
+material = SubResource("Steel")
+size = Vector3(1.7, 3.3, 0.1)
+
+[sub_resource type="BoxMesh" id="RibMesh"]
+material = SubResource("DarkSteel")
+size = Vector3(1.5, 0.09, 0.14)
+
+[sub_resource type="BoxMesh" id="EdgeMesh"]
+material = SubResource("DarkSteel")
+size = Vector3(0.1, 3.3, 0.14)
+
+[sub_resource type="BoxMesh" id="HazardBandMesh"]
+material = SubResource("Hazard")
+size = Vector3(1.5, 0.32, 0.13)
+
+[sub_resource type="BoxMesh" id="HazardStripeMesh"]
+material = SubResource("DarkSteel")
+size = Vector3(0.1, 0.5, 0.14)
+
+[sub_resource type="BoxMesh" id="JambMesh"]
+material = SubResource("DarkSteel")
+size = Vector3(0.14, 3.3, 0.36)
+
+[sub_resource type="BoxMesh" id="HousingMesh"]
+material = SubResource("DarkSteel")
+size = Vector3(1.9, 0.8, 0.36)
 
 [node name="Door" type="Node3D"]
 script = ExtResource("1")
 
+[node name="Frame" type="Node3D" parent="."]
+
+[node name="JambA" type="MeshInstance3D" parent="Frame"]
+mesh = SubResource("JambMesh")
+position = Vector3(0.87, 1.65, 0)
+
+[node name="JambB" type="MeshInstance3D" parent="Frame"]
+mesh = SubResource("JambMesh")
+position = Vector3(-0.87, 1.65, 0)
+
+[node name="Housing" type="MeshInstance3D" parent="Frame"]
+mesh = SubResource("HousingMesh")
+position = Vector3(0, 3.6, 0)
+
 [node name="Panel" type="MeshInstance3D" parent="."]
-mesh = SubResource("BoxMesh_door")
-position = Vector3(0, -0.2, 0)
-cast_shadow = 1
+mesh = SubResource("PanelMesh")
+position = Vector3(0, 4.85, 0)
+
+[node name="EdgeA" type="MeshInstance3D" parent="Panel"]
+mesh = SubResource("EdgeMesh")
+position = Vector3(0.8, 0, 0)
+
+[node name="EdgeB" type="MeshInstance3D" parent="Panel"]
+mesh = SubResource("EdgeMesh")
+position = Vector3(-0.8, 0, 0)
+
+[node name="Rib1" type="MeshInstance3D" parent="Panel"]
+mesh = SubResource("RibMesh")
+position = Vector3(0, 1.4, 0)
+
+[node name="Rib2" type="MeshInstance3D" parent="Panel"]
+mesh = SubResource("RibMesh")
+position = Vector3(0, 0.8, 0)
+
+[node name="Rib3" type="MeshInstance3D" parent="Panel"]
+mesh = SubResource("RibMesh")
+position = Vector3(0, 0.2, 0)
+
+[node name="Rib4" type="MeshInstance3D" parent="Panel"]
+mesh = SubResource("RibMesh")
+position = Vector3(0, -0.4, 0)
+
+[node name="Rib5" type="MeshInstance3D" parent="Panel"]
+mesh = SubResource("RibMesh")
+position = Vector3(0, -1.0, 0)
+
+[node name="HazardBand" type="MeshInstance3D" parent="Panel"]
+mesh = SubResource("HazardBandMesh")
+position = Vector3(0, -1.45, 0)
+
+[node name="Stripe1" type="MeshInstance3D" parent="Panel"]
+mesh = SubResource("HazardStripeMesh")
+transform = Transform3D(0.866, 0.5, 0, -0.5, 0.866, 0, 0, 0, 1, -0.6, -1.45, 0)
+
+[node name="Stripe2" type="MeshInstance3D" parent="Panel"]
+mesh = SubResource("HazardStripeMesh")
+transform = Transform3D(0.866, 0.5, 0, -0.5, 0.866, 0, 0, 0, 1, -0.36, -1.45, 0)
+
+[node name="Stripe3" type="MeshInstance3D" parent="Panel"]
+mesh = SubResource("HazardStripeMesh")
+transform = Transform3D(0.866, 0.5, 0, -0.5, 0.866, 0, 0, 0, 1, -0.12, -1.45, 0)
+
+[node name="Stripe4" type="MeshInstance3D" parent="Panel"]
+mesh = SubResource("HazardStripeMesh")
+transform = Transform3D(0.866, 0.5, 0, -0.5, 0.866, 0, 0, 0, 1, 0.12, -1.45, 0)
+
+[node name="Stripe5" type="MeshInstance3D" parent="Panel"]
+mesh = SubResource("HazardStripeMesh")
+transform = Transform3D(0.866, 0.5, 0, -0.5, 0.866, 0, 0, 0, 1, 0.36, -1.45, 0)
+
+[node name="Stripe6" type="MeshInstance3D" parent="Panel"]
+mesh = SubResource("HazardStripeMesh")
+transform = Transform3D(0.866, 0.5, 0, -0.5, 0.866, 0, 0, 0, 1, 0.6, -1.45, 0)

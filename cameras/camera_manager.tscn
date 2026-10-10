@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://dfllx4hjuyydj"]
 
 [ext_resource type="Script" uid="uid://c3kmq0tu13trx" path="res://cameras/camera_manager.gd" id="1_ba3l0"]
-[ext_resource type="Texture2D" uid="uid://lyt8huuwqniu" path="res://cameras/map.png" id="2_1emkl"]
 [ext_resource type="Script" uid="uid://rdt2a7t0lqqv" path="res://cameras/cam_button.gd" id="3_k2tk3"]
 [ext_resource type="Texture2D" uid="uid://cc1t62ptqfiux" path="res://common/static/static_frame_1.png" id="4_im107"]
 [ext_resource type="Texture2D" uid="uid://cpkqfqi3f7q3a" path="res://common/static/static_frame_2.png" id="5_al0ie"]
@@ -77,20 +76,18 @@ metadata/_edit_lock_ = true
 script = ExtResource("11_noise")
 frames = Array[Texture2D]([ExtResource("4_im107"), ExtResource("5_al0ie"), ExtResource("6_qhegm"), ExtResource("7_b4mdr"), ExtResource("8_ciquy")])
 
-[node name="Map" type="TextureRect" parent="CameraUI" unique_id=342527094]
+[node name="Map" type="Control" parent="CameraUI"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.665
-anchor_top = 0.299
-anchor_right = 0.978
-anchor_bottom = 0.827
+anchor_left = 0.62
+anchor_top = 0.2
+anchor_right = 0.99
+anchor_bottom = 0.85
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-texture = ExtResource("2_1emkl")
-expand_mode = 1
 
-[node name="CamButtonsParent" type="Control" parent="CameraUI/Map" unique_id=1311170087]
+[node name="CamButtonsParent" type="Control" parent="CameraUI/Map"]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
@@ -99,101 +96,126 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PartyRoomLeftBtn" type="Button" parent="CameraUI/Map/CamButtonsParent" unique_id=462998415]
+[node name="ToyFactoryBtn" type="Button" parent="CameraUI/Map/CamButtonsParent"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.084365
-anchor_top = 0.683186
-anchor_right = 0.242365
-anchor_bottom = 0.787186
-text = "Cam1"
+anchor_left = 0.355
+anchor_top = 0.040
+anchor_right = 0.505
+anchor_bottom = 0.120
+text = "Cam 1"
 script = ExtResource("3_k2tk3")
-camera_node_name = "PartyRoomLeft"
-metadata/_edit_use_anchors_ = true
+camera_node_name = "ToyFactory"
 
-[node name="PartyRoomRightBtn" type="Button" parent="CameraUI/Map/CamButtonsParent" unique_id=1484302272]
+[node name="FactoryTransferCorridorBtn" type="Button" parent="CameraUI/Map/CamButtonsParent"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.483726
-anchor_top = 0.696338
-anchor_right = 0.642726
-anchor_bottom = 0.789338
-text = "Cam2"
+anchor_left = 0.355
+anchor_top = 0.170
+anchor_right = 0.505
+anchor_bottom = 0.250
+text = "Cam 2"
 script = ExtResource("3_k2tk3")
-camera_node_name = "PartyRoomRight"
-metadata/_edit_use_anchors_ = true
+camera_node_name = "FactoryTransferCorridor"
 
-[node name="SmallHallwayBtn" type="Button" parent="CameraUI/Map/CamButtonsParent" unique_id=1142348107]
+[node name="MainStorageHallBtn" type="Button" parent="CameraUI/Map/CamButtonsParent"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.5486222
-anchor_top = 0.47274798
-anchor_right = 0.7076222
-anchor_bottom = 0.565748
-text = "Cam3"
+anchor_left = 0.355
+anchor_top = 0.470
+anchor_right = 0.505
+anchor_bottom = 0.550
+text = "Cam 3"
 script = ExtResource("3_k2tk3")
-camera_node_name = "SmallHallway"
-metadata/_edit_use_anchors_ = true
+camera_node_name = "MainStorageHall"
 
-[node name="StageBtn" type="Button" parent="CameraUI/Map/CamButtonsParent" unique_id=420019312]
+[node name="PartsReturnsStorageRoomBtn" type="Button" parent="CameraUI/Map/CamButtonsParent"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.8007189
-anchor_top = 0.29387626
-anchor_right = 0.959719
-anchor_bottom = 0.38687527
-text = "Cam4"
+anchor_left = 0.035
+anchor_top = 0.360
+anchor_right = 0.185
+anchor_bottom = 0.440
+text = "Cam 4"
 script = ExtResource("3_k2tk3")
-camera_node_name = "Stage"
-metadata/_edit_use_anchors_ = true
+camera_node_name = "PartsReturnsStorageRoom"
 
-[node name="RightVentBtn" type="Button" parent="CameraUI/Map/CamButtonsParent" unique_id=1911354910]
+[node name="StaffRoomBtn" type="Button" parent="CameraUI/Map/CamButtonsParent"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.51867
-anchor_top = 0.883102
-anchor_right = 0.67767
-anchor_bottom = 0.976101
-text = "Cam5"
+anchor_left = 0.065
+anchor_top = 0.580
+anchor_right = 0.215
+anchor_bottom = 0.660
+text = "Cam 5"
 script = ExtResource("3_k2tk3")
-camera_node_name = "RightVent"
-metadata/_edit_use_anchors_ = true
+camera_node_name = "StaffRoom"
 
-[node name="LeftVentBtn" type="Button" parent="CameraUI/Map/CamButtonsParent" unique_id=969769726]
+[node name="PackingRoomBtn" type="Button" parent="CameraUI/Map/CamButtonsParent"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.0219647
-anchor_top = 0.877841
-anchor_right = 0.180965
-anchor_bottom = 0.97084
-text = "Cam6"
+anchor_left = 0.675
+anchor_top = 0.370
+anchor_right = 0.825
+anchor_bottom = 0.450
+text = "Cam 6"
 script = ExtResource("3_k2tk3")
-camera_node_name = "LeftVent"
-metadata/_edit_use_anchors_ = true
+camera_node_name = "PackingRoom"
 
-[node name="HallStartBtn" type="Button" parent="CameraUI/Map/CamButtonsParent" unique_id=1955770639]
+[node name="InventoryCheckRoomBtn" type="Button" parent="CameraUI/Map/CamButtonsParent"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.27905354
-anchor_top = 0.55692345
-anchor_right = 0.43805382
-anchor_bottom = 0.64992243
-text = "Cam7"
+anchor_left = 0.675
+anchor_top = 0.580
+anchor_right = 0.825
+anchor_bottom = 0.660
+text = "Cam 7"
 script = ExtResource("3_k2tk3")
-camera_node_name = "HallStart"
-metadata/_edit_use_anchors_ = true
+camera_node_name = "InventoryCheckRoom"
 
-[node name="HallEndBtn" type="Button" parent="CameraUI/Map/CamButtonsParent" unique_id=1756991754]
+[node name="LoadingBayBtn" type="Button" parent="CameraUI/Map/CamButtonsParent"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.27905354
-anchor_top = 0.738426
-anchor_right = 0.43805382
-anchor_bottom = 0.83142495
-text = "Cam8"
+anchor_left = 0.835
+anchor_top = 0.470
+anchor_right = 0.985
+anchor_bottom = 0.550
+text = "Cam 8"
 script = ExtResource("3_k2tk3")
-camera_node_name = "HallEnd"
-metadata/_edit_use_anchors_ = true
+camera_node_name = "LoadingBay"
+
+[node name="ElectricalRoomBtn" type="Button" parent="CameraUI/Map/CamButtonsParent"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.005
+anchor_top = 0.790
+anchor_right = 0.155
+anchor_bottom = 0.870
+text = "Cam 9"
+script = ExtResource("3_k2tk3")
+camera_node_name = "ElectricalRoom"
+
+[node name="LeftHallBtn" type="Button" parent="CameraUI/Map/CamButtonsParent"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.225
+anchor_top = 0.820
+anchor_right = 0.375
+anchor_bottom = 0.900
+text = "Cam 10"
+script = ExtResource("3_k2tk3")
+camera_node_name = "LeftHall"
+
+[node name="RightHallBtn" type="Button" parent="CameraUI/Map/CamButtonsParent"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.485
+anchor_top = 0.820
+anchor_right = 0.635
+anchor_bottom = 0.900
+text = "Cam 11"
+script = ExtResource("3_k2tk3")
+camera_node_name = "RightHall"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CameraUI" unique_id=785406415]
 libraries/ = SubResource("AnimationLibrary_c5k7w")

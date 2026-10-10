@@ -3,54 +3,54 @@
 [ext_resource type="Script" uid="uid://bw77jafikts7b" path="res://animatronics/animatronic_utilities/graph/animatronic_graph.gd" id="1_graph"]
 [ext_resource type="Script" uid="uid://cm1k1xe1q4uw4" path="res://animatronics/animatronic_utilities/graph/animatronic_graph_node.gd" id="2_node"]
 
-[sub_resource type="Resource" id="Resource_stage"]
+[sub_resource type="Resource" id="Resource_toy"]
 script = ExtResource("2_node")
-position_name = &"Stage"
+position_name = &"ToyFactory"
 destinations = Dictionary[StringName, float]({
-&"HallEnd": 10.0,
-&"PartyRoomRight": 10.0,
-&"SmallHallway": 80.0
+&"FactoryTransferCorridor": 80.0,
+&"InventoryCheckRoom": 10.0,
+&"MainStorageHall": 10.0
 })
 
-[sub_resource type="Resource" id="Resource_small_hallway"]
+[sub_resource type="Resource" id="Resource_ftc"]
 script = ExtResource("2_node")
-position_name = &"SmallHallway"
+position_name = &"FactoryTransferCorridor"
 destinations = Dictionary[StringName, float]({
-&"HallEnd": 70.0,
-&"Stage": 30.0
+&"MainStorageHall": 70.0,
+&"ToyFactory": 30.0
 })
 
-[sub_resource type="Resource" id="Resource_hall_end"]
+[sub_resource type="Resource" id="Resource_main"]
 script = ExtResource("2_node")
-position_name = &"HallEnd"
+position_name = &"MainStorageHall"
 destinations = Dictionary[StringName, float]({
-&"PartyRoomRight": 70.0,
-&"SmallHallway": 30.0
+&"FactoryTransferCorridor": 30.0,
+&"InventoryCheckRoom": 70.0
 })
 
-[sub_resource type="Resource" id="Resource_party_room_right"]
+[sub_resource type="Resource" id="Resource_inv"]
 script = ExtResource("2_node")
-position_name = &"PartyRoomRight"
+position_name = &"InventoryCheckRoom"
 destinations = Dictionary[StringName, float]({
-&"HallEnd": 20.0,
-&"RightVent": 70.0,
-&"Stage": 10.0
+&"MainStorageHall": 20.0,
+&"RightHall": 70.0,
+&"ToyFactory": 10.0
 })
 
-[sub_resource type="Resource" id="Resource_right_vent"]
+[sub_resource type="Resource" id="Resource_rhall"]
 script = ExtResource("2_node")
-position_name = &"RightVent"
+position_name = &"RightHall"
 destinations = Dictionary[StringName, float]({
-&"Office": 70.0,
-&"PartyRoomRight": 30.0
+&"InventoryCheckRoom": 30.0,
+&"Office": 70.0
 })
 
 [resource]
 script = ExtResource("1_graph")
-start_position = &"Stage"
-return_position = &"PartyRoomRight"
+start_position = &"ToyFactory"
+return_position = &"InventoryCheckRoom"
 decision_time_min = 4.0
 decision_time_max = 5.0
 blocked_retreat_delay_min = 3.0
 blocked_retreat_delay_max = 5.0
-nodes = Array[ExtResource("2_node")]([SubResource("Resource_stage"), SubResource("Resource_small_hallway"), SubResource("Resource_hall_end"), SubResource("Resource_party_room_right"), SubResource("Resource_right_vent")])
+nodes = Array[ExtResource("2_node")]([SubResource("Resource_toy"), SubResource("Resource_ftc"), SubResource("Resource_main"), SubResource("Resource_inv"), SubResource("Resource_rhall")])

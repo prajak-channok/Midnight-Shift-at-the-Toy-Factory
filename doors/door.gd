@@ -3,8 +3,8 @@ class_name Door
 
 signal state_changed(is_closed: bool)
 
-@export var closed_height: float = 2
-@export var open_height: float = -0.2
+@export var closed_height: float = 1.65
+@export var open_height: float = 4.85
 @export var move_time: float = 0.12
 
 var is_closed: bool = false

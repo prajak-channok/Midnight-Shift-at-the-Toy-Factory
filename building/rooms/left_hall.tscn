@@ -56,6 +56,10 @@ size = Vector2(1.6000001, 0.3)
 material = SubResource("StandardMaterial3D_d4kj4")
 size = Vector2(2.1999998, 3.5)
 
+[sub_resource type="BoxMesh" id="BoxMesh_partition_pier"]
+material = SubResource("StandardMaterial3D_d4kj4")
+size = Vector3(4.5, 3.5, 0.2)
+
 [node name="LeftHall" type="Node3D" unique_id=1425369266]
 
 [node name="Floor" type="MeshInstance3D" parent="." unique_id=1870565466]
@@ -113,3 +117,10 @@ mesh = SubResource("QuadMesh_huatw")
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 2.25, 1.75, 5.9)
 cast_shadow = 2
 mesh = SubResource("QuadMesh_3njjj")
+
+[node name="Partition" type="Node3D" parent="."]
+
+[node name="PartitionWall" type="MeshInstance3D" parent="Partition"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.75, 0)
+cast_shadow = 2
+mesh = SubResource("BoxMesh_partition_pier")
