@@ -1,5 +1,21 @@
 [gd_scene format=3]
 
+[ext_resource type="PackedScene" path="res://building/props/common/rug.tscn" id="s1_rug"]
+[ext_resource type="PackedScene" path="res://building/props/staff/staff_table.tscn" id="s2_table"]
+[ext_resource type="PackedScene" path="res://building/props/staff/staff_chair.tscn" id="s3_chair"]
+[ext_resource type="PackedScene" path="res://building/props/security/mug.tscn" id="s4_mug"]
+[ext_resource type="PackedScene" path="res://building/props/security/paper_stack.tscn" id="s5_papers"]
+[ext_resource type="PackedScene" path="res://building/props/staff/bulletin_board.tscn" id="s6_board"]
+[ext_resource type="PackedScene" path="res://building/props/staff/time_clock.tscn" id="s7_tclock"]
+[ext_resource type="PackedScene" path="res://building/props/security/wall_clock.tscn" id="s8_wclock"]
+[ext_resource type="PackedScene" path="res://building/props/staff/kitchenette_counter.tscn" id="s9_kitchen"]
+[ext_resource type="PackedScene" path="res://building/props/security/trash_bin.tscn" id="s10_bin"]
+[ext_resource type="PackedScene" path="res://building/props/staff/locker_bank.tscn" id="s11_lockers"]
+[ext_resource type="PackedScene" path="res://building/props/staff/vending_machine.tscn" id="s12_vending"]
+[ext_resource type="PackedScene" path="res://building/props/staff/staff_sofa.tscn" id="s13_sofa"]
+[ext_resource type="PackedScene" path="res://building/props/staff/dead_plant.tscn" id="s14_plant"]
+[ext_resource type="PackedScene" path="res://building/props/security/ceiling_light.tscn" id="s15_cl"]
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m2fl4"]
 albedo_color = Color(0.275, 0.21, 0.34, 1)
 roughness = 0.6
@@ -68,3 +84,81 @@ mesh = SubResource("QuadMesh_y3k63")
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.9999998, 1.75, 0)
 cast_shadow = 2
 mesh = SubResource("QuadMesh_d7y17")
+
+[node name="Props" type="Node3D" parent="."]
+
+[node name="Center" type="Node3D" parent="Props"]
+
+[node name="Rug" parent="Props/Center" instance=ExtResource("s1_rug")]
+transform = Transform3D(1.15, 0, 0, 0, 1, 0, 0, 0, 1.15, 0, 0, 0)
+
+[node name="Table" parent="Props/Center" instance=ExtResource("s2_table")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="ChairN1" parent="Props/Center" instance=ExtResource("s3_chair")]
+transform = Transform3D(0.9945219, 0, -0.104528464, 0, 1, 0, 0.104528464, 0, 0.9945219, -0.45, 0, -0.72)
+
+[node name="ChairN2" parent="Props/Center" instance=ExtResource("s3_chair")]
+transform = Transform3D(0.9848077, 0, 0.17364818, 0, 1, 0, -0.17364818, 0, 0.9848077, 0.5, 0, -0.9)
+
+[node name="ChairS1" parent="Props/Center" instance=ExtResource("s3_chair")]
+transform = Transform3D(-0.9975641, 0, -0.0697564, 0, 1, 0, 0.0697564, 0, -0.9975641, -0.5, 0, 0.7)
+
+[node name="ChairS2" parent="Props/Center" instance=ExtResource("s3_chair")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.45, 0, 0.66)
+
+[node name="ChairE" parent="Props/Center" instance=ExtResource("s3_chair")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.28, 0, 0.05)
+
+[node name="ChairToppled" parent="Props/Center" instance=ExtResource("s3_chair")]
+transform = Transform3D(-3.5806274e-08, -0.81915206, 0.57357645, 1, -4.371139e-08, 0, 2.5071824e-08, 0.57357645, 0.81915206, -1.5, 0.215, 0.35)
+
+[node name="Mug1" parent="Props/Center" instance=ExtResource("s4_mug")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.76, -0.2)
+
+[node name="Mug2" parent="Props/Center" instance=ExtResource("s4_mug")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.55, 0.76, 0.25)
+
+[node name="Papers" parent="Props/Center" instance=ExtResource("s5_papers")]
+transform = Transform3D(0.9396926, 0, 0.34202012, 0, 1, 0, -0.34202012, 0, 0.9396926, 0.05, 0.76, 0.12)
+
+[node name="NorthWall" type="Node3D" parent="Props"]
+
+[node name="BulletinBoard" parent="Props/NorthWall" instance=ExtResource("s6_board")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9, 1.85, -3.25)
+
+[node name="TimeClock" parent="Props/NorthWall" instance=ExtResource("s7_tclock")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.55, 1.4, -3.25)
+
+[node name="WallClock" parent="Props/NorthWall" instance=ExtResource("s8_wclock")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.85, -3.25)
+
+[node name="Kitchenette" parent="Props/NorthWall" instance=ExtResource("s9_kitchen")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7, 0, -2.95)
+
+[node name="TrashBin" parent="Props/NorthWall" instance=ExtResource("s10_bin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.25, 0, -3)
+
+[node name="WestWall" type="Node3D" parent="Props"]
+
+[node name="LockerBank" parent="Props/WestWall" instance=ExtResource("s11_lockers")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.75, 0, -1.9)
+
+[node name="VendingMachine" parent="Props/WestWall" instance=ExtResource("s12_vending")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.575, 0, 0.9)
+
+[node name="SouthWall" type="Node3D" parent="Props"]
+
+[node name="Sofa" parent="Props/SouthWall" instance=ExtResource("s13_sofa")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -2, 0, 2.8)
+
+[node name="DeadPlant" parent="Props/SouthWall" instance=ExtResource("s14_plant")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 2.75)
+
+[node name="Ceiling" type="Node3D" parent="Props"]
+
+[node name="CeilingLight1" parent="Props/Ceiling" instance=ExtResource("s15_cl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5, -1.1)
+
+[node name="CeilingLight2" parent="Props/Ceiling" instance=ExtResource("s15_cl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5, 1.4)
