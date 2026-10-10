@@ -1,0 +1,57 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://building/props/materials/sign_burnt.tres" id="1_1efa1"]
+[ext_resource type="Material" path="res://building/props/materials/steel_burnt.tres" id="2_yr1ib"]
+[ext_resource type="Material" path="res://building/props/materials/char.tres" id="3_iftj8"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_r3lgd"]
+material = ExtResource("1_1efa1")
+top_radius = 0.2
+bottom_radius = 0.2
+height = 0.03
+radial_segments = 24
+rings = 1
+
+[sub_resource type="TorusMesh" id="TorusMesh_ah3yv"]
+material = ExtResource("2_yr1ib")
+inner_radius = 0.19
+outer_radius = 0.215
+rings = 20
+ring_segments = 8
+
+[sub_resource type="BoxMesh" id="BoxMesh_kclhn"]
+material = ExtResource("3_iftj8")
+size = Vector3(0.015, 0.1, 0.004)
+
+[sub_resource type="BoxMesh" id="BoxMesh_v8m51"]
+material = ExtResource("3_iftj8")
+size = Vector3(0.01, 0.15, 0.004)
+
+[sub_resource type="SphereMesh" id="SphereMesh_iq3ds"]
+material = ExtResource("3_iftj8")
+radius = 0.14
+height = 0.28
+radial_segments = 14
+rings = 7
+
+[node name="BurntClock" type="Node3D" unique_id=134114211]
+
+[node name="Face" type="MeshInstance3D" parent="." unique_id=498692967]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0.015)
+mesh = SubResource("CylinderMesh_r3lgd")
+
+[node name="Rim" type="MeshInstance3D" parent="." unique_id=1909051234]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0.02)
+mesh = SubResource("TorusMesh_ah3yv")
+
+[node name="HourHand" type="MeshInstance3D" parent="." unique_id=1373461756]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0.036)
+mesh = SubResource("BoxMesh_kclhn")
+
+[node name="MinuteHand" type="MeshInstance3D" parent="." unique_id=1987320385]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.075, 0.04)
+mesh = SubResource("BoxMesh_v8m51")
+
+[node name="Burn" type="MeshInstance3D" parent="." unique_id=1464530820]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.08, 0.07, -0.07, 0.034)
+mesh = SubResource("SphereMesh_iq3ds")

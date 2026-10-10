@@ -4,62 +4,112 @@
 albedo_color = Color(0.31, 0.12, 0.14, 1)
 roughness = 0.6
 
-[sub_resource type="BoxMesh" id="BoxMesh_82hen"]
+[sub_resource type="PlaneMesh" id="PlaneMesh_lk5im"]
 material = SubResource("StandardMaterial3D_lk5im")
-size = Vector3(4.5, 0.2, 14)
+size = Vector2(4.5, 14)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a2vxq"]
 albedo_color = Color(0.403, 0.15599999, 0.182, 1)
 roughness = 0.9
 
-[sub_resource type="BoxMesh" id="BoxMesh_7dc40"]
+[sub_resource type="PlaneMesh" id="PlaneMesh_82hen"]
 material = SubResource("StandardMaterial3D_a2vxq")
-size = Vector3(4.5, 0.2, 14)
+size = Vector2(4.5, 14)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_036ul"]
 albedo_color = Color(0.62, 0.24, 0.28, 1)
 roughness = 0.9
 
-[sub_resource type="BoxMesh" id="BoxMesh_yhxg5"]
+[sub_resource type="QuadMesh" id="QuadMesh_a2vxq"]
 material = SubResource("StandardMaterial3D_036ul")
-size = Vector3(4.5, 3.5, 0.3)
+size = Vector2(4.5, 3.5)
 
-[sub_resource type="BoxMesh" id="BoxMesh_wwpk6"]
+[sub_resource type="QuadMesh" id="QuadMesh_7dc40"]
 material = SubResource("StandardMaterial3D_036ul")
-size = Vector3(4.5, 3.5, 0.3)
+size = Vector2(4.5, 3.5)
 
-[sub_resource type="BoxMesh" id="BoxMesh_fvayp"]
+[sub_resource type="QuadMesh" id="QuadMesh_036ul"]
 material = SubResource("StandardMaterial3D_036ul")
-size = Vector3(0.3, 3.5, 13.4)
+size = Vector2(14, 3.5)
 
-[sub_resource type="BoxMesh" id="BoxMesh_vnkey"]
+[sub_resource type="QuadMesh" id="QuadMesh_lk5im"]
 material = SubResource("StandardMaterial3D_036ul")
-size = Vector3(0.3, 3.5, 13.4)
+size = Vector2(8.2, 3.5)
+
+[sub_resource type="QuadMesh" id="QuadMesh_82hen"]
+material = SubResource("StandardMaterial3D_036ul")
+size = Vector2(1.2, 1.4)
+
+[sub_resource type="QuadMesh" id="QuadMesh_yhxg5"]
+material = SubResource("StandardMaterial3D_036ul")
+size = Vector2(1.2, 1.1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_wwpk6"]
+material = SubResource("StandardMaterial3D_036ul")
+size = Vector2(0.79999995, 3.5)
+
+[sub_resource type="QuadMesh" id="QuadMesh_fvayp"]
+material = SubResource("StandardMaterial3D_036ul")
+size = Vector2(1.6000001, 0.3)
+
+[sub_resource type="QuadMesh" id="QuadMesh_vnkey"]
+material = SubResource("StandardMaterial3D_036ul")
+size = Vector2(2.1999998, 3.5)
 
 [node name="RightHall" type="Node3D" unique_id=857034964]
 
 [node name="Floor" type="MeshInstance3D" parent="." unique_id=504617790]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
-mesh = SubResource("BoxMesh_82hen")
+cast_shadow = 2
+mesh = SubResource("PlaneMesh_lk5im")
 
 [node name="Ceiling" type="MeshInstance3D" parent="." unique_id=409077418]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.6, 0)
-mesh = SubResource("BoxMesh_7dc40")
+transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 3.5, 0)
+cast_shadow = 2
+mesh = SubResource("PlaneMesh_82hen")
 
 [node name="Walls" type="Node3D" parent="." unique_id=499656667]
 
 [node name="WallN" type="MeshInstance3D" parent="Walls" unique_id=1698269881]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.75, -6.85)
-mesh = SubResource("BoxMesh_yhxg5")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.75, -7)
+cast_shadow = 2
+mesh = SubResource("QuadMesh_a2vxq")
 
 [node name="WallS" type="MeshInstance3D" parent="Walls" unique_id=1912181175]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.75, 6.85)
-mesh = SubResource("BoxMesh_wwpk6")
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 1.75, 7)
+cast_shadow = 2
+mesh = SubResource("QuadMesh_7dc40")
 
 [node name="WallE" type="MeshInstance3D" parent="Walls" unique_id=1701917998]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1, 1.75, 0)
-mesh = SubResource("BoxMesh_fvayp")
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 2.25, 1.75, 0)
+cast_shadow = 2
+mesh = SubResource("QuadMesh_036ul")
 
 [node name="WallW" type="MeshInstance3D" parent="Walls" unique_id=723902046]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1, 1.75, 0)
-mesh = SubResource("BoxMesh_vnkey")
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.25, 1.75, -2.9)
+cast_shadow = 2
+mesh = SubResource("QuadMesh_lk5im")
+
+[node name="WallW_Below_0" type="MeshInstance3D" parent="Walls" unique_id=760673293]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.25, 0.7, 1.8000001)
+cast_shadow = 2
+mesh = SubResource("QuadMesh_82hen")
+
+[node name="WallW_Above_0" type="MeshInstance3D" parent="Walls" unique_id=322378935]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.25, 2.95, 1.8000001)
+cast_shadow = 2
+mesh = SubResource("QuadMesh_yhxg5")
+
+[node name="WallW_Pier_1" type="MeshInstance3D" parent="Walls" unique_id=1503237042]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.25, 1.75, 2.8000002)
+cast_shadow = 2
+mesh = SubResource("QuadMesh_wwpk6")
+
+[node name="WallW_Above_1" type="MeshInstance3D" parent="Walls" unique_id=1744288846]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.25, 3.35, 4)
+cast_shadow = 2
+mesh = SubResource("QuadMesh_fvayp")
+
+[node name="WallW_B" type="MeshInstance3D" parent="Walls" unique_id=681423270]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.25, 1.75, 5.9)
+cast_shadow = 2
+mesh = SubResource("QuadMesh_vnkey")

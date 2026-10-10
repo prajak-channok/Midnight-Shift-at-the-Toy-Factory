@@ -1,0 +1,109 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://building/props/materials/burnt_plush.tres" id="1_8rylv"]
+[ext_resource type="Material" path="res://building/props/materials/char.tres" id="2_pgp6h"]
+[ext_resource type="Material" path="res://building/props/materials/singed_plush.tres" id="3_4gfw7"]
+[ext_resource type="Material" path="res://building/props/materials/rubber_black.tres" id="4_e8ys3"]
+[ext_resource type="Material" path="res://building/props/materials/ceramic_white.tres" id="5_ujake"]
+[ext_resource type="Material" path="res://building/props/materials/ash.tres" id="6_q41nr"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_rhl51"]
+material = ExtResource("1_8rylv")
+radius = 0.075
+height = 0.15
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_xt8ys"]
+material = ExtResource("2_pgp6h")
+radius = 0.07
+height = 0.14
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_d5jk5"]
+material = ExtResource("2_pgp6h")
+radius = 0.028
+height = 0.056
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_c34xa"]
+material = ExtResource("1_8rylv")
+radius = 0.028
+height = 0.056
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_cnvfr"]
+material = ExtResource("3_4gfw7")
+radius = 0.03
+height = 0.06
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_7veki"]
+material = ExtResource("4_e8ys3")
+radius = 0.011
+height = 0.022
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_iwtct"]
+material = ExtResource("5_ujake")
+radius = 0.01
+height = 0.02
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_pc1n2"]
+material = ExtResource("2_pgp6h")
+radius = 0.012
+height = 0.024
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_lphl6"]
+material = ExtResource("6_q41nr")
+radius = 0.03
+height = 0.06
+radial_segments = 14
+rings = 7
+
+[node name="TeddyHead" type="Node3D" unique_id=1877268272]
+
+[node name="Head" type="MeshInstance3D" parent="." unique_id=102285978]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.07, 0)
+mesh = SubResource("SphereMesh_rhl51")
+
+[node name="Singe" type="MeshInstance3D" parent="." unique_id=480631566]
+transform = Transform3D(0.8, 0, 0, 0, 1, 0, 0, 0, 0.9, 0, 0.075, 0.01)
+mesh = SubResource("SphereMesh_xt8ys")
+
+[node name="EarL" type="MeshInstance3D" parent="." unique_id=729958637]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.055, 0.12, 0)
+mesh = SubResource("SphereMesh_d5jk5")
+
+[node name="EarR" type="MeshInstance3D" parent="." unique_id=1298981229]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.055, 0.125, 0)
+mesh = SubResource("SphereMesh_c34xa")
+
+[node name="Muzzle" type="MeshInstance3D" parent="." unique_id=2063413806]
+transform = Transform3D(1.1, 0, 0, 0, 0.85, 0, 0, 0, 0.9, 0, 0.055, 0.062)
+mesh = SubResource("SphereMesh_cnvfr")
+
+[node name="Nose" type="MeshInstance3D" parent="." unique_id=711261861]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.065, 0.09)
+mesh = SubResource("SphereMesh_7veki")
+
+[node name="EyeR" type="MeshInstance3D" parent="." unique_id=949752268]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.03, 0.09, 0.066)
+mesh = SubResource("SphereMesh_iwtct")
+
+[node name="EyeSocket" type="MeshInstance3D" parent="." unique_id=165000956]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03, 0.09, 0.066)
+mesh = SubResource("SphereMesh_pc1n2")
+
+[node name="Stuffing" type="MeshInstance3D" parent="." unique_id=1613249176]
+transform = Transform3D(1, 0, 0, 0, 0.4, 0, 0, 0, 1, 0, 0, -0.05)
+mesh = SubResource("SphereMesh_lphl6")

@@ -1,0 +1,52 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://building/props/materials/plastic_black.tres" id="1_l01ys"]
+[ext_resource type="Material" path="res://building/props/materials/metal_dark.tres" id="2_2ofcb"]
+[ext_resource type="Material" path="res://building/props/materials/light_emit.tres" id="3_cxf0c"]
+[ext_resource type="Material" path="res://building/props/materials/led_red.tres" id="4_a8lde"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_o54ye"]
+material = ExtResource("1_l01ys")
+top_radius = 0.018
+bottom_radius = 0.018
+height = 0.16
+radial_segments = 14
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_grdim"]
+material = ExtResource("2_2ofcb")
+top_radius = 0.032
+bottom_radius = 0.018
+height = 0.04
+radial_segments = 14
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_f2tx7"]
+material = ExtResource("3_cxf0c")
+top_radius = 0.028
+bottom_radius = 0.028
+height = 0.006
+radial_segments = 14
+rings = 1
+
+[sub_resource type="BoxMesh" id="BoxMesh_pe7yq"]
+material = ExtResource("4_a8lde")
+size = Vector3(0.015, 0.008, 0.012)
+
+[node name="Flashlight" type="Node3D" unique_id=761899279]
+
+[node name="Body" type="MeshInstance3D" parent="." unique_id=545017705]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0.018, 0)
+mesh = SubResource("CylinderMesh_o54ye")
+
+[node name="Head" type="MeshInstance3D" parent="." unique_id=158558307]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0.1, 0.018, 0)
+mesh = SubResource("CylinderMesh_grdim")
+
+[node name="Lens" type="MeshInstance3D" parent="." unique_id=500166126]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0.122, 0.018, 0)
+mesh = SubResource("CylinderMesh_f2tx7")
+
+[node name="Button" type="MeshInstance3D" parent="." unique_id=1755287296]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.039, 0)
+mesh = SubResource("BoxMesh_pe7yq")

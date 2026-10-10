@@ -1,0 +1,85 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://building/props/materials/metal_dark.tres" id="1_3jmgh"]
+[ext_resource type="Material" path="res://building/props/materials/metal_grey.tres" id="2_30na4"]
+[ext_resource type="Material" path="res://building/props/materials/paper_white.tres" id="3_n46y5"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_f1h3j"]
+material = ExtResource("1_3jmgh")
+top_radius = 0.14
+bottom_radius = 0.11
+height = 0.3
+radial_segments = 14
+rings = 1
+
+[sub_resource type="TorusMesh" id="TorusMesh_pu2no"]
+material = ExtResource("2_30na4")
+inner_radius = 0.135
+outer_radius = 0.15
+rings = 20
+ring_segments = 8
+
+[sub_resource type="SphereMesh" id="SphereMesh_tq2tj"]
+material = ExtResource("3_n46y5")
+radius = 0.045
+height = 0.09
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_krqjb"]
+material = ExtResource("3_n46y5")
+radius = 0.045
+height = 0.09
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_loq6s"]
+material = ExtResource("3_n46y5")
+radius = 0.045
+height = 0.09
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_ep8h5"]
+material = ExtResource("3_n46y5")
+radius = 0.045
+height = 0.09
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_phoyl"]
+material = ExtResource("3_n46y5")
+radius = 0.045
+height = 0.09
+radial_segments = 14
+rings = 7
+
+[node name="TrashBin" type="Node3D" unique_id=1741488394]
+
+[node name="Body" type="MeshInstance3D" parent="." unique_id=1563089837]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
+mesh = SubResource("CylinderMesh_f1h3j")
+
+[node name="Rim" type="MeshInstance3D" parent="." unique_id=1188961227]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+mesh = SubResource("TorusMesh_pu2no")
+
+[node name="Paper0" type="MeshInstance3D" parent="." unique_id=891638017]
+transform = Transform3D(1, 0, 0, 0, 0.85, 0, 0, 0, 1, -0.04949125, 0.33681068, -0.0112192)
+mesh = SubResource("SphereMesh_tq2tj")
+
+[node name="Paper1" type="MeshInstance3D" parent="." unique_id=1399914722]
+transform = Transform3D(1, 0, 0, 0, 0.85, 0, 0, 0, 1, -0.023590833, 0.3334779, -0.0042162985)
+mesh = SubResource("SphereMesh_krqjb")
+
+[node name="Paper2" type="MeshInstance3D" parent="." unique_id=575335330]
+transform = Transform3D(1, 0, 0, 0, 0.85, 0, 0, 0, 1, -0.05099065, 0.31589574, -0.008959755)
+mesh = SubResource("SphereMesh_loq6s")
+
+[node name="Paper3" type="MeshInstance3D" parent="." unique_id=1685851817]
+transform = Transform3D(1, 0, 0, 0, 0.85, 0, 0, 0, 1, 0.01366128, 0.33904567, 0.028115012)
+mesh = SubResource("SphereMesh_ep8h5")
+
+[node name="Paper4" type="MeshInstance3D" parent="." unique_id=192829511]
+transform = Transform3D(1, 0, 0, 0, 0.85, 0, 0, 0, 1, 0.0344088, 0.33041584, 0.0025948957)
+mesh = SubResource("SphereMesh_phoyl")

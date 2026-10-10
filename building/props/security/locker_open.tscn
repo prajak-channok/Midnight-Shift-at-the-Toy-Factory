@@ -1,0 +1,56 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://building/props/materials/locker_blue.tres" id="1_olal4"]
+[ext_resource type="Material" path="res://building/props/materials/metal_dark.tres" id="2_2i4lw"]
+[ext_resource type="Material" path="res://building/props/materials/metal_grey.tres" id="3_issym"]
+[ext_resource type="Material" path="res://building/props/materials/jacket.tres" id="4_x1a51"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_wbu5e"]
+material = ExtResource("1_olal4")
+size = Vector3(0.45, 1.85, 0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_6pomk"]
+material = ExtResource("2_2i4lw")
+size = Vector3(0.4, 1.8, 0.02)
+
+[sub_resource type="BoxMesh" id="BoxMesh_dcvnr"]
+material = ExtResource("3_issym")
+size = Vector3(0.4, 0.02, 0.4)
+
+[sub_resource type="BoxMesh" id="BoxMesh_0omy3"]
+material = ExtResource("3_issym")
+size = Vector3(0.3, 0.01, 0.01)
+
+[sub_resource type="BoxMesh" id="BoxMesh_2jlwv"]
+material = ExtResource("4_x1a51")
+size = Vector3(0.3, 0.5, 0.08)
+
+[sub_resource type="BoxMesh" id="BoxMesh_7kpsp"]
+material = ExtResource("1_olal4")
+size = Vector3(0.43, 1.8, 0.02)
+
+[node name="LockerOpen" type="Node3D" unique_id=1034058386]
+
+[node name="Body" type="MeshInstance3D" parent="." unique_id=547750752]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.925, 0)
+mesh = SubResource("BoxMesh_wbu5e")
+
+[node name="Inside" type="MeshInstance3D" parent="." unique_id=2142502351]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.925, -0.22)
+mesh = SubResource("BoxMesh_6pomk")
+
+[node name="Shelf" type="MeshInstance3D" parent="." unique_id=178766977]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -0.02)
+mesh = SubResource("BoxMesh_dcvnr")
+
+[node name="Hanger" type="MeshInstance3D" parent="." unique_id=2011819511]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, -0.15)
+mesh = SubResource("BoxMesh_0omy3")
+
+[node name="Jacket" type="MeshInstance3D" parent="." unique_id=920301273]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, -0.15)
+mesh = SubResource("BoxMesh_2jlwv")
+
+[node name="Door" type="MeshInstance3D" parent="." unique_id=1314125328]
+transform = Transform3D(0.17364822, 0, -0.9848077, 0, 1, 0, 0.9848077, 0, 0.17364822, -0.17766564, 0.925, 0.47173366)
+mesh = SubResource("BoxMesh_7kpsp")

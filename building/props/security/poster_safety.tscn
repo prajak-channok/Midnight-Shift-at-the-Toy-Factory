@@ -1,0 +1,108 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://building/props/materials/black_text.tres" id="1_1s2eg"]
+[ext_resource type="Material" path="res://building/props/materials/paper_white.tres" id="2_2q6ri"]
+[ext_resource type="Material" path="res://building/props/materials/poster_hazard.tres" id="3_x74ih"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_6crus"]
+material = ExtResource("1_1s2eg")
+size = Vector3(0.62, 0.86, 0.03)
+
+[sub_resource type="BoxMesh" id="BoxMesh_x4bv1"]
+material = ExtResource("2_2q6ri")
+size = Vector3(0.56, 0.8, 0.01)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ik5i2"]
+material = ExtResource("3_x74ih")
+size = Vector3(0.56, 0.16, 0.012)
+
+[sub_resource type="BoxMesh" id="BoxMesh_nt67e"]
+material = ExtResource("1_1s2eg")
+size = Vector3(0.03, 0.17, 0.014)
+
+[sub_resource type="BoxMesh" id="BoxMesh_r8pat"]
+material = ExtResource("1_1s2eg")
+size = Vector3(0.03, 0.17, 0.014)
+
+[sub_resource type="BoxMesh" id="BoxMesh_b7r5t"]
+material = ExtResource("1_1s2eg")
+size = Vector3(0.03, 0.17, 0.014)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ljv15"]
+material = ExtResource("1_1s2eg")
+size = Vector3(0.03, 0.17, 0.014)
+
+[sub_resource type="BoxMesh" id="BoxMesh_bnh0y"]
+material = ExtResource("1_1s2eg")
+size = Vector3(0.03, 0.17, 0.014)
+
+[sub_resource type="BoxMesh" id="BoxMesh_3fk8n"]
+material = ExtResource("1_1s2eg")
+size = Vector3(0.03, 0.17, 0.014)
+
+[sub_resource type="BoxMesh" id="BoxMesh_on73e"]
+material = ExtResource("1_1s2eg")
+size = Vector3(0.03, 0.17, 0.014)
+
+[node name="PosterSafety" type="Node3D" unique_id=492393712]
+
+[node name="Frame" type="MeshInstance3D" parent="." unique_id=409534305]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.015)
+mesh = SubResource("BoxMesh_6crus")
+
+[node name="Paper" type="MeshInstance3D" parent="." unique_id=1811415652]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.032)
+mesh = SubResource("BoxMesh_x4bv1")
+
+[node name="Header" type="MeshInstance3D" parent="." unique_id=609968304]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.32, 0.036)
+mesh = SubResource("BoxMesh_ik5i2")
+
+[node name="Stripe0" type="MeshInstance3D" parent="." unique_id=583206558]
+transform = Transform3D(0.8660254, -0.5, 0, 0.5, 0.8660254, 0, 0, 0, 1, -0.24, 0.32, 0.037)
+mesh = SubResource("BoxMesh_nt67e")
+
+[node name="Stripe1" type="MeshInstance3D" parent="." unique_id=257182493]
+transform = Transform3D(0.8660254, -0.5, 0, 0.5, 0.8660254, 0, 0, 0, 1, -0.16, 0.32, 0.037)
+mesh = SubResource("BoxMesh_r8pat")
+
+[node name="Stripe2" type="MeshInstance3D" parent="." unique_id=1270991273]
+transform = Transform3D(0.8660254, -0.5, 0, 0.5, 0.8660254, 0, 0, 0, 1, -0.08, 0.32, 0.037)
+mesh = SubResource("BoxMesh_b7r5t")
+
+[node name="Stripe3" type="MeshInstance3D" parent="." unique_id=1815674524]
+transform = Transform3D(0.8660254, -0.5, 0, 0.5, 0.8660254, 0, 0, 0, 1, 0, 0.32, 0.037)
+mesh = SubResource("BoxMesh_ljv15")
+
+[node name="Stripe4" type="MeshInstance3D" parent="." unique_id=174367090]
+transform = Transform3D(0.8660254, -0.5, 0, 0.5, 0.8660254, 0, 0, 0, 1, 0.08, 0.32, 0.037)
+mesh = SubResource("BoxMesh_bnh0y")
+
+[node name="Stripe5" type="MeshInstance3D" parent="." unique_id=308053965]
+transform = Transform3D(0.8660254, -0.5, 0, 0.5, 0.8660254, 0, 0, 0, 1, 0.16, 0.32, 0.037)
+mesh = SubResource("BoxMesh_3fk8n")
+
+[node name="Stripe6" type="MeshInstance3D" parent="." unique_id=962271329]
+transform = Transform3D(0.8660254, -0.5, 0, 0.5, 0.8660254, 0, 0, 0, 1, 0.24, 0.32, 0.037)
+mesh = SubResource("BoxMesh_on73e")
+
+[node name="Title" type="Label3D" parent="." unique_id=1904174714]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0.042)
+pixel_size = 0.0019
+modulate = Color(0.6, 0.05, 0.03, 1)
+text = "SAFETY
+FIRST"
+font_size = 64
+outline_size = 0
+
+[node name="Rules" type="Label3D" parent="." unique_id=1847766592]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.22, 0.042)
+pixel_size = 0.0007
+modulate = Color(0.1, 0.1, 0.1, 1)
+text = "NIGHT SHIFT
+CHECK THE DOORS
+WATCH YOUR POWER
+DO NOT LEAVE
+YOUR POST"
+font_size = 64
+outline_size = 0

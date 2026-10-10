@@ -1,0 +1,107 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://building/props/materials/soot.tres" id="1_gtb2d"]
+[ext_resource type="Material" path="res://building/props/materials/singed_plush.tres" id="2_1nbdc"]
+[ext_resource type="Material" path="res://building/props/materials/char.tres" id="3_8n1uw"]
+[ext_resource type="Material" path="res://building/props/materials/ceramic_white.tres" id="4_jb46b"]
+[ext_resource type="Material" path="res://building/props/materials/rubber_black.tres" id="5_xb35p"]
+[ext_resource type="Material" path="res://building/props/materials/burnt_red.tres" id="6_6yak4"]
+[ext_resource type="Material" path="res://building/props/materials/melted_plastic.tres" id="7_b8cnj"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_adtbh"]
+material = ExtResource("1_gtb2d")
+radius = 0.07
+height = 0.14
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_p08yh"]
+material = ExtResource("2_1nbdc")
+radius = 0.062
+height = 0.124
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_y18g7"]
+material = ExtResource("3_8n1uw")
+radius = 0.07
+height = 0.14
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_3ua5w"]
+material = ExtResource("4_jb46b")
+radius = 0.014
+height = 0.028
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_kltu3"]
+material = ExtResource("5_xb35p")
+radius = 0.007
+height = 0.014
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_rcqk7"]
+material = ExtResource("3_8n1uw")
+radius = 0.016
+height = 0.032
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_gfiym"]
+material = ExtResource("2_1nbdc")
+radius = 0.008
+height = 0.016
+radial_segments = 14
+rings = 7
+
+[sub_resource type="BoxMesh" id="BoxMesh_iwnua"]
+material = ExtResource("6_6yak4")
+size = Vector3(0.03, 0.006, 0.008)
+
+[sub_resource type="SphereMesh" id="SphereMesh_f4kfi"]
+material = ExtResource("7_b8cnj")
+radius = 0.035
+height = 0.07
+radial_segments = 14
+rings = 7
+
+[node name="DollHead" type="Node3D" unique_id=590647117]
+
+[node name="Head" type="MeshInstance3D" parent="." unique_id=529443424]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.07, 0)
+mesh = SubResource("SphereMesh_adtbh")
+
+[node name="Face" type="MeshInstance3D" parent="." unique_id=1316011471]
+transform = Transform3D(0.9, 0, 0, 0, 1, 0, 0, 0, 0.9, 0.01, 0.07, 0.015)
+mesh = SubResource("SphereMesh_p08yh")
+
+[node name="Hair" type="MeshInstance3D" parent="." unique_id=272043487]
+transform = Transform3D(1, 0, 0, 0, 0.65, 0, 0, 0, 1, 0, 0.1, -0.015)
+mesh = SubResource("SphereMesh_y18g7")
+
+[node name="EyeL" type="MeshInstance3D" parent="." unique_id=447792093]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.025, 0.08, 0.06)
+mesh = SubResource("SphereMesh_3ua5w")
+
+[node name="PupilL" type="MeshInstance3D" parent="." unique_id=1753233919]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.025, 0.08, 0.072)
+mesh = SubResource("SphereMesh_kltu3")
+
+[node name="EyeSocketR" type="MeshInstance3D" parent="." unique_id=1616649910]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.028, 0.08, 0.058)
+mesh = SubResource("SphereMesh_rcqk7")
+
+[node name="Nose" type="MeshInstance3D" parent="." unique_id=445757765]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.065, 0.07)
+mesh = SubResource("SphereMesh_gfiym")
+
+[node name="Mouth" type="MeshInstance3D" parent="." unique_id=1781125901]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.04, 0.066)
+mesh = SubResource("BoxMesh_iwnua")
+
+[node name="Melt" type="MeshInstance3D" parent="." unique_id=1671152771]
+transform = Transform3D(1, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0.03, 0.05, 0.045)
+mesh = SubResource("SphereMesh_f4kfi")

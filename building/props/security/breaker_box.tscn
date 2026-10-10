@@ -1,0 +1,48 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://building/props/materials/metal_grey.tres" id="1_suptm"]
+[ext_resource type="Material" path="res://building/props/materials/metal_dark.tres" id="2_lnnl2"]
+[ext_resource type="Material" path="res://building/props/materials/red_paint.tres" id="3_1nyfb"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_u7p5f"]
+material = ExtResource("1_suptm")
+size = Vector3(0.45, 0.6, 0.12)
+
+[sub_resource type="BoxMesh" id="BoxMesh_5ueig"]
+material = ExtResource("2_lnnl2")
+size = Vector3(0.41, 0.56, 0.015)
+
+[sub_resource type="BoxMesh" id="BoxMesh_sdu72"]
+material = ExtResource("3_1nyfb")
+size = Vector3(0.02, 0.12, 0.03)
+
+[sub_resource type="BoxMesh" id="BoxMesh_t8exp"]
+material = ExtResource("3_1nyfb")
+size = Vector3(0.22, 0.12, 0.004)
+
+[node name="BreakerBox" type="Node3D" unique_id=476087416]
+
+[node name="Body" type="MeshInstance3D" parent="." unique_id=1589286932]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.06)
+mesh = SubResource("BoxMesh_u7p5f")
+
+[node name="Door" type="MeshInstance3D" parent="." unique_id=2104258920]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.125)
+mesh = SubResource("BoxMesh_5ueig")
+
+[node name="Handle" type="MeshInstance3D" parent="." unique_id=2096527228]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0, 0.14)
+mesh = SubResource("BoxMesh_sdu72")
+
+[node name="Warning" type="Label3D" parent="." unique_id=1709844210]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0.134)
+pixel_size = 0.0013
+modulate = Color(0.75, 0.55, 0.05, 1)
+text = "DANGER
+HIGH VOLTAGE"
+font_size = 64
+outline_size = 0
+
+[node name="WarnPlate" type="MeshInstance3D" parent="." unique_id=752609160]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0.133)
+mesh = SubResource("BoxMesh_t8exp")

@@ -1,0 +1,92 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://building/props/materials/rust.tres" id="1_e86qv"]
+[ext_resource type="Material" path="res://building/props/materials/char.tres" id="2_0v01a"]
+[ext_resource type="Material" path="res://building/props/materials/steel_burnt.tres" id="3_tncmm"]
+[ext_resource type="Material" path="res://building/props/materials/steel_dull.tres" id="4_4cwoa"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ymjde"]
+material = ExtResource("1_e86qv")
+top_radius = 0.3
+bottom_radius = 0.3
+height = 0.9
+radial_segments = 14
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_msmyx"]
+material = ExtResource("2_0v01a")
+top_radius = 0.305
+bottom_radius = 0.305
+height = 0.4
+radial_segments = 14
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_jwc7a"]
+material = ExtResource("3_tncmm")
+top_radius = 0.31
+bottom_radius = 0.31
+height = 0.04
+radial_segments = 14
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ewg7n"]
+material = ExtResource("3_tncmm")
+top_radius = 0.31
+bottom_radius = 0.31
+height = 0.04
+radial_segments = 14
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_idr5f"]
+material = ExtResource("3_tncmm")
+top_radius = 0.31
+bottom_radius = 0.31
+height = 0.04
+radial_segments = 14
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_1rgnc"]
+material = ExtResource("2_0v01a")
+top_radius = 0.28
+bottom_radius = 0.28
+height = 0.025
+radial_segments = 14
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_2a7wy"]
+material = ExtResource("4_4cwoa")
+top_radius = 0.04
+bottom_radius = 0.04
+height = 0.03
+radial_segments = 14
+rings = 1
+
+[node name="Barrel" type="Node3D" unique_id=1521575945]
+
+[node name="Body" type="MeshInstance3D" parent="." unique_id=786538659]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
+mesh = SubResource("CylinderMesh_ymjde")
+
+[node name="Soot" type="MeshInstance3D" parent="." unique_id=1805719107]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.68, 0)
+mesh = SubResource("CylinderMesh_msmyx")
+
+[node name="Ring0" type="MeshInstance3D" parent="." unique_id=177752500]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
+mesh = SubResource("CylinderMesh_jwc7a")
+
+[node name="Ring1" type="MeshInstance3D" parent="." unique_id=1119969289]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
+mesh = SubResource("CylinderMesh_ewg7n")
+
+[node name="Ring2" type="MeshInstance3D" parent="." unique_id=1350912582]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
+mesh = SubResource("CylinderMesh_idr5f")
+
+[node name="Lid" type="MeshInstance3D" parent="." unique_id=66869920]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+mesh = SubResource("CylinderMesh_1rgnc")
+
+[node name="Bung" type="MeshInstance3D" parent="." unique_id=691996301]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12, 0.92, 0.08)
+mesh = SubResource("CylinderMesh_2a7wy")

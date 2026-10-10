@@ -1,0 +1,155 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://building/props/materials/rubble.tres" id="1_4ws7l"]
+[ext_resource type="Material" path="res://building/props/materials/soot.tres" id="2_rmute"]
+[ext_resource type="Material" path="res://building/props/materials/char.tres" id="3_pkv2y"]
+[ext_resource type="Material" path="res://building/props/materials/burnt_wood.tres" id="4_c421j"]
+[ext_resource type="Material" path="res://building/props/materials/rust.tres" id="5_sb07b"]
+[ext_resource type="Material" path="res://building/props/materials/ember.tres" id="6_mhs7a"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_3auky"]
+material = ExtResource("1_4ws7l")
+size = Vector3(0.20785564, 0.15302022, 0.12259504)
+
+[sub_resource type="BoxMesh" id="BoxMesh_vt1i4"]
+material = ExtResource("2_rmute")
+size = Vector3(0.27258557, 0.07859303, 0.12698413)
+
+[sub_resource type="BoxMesh" id="BoxMesh_owyic"]
+material = ExtResource("3_pkv2y")
+size = Vector3(0.21653403, 0.10701118, 0.17721698)
+
+[sub_resource type="BoxMesh" id="BoxMesh_l2dw3"]
+material = ExtResource("4_c421j")
+size = Vector3(0.24506275, 0.05162804, 0.10362828)
+
+[sub_resource type="BoxMesh" id="BoxMesh_q4cn6"]
+material = ExtResource("1_4ws7l")
+size = Vector3(0.257952, 0.08118787, 0.09187329)
+
+[sub_resource type="BoxMesh" id="BoxMesh_7ysac"]
+material = ExtResource("1_4ws7l")
+size = Vector3(0.08799748, 0.06272587, 0.08381732)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ryktj"]
+material = ExtResource("2_rmute")
+size = Vector3(0.17747173, 0.060205355, 0.09652939)
+
+[sub_resource type="BoxMesh" id="BoxMesh_5x06n"]
+material = ExtResource("3_pkv2y")
+size = Vector3(0.19668241, 0.063351884, 0.123895)
+
+[sub_resource type="BoxMesh" id="BoxMesh_docxl"]
+material = ExtResource("4_c421j")
+size = Vector3(0.1396803, 0.079175256, 0.2587273)
+
+[sub_resource type="BoxMesh" id="BoxMesh_q1key"]
+material = ExtResource("1_4ws7l")
+size = Vector3(0.2402481, 0.14404085, 0.1966669)
+
+[sub_resource type="BoxMesh" id="BoxMesh_7b5xf"]
+material = ExtResource("1_4ws7l")
+size = Vector3(0.23176582, 0.0721641, 0.18017292)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_re5vu"]
+material = ExtResource("5_sb07b")
+top_radius = 0.012
+bottom_radius = 0.012
+height = 0.8902247
+radial_segments = 6
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_tf4xd"]
+material = ExtResource("5_sb07b")
+top_radius = 0.01
+bottom_radius = 0.01
+height = 0.7566373
+radial_segments = 6
+rings = 1
+
+[sub_resource type="SphereMesh" id="SphereMesh_v8mch"]
+material = ExtResource("6_mhs7a")
+radius = 0.011
+height = 0.022
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_ublnc"]
+material = ExtResource("6_mhs7a")
+radius = 0.011
+height = 0.022
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_4smtf"]
+material = ExtResource("6_mhs7a")
+radius = 0.011
+height = 0.022
+radial_segments = 14
+rings = 7
+
+[node name="RubblePile" type="Node3D" unique_id=1332644814]
+
+[node name="Chunk0" type="MeshInstance3D" parent="." unique_id=23808965]
+transform = Transform3D(-0.7330482, 0.06805239, -0.6767638, 0.033876196, 0.9974003, 0.06360061, 0.67933255, 0.023696132, -0.73344785, -0.052724484, 0.10680435, -0.17939402)
+mesh = SubResource("BoxMesh_3auky")
+
+[node name="Chunk1" type="MeshInstance3D" parent="." unique_id=568309134]
+transform = Transform3D(0.9968493, 0.014518671, 0.07797887, -0.010387732, 0.99853396, -0.05312186, -0.07863582, 0.052144468, 0.9955387, 0.2984992, 0.058719933, -0.07602455)
+mesh = SubResource("BoxMesh_vt1i4")
+
+[node name="Chunk2" type="MeshInstance3D" parent="." unique_id=381277865]
+transform = Transform3D(0.8220314, -0.1322195, 0.55387944, 0.20873983, 0.9749299, -0.077067226, -0.5298038, 0.17896837, 0.82902247, 0.022272866, 0.04508549, -0.4179566)
+mesh = SubResource("BoxMesh_owyic")
+
+[node name="Chunk3" type="MeshInstance3D" parent="." unique_id=1224850153]
+transform = Transform3D(0.7617547, 0.005730316, -0.64784026, -0.31852764, 0.87406754, -0.3668053, 0.5641542, 0.48577067, 0.6676503, 0.27481997, 0.029354526, -0.03429868)
+mesh = SubResource("BoxMesh_l2dw3")
+
+[node name="Chunk4" type="MeshInstance3D" parent="." unique_id=1261013778]
+transform = Transform3D(-0.3654863, -0.18609706, -0.91202396, -0.17329551, 0.97628397, -0.12976241, 0.91454273, 0.110623285, -0.38906822, -0.118887626, 0.0378509, -0.43677565)
+mesh = SubResource("BoxMesh_q4cn6")
+
+[node name="Chunk5" type="MeshInstance3D" parent="." unique_id=238838239]
+transform = Transform3D(-0.9142662, 0.21927607, 0.3406396, 0.34256613, 0.8673136, 0.36113095, -0.21625395, 0.44686142, -0.8680721, 0.08659328, 0.031778596, 0.4391032)
+mesh = SubResource("BoxMesh_7ysac")
+
+[node name="Chunk6" type="MeshInstance3D" parent="." unique_id=1608820995]
+transform = Transform3D(0.9018587, 0.3664189, 0.22888435, -0.38491014, 0.9220645, 0.040512633, -0.19620156, -0.124636576, 0.9726102, 0.024679525, 0.048069473, 0.14915484)
+mesh = SubResource("BoxMesh_ryktj")
+
+[node name="Chunk7" type="MeshInstance3D" parent="." unique_id=1914841183]
+transform = Transform3D(0.4072941, 0.08679886, -0.9091631, 0.3398456, 0.909584, 0.23908576, 0.8477125, -0.4063533, 0.34096998, 0.03864384, 0.04528102, 0.23588023)
+mesh = SubResource("BoxMesh_5x06n")
+
+[node name="Chunk8" type="MeshInstance3D" parent="." unique_id=334949723]
+transform = Transform3D(0.8913878, 0.037043512, -0.45172498, -0.14032225, 0.9702418, -0.1973333, 0.43097255, 0.23928757, 0.8700598, 0.10146065, 0.04236851, -0.4032833)
+mesh = SubResource("BoxMesh_docxl")
+
+[node name="Chunk9" type="MeshInstance3D" parent="." unique_id=891751742]
+transform = Transform3D(0.5005039, 0.19331211, 0.8438757, 0.18877418, 0.9269272, -0.3242995, -0.84490246, 0.32161513, 0.42743838, 0.03859435, 0.11709608, -0.047692757)
+mesh = SubResource("BoxMesh_q1key")
+
+[node name="Chunk10" type="MeshInstance3D" parent="." unique_id=656151650]
+transform = Transform3D(0.75735426, -0.015704911, -0.6528154, -0.04087674, 0.99661, -0.0713982, 0.6517236, 0.08075869, 0.7541448, -0.15873995, 0.05822439, 0.08733893)
+mesh = SubResource("BoxMesh_7b5xf")
+
+[node name="Rebar1" type="MeshInstance3D" parent="." unique_id=1070235187]
+transform = Transform3D(0.369493, 0.8986495, -0.23644014, -0.8986495, 0.28082794, -0.3369936, -0.23644014, 0.3369936, 0.91133493, 0.099999994, 0.17500001, 0.05)
+mesh = SubResource("CylinderMesh_re5vu")
+
+[node name="Rebar2" type="MeshInstance3D" parent="." unique_id=998134129]
+transform = Transform3D(0.6875789, -0.59473675, -0.41656145, 0.59473675, 0.13216364, 0.7929824, -0.41656145, -0.7929824, 0.44458473, -0.125, 0.17, 0)
+mesh = SubResource("CylinderMesh_tf4xd")
+
+[node name="Ember0" type="MeshInstance3D" parent="." unique_id=1457701769]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10815801, 0.14, 0.15662782)
+mesh = SubResource("SphereMesh_v8mch")
+
+[node name="Ember1" type="MeshInstance3D" parent="." unique_id=687080342]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08385481, 0.15, -0.19664207)
+mesh = SubResource("SphereMesh_ublnc")
+
+[node name="Ember2" type="MeshInstance3D" parent="." unique_id=686693484]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17726545, 0.16, 0.07616882)
+mesh = SubResource("SphereMesh_4smtf")

@@ -1,0 +1,54 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://building/props/materials/paper_white.tres" id="1_05ror"]
+[ext_resource type="Material" path="res://building/props/materials/metal_grey.tres" id="2_nak8n"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_wo5e1"]
+material = ExtResource("1_05ror")
+size = Vector3(0.21, 0.004, 0.297)
+
+[sub_resource type="BoxMesh" id="BoxMesh_a3fmy"]
+material = ExtResource("1_05ror")
+size = Vector3(0.21, 0.004, 0.297)
+
+[sub_resource type="BoxMesh" id="BoxMesh_htj5l"]
+material = ExtResource("1_05ror")
+size = Vector3(0.21, 0.004, 0.297)
+
+[sub_resource type="BoxMesh" id="BoxMesh_bjcsu"]
+material = ExtResource("1_05ror")
+size = Vector3(0.21, 0.004, 0.297)
+
+[sub_resource type="BoxMesh" id="BoxMesh_18wvy"]
+material = ExtResource("1_05ror")
+size = Vector3(0.21, 0.004, 0.297)
+
+[sub_resource type="BoxMesh" id="BoxMesh_fme8p"]
+material = ExtResource("2_nak8n")
+size = Vector3(0.04, 0.012, 0.012)
+
+[node name="PaperStack" type="Node3D" unique_id=374748142]
+
+[node name="Sheet0" type="MeshInstance3D" parent="." unique_id=1909299759]
+transform = Transform3D(0.9848077, 0, -0.17364818, 0, 1, 0, 0.17364818, 0, 0.9848077, 0, 0.002, 0)
+mesh = SubResource("BoxMesh_wo5e1")
+
+[node name="Sheet1" type="MeshInstance3D" parent="." unique_id=582086324]
+transform = Transform3D(0.9975641, 0, -0.06975647, 0, 1, 0, 0.06975647, 0, 0.9975641, 0.002, 0.0065, 0.0015)
+mesh = SubResource("BoxMesh_a3fmy")
+
+[node name="Sheet2" type="MeshInstance3D" parent="." unique_id=123481930]
+transform = Transform3D(0.99939084, 0, 0.034899496, 0, 1, 0, -0.034899496, 0, 0.99939084, 0.004, 0.011, 0.003)
+mesh = SubResource("BoxMesh_htj5l")
+
+[node name="Sheet3" type="MeshInstance3D" parent="." unique_id=48658671]
+transform = Transform3D(0.99026805, 0, 0.1391731, 0, 1, 0, -0.1391731, 0, 0.99026805, 0.006, 0.0155, 0.0045)
+mesh = SubResource("BoxMesh_bjcsu")
+
+[node name="Sheet4" type="MeshInstance3D" parent="." unique_id=1596658528]
+transform = Transform3D(0.9702957, 0, 0.2419219, 0, 1, 0, -0.2419219, 0, 0.9702957, 0.008, 0.02, 0.006)
+mesh = SubResource("BoxMesh_18wvy")
+
+[node name="Clip" type="MeshInstance3D" parent="." unique_id=387801048]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.07, 0.03, -0.14)
+mesh = SubResource("BoxMesh_fme8p")

@@ -1,0 +1,46 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://building/props/materials/cardboard.tres" id="1_k8id8"]
+[ext_resource type="Material" path="res://building/props/materials/paper_white.tres" id="2_58xh6"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_i4v11"]
+material = ExtResource("1_k8id8")
+size = Vector3(0.42, 0.3, 0.32)
+
+[sub_resource type="BoxMesh" id="BoxMesh_5xyxp"]
+material = ExtResource("1_k8id8")
+size = Vector3(0.2, 0.01, 0.32)
+
+[sub_resource type="BoxMesh" id="BoxMesh_fn1qw"]
+material = ExtResource("1_k8id8")
+size = Vector3(0.2, 0.01, 0.3)
+
+[sub_resource type="BoxMesh" id="BoxMesh_f25kg"]
+material = ExtResource("1_k8id8")
+size = Vector3(0.42, 0.01, 0.16)
+
+[sub_resource type="BoxMesh" id="BoxMesh_hi4r0"]
+material = ExtResource("2_58xh6")
+size = Vector3(0.06, 0.002, 0.32)
+
+[node name="CardboardBox" type="Node3D" unique_id=1778423263]
+
+[node name="Body" type="MeshInstance3D" parent="." unique_id=35040340]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
+mesh = SubResource("BoxMesh_i4v11")
+
+[node name="FlapL" type="MeshInstance3D" parent="." unique_id=2114210833]
+transform = Transform3D(0.57357645, -0.81915206, 0, 0.81915206, 0.57357645, 0, 0, 0, 1, -0.25, 0.37, 0)
+mesh = SubResource("BoxMesh_5xyxp")
+
+[node name="FlapR" type="MeshInstance3D" parent="." unique_id=1484690756]
+transform = Transform3D(0.81915206, 0.57357645, 0, -0.57357645, 0.81915206, 0, 0, 0, 1, 0.24, 0.34, 0)
+mesh = SubResource("BoxMesh_fn1qw")
+
+[node name="FlapF" type="MeshInstance3D" parent="." unique_id=1641234262]
+transform = Transform3D(1, 0, 0, 0, 0.76604444, 0.6427876, 0, -0.6427876, 0.76604444, 0, 0.33, 0.22)
+mesh = SubResource("BoxMesh_f25kg")
+
+[node name="Tape" type="MeshInstance3D" parent="." unique_id=419683003]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.302, 0)
+mesh = SubResource("BoxMesh_hi4r0")

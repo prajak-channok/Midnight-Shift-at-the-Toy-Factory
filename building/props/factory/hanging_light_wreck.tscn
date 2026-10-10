@@ -1,0 +1,80 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://building/props/materials/wire_black.tres" id="1_uc7k0"]
+[ext_resource type="Material" path="res://building/props/materials/steel_dull.tres" id="2_7set4"]
+[ext_resource type="Material" path="res://building/props/materials/screen_dead.tres" id="3_35cy7"]
+[ext_resource type="Material" path="res://building/props/materials/ash.tres" id="4_dbu37"]
+[ext_resource type="Material" path="res://building/props/materials/char.tres" id="5_35ksi"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ihp2d"]
+material = ExtResource("1_uc7k0")
+top_radius = 0.012
+bottom_radius = 0.012
+height = 0.72
+radial_segments = 6
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_wwh1t"]
+material = ExtResource("1_uc7k0")
+top_radius = 0.012
+bottom_radius = 0.012
+height = 0.5678908
+radial_segments = 6
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_sctxk"]
+material = ExtResource("1_uc7k0")
+top_radius = 0.012
+bottom_radius = 0.012
+height = 0.60066634
+radial_segments = 6
+rings = 1
+
+[sub_resource type="BoxMesh" id="BoxMesh_cwnss"]
+material = ExtResource("2_7set4")
+size = Vector3(1.2, 0.07, 0.28)
+
+[sub_resource type="BoxMesh" id="BoxMesh_03drc"]
+material = ExtResource("3_35cy7")
+size = Vector3(1.1, 0.01, 0.22)
+
+[sub_resource type="BoxMesh" id="BoxMesh_l3npm"]
+material = ExtResource("4_dbu37")
+size = Vector3(0.5, 0.025, 0.025)
+
+[sub_resource type="BoxMesh" id="BoxMesh_xqe50"]
+material = ExtResource("5_35ksi")
+size = Vector3(0.7, 0.02, 0.29)
+
+[node name="HangingLightWreck" type="Node3D" unique_id=1083529493]
+
+[node name="WireL" type="MeshInstance3D" parent="." unique_id=458711064]
+transform = Transform3D(-1, 0, 0, 0, -1, 0, 0, 0, 1, -0.35, -0.36, 0)
+mesh = SubResource("CylinderMesh_ihp2d")
+
+[node name="WireR" type="MeshInstance3D" parent="." unique_id=61464821]
+transform = Transform3D(-0.6210784, 0.44022545, -0.6484313, -0.44022545, -0.88045096, -0.17609018, -0.6484313, 0.17609018, 0.74062747, 0.575, -0.25, 0.05)
+mesh = SubResource("CylinderMesh_wwh1t")
+
+[node name="WireR2" type="MeshInstance3D" parent="." unique_id=917779849]
+transform = Transform3D(0.00055235624, 0.033295758, -0.9994454, -0.033295758, -0.99889076, -0.033295684, -0.9994454, 0.033295684, 0.0005568862, 0.71000004, -0.8, 0.11)
+mesh = SubResource("CylinderMesh_sctxk")
+
+[node name="Fixture" type="Node3D" parent="." unique_id=1980126202]
+transform = Transform3D(0.8743548, -0.4649027, 0.1391731, 0.46947157, 0.88294756, 0, -0.12288255, 0.065337814, 0.99026805, -0.35, -0.78, 0)
+
+[node name="Housing" type="MeshInstance3D" parent="Fixture" unique_id=422116879]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.35, 0, 0)
+mesh = SubResource("BoxMesh_cwnss")
+
+[node name="Diffuser" type="MeshInstance3D" parent="Fixture" unique_id=1852088905]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.35, -0.04, 0)
+mesh = SubResource("BoxMesh_03drc")
+
+[node name="Tube" type="MeshInstance3D" parent="Fixture" unique_id=661420214]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, -0.05, 0)
+mesh = SubResource("BoxMesh_l3npm")
+
+[node name="Soot" type="MeshInstance3D" parent="Fixture" unique_id=933889410]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0, 0)
+mesh = SubResource("BoxMesh_xqe50")

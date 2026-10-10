@@ -1,0 +1,72 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://building/props/materials/plastic_beige.tres" id="1_b8xs8"]
+[ext_resource type="Material" path="res://building/props/materials/plastic_beige_dark.tres" id="2_shnv0"]
+[ext_resource type="Material" path="res://building/props/materials/screen_glow.tres" id="3_amb6s"]
+[ext_resource type="Material" path="res://building/props/materials/led_green.tres" id="4_tnktr"]
+[ext_resource type="Material" path="res://building/props/materials/plastic_black.tres" id="5_odfjb"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_157go"]
+material = ExtResource("1_b8xs8")
+size = Vector3(0.22, 0.025, 0.2)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_210hj"]
+material = ExtResource("2_shnv0")
+top_radius = 0.04
+bottom_radius = 0.05
+height = 0.05
+radial_segments = 14
+rings = 1
+
+[sub_resource type="BoxMesh" id="BoxMesh_dixgr"]
+material = ExtResource("1_b8xs8")
+size = Vector3(0.42, 0.36, 0.1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_yev5b"]
+material = ExtResource("3_amb6s")
+size = Vector3(0.34, 0.27, 0.012)
+
+[sub_resource type="BoxMesh" id="BoxMesh_7wc35"]
+material = ExtResource("2_shnv0")
+size = Vector3(0.32, 0.28, 0.26)
+
+[sub_resource type="SphereMesh" id="SphereMesh_nvstk"]
+material = ExtResource("4_tnktr")
+radius = 0.008
+height = 0.016
+radial_segments = 14
+rings = 7
+
+[sub_resource type="BoxMesh" id="BoxMesh_binag"]
+material = ExtResource("5_odfjb")
+size = Vector3(0.03, 0.015, 0.01)
+
+[node name="CrtMonitor" type="Node3D" unique_id=1324757477]
+
+[node name="Base" type="MeshInstance3D" parent="." unique_id=680453343]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0125, 0)
+mesh = SubResource("BoxMesh_157go")
+
+[node name="Neck" type="MeshInstance3D" parent="." unique_id=2058896939]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0)
+mesh = SubResource("CylinderMesh_210hj")
+
+[node name="Front" type="MeshInstance3D" parent="." unique_id=1176001119]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.27, 0.1)
+mesh = SubResource("BoxMesh_dixgr")
+
+[node name="Screen" type="MeshInstance3D" parent="." unique_id=1251585036]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.28, 0.151)
+mesh = SubResource("BoxMesh_yev5b")
+
+[node name="Rear" type="MeshInstance3D" parent="." unique_id=2091174263]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.27, -0.08)
+mesh = SubResource("BoxMesh_7wc35")
+
+[node name="Led" type="MeshInstance3D" parent="." unique_id=2082765001]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17, 0.12, 0.151)
+mesh = SubResource("SphereMesh_nvstk")
+
+[node name="Knob" type="MeshInstance3D" parent="." unique_id=472183477]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 0.12, 0.151)
+mesh = SubResource("BoxMesh_binag")

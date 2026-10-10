@@ -1,0 +1,76 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://building/props/materials/ceramic_white.tres" id="1_fwi0m"]
+[ext_resource type="Material" path="res://building/props/materials/paper_blue.tres" id="2_ackd3"]
+[ext_resource type="Material" path="res://building/props/materials/icing_pink.tres" id="3_ng014"]
+[ext_resource type="Material" path="res://building/props/materials/cherry.tres" id="4_on4q5"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_vulyc"]
+material = ExtResource("1_fwi0m")
+top_radius = 0.065
+bottom_radius = 0.06
+height = 0.008
+radial_segments = 14
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_3euk5"]
+material = ExtResource("2_ackd3")
+top_radius = 0.035
+bottom_radius = 0.025
+height = 0.04
+radial_segments = 14
+rings = 1
+
+[sub_resource type="SphereMesh" id="SphereMesh_k5nxh"]
+material = ExtResource("3_ng014")
+radius = 0.034
+height = 0.068
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_tpmd2"]
+material = ExtResource("4_on4q5")
+radius = 0.011
+height = 0.022
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_jryoa"]
+material = ExtResource("1_fwi0m")
+radius = 0.007
+height = 0.014
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_4s8ix"]
+material = ExtResource("1_fwi0m")
+radius = 0.007
+height = 0.014
+radial_segments = 14
+rings = 7
+
+[node name="Cupcake" type="Node3D" unique_id=1805958140]
+
+[node name="Plate" type="MeshInstance3D" parent="." unique_id=825307977]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.004, 0)
+mesh = SubResource("CylinderMesh_vulyc")
+
+[node name="Wrapper" type="MeshInstance3D" parent="." unique_id=1282983832]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.028, 0)
+mesh = SubResource("CylinderMesh_3euk5")
+
+[node name="Icing" type="MeshInstance3D" parent="." unique_id=1712658706]
+transform = Transform3D(1, 0, 0, 0, 0.8, 0, 0, 0, 1, 0, 0.055, 0)
+mesh = SubResource("SphereMesh_k5nxh")
+
+[node name="Cherry" type="MeshInstance3D" parent="." unique_id=670135837]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.085, 0)
+mesh = SubResource("SphereMesh_tpmd2")
+
+[node name="EyeL" type="MeshInstance3D" parent="." unique_id=1574813228]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.014, 0.06, 0.03)
+mesh = SubResource("SphereMesh_jryoa")
+
+[node name="EyeR" type="MeshInstance3D" parent="." unique_id=1858523741]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.014, 0.06, 0.03)
+mesh = SubResource("SphereMesh_4s8ix")

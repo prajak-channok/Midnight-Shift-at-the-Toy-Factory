@@ -1,0 +1,107 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://building/props/materials/burnt_blue.tres" id="1_ygkd3"]
+[ext_resource type="Material" path="res://building/props/materials/char.tres" id="2_w1x0l"]
+[ext_resource type="Material" path="res://building/props/materials/steel_dull.tres" id="3_me18c"]
+[ext_resource type="Material" path="res://building/props/materials/led_red.tres" id="4_wpnvn"]
+[ext_resource type="Material" path="res://building/props/materials/burnt_red.tres" id="5_vblqd"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ft3ru"]
+material = ExtResource("1_ygkd3")
+size = Vector3(0.14, 0.18, 0.1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_dtuc5"]
+material = ExtResource("2_w1x0l")
+size = Vector3(0.145, 0.09, 0.105)
+
+[sub_resource type="BoxMesh" id="BoxMesh_vb5xu"]
+material = ExtResource("3_me18c")
+size = Vector3(0.1, 0.08, 0.09)
+
+[sub_resource type="BoxMesh" id="BoxMesh_4knfs"]
+material = ExtResource("4_wpnvn")
+size = Vector3(0.025, 0.02, 0.01)
+
+[sub_resource type="BoxMesh" id="BoxMesh_066ku"]
+material = ExtResource("2_w1x0l")
+size = Vector3(0.025, 0.02, 0.01)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_tlytq"]
+material = ExtResource("3_me18c")
+top_radius = 0.004
+bottom_radius = 0.004
+height = 0.082462125
+radial_segments = 6
+rings = 1
+
+[sub_resource type="SphereMesh" id="SphereMesh_3nj1p"]
+material = ExtResource("5_vblqd")
+radius = 0.012
+height = 0.024
+radial_segments = 14
+rings = 7
+
+[sub_resource type="BoxMesh" id="BoxMesh_xooku"]
+material = ExtResource("3_me18c")
+size = Vector3(0.04, 0.13, 0.05)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ybphc"]
+material = ExtResource("2_w1x0l")
+size = Vector3(0.04, 0.07, 0.05)
+
+[sub_resource type="BoxMesh" id="BoxMesh_rcxmp"]
+material = ExtResource("3_me18c")
+size = Vector3(0.05, 0.12, 0.06)
+
+[sub_resource type="BoxMesh" id="BoxMesh_cdtlr"]
+material = ExtResource("2_w1x0l")
+size = Vector3(0.05, 0.12, 0.06)
+
+[node name="ToyRobot" type="Node3D" unique_id=1301667134]
+
+[node name="Lying" type="Node3D" parent="." unique_id=1673068689]
+transform = Transform3D(0.8660254, -0.5, 0, 0.06958655, 0.120527446, 0.99026805, -0.49513403, -0.8575973, 0.1391731, 0, 0.06, 0)
+
+[node name="Torso" type="MeshInstance3D" parent="Lying" unique_id=181665930]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
+mesh = SubResource("BoxMesh_ft3ru")
+
+[node name="TorsoSoot" type="MeshInstance3D" parent="Lying" unique_id=96130600]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.19, 0)
+mesh = SubResource("BoxMesh_dtuc5")
+
+[node name="Head" type="MeshInstance3D" parent="Lying" unique_id=1949545579]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.28, 0)
+mesh = SubResource("BoxMesh_vb5xu")
+
+[node name="EyeL" type="MeshInstance3D" parent="Lying" unique_id=1001452967]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.025, 0.285, 0.046)
+mesh = SubResource("BoxMesh_4knfs")
+
+[node name="EyeR" type="MeshInstance3D" parent="Lying" unique_id=521543180]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.025, 0.285, 0.046)
+mesh = SubResource("BoxMesh_066ku")
+
+[node name="Antenna" type="MeshInstance3D" parent="Lying" unique_id=2116433831]
+transform = Transform3D(0.9701425, 0.24253559, 0, -0.24253559, 0.9701425, 0, 0, 0, 1, 0.01, 0.36, 0)
+mesh = SubResource("CylinderMesh_tlytq")
+
+[node name="AntBall" type="MeshInstance3D" parent="Lying" unique_id=40677240]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02, 0.405, 0)
+mesh = SubResource("SphereMesh_3nj1p")
+
+[node name="ArmL" type="MeshInstance3D" parent="Lying" unique_id=698307615]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, 0.15, 0)
+mesh = SubResource("BoxMesh_xooku")
+
+[node name="ArmR" type="MeshInstance3D" parent="Lying" unique_id=601928765]
+transform = Transform3D(0.8660254, 0.5, 0, -0.5, 0.8660254, 0, 0, 0, 1, 0.1, 0.18, 0)
+mesh = SubResource("BoxMesh_ybphc")
+
+[node name="LegL" type="MeshInstance3D" parent="Lying" unique_id=869250723]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.04, 0, 0)
+mesh = SubResource("BoxMesh_rcxmp")
+
+[node name="LegR" type="MeshInstance3D" parent="Lying" unique_id=1044267789]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04, 0, 0)
+mesh = SubResource("BoxMesh_cdtlr")

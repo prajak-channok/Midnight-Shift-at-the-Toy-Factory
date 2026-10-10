@@ -1,0 +1,22 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://building/props/materials/rug_dark.tres" id="1_3gmoq"]
+[ext_resource type="Material" path="res://building/props/materials/yellow_paint.tres" id="2_aci6r"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_5sqim"]
+material = ExtResource("1_3gmoq")
+size = Vector3(1, 0.015, 0.6)
+
+[sub_resource type="BoxMesh" id="BoxMesh_dd80y"]
+material = ExtResource("2_aci6r")
+size = Vector3(0.9, 0.016, 0.06)
+
+[node name="DoorMat" type="Node3D" unique_id=1728853788]
+
+[node name="Mat" type="MeshInstance3D" parent="." unique_id=1954056260]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0075, 0)
+mesh = SubResource("BoxMesh_5sqim")
+
+[node name="Stripe" type="MeshInstance3D" parent="." unique_id=1811587404]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0078, 0)
+mesh = SubResource("BoxMesh_dd80y")

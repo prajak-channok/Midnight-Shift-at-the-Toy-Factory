@@ -1,0 +1,75 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://building/props/materials/sign_burnt.tres" id="1_i724e"]
+[ext_resource type="Material" path="res://building/props/materials/char.tres" id="2_tlbrb"]
+[ext_resource type="Material" path="res://building/props/materials/wire_black.tres" id="3_q2pap"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_cqmlc"]
+material = ExtResource("1_i724e")
+size = Vector3(2.4, 0.5, 0.01)
+
+[sub_resource type="BoxMesh" id="BoxMesh_grfk8"]
+material = ExtResource("1_i724e")
+size = Vector3(0.7, 0.4, 0.01)
+
+[sub_resource type="SphereMesh" id="SphereMesh_rm24h"]
+material = ExtResource("2_tlbrb")
+radius = 0.3
+height = 0.6
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_j2j5j"]
+material = ExtResource("2_tlbrb")
+radius = 0.22
+height = 0.44
+radial_segments = 14
+rings = 7
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_o00tm"]
+material = ExtResource("3_q2pap")
+top_radius = 0.01
+bottom_radius = 0.01
+height = 0.5147815
+radial_segments = 6
+rings = 1
+
+[node name="Banner" type="Node3D" unique_id=314586460]
+
+[node name="Top" type="MeshInstance3D" parent="." unique_id=1660681044]
+mesh = SubResource("BoxMesh_cqmlc")
+
+[node name="Name" type="Label3D" parent="." unique_id=887105036]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.02, 0.008)
+pixel_size = 0.004
+modulate = Color(0.05, 0.03, 0.02, 1)
+text = "WONDERMOLD"
+font_size = 64
+outline_size = 0
+
+[node name="Torn" type="Node3D" parent="." unique_id=250392162]
+transform = Transform3D(0.92718387, 0.37460658, 0, -0.37460658, 0.92718387, 0, 0, 0, 1, 0.8, -0.25, 0)
+
+[node name="Strip" type="MeshInstance3D" parent="Torn" unique_id=356217781]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2, 0)
+mesh = SubResource("BoxMesh_grfk8")
+
+[node name="Toys" type="Label3D" parent="Torn" unique_id=1682013898]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2, 0.008)
+pixel_size = 0.004
+modulate = Color(0.05, 0.03, 0.02, 1)
+text = "TOYS"
+font_size = 64
+outline_size = 0
+
+[node name="BurnL" type="MeshInstance3D" parent="." unique_id=963677884]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.03, -1.05, -0.1, 0.006)
+mesh = SubResource("SphereMesh_rm24h")
+
+[node name="BurnR" type="MeshInstance3D" parent="." unique_id=1772367402]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.03, 1, 0.1, 0.006)
+mesh = SubResource("SphereMesh_j2j5j")
+
+[node name="RopeL" type="MeshInstance3D" parent="." unique_id=597435124]
+transform = Transform3D(0.8741573, -0.4856429, 0, 0.4856429, 0.8741573, 0, 0, 0, 1, -1.225, 0.475, 0)
+mesh = SubResource("CylinderMesh_o00tm")

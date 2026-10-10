@@ -1,0 +1,127 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://building/props/materials/fridge_cream.tres" id="1_v3u4x"]
+[ext_resource type="Material" path="res://building/props/materials/metal_grey.tres" id="2_jk220"]
+[ext_resource type="Material" path="res://building/props/materials/red_paint.tres" id="3_5bl2s"]
+[ext_resource type="Material" path="res://building/props/materials/paper_yellow.tres" id="4_m3khv"]
+[ext_resource type="Material" path="res://building/props/materials/plastic_black.tres" id="5_30jdn"]
+[ext_resource type="Material" path="res://building/props/materials/glass_clear.tres" id="6_uvn5a"]
+[ext_resource type="Material" path="res://building/props/materials/coffee.tres" id="7_m42k7"]
+[ext_resource type="Material" path="res://building/props/materials/led_red.tres" id="8_ovmcg"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_e2bao"]
+material = ExtResource("1_v3u4x")
+size = Vector3(0.5, 0.85, 0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_j1836"]
+material = ExtResource("1_v3u4x")
+size = Vector3(0.48, 0.55, 0.02)
+
+[sub_resource type="BoxMesh" id="BoxMesh_t83gw"]
+material = ExtResource("1_v3u4x")
+size = Vector3(0.48, 0.24, 0.02)
+
+[sub_resource type="BoxMesh" id="BoxMesh_essq3"]
+material = ExtResource("2_jk220")
+size = Vector3(0.02, 0.3, 0.03)
+
+[sub_resource type="BoxMesh" id="BoxMesh_vkuqm"]
+material = ExtResource("2_jk220")
+size = Vector3(0.02, 0.1, 0.03)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ejbi1"]
+material = ExtResource("3_5bl2s")
+size = Vector3(0.06, 0.06, 0.008)
+
+[sub_resource type="BoxMesh" id="BoxMesh_yvycw"]
+material = ExtResource("4_m3khv")
+size = Vector3(0.1, 0.07, 0.006)
+
+[sub_resource type="BoxMesh" id="BoxMesh_6cxxb"]
+material = ExtResource("5_30jdn")
+size = Vector3(0.2, 0.03, 0.2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_dlr2a"]
+material = ExtResource("5_30jdn")
+size = Vector3(0.2, 0.28, 0.06)
+
+[sub_resource type="BoxMesh" id="BoxMesh_n8q7p"]
+material = ExtResource("5_30jdn")
+size = Vector3(0.2, 0.06, 0.18)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_q8rhh"]
+material = ExtResource("6_uvn5a")
+top_radius = 0.06
+bottom_radius = 0.06
+height = 0.15
+radial_segments = 14
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_748hv"]
+material = ExtResource("7_m42k7")
+top_radius = 0.055
+bottom_radius = 0.055
+height = 0.08
+radial_segments = 14
+rings = 1
+
+[sub_resource type="SphereMesh" id="SphereMesh_1hiwe"]
+material = ExtResource("8_ovmcg")
+radius = 0.008
+height = 0.016
+radial_segments = 14
+rings = 7
+
+[node name="MiniFridge" type="Node3D" unique_id=1194768683]
+
+[node name="Body" type="MeshInstance3D" parent="." unique_id=1895746362]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.425, 0)
+mesh = SubResource("BoxMesh_e2bao")
+
+[node name="Door" type="MeshInstance3D" parent="." unique_id=149483699]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.34, 0.255)
+mesh = SubResource("BoxMesh_j1836")
+
+[node name="FreezerDoor" type="MeshInstance3D" parent="." unique_id=1648086233]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.71, 0.255)
+mesh = SubResource("BoxMesh_t83gw")
+
+[node name="Handle" type="MeshInstance3D" parent="." unique_id=154199966]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0.4, 0.285)
+mesh = SubResource("BoxMesh_essq3")
+
+[node name="Handle2" type="MeshInstance3D" parent="." unique_id=2066626044]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0.71, 0.285)
+mesh = SubResource("BoxMesh_vkuqm")
+
+[node name="Magnet1" type="MeshInstance3D" parent="." unique_id=190635869]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, 0.5, 0.267)
+mesh = SubResource("BoxMesh_ejbi1")
+
+[node name="Magnet2" type="MeshInstance3D" parent="." unique_id=997116684]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12, 0.28, 0.266)
+mesh = SubResource("BoxMesh_yvycw")
+
+[node name="CoffeeBase" type="MeshInstance3D" parent="." unique_id=1943920800]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.865, 0)
+mesh = SubResource("BoxMesh_6cxxb")
+
+[node name="CoffeeBack" type="MeshInstance3D" parent="." unique_id=1830153549]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -0.07)
+mesh = SubResource("BoxMesh_dlr2a")
+
+[node name="CoffeeTop" type="MeshInstance3D" parent="." unique_id=279561533]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.14, -0.02)
+mesh = SubResource("BoxMesh_n8q7p")
+
+[node name="Pot" type="MeshInstance3D" parent="." unique_id=1759037134]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.95, 0.04)
+mesh = SubResource("CylinderMesh_q8rhh")
+
+[node name="PotCoffee" type="MeshInstance3D" parent="." unique_id=1150609129]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.92, 0.04)
+mesh = SubResource("CylinderMesh_748hv")
+
+[node name="CoffeeLed" type="MeshInstance3D" parent="." unique_id=804898131]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07, 1, 0)
+mesh = SubResource("SphereMesh_1hiwe")

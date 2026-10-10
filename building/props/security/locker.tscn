@@ -1,0 +1,72 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://building/props/materials/locker_blue.tres" id="1_xkrjj"]
+[ext_resource type="Material" path="res://building/props/materials/metal_dark.tres" id="2_2ok5v"]
+[ext_resource type="Material" path="res://building/props/materials/metal_grey.tres" id="3_5xx4x"]
+[ext_resource type="Material" path="res://building/props/materials/paper_white.tres" id="4_jl3rp"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_mu1n4"]
+material = ExtResource("1_xkrjj")
+size = Vector3(0.45, 1.85, 0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_sojeq"]
+material = ExtResource("1_xkrjj")
+size = Vector3(0.43, 1.8, 0.02)
+
+[sub_resource type="BoxMesh" id="BoxMesh_p3g07"]
+material = ExtResource("2_2ok5v")
+size = Vector3(0.3, 0.016, 0.006)
+
+[sub_resource type="BoxMesh" id="BoxMesh_w2163"]
+material = ExtResource("2_2ok5v")
+size = Vector3(0.3, 0.016, 0.006)
+
+[sub_resource type="BoxMesh" id="BoxMesh_lumgn"]
+material = ExtResource("2_2ok5v")
+size = Vector3(0.3, 0.016, 0.006)
+
+[sub_resource type="BoxMesh" id="BoxMesh_in2ab"]
+material = ExtResource("2_2ok5v")
+size = Vector3(0.3, 0.016, 0.006)
+
+[sub_resource type="BoxMesh" id="BoxMesh_5f8o7"]
+material = ExtResource("3_5xx4x")
+size = Vector3(0.03, 0.12, 0.03)
+
+[sub_resource type="BoxMesh" id="BoxMesh_cvgg5"]
+material = ExtResource("4_jl3rp")
+size = Vector3(0.12, 0.05, 0.006)
+
+[node name="Locker" type="Node3D" unique_id=1282041478]
+
+[node name="Body" type="MeshInstance3D" parent="." unique_id=784363484]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.925, 0)
+mesh = SubResource("BoxMesh_mu1n4")
+
+[node name="Door" type="MeshInstance3D" parent="." unique_id=1876054384]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.925, 0.26)
+mesh = SubResource("BoxMesh_sojeq")
+
+[node name="Vent0" type="MeshInstance3D" parent="." unique_id=1370499524]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.58, 0.273)
+mesh = SubResource("BoxMesh_p3g07")
+
+[node name="Vent1" type="MeshInstance3D" parent="." unique_id=1244761736]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.62, 0.273)
+mesh = SubResource("BoxMesh_w2163")
+
+[node name="Vent2" type="MeshInstance3D" parent="." unique_id=554503175]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.66, 0.273)
+mesh = SubResource("BoxMesh_lumgn")
+
+[node name="Vent3" type="MeshInstance3D" parent="." unique_id=181717254]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0.273)
+mesh = SubResource("BoxMesh_in2ab")
+
+[node name="Handle" type="MeshInstance3D" parent="." unique_id=1784230614]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14, 1, 0.285)
+mesh = SubResource("BoxMesh_5f8o7")
+
+[node name="NamePlate" type="MeshInstance3D" parent="." unique_id=358979394]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0.273)
+mesh = SubResource("BoxMesh_cvgg5")

@@ -1,0 +1,90 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://building/props/materials/cardboard.tres" id="1_iq16q"]
+[ext_resource type="Material" path="res://building/props/materials/yellow_paint.tres" id="2_utldg"]
+[ext_resource type="Material" path="res://building/props/materials/burnt_red.tres" id="3_pmc2b"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_k3y7m"]
+material = ExtResource("1_iq16q")
+size = Vector3(0.36, 0.04, 0.36)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ccf4o"]
+material = ExtResource("2_utldg")
+top_radius = 0.15
+bottom_radius = 0.15
+height = 0.02
+radial_segments = 20
+rings = 1
+
+[sub_resource type="SphereMesh" id="SphereMesh_dmwtf"]
+material = ExtResource("3_pmc2b")
+radius = 0.03
+height = 0.06
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_q1wbb"]
+material = ExtResource("3_pmc2b")
+radius = 0.03
+height = 0.06
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_fsg3q"]
+material = ExtResource("3_pmc2b")
+radius = 0.03
+height = 0.06
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_4ypyj"]
+material = ExtResource("3_pmc2b")
+radius = 0.03
+height = 0.06
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_vags0"]
+material = ExtResource("3_pmc2b")
+radius = 0.03
+height = 0.06
+radial_segments = 14
+rings = 7
+
+[sub_resource type="BoxMesh" id="BoxMesh_fvau3"]
+material = ExtResource("1_iq16q")
+size = Vector3(0.36, 0.01, 0.36)
+
+[node name="PizzaBox" type="Node3D" unique_id=997272251]
+
+[node name="Base" type="MeshInstance3D" parent="." unique_id=978852794]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.02, 0)
+mesh = SubResource("BoxMesh_k3y7m")
+
+[node name="Pizza" type="MeshInstance3D" parent="." unique_id=1307810310]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.045, 0)
+mesh = SubResource("CylinderMesh_ccf4o")
+
+[node name="Pepperoni0" type="MeshInstance3D" parent="." unique_id=1536653643]
+transform = Transform3D(1, 0, 0, 0, 0.2, 0, 0, 0, 1, 0, 0.058, 0.08)
+mesh = SubResource("SphereMesh_dmwtf")
+
+[node name="Pepperoni1" type="MeshInstance3D" parent="." unique_id=1854532611]
+transform = Transform3D(1, 0, 0, 0, 0.2, 0, 0, 0, 1, 0.07708465, 0.058, 0.021399906)
+mesh = SubResource("SphereMesh_q1wbb")
+
+[node name="Pepperoni2" type="MeshInstance3D" parent="." unique_id=112104255]
+transform = Transform3D(1, 0, 0, 0, 0.2, 0, 0, 0, 1, 0.04124011, 0.058, -0.0685511)
+mesh = SubResource("SphereMesh_fsg3q")
+
+[node name="Pepperoni3" type="MeshInstance3D" parent="." unique_id=1201678031]
+transform = Transform3D(1, 0, 0, 0, 0.2, 0, 0, 0, 1, -0.055021293, 0.058, -0.058074586)
+mesh = SubResource("SphereMesh_4ypyj")
+
+[node name="Pepperoni4" type="MeshInstance3D" parent="." unique_id=1268940848]
+transform = Transform3D(1, 0, 0, 0, 0.2, 0, 0, 0, 1, -0.07067637, 0.058, 0.037481334)
+mesh = SubResource("SphereMesh_vags0")
+
+[node name="Lid" type="MeshInstance3D" parent="." unique_id=620553804]
+transform = Transform3D(1, 0, 0, 0, -0.1736482, 0.9848077, 0, -0.9848077, -0.1736482, 0, 0.2, -0.22)
+mesh = SubResource("BoxMesh_fvau3")
