@@ -1,70 +1,168 @@
 [gd_scene format=3]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y2dj2"]
-albedo_color = Color(0.39, 0.33, 0.07, 1)
-roughness = 0.6
+[ext_resource type="PackedScene" path="res://building/props/electrical/main_power_cabinet.tscn" id="p_cab"]
+[ext_resource type="PackedScene" path="res://building/props/electrical/sub_breaker_panel_open.tscn" id="p_subo"]
+[ext_resource type="PackedScene" path="res://building/props/electrical/sub_breaker_panel.tscn" id="p_sub"]
+[ext_resource type="PackedScene" path="res://building/props/electrical/ups_unit.tscn" id="p_ups"]
+[ext_resource type="PackedScene" path="res://building/props/electrical/cable_conduit.tscn" id="p_con"]
+[ext_resource type="PackedScene" path="res://building/props/electrical/high_voltage_sign.tscn" id="p_hv"]
+[ext_resource type="PackedScene" path="res://building/props/electrical/camera_status_panel.tscn" id="p_cam"]
+[ext_resource type="PackedScene" path="res://building/props/electrical/electrical_door.tscn" id="p_door"]
+[ext_resource type="PackedScene" path="res://building/props/factory/soot_stain.tscn" id="p_soot"]
+[ext_resource type="PackedScene" path="res://building/props/factory/puddle.tscn" id="p_pud"]
+[ext_resource type="PackedScene" path="res://building/props/factory/hazard_barrier.tscn" id="p_bar"]
+[ext_resource type="PackedScene" path="res://building/props/factory/warning_sign.tscn" id="p_warn"]
+[ext_resource type="Material" path="res://building/props/materials/steel_burnt.tres" id="m_trim"]
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_y2dj2"]
-material = SubResource("StandardMaterial3D_y2dj2")
-size = Vector2(10, 6)
+[sub_resource type="StandardMaterial3D" id="mf"]
+albedo_color = Color(0.22, 0.195, 0.15, 1)
+roughness = 0.55
+metallic_specular = 0.3
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_88wak"]
-albedo_color = Color(0.50699997, 0.429, 0.091, 1)
-roughness = 0.9
+[sub_resource type="StandardMaterial3D" id="mc"]
+albedo_color = Color(0.12, 0.11, 0.09, 1)
+roughness = 0.95
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_12tct"]
-material = SubResource("StandardMaterial3D_88wak")
-size = Vector2(10, 6)
+[sub_resource type="StandardMaterial3D" id="mw"]
+albedo_color = Color(0.32, 0.3, 0.22, 1)
+roughness = 0.95
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fbj68"]
-albedo_color = Color(0.78, 0.66, 0.14, 1)
-roughness = 0.9
+[sub_resource type="PlaneMesh" id="pf"]
+material = SubResource("mf")
+size = Vector2(5.6, 6.0)
 
-[sub_resource type="QuadMesh" id="QuadMesh_88wak"]
-material = SubResource("StandardMaterial3D_fbj68")
-size = Vector2(10, 3.5)
+[sub_resource type="PlaneMesh" id="pc"]
+material = SubResource("mc")
+size = Vector2(5.6, 6.0)
 
-[sub_resource type="QuadMesh" id="QuadMesh_dl5yv"]
-material = SubResource("StandardMaterial3D_fbj68")
-size = Vector2(10, 3.5)
+[sub_resource type="QuadMesh" id="qx"]
+material = SubResource("mw")
+size = Vector2(5.6, 3.5)
 
-[sub_resource type="QuadMesh" id="QuadMesh_fbj68"]
-material = SubResource("StandardMaterial3D_fbj68")
-size = Vector2(6, 3.5)
+[sub_resource type="QuadMesh" id="qz"]
+material = SubResource("mw")
+size = Vector2(6.0, 3.5)
 
-[sub_resource type="QuadMesh" id="QuadMesh_wvv4b"]
-material = SubResource("StandardMaterial3D_fbj68")
-size = Vector2(6, 3.5)
+[sub_resource type="BoxMesh" id="bx"]
+material = ExtResource("m_trim")
+size = Vector3(5.6, 0.14, 0.04)
 
-[node name="ElectricalRoom" type="Node3D" unique_id=1032769796]
+[sub_resource type="BoxMesh" id="bz"]
+material = ExtResource("m_trim")
+size = Vector3(0.04, 0.14, 6.0)
 
-[node name="Floor" type="MeshInstance3D" parent="." unique_id=863590650]
+[node name="ElectricalRoom" type="Node3D"]
+
+[node name="Floor" type="MeshInstance3D" parent="."]
 cast_shadow = 2
-mesh = SubResource("PlaneMesh_y2dj2")
+mesh = SubResource("pf")
 
-[node name="Ceiling" type="MeshInstance3D" parent="." unique_id=1477178883]
+[node name="Ceiling" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 3.5, 0)
 cast_shadow = 2
-mesh = SubResource("PlaneMesh_12tct")
+mesh = SubResource("pc")
 
-[node name="Walls" type="Node3D" parent="." unique_id=497769738]
+[node name="Walls" type="Node3D" parent="."]
 
-[node name="WallN" type="MeshInstance3D" parent="Walls" unique_id=781970751]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.75, -2.9999998)
+[node name="WallN" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.75, -3)
 cast_shadow = 2
-mesh = SubResource("QuadMesh_88wak")
+mesh = SubResource("qx")
 
-[node name="WallS" type="MeshInstance3D" parent="Walls" unique_id=267528795]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 1.75, 2.9999998)
+[node name="WallS" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 1.75, 3)
 cast_shadow = 2
-mesh = SubResource("QuadMesh_dl5yv")
+mesh = SubResource("qx")
 
-[node name="WallE" type="MeshInstance3D" parent="Walls" unique_id=1888544289]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 5, 1.75, 0)
+[node name="WallE" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 2.8, 1.75, 0)
 cast_shadow = 2
-mesh = SubResource("QuadMesh_fbj68")
+mesh = SubResource("qz")
 
-[node name="WallW" type="MeshInstance3D" parent="Walls" unique_id=8117940]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -5, 1.75, 0)
+[node name="WallW" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.8, 1.75, 0)
 cast_shadow = 2
-mesh = SubResource("QuadMesh_wvv4b")
+mesh = SubResource("qz")
+
+[node name="Trim" type="Node3D" parent="."]
+
+[node name="TrimN" type="MeshInstance3D" parent="Trim"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.07, -2.98)
+mesh = SubResource("bx")
+
+[node name="TrimS" type="MeshInstance3D" parent="Trim"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.07, 2.98)
+mesh = SubResource("bx")
+
+[node name="TrimE" type="MeshInstance3D" parent="Trim"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.78, 0.07, 0)
+mesh = SubResource("bz")
+
+[node name="TrimW" type="MeshInstance3D" parent="Trim"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.78, 0.07, 0)
+mesh = SubResource("bz")
+
+[node name="Props" type="Node3D" parent="."]
+
+[node name="MainCabinet" parent="Props" instance=ExtResource("p_cab")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 2.8, 0, -0.35)
+
+[node name="SubBreakerA" parent="Props" instance=ExtResource("p_subo")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 2.8, 1.4, -2.1)
+
+[node name="SubBreakerB" parent="Props" instance=ExtResource("p_sub")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 2.8, 1.4, 1.2)
+
+[node name="CameraStatusPanel" parent="Props" instance=ExtResource("p_cam")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 2.8, 1.6, 2.25)
+
+[node name="HvSignMain" parent="Props" instance=ExtResource("p_hv")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 2.8, 2.65, -0.35)
+
+[node name="SubBreakerC" parent="Props" instance=ExtResource("p_sub")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 1.5, -3)
+
+[node name="HvSignN" parent="Props" instance=ExtResource("p_hv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 2.4, -3)
+
+[node name="WarningSignN" parent="Props" instance=ExtResource("p_warn")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 1, -0.15, 2.05, -3)
+
+[node name="ConduitN" parent="Props" instance=ExtResource("p_con")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.85, 0, -3)
+
+[node name="UpsUnit" parent="Props" instance=ExtResource("p_ups")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.55, 0, -3)
+
+[node name="ConduitE1" parent="Props" instance=ExtResource("p_con")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 2.8, 0, -0.75)
+
+[node name="ConduitE2" parent="Props" instance=ExtResource("p_con")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 2.8, 0, 0.05)
+
+[node name="ConduitCeilingE" parent="Props" instance=ExtResource("p_con")]
+transform = Transform3D(1.9106855e-15, 4.371139e-08, -1, 1, -4.371139e-08, 0, -4.371139e-08, -1, -4.371139e-08, 2.8, 3.3, 0.5)
+
+[node name="ConduitCeilingE2" parent="Props" instance=ExtResource("p_con")]
+transform = Transform3D(1.9106855e-15, 4.371139e-08, -1, 1, -4.371139e-08, 0, -4.371139e-08, -1, -4.371139e-08, 2.8, 3.3, 3)
+
+[node name="ConduitCeilingN" parent="Props" instance=ExtResource("p_con")]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -1.2, 3.35, -3)
+
+[node name="Door" parent="Props" instance=ExtResource("p_door")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.4, 0, 3)
+
+[node name="SootDoor" parent="Props" instance=ExtResource("p_soot")]
+transform = Transform3D(-0.45, 0, -8.742278e-08, 0, 0.9, 0, 3.934025e-08, 0, -1, 1.9, 0, 2.995)
+
+[node name="SootCabinet" parent="Props" instance=ExtResource("p_soot")]
+transform = Transform3D(-3.059797e-08, 0, -1, 0, 0.8, 0, 0.7, 0, -4.371139e-08, 2.795, 0, -0.35)
+
+[node name="SootUps" parent="Props" instance=ExtResource("p_soot")]
+transform = Transform3D(0.5, 0, 0, 0, 0.95, 0, 0, 0, 1, 1.5, 0, -2.995)
+
+[node name="Puddle" parent="Props" instance=ExtResource("p_pud")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 1.4)
+
+[node name="HazardBarrier" parent="Props" instance=ExtResource("p_bar")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.45, 0, -0.5)

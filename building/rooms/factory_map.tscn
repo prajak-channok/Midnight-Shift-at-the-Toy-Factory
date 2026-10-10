@@ -27,7 +27,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.65, 0, -3)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.65, 0, -3)
 
 [node name="ElectricalRoom" type="Node3D" parent="." unique_id=1032769796 instance=ExtResource("5_cepq1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.9, 0, -4.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.7, 0, -4.5)
 
 [node name="PartsReturnsStorageRoom" type="Node3D" parent="." unique_id=1021523416 instance=ExtResource("6_5fixo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, -26.75)

@@ -1,0 +1,114 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://building/props/materials/steel_dull.tres" id="m_steel_dull"]
+[ext_resource type="Material" path="res://building/props/materials/metal_dark.tres" id="m_metal_dark"]
+[ext_resource type="Material" path="res://building/props/materials/steel_burnt.tres" id="m_steel_burnt"]
+[ext_resource type="Material" path="res://building/props/materials/rust.tres" id="m_rust"]
+[ext_resource type="Material" path="res://building/props/materials/wire_red.tres" id="m_wire_red"]
+[ext_resource type="Material" path="res://building/props/materials/wire_black.tres" id="m_wire_black"]
+
+[sub_resource type="CylinderMesh" id="s1"]
+material = ExtResource("m_steel_dull")
+top_radius = 0.04
+bottom_radius = 0.04
+height = 3.5
+radial_segments = 14
+rings = 1
+
+[sub_resource type="CylinderMesh" id="s2"]
+material = ExtResource("m_metal_dark")
+top_radius = 0.028
+bottom_radius = 0.028
+height = 3.5
+radial_segments = 14
+rings = 1
+
+[sub_resource type="BoxMesh" id="s3"]
+material = ExtResource("m_steel_burnt")
+size = Vector3(0.2, 0.05, 0.09)
+
+[sub_resource type="BoxMesh" id="s4"]
+material = ExtResource("m_steel_burnt")
+size = Vector3(0.2, 0.05, 0.09)
+
+[sub_resource type="BoxMesh" id="s5"]
+material = ExtResource("m_steel_burnt")
+size = Vector3(0.2, 0.05, 0.09)
+
+[sub_resource type="BoxMesh" id="s6"]
+material = ExtResource("m_steel_burnt")
+size = Vector3(0.2, 0.05, 0.09)
+
+[sub_resource type="BoxMesh" id="s7"]
+material = ExtResource("m_steel_burnt")
+size = Vector3(0.2, 0.05, 0.09)
+
+[sub_resource type="BoxMesh" id="s8"]
+material = ExtResource("m_steel_burnt")
+size = Vector3(0.2, 0.22, 0.1)
+
+[sub_resource type="BoxMesh" id="s9"]
+material = ExtResource("m_rust")
+size = Vector3(0.17, 0.19, 0.01)
+
+[sub_resource type="CylinderMesh" id="s10"]
+material = ExtResource("m_wire_red")
+top_radius = 0.012
+bottom_radius = 0.012
+height = 0.5
+radial_segments = 14
+rings = 1
+
+[sub_resource type="CylinderMesh" id="s11"]
+material = ExtResource("m_wire_black")
+top_radius = 0.012
+bottom_radius = 0.012
+height = 0.45
+radial_segments = 14
+rings = 1
+
+[node name="CableConduit" type="Node3D"]
+
+[node name="Pipe" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.75, 0.06)
+mesh = SubResource("s1")
+
+[node name="Pipe2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 1.75, 0.05)
+mesh = SubResource("s2")
+
+[node name="Clamp0" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05, 0.3, 0.05)
+mesh = SubResource("s3")
+
+[node name="Clamp1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05, 1, 0.05)
+mesh = SubResource("s4")
+
+[node name="Clamp2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05, 1.7, 0.05)
+mesh = SubResource("s5")
+
+[node name="Clamp3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05, 2.4, 0.05)
+mesh = SubResource("s6")
+
+[node name="Clamp4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05, 3.1, 0.05)
+mesh = SubResource("s7")
+
+[node name="Junction" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0.07)
+mesh = SubResource("s8")
+
+[node name="Cover" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0.125)
+mesh = SubResource("s9")
+
+[node name="DangleRed" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.9848077, -0.17364818, 0, 0.17364818, 0.9848077, 0.06, 1.2, 0.12)
+mesh = SubResource("s10")
+
+[node name="DangleBlack" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.99026805, -0.1391731, 0, 0.1391731, 0.99026805, 0, 0, 0, 1, -0.05, 1.25, 0.13)
+mesh = SubResource("s11")
