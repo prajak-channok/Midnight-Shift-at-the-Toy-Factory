@@ -1,5 +1,11 @@
 [gd_scene format=3]
 
+[ext_resource type="PackedScene" path="res://building/props/factory/soot_stain.tscn" id="1_soot"]
+[ext_resource type="PackedScene" path="res://building/props/factory/toy_box_burnt.tscn" id="2_toybox"]
+[ext_resource type="PackedScene" path="res://building/props/factory/no_entry_sign.tscn" id="3_sign"]
+[ext_resource type="PackedScene" path="res://building/props/factory/emergency_light.tscn" id="4_emlight"]
+[ext_resource type="PackedScene" path="res://building/props/factory/hazard_barrier.tscn" id="5_barrier"]
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cbt67"]
 albedo_color = Color(0.19, 0.165, 0.15, 1)
 roughness = 0.6
@@ -20,21 +26,29 @@ size = Vector2(6, 7)
 albedo_color = Color(0.38, 0.33, 0.3, 1)
 roughness = 0.9
 
-[sub_resource type="QuadMesh" id="QuadMesh_b8u5j"]
+[sub_resource type="QuadMesh" id="QuadMesh_pier"]
 material = SubResource("StandardMaterial3D_rrigj")
-size = Vector2(6, 3.5)
+size = Vector2(1.5, 4)
 
 [sub_resource type="QuadMesh" id="QuadMesh_udcyy"]
 material = SubResource("StandardMaterial3D_rrigj")
-size = Vector2(6, 3.5)
+size = Vector2(6, 4)
 
 [sub_resource type="QuadMesh" id="QuadMesh_rrigj"]
 material = SubResource("StandardMaterial3D_rrigj")
-size = Vector2(7, 3.5)
+size = Vector2(7, 4)
 
 [sub_resource type="QuadMesh" id="QuadMesh_88yil"]
 material = SubResource("StandardMaterial3D_rrigj")
-size = Vector2(7, 3.5)
+size = Vector2(7, 4)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_trim"]
+albedo_color = Color(0.16, 0.15, 0.15, 1)
+roughness = 0.5
+
+[sub_resource type="BoxMesh" id="BoxMesh_trim"]
+material = SubResource("StandardMaterial3D_trim")
+size = Vector3(0.12, 4, 0.08)
 
 [node name="FactoryTransferCorridor" type="Node3D" unique_id=799392948]
 
@@ -43,28 +57,66 @@ cast_shadow = 2
 mesh = SubResource("PlaneMesh_cbt67")
 
 [node name="Ceiling" type="MeshInstance3D" parent="." unique_id=936826990]
-transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 3.5, 0)
+transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 4, 0)
 cast_shadow = 2
 mesh = SubResource("PlaneMesh_scfiy")
 
 [node name="Walls" type="Node3D" parent="." unique_id=1212385811]
 
-[node name="WallN" type="MeshInstance3D" parent="Walls" unique_id=578769040]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.75, -3.4999998)
+[node name="WallN_PierW" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.25, 2, -3.4999998)
 cast_shadow = 2
-mesh = SubResource("QuadMesh_b8u5j")
+mesh = SubResource("QuadMesh_pier")
+
+[node name="WallN_PierE" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.25, 2, -3.4999998)
+cast_shadow = 2
+mesh = SubResource("QuadMesh_pier")
 
 [node name="WallS" type="MeshInstance3D" parent="Walls" unique_id=1325707149]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 1.75, 3.4999998)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 2, 3.4999998)
 cast_shadow = 2
 mesh = SubResource("QuadMesh_udcyy")
 
 [node name="WallE" type="MeshInstance3D" parent="Walls" unique_id=1343359005]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 2.9999998, 1.75, 0)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 2.9999998, 2, 0)
 cast_shadow = 2
 mesh = SubResource("QuadMesh_rrigj")
 
 [node name="WallW" type="MeshInstance3D" parent="Walls" unique_id=176483236]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.9999998, 1.75, 0)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.9999998, 2, 0)
 cast_shadow = 2
 mesh = SubResource("QuadMesh_88yil")
+
+[node name="DoorTrim" type="Node3D" parent="."]
+
+[node name="TrimW" type="MeshInstance3D" parent="DoorTrim"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.56, 2, -3.46)
+mesh = SubResource("BoxMesh_trim")
+
+[node name="TrimE" type="MeshInstance3D" parent="DoorTrim"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.56, 2, -3.46)
+mesh = SubResource("BoxMesh_trim")
+
+[node name="Props" type="Node3D" parent="."]
+
+[node name="SootWest" parent="Props" instance=ExtResource("1_soot")]
+transform = Transform3D(-5.0268e-08, 0, 1, 0, 1, 0, -1.15, 0, -4.371139e-08, -2.995, 0, -1.4)
+
+[node name="SootNorthW" parent="Props" instance=ExtResource("1_soot")]
+transform = Transform3D(0.42, 0, 0, 0, 0.95, 0, 0, 0, 1, -2.25, 0, -3.495)
+
+[node name="SootNorthE" parent="Props" instance=ExtResource("1_soot")]
+transform = Transform3D(0.42, 0, 0, 0, 0.8, 0, 0, 0, 1, 2.25, 0, -3.495)
+
+[node name="ToyBoxBurnt" parent="Props" instance=ExtResource("2_toybox")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.2, 0, -2.3)
+
+[node name="NoEntrySign" parent="Props" instance=ExtResource("3_sign")]
+transform = Transform3D(0.9848077, 0, 0.17364818, 0, 1, 0, -0.17364818, 0, 0.9848077, 2.3, 0, -2.7)
+
+[node name="HazardBarrier" parent="Props" instance=ExtResource("5_barrier")]
+transform = Transform3D(0.9781476, 0, 0.2079117, 0, 1, 0, -0.2079117, 0, 0.9781476, 1.75, 0, -1.3)
+
+[node name="EmergencyLight" parent="Props" instance=ExtResource("4_emlight")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.25, 3.1, -3.495)

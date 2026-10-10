@@ -1,0 +1,190 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://building/props/materials/steel_burnt.tres" id="1_7mqwu"]
+[ext_resource type="Material" path="res://building/props/materials/steel_dull.tres" id="2_kbult"]
+[ext_resource type="Material" path="res://building/props/materials/red_paint.tres" id="3_4bovt"]
+[ext_resource type="Material" path="res://building/props/materials/char.tres" id="4_rpsxl"]
+[ext_resource type="Material" path="res://building/props/materials/soot.tres" id="5_mtx7s"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_cm1sl"]
+material = ExtResource("1_7mqwu")
+top_radius = 0.26
+bottom_radius = 0.26
+height = 0.05
+radial_segments = 18
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_fjq8g"]
+material = ExtResource("1_7mqwu")
+top_radius = 0.13
+bottom_radius = 0.15
+height = 0.05
+radial_segments = 14
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_106sw"]
+material = ExtResource("2_kbult")
+top_radius = 0.024
+bottom_radius = 0.024
+height = 1.6
+radial_segments = 10
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_uxu50"]
+material = ExtResource("3_4bovt")
+top_radius = 0.3
+bottom_radius = 0.3
+height = 0.03
+radial_segments = 28
+rings = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b6bcm"]
+albedo_color = Color(0.62, 0.6, 0.52, 1)
+roughness = 0.7
+
+[sub_resource type="TorusMesh" id="TorusMesh_ber21"]
+material = SubResource("StandardMaterial3D_b6bcm")
+inner_radius = 0.262
+outer_radius = 0.292
+rings = 28
+ring_segments = 6
+
+[sub_resource type="BoxMesh" id="BoxMesh_0aybv"]
+material = SubResource("StandardMaterial3D_b6bcm")
+size = Vector3(0.42, 0.09, 0.012)
+
+[sub_resource type="SphereMesh" id="SphereMesh_porvk"]
+material = ExtResource("4_rpsxl")
+radius = 0.12
+height = 0.24
+radial_segments = 16
+rings = 8
+
+[sub_resource type="SphereMesh" id="SphereMesh_u335m"]
+material = ExtResource("5_mtx7s")
+radius = 0.09
+height = 0.18
+radial_segments = 16
+rings = 8
+
+[sub_resource type="SphereMesh" id="SphereMesh_563ua"]
+material = ExtResource("4_rpsxl")
+radius = 0.08
+height = 0.16
+radial_segments = 16
+rings = 8
+
+[sub_resource type="BoxMesh" id="BoxMesh_ptffq"]
+material = ExtResource("2_kbult")
+size = Vector3(0.05, 0.1, 0.06)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_egal2"]
+albedo_color = Color(0.5, 0.47, 0.4, 1)
+roughness = 0.7
+
+[sub_resource type="BoxMesh" id="BoxMesh_mjbx3"]
+material = SubResource("StandardMaterial3D_egal2")
+size = Vector3(0.62, 0.17, 0.015)
+
+[sub_resource type="SphereMesh" id="SphereMesh_1ggk8"]
+material = ExtResource("4_rpsxl")
+radius = 0.1
+height = 0.2
+radial_segments = 16
+rings = 8
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_r4m0y"]
+material = ExtResource("2_kbult")
+top_radius = 0.012
+bottom_radius = 0.012
+height = 0.02
+radial_segments = 8
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_7ciem"]
+material = ExtResource("2_kbult")
+top_radius = 0.012
+bottom_radius = 0.012
+height = 0.02
+radial_segments = 8
+rings = 1
+
+[sub_resource type="SphereMesh" id="SphereMesh_6o8mx"]
+material = ExtResource("5_mtx7s")
+radius = 0.35
+height = 0.7
+radial_segments = 16
+rings = 8
+
+[node name="NoEntrySign" type="Node3D" unique_id=1644675549]
+
+[node name="BaseDisc" type="MeshInstance3D" parent="." unique_id=1784571794]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.025, 0)
+mesh = SubResource("CylinderMesh_cm1sl")
+
+[node name="BaseCap" type="MeshInstance3D" parent="." unique_id=438492278]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.075, 0)
+mesh = SubResource("CylinderMesh_fjq8g")
+
+[node name="Post" type="MeshInstance3D" parent="." unique_id=628460180]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.88, 0)
+mesh = SubResource("CylinderMesh_106sw")
+
+[node name="Sign" type="Node3D" parent="." unique_id=1623187225]
+transform = Transform3D(0.9961947, -0.08715574, 0, 0.08715574, 0.9961947, 0, 0, 0, 1, 0, 1.55, 0)
+
+[node name="Disc" type="MeshInstance3D" parent="Sign" unique_id=863671583]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+mesh = SubResource("CylinderMesh_uxu50")
+
+[node name="Ring" type="MeshInstance3D" parent="Sign" unique_id=105615291]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0.016)
+mesh = SubResource("TorusMesh_ber21")
+
+[node name="Bar" type="MeshInstance3D" parent="Sign" unique_id=1794722137]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.022)
+mesh = SubResource("BoxMesh_0aybv")
+
+[node name="Burn1" type="MeshInstance3D" parent="Sign" unique_id=109707743]
+transform = Transform3D(1.3, 0, 0, 0, 1, 0, 0, 0, 0.06, 0.14, -0.14, 0.02)
+mesh = SubResource("SphereMesh_porvk")
+
+[node name="Burn2" type="MeshInstance3D" parent="Sign" unique_id=396482975]
+transform = Transform3D(1.4, 0, 0, 0, 1, 0, 0, 0, 0.06, -0.17, 0.16, 0.02)
+mesh = SubResource("SphereMesh_u335m")
+
+[node name="BarBurn" type="MeshInstance3D" parent="Sign" unique_id=1142397773]
+transform = Transform3D(1, 0, 0, 0, 0.8, 0, 0, 0, 0.06, 0.17, 0, 0.03)
+mesh = SubResource("SphereMesh_563ua")
+
+[node name="Bracket" type="MeshInstance3D" parent="Sign" unique_id=1383483791]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.04)
+mesh = SubResource("BoxMesh_ptffq")
+
+[node name="Plate" type="MeshInstance3D" parent="Sign" unique_id=1042480774]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.46, 0)
+mesh = SubResource("BoxMesh_mjbx3")
+
+[node name="PlateText" type="Label3D" parent="Sign" unique_id=773706873]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.46, 0.0085)
+pixel_size = 0.0026
+modulate = Color(0.4, 0.06, 0.04, 1)
+text = "KEEP OUT"
+font_size = 64
+outline_size = 0
+
+[node name="PlateBurn" type="MeshInstance3D" parent="Sign" unique_id=1442893069]
+transform = Transform3D(1.6, 0, 0, 0, 1, 0, 0, 0, 0.05, 0.22, -0.5, 0.01)
+mesh = SubResource("SphereMesh_1ggk8")
+
+[node name="BoltL" type="MeshInstance3D" parent="Sign" unique_id=676087316]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -0.27, -0.46, 0.01)
+mesh = SubResource("CylinderMesh_r4m0y")
+
+[node name="BoltR" type="MeshInstance3D" parent="Sign" unique_id=388396090]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.27, -0.46, 0.01)
+mesh = SubResource("CylinderMesh_7ciem")
+
+[node name="FloorSoot" type="MeshInstance3D" parent="." unique_id=1574810624]
+transform = Transform3D(1, 0, 0, 0, 0.01, 0, 0, 0, 1, 0.05, 0.004, 0.1)
+mesh = SubResource("SphereMesh_6o8mx")

@@ -1,0 +1,152 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://building/props/materials/steel_burnt.tres" id="1_duqhq"]
+[ext_resource type="Material" path="res://building/props/materials/hazard_dark.tres" id="2_ryfna"]
+[ext_resource type="Material" path="res://building/props/materials/char.tres" id="3_3np8y"]
+[ext_resource type="Material" path="res://building/props/materials/soot.tres" id="4_ara7g"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ue2hm"]
+material = ExtResource("1_duqhq")
+size = Vector3(0.05, 1, 0.05)
+
+[sub_resource type="BoxMesh" id="BoxMesh_d7nwa"]
+material = ExtResource("1_duqhq")
+size = Vector3(0.05, 0.05, 0.6)
+
+[sub_resource type="BoxMesh" id="BoxMesh_po5xr"]
+material = ExtResource("1_duqhq")
+size = Vector3(0.05, 1, 0.05)
+
+[sub_resource type="BoxMesh" id="BoxMesh_kppf6"]
+material = ExtResource("1_duqhq")
+size = Vector3(0.05, 0.05, 0.6)
+
+[sub_resource type="BoxMesh" id="BoxMesh_jvrat"]
+material = ExtResource("2_ryfna")
+size = Vector3(1.7, 0.2, 0.03)
+
+[sub_resource type="Gradient" id="Gradient_l41yk"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.5)
+colors = PackedColorArray(0.025, 0.025, 0.025, 1, 0.52, 0.38, 0.04, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_savvq"]
+gradient = SubResource("Gradient_l41yk")
+width = 512
+fill_to = Vector2(0.119, 0.014)
+repeat = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uauj1"]
+albedo_texture = SubResource("GradientTexture2D_savvq")
+roughness = 0.75
+
+[sub_resource type="QuadMesh" id="QuadMesh_icyd0"]
+material = SubResource("StandardMaterial3D_uauj1")
+size = Vector2(1.7, 0.2)
+
+[sub_resource type="QuadMesh" id="QuadMesh_ik8mv"]
+material = SubResource("StandardMaterial3D_uauj1")
+size = Vector2(1.7, 0.2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_mpw18"]
+material = ExtResource("3_3np8y")
+size = Vector3(0.45, 0.205, 0.034)
+
+[sub_resource type="BoxMesh" id="BoxMesh_j0jrm"]
+material = ExtResource("2_ryfna")
+size = Vector3(1.7, 0.2, 0.03)
+
+[sub_resource type="QuadMesh" id="QuadMesh_jxugp"]
+material = SubResource("StandardMaterial3D_uauj1")
+size = Vector2(1.7, 0.2)
+
+[sub_resource type="QuadMesh" id="QuadMesh_ch7yl"]
+material = SubResource("StandardMaterial3D_uauj1")
+size = Vector2(1.7, 0.2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_uif1n"]
+material = ExtResource("3_3np8y")
+size = Vector3(0.38, 0.205, 0.034)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ihdvg"]
+material = ExtResource("3_3np8y")
+size = Vector3(0.18, 0.205, 0.034)
+
+[sub_resource type="SphereMesh" id="SphereMesh_pcc8u"]
+material = ExtResource("3_3np8y")
+radius = 0.12
+height = 0.24
+radial_segments = 16
+rings = 8
+
+[sub_resource type="SphereMesh" id="SphereMesh_666d5"]
+material = ExtResource("4_ara7g")
+radial_segments = 16
+rings = 8
+
+[node name="HazardBarrier" type="Node3D" unique_id=403617104]
+
+[node name="PostL" type="MeshInstance3D" parent="." unique_id=1412542487]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.78, 0.5, 0)
+mesh = SubResource("BoxMesh_ue2hm")
+
+[node name="FootL" type="MeshInstance3D" parent="." unique_id=1593696292]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.78, 0.025, 0)
+mesh = SubResource("BoxMesh_d7nwa")
+
+[node name="PostR" type="MeshInstance3D" parent="." unique_id=1824566176]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.78, 0.5, 0)
+mesh = SubResource("BoxMesh_po5xr")
+
+[node name="FootR" type="MeshInstance3D" parent="." unique_id=388866191]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.78, 0.025, 0)
+mesh = SubResource("BoxMesh_kppf6")
+
+[node name="TopSlat" type="Node3D" parent="." unique_id=1412303679]
+transform = Transform3D(0.9135454, 0.40673664, 0, -0.40673664, 0.9135454, 0, 0, 0, 1, -0.78, 0.9, 0.04)
+
+[node name="Core" type="MeshInstance3D" parent="TopSlat" unique_id=1997912927]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.85, 0, 0)
+mesh = SubResource("BoxMesh_jvrat")
+
+[node name="Front" type="MeshInstance3D" parent="TopSlat" unique_id=1796314228]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.85, 0, 0.0155)
+mesh = SubResource("QuadMesh_icyd0")
+
+[node name="Back" type="MeshInstance3D" parent="TopSlat" unique_id=1030807245]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.85, 0, -0.0155)
+mesh = SubResource("QuadMesh_ik8mv")
+
+[node name="Burn" type="MeshInstance3D" parent="TopSlat" unique_id=1270590427]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.45, 0, 0)
+mesh = SubResource("BoxMesh_mpw18")
+
+[node name="LowSlat" type="Node3D" parent="." unique_id=89506827]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.52, 0.04)
+
+[node name="Core" type="MeshInstance3D" parent="LowSlat" unique_id=538086781]
+mesh = SubResource("BoxMesh_j0jrm")
+
+[node name="Front" type="MeshInstance3D" parent="LowSlat" unique_id=352542279]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0155)
+mesh = SubResource("QuadMesh_jxugp")
+
+[node name="Back" type="MeshInstance3D" parent="LowSlat" unique_id=1654972471]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, -0.0155)
+mesh = SubResource("QuadMesh_ch7yl")
+
+[node name="BurnL" type="MeshInstance3D" parent="LowSlat" unique_id=1165872426]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, 0, 0)
+mesh = SubResource("BoxMesh_uif1n")
+
+[node name="BurnR" type="MeshInstance3D" parent="LowSlat" unique_id=586911915]
+transform = Transform3D(0.9848077, -0.17364818, 0, 0.17364818, 0.9848077, 0, 0, 0, 1, 0.3, 0, 0)
+mesh = SubResource("BoxMesh_ihdvg")
+
+[node name="PostBurn" type="MeshInstance3D" parent="." unique_id=658663425]
+transform = Transform3D(0.5, 0, 0, 0, 2, 0, 0, 0, 0.5, -0.78, 0.35, 0.03)
+mesh = SubResource("SphereMesh_pcc8u")
+
+[node name="FloorSoot" type="MeshInstance3D" parent="." unique_id=1851536908]
+transform = Transform3D(1.7, 0, 0, 0, 0.01, 0, 0, 0, 0.8, 0, 0.004, 0)
+mesh = SubResource("SphereMesh_666d5")
