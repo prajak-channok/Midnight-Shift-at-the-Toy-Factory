@@ -1,10 +1,10 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://cy7rqkjbglxru"]
 
 [ext_resource type="Material" path="res://building/props/materials/plastic_black.tres" id="1_r0qb7"]
 [ext_resource type="Material" path="res://building/props/materials/glass_clear.tres" id="2_4jn3q"]
 [ext_resource type="Material" path="res://building/props/materials/metal_grey.tres" id="3_3p7m0"]
-[ext_resource type="Material" path="res://building/props/materials/light_emit.tres" id="4_dyqrj"]
-[ext_resource type="Material" path="res://building/props/materials/led_green.tres" id="5_j8ops"]
+[ext_resource type="Material" uid="uid://btwyavnry2pc" path="res://building/props/materials/light_emit.tres" id="4_dyqrj"]
+[ext_resource type="Material" uid="uid://drg6bcmpkwwwj" path="res://building/props/materials/led_green.tres" id="5_j8ops"]
 [ext_resource type="Material" path="res://building/props/materials/metal_dark.tres" id="6_6keu8"]
 [ext_resource type="Material" path="res://building/props/materials/yellow_paint.tres" id="7_w7ehw"]
 [ext_resource type="Material" path="res://building/props/materials/led_red.tres" id="8_ec7px"]
@@ -788,9 +788,9 @@ mesh = SubResource("BoxMesh_x5s23")
 [node name="MarqueeText" type="Label3D" parent="." unique_id=1108702565]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.735, 0.4195)
 pixel_size = 0.0031
-modulate = Color(0.5, 0.05, 0.04, 1)
+modulate = Color(0.37465048, 0.028055228, 0.021132456, 1)
 text = "SNACKS"
-font_size = 64
+font_size = 50
 outline_size = 0
 
 [node name="Display" type="MeshInstance3D" parent="." unique_id=368795053]
@@ -897,10 +897,10 @@ mesh = SubResource("BoxMesh_sfr6f")
 [node name="Text" type="Label3D" parent="OutOfOrder" unique_id=130280378]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0035)
 pixel_size = 0.0017
-modulate = Color(0.7, 0.07, 0.05, 1)
+modulate = Color(0.30999437, 0.013912455, 0.008824063, 1)
 text = "OUT OF
 ORDER"
-font_size = 64
+font_size = 40
 outline_size = 0
 
 [node name="TapeL" type="MeshInstance3D" parent="OutOfOrder" unique_id=2053446214]

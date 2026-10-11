@@ -15,13 +15,9 @@
 [ext_resource type="PackedScene" path="res://building/props/common/rug.tscn" id="13_xf2m6"]
 [ext_resource type="PackedScene" path="res://building/props/security/trash_bin.tscn" id="14_543qc"]
 [ext_resource type="PackedScene" path="res://building/props/common/paper_ball.tscn" id="15_ntrp8"]
-[ext_resource type="Material" path="res://building/props/materials/wire_black.tres" id="17_xodro"]
-[ext_resource type="Material" path="res://building/props/materials/plastic_beige.tres" id="18_xd6hp"]
-[ext_resource type="Material" path="res://building/props/materials/led_red.tres" id="19_yoce3"]
 [ext_resource type="PackedScene" path="res://building/props/security/cork_board.tscn" id="20_m61mr"]
-[ext_resource type="PackedScene" path="res://building/props/security/poster_bear.tscn" id="21_gebr3"]
-[ext_resource type="PackedScene" path="res://building/props/security/poster_safety.tscn" id="22_fgrf8"]
-[ext_resource type="PackedScene" path="res://building/props/security/kid_drawings.tscn" id="23_qthv8"]
+[ext_resource type="PackedScene" uid="uid://bafe7mm7s45jw" path="res://building/props/security/poster_bear.tscn" id="21_gebr3"]
+[ext_resource type="PackedScene" uid="uid://cu2nug6f6v00o" path="res://building/props/security/poster_safety.tscn" id="22_fgrf8"]
 [ext_resource type="PackedScene" path="res://building/props/security/wall_clock.tscn" id="24_jy0dw"]
 [ext_resource type="PackedScene" path="res://building/props/security/wall_camera.tscn" id="25_jjic7"]
 [ext_resource type="PackedScene" path="res://building/props/security/locker.tscn" id="26_exi5f"]
@@ -107,73 +103,6 @@ size = Vector2(1.6, 0.7999999)
 [sub_resource type="QuadMesh" id="QuadMesh_uilsv"]
 material = SubResource("StandardMaterial3D_8du5a")
 size = Vector2(1.4999998, 4)
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_hubx3"]
-material = ExtResource("17_xodro")
-top_radius = 0.012
-bottom_radius = 0.012
-height = 0.29705894
-radial_segments = 6
-rings = 1
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_0o6q6"]
-material = ExtResource("17_xodro")
-top_radius = 0.012
-bottom_radius = 0.012
-height = 0.9394147
-radial_segments = 6
-rings = 1
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_rclu2"]
-material = ExtResource("17_xodro")
-top_radius = 0.012
-bottom_radius = 0.012
-height = 1.15
-radial_segments = 6
-rings = 1
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_xx7i7"]
-material = ExtResource("17_xodro")
-top_radius = 0.01
-bottom_radius = 0.01
-height = 0.56044626
-radial_segments = 6
-rings = 1
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_bt1v2"]
-material = ExtResource("17_xodro")
-top_radius = 0.01
-bottom_radius = 0.01
-height = 0.49783936
-radial_segments = 6
-rings = 1
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_qmju7"]
-material = ExtResource("17_xodro")
-top_radius = 0.01
-bottom_radius = 0.01
-height = 0.82462114
-radial_segments = 6
-rings = 1
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_sufu0"]
-material = ExtResource("17_xodro")
-top_radius = 0.01
-bottom_radius = 0.01
-height = 0.952
-radial_segments = 6
-rings = 1
-
-[sub_resource type="BoxMesh" id="BoxMesh_27q4p"]
-material = ExtResource("18_xd6hp")
-size = Vector3(0.4, 0.04, 0.08)
-
-[sub_resource type="SphereMesh" id="SphereMesh_osiuy"]
-material = ExtResource("19_yoce3")
-radius = 0.008
-height = 0.016
-radial_segments = 14
-rings = 7
 
 [node name="SecurityRoom" type="Node3D" unique_id=2043193841]
 
@@ -312,44 +241,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0.35)
 [node name="PaperBall1" parent="Props/Desk" unique_id=1624374326 instance=ExtResource("15_ntrp8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.28, 0, 0.82)
 
-[node name="Cables" type="Node3D" parent="Props" unique_id=1909518237]
-
-[node name="PowerCable_0" type="MeshInstance3D" parent="Props/Cables" unique_id=599637498]
-transform = Transform3D(1, 0, 0, 0, -0.63287103, 0.7742572, 0, -0.7742572, -0.63287103, 0.5, 0.106, -0.435)
-mesh = SubResource("CylinderMesh_hubx3")
-
-[node name="PowerCable_1" type="MeshInstance3D" parent="Props/Cables" unique_id=1206744820]
-transform = Transform3D(0.81869686, 0.42579705, 0.3852691, -0.42579705, 0, 0.9048187, 0.3852691, -0.9048187, 0.18130314, 0.7, 0.012, -0.975)
-mesh = SubResource("CylinderMesh_0o6q6")
-
-[node name="PowerCable_2" type="MeshInstance3D" parent="Props/Cables" unique_id=53002568]
-transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0.9, 0.012, -1.975)
-mesh = SubResource("CylinderMesh_rclu2")
-
-[node name="VideoCable_0" type="MeshInstance3D" parent="Props/Cables" unique_id=1235774068]
-transform = Transform3D(1, 0, 0, 0, -0.9635179, 0.26764393, 0, -0.26764393, -0.9635179, -0.5, 0.47, -0.375)
-mesh = SubResource("CylinderMesh_xx7i7")
-
-[node name="VideoCable_1" type="MeshInstance3D" parent="Props/Cables" unique_id=131841906]
-transform = Transform3D(0.4165324, -0.60260403, -0.6807123, 0.60260403, -0.37763202, 0.70303816, -0.6807123, -0.70303816, 0.20583558, -0.65, 0.106, -0.625)
-mesh = SubResource("CylinderMesh_bt1v2")
-
-[node name="VideoCable_2" type="MeshInstance3D" parent="Props/Cables" unique_id=123875968]
-transform = Transform3D(0.9411765, 0.24253562, 0.23529413, -0.24253562, -1.1920929e-07, 0.97014254, 0.23529413, -0.97014254, 0.058823407, -0.70000005, 0.012, -1.2)
-mesh = SubResource("CylinderMesh_qmju7")
-
-[node name="VideoCable_3" type="MeshInstance3D" parent="Props/Cables" unique_id=1017876511]
-transform = Transform3D(0.99634033, -0.06049504, -0.060384247, 0.06049504, 0, 0.9981685, -0.060384247, -0.9981685, 0.003659606, -0.629, 0.012, -2.075)
-mesh = SubResource("CylinderMesh_sufu0")
-
-[node name="PowerStrip" type="MeshInstance3D" parent="Props/Cables" unique_id=1524903595]
-transform = Transform3D(0.99026805, 0, 0.1391731, 0, 1, 0, -0.1391731, 0, 0.99026805, 0.9, 0.02, -1.4)
-mesh = SubResource("BoxMesh_27q4p")
-
-[node name="StripLed" type="MeshInstance3D" parent="Props/Cables" unique_id=1592198818]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.05, 0.045, -1.4)
-mesh = SubResource("SphereMesh_osiuy")
-
 [node name="NorthWall" type="Node3D" parent="Props" unique_id=1884374634]
 
 [node name="CorkBoard" parent="Props/NorthWall" unique_id=1790467952 instance=ExtResource("20_m61mr")]
@@ -377,9 +268,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9, 0, -2.4)
 
 [node name="WaterCooler" parent="Props/WestWall" unique_id=485819792 instance=ExtResource("28_kcd2m")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.2, 0, 2.75)
-
-[node name="KidDrawings" parent="Props/WestWall" unique_id=470893379 instance=ExtResource("23_qthv8")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.4, 1.9, 2.8518012)
 
 [node name="DoorMatW" parent="Props/WestWall" unique_id=1728853788 instance=ExtResource("29_g2bo3")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.95, 0, 1)

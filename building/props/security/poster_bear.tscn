@@ -1,4 +1,4 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://bafe7mm7s45jw"]
 
 [ext_resource type="Material" path="res://building/props/materials/black_text.tres" id="1_eyidd"]
 [ext_resource type="Material" path="res://building/props/materials/poster_bg.tres" id="2_qtbot"]
@@ -104,7 +104,7 @@ mesh = SubResource("SphereMesh_ngak8")
 [node name="Title" type="Label3D" parent="." unique_id=1442409716]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.36, 0.04)
 pixel_size = 0.0013
-modulate = Color(0.55, 0.08, 0.05, 1)
+modulate = Color(0, 0, 0, 1)
 text = "WONDERMOLD"
 font_size = 64
 outline_size = 0
