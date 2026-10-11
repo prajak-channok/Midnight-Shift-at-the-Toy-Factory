@@ -44,6 +44,7 @@ difficulties = Array[ExtResource("20")]([ExtResource("22"), ExtResource("23"), E
 environment = ExtResource("2")
 
 [node name="FactoryMap" parent="." unique_id=1472207156 instance=ExtResource("9_24kut")]
+metadata/_edit_lock_ = true
 
 [node name="Lights" type="Node3D" parent="." unique_id=1968523478]
 
@@ -90,11 +91,11 @@ light_specular = 0.0
 omni_range = 12.0
 
 [node name="ElectricalRoomLight" type="OmniLight3D" parent="Lights" unique_id=1917606931]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.7, 3.1, -4.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.897708, 2.240981, -4.445929)
 light_color = Color(0.8, 0.78, 0.55, 1)
 light_energy = 3.2
 light_specular = 0.0
-omni_range = 6.5
+omni_range = 4.0
 
 [node name="PartsReturnsStorageRoomLight" type="OmniLight3D" parent="Lights" unique_id=328951525]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.35, 3.1, -27.25)
@@ -181,7 +182,7 @@ cam_manager = NodePath("../CameraManager")
 [node name="CameraManager" parent="." unique_id=200658623 instance=ExtResource("6")]
 
 [node name="MainStorageHall" parent="CameraManager" unique_id=1850270255 instance=ExtResource("7")]
-transform = Transform3D(0.66760385, 0.20886132, -0.7146203, 0, 0.9598445, 0.28053275, 0.74451673, -0.18728474, 0.6407959, -12.1, 5.55, -10.4)
+transform = Transform3D(0.99990976, -0.0037689738, 0.012895493, 0.0013332163, 0.98294264, 0.1839084, -0.013368674, -0.1838746, 0.9828589, -6.5510497, 2.8918228, -10.002299)
 
 [node name="LeftHall" parent="CameraManager" unique_id=1425505900 instance=ExtResource("7")]
 transform = Transform3D(0.9998876, -0.0026360776, 0.014762025, -0.010164525, 0.6046198, 0.7964494, -0.011024917, -0.7965099, 0.604525, -4.65, 3.2108781, -4.5766625)

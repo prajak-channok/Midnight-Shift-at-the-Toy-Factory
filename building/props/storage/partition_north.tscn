@@ -1,0 +1,175 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://building/props/materials/partition_wall.tres" id="m_partition_wall"]
+[ext_resource type="Material" path="res://building/props/materials/wall_wainscot.tres" id="m_wall_wainscot"]
+[ext_resource type="Material" path="res://building/props/materials/metal_dark.tres" id="m_metal_dark"]
+[ext_resource type="Material" path="res://building/props/materials/metal_grey.tres" id="m_metal_grey"]
+[ext_resource type="Material" path="res://building/props/materials/soot.tres" id="m_soot"]
+[ext_resource type="Material" path="res://building/props/materials/rust.tres" id="m_rust"]
+[ext_resource type="Material" path="res://building/props/materials/steel_burnt.tres" id="m_steel_burnt"]
+
+[sub_resource type="BoxMesh" id="B1"]
+material = ExtResource("m_partition_wall")
+size = Vector3(15.4, 6, 0.2)
+
+[sub_resource type="BoxMesh" id="B2"]
+material = ExtResource("m_wall_wainscot")
+size = Vector3(15.3800, 1.1, 0.02)
+
+[sub_resource type="BoxMesh" id="B3"]
+material = ExtResource("m_metal_dark")
+size = Vector3(15.4, 0.14, 0.04)
+
+[sub_resource type="BoxMesh" id="B4"]
+material = ExtResource("m_metal_dark")
+size = Vector3(15.4, 0.12, 0.06)
+
+[sub_resource type="BoxMesh" id="B5"]
+material = ExtResource("m_metal_dark")
+size = Vector3(0.22, 6, 0.06)
+
+[sub_resource type="BoxMesh" id="B6"]
+material = ExtResource("m_metal_dark")
+size = Vector3(0.05, 0.16, 0.12)
+
+[sub_resource type="BoxMesh" id="B7"]
+material = ExtResource("m_metal_dark")
+size = Vector3(0.22, 6, 0.06)
+
+[sub_resource type="BoxMesh" id="B8"]
+material = ExtResource("m_metal_dark")
+size = Vector3(0.05, 0.16, 0.12)
+
+[sub_resource type="BoxMesh" id="B9"]
+material = ExtResource("m_metal_dark")
+size = Vector3(0.22, 6, 0.06)
+
+[sub_resource type="BoxMesh" id="B10"]
+material = ExtResource("m_metal_dark")
+size = Vector3(0.05, 0.16, 0.12)
+
+[sub_resource type="BoxMesh" id="B11"]
+material = ExtResource("m_metal_dark")
+size = Vector3(0.22, 6, 0.06)
+
+[sub_resource type="BoxMesh" id="B12"]
+material = ExtResource("m_metal_dark")
+size = Vector3(0.05, 0.16, 0.12)
+
+[sub_resource type="BoxMesh" id="B13"]
+material = ExtResource("m_metal_dark")
+size = Vector3(0.22, 6, 0.06)
+
+[sub_resource type="BoxMesh" id="B14"]
+material = ExtResource("m_metal_dark")
+size = Vector3(0.05, 0.16, 0.12)
+
+[sub_resource type="CylinderMesh" id="C15"]
+material = ExtResource("m_metal_grey")
+top_radius = 0.06
+bottom_radius = 0.06
+height = 15.3000
+radial_segments = 12
+rings = 1
+
+[sub_resource type="BoxMesh" id="B16"]
+material = ExtResource("m_soot")
+size = Vector3(1.6, 2.2, 0.004)
+
+[sub_resource type="BoxMesh" id="B17"]
+material = ExtResource("m_soot")
+size = Vector3(1.1, 1.6, 0.004)
+
+[sub_resource type="BoxMesh" id="B18"]
+material = ExtResource("m_rust")
+size = Vector3(0.07, 1.5, 0.006)
+
+[sub_resource type="BoxMesh" id="B19"]
+material = ExtResource("m_rust")
+size = Vector3(0.05, 1.1, 0.006)
+
+[sub_resource type="BoxMesh" id="B20"]
+material = ExtResource("m_steel_burnt")
+size = Vector3(15.0000, 0.08, 0.006)
+
+[node name="PartitionNorth" type="Node3D"]
+
+[node name="Body" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, 0, 3, 0)
+mesh = SubResource("B1")
+
+[node name="Wainscot" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, 0, 0.55, 0.11)
+mesh = SubResource("B2")
+
+[node name="Baseboard" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, 0, 0.07, 0.12)
+mesh = SubResource("B3")
+
+[node name="TopCap" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, 0, 5.94, 0.13)
+mesh = SubResource("B4")
+
+[node name="Pilaster0" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, -6.2000, 3, 0.13)
+mesh = SubResource("B5")
+
+[node name="Bracket0" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, -6.2000, 4.7, 0.2)
+mesh = SubResource("B6")
+
+[node name="Pilaster1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, -3.2000, 3, 0.13)
+mesh = SubResource("B7")
+
+[node name="Bracket1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, -3.2000, 4.7, 0.2)
+mesh = SubResource("B8")
+
+[node name="Pilaster2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, -0.2000, 3, 0.13)
+mesh = SubResource("B9")
+
+[node name="Bracket2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, -0.2000, 4.7, 0.2)
+mesh = SubResource("B10")
+
+[node name="Pilaster3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, 2.8000, 3, 0.13)
+mesh = SubResource("B11")
+
+[node name="Bracket3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, 2.8000, 4.7, 0.2)
+mesh = SubResource("B12")
+
+[node name="Pilaster4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, 5.8000, 3, 0.13)
+mesh = SubResource("B13")
+
+[node name="Bracket4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, 5.8000, 4.7, 0.2)
+mesh = SubResource("B14")
+
+[node name="Pipe" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.00000, -1.00000, 0.00000, 1.00000, 0.00000, -0.00000, 0.00000, 0.00000, 1.00000, 0, 4.7, 0.2)
+mesh = SubResource("C15")
+
+[node name="SootA" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, -3.2000, 2.4, 0.102)
+mesh = SubResource("B16")
+
+[node name="SootB" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, 4.1000, 3.0, 0.102)
+mesh = SubResource("B17")
+
+[node name="Rust1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, -0.5000, 4.0, 0.103)
+mesh = SubResource("B18")
+
+[node name="Rust2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, -0.3000, 3.7, 0.103)
+mesh = SubResource("B19")
+
+[node name="WearBand" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, 0, 1.15, 0.121)
+mesh = SubResource("B20")

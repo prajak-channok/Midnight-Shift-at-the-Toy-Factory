@@ -1,0 +1,137 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://building/props/materials/wood_dark.tres" id="m_wood_dark"]
+[ext_resource type="Material" path="res://building/props/materials/burnt_wood.tres" id="m_burnt_wood"]
+[ext_resource type="Material" path="res://building/props/materials/scorched_wood.tres" id="m_scorched_wood"]
+[ext_resource type="Material" path="res://building/props/materials/label_dirty.tres" id="m_label_dirty"]
+[ext_resource type="Material" path="res://building/props/materials/soot.tres" id="m_soot"]
+
+[sub_resource type="BoxMesh" id="B1"]
+material = ExtResource("m_wood_dark")
+size = Vector3(2.06, 0.76, 0.86)
+
+[sub_resource type="BoxMesh" id="B2"]
+material = ExtResource("m_burnt_wood")
+size = Vector3(0.08, 0.8, 0.08)
+
+[sub_resource type="BoxMesh" id="B3"]
+material = ExtResource("m_burnt_wood")
+size = Vector3(0.08, 0.8, 0.08)
+
+[sub_resource type="BoxMesh" id="B4"]
+material = ExtResource("m_burnt_wood")
+size = Vector3(0.08, 0.8, 0.08)
+
+[sub_resource type="BoxMesh" id="B5"]
+material = ExtResource("m_burnt_wood")
+size = Vector3(0.08, 0.8, 0.08)
+
+[sub_resource type="BoxMesh" id="B6"]
+material = ExtResource("m_burnt_wood")
+size = Vector3(0.08, 0.8, 0.08)
+
+[sub_resource type="BoxMesh" id="B7"]
+material = ExtResource("m_burnt_wood")
+size = Vector3(0.08, 0.8, 0.08)
+
+[sub_resource type="BoxMesh" id="B8"]
+material = ExtResource("m_scorched_wood")
+size = Vector3(2.1, 0.12, 0.02)
+
+[sub_resource type="BoxMesh" id="B9"]
+material = ExtResource("m_scorched_wood")
+size = Vector3(2.1, 0.12, 0.02)
+
+[sub_resource type="BoxMesh" id="B10"]
+material = ExtResource("m_scorched_wood")
+size = Vector3(2.1, 0.12, 0.02)
+
+[sub_resource type="BoxMesh" id="B11"]
+material = ExtResource("m_scorched_wood")
+size = Vector3(0.02, 0.12, 0.86)
+
+[sub_resource type="BoxMesh" id="B12"]
+material = ExtResource("m_scorched_wood")
+size = Vector3(0.02, 0.12, 0.86)
+
+[sub_resource type="BoxMesh" id="B13"]
+material = ExtResource("m_burnt_wood")
+size = Vector3(0.95, 0.07, 0.02)
+
+[sub_resource type="BoxMesh" id="B14"]
+material = ExtResource("m_burnt_wood")
+size = Vector3(0.95, 0.07, 0.02)
+
+[sub_resource type="BoxMesh" id="B15"]
+material = ExtResource("m_label_dirty")
+size = Vector3(0.22, 0.14, 0.006)
+
+[sub_resource type="BoxMesh" id="B16"]
+material = ExtResource("m_soot")
+size = Vector3(1.2, 0.006, 0.5)
+
+[node name="WideCrate" type="Node3D"]
+
+[node name="Body" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, 0, 0.4, 0)
+mesh = SubResource("B1")
+
+[node name="Post_-1p01_-0p41" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, -1.01, 0.4, -0.41)
+mesh = SubResource("B2")
+
+[node name="Post_-1p01_0p41" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, -1.01, 0.4, 0.41)
+mesh = SubResource("B3")
+
+[node name="Post_0_-0p41" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, 0, 0.4, -0.41)
+mesh = SubResource("B4")
+
+[node name="Post_0_0p41" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, 0, 0.4, 0.41)
+mesh = SubResource("B5")
+
+[node name="Post_1p01_-0p41" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, 1.01, 0.4, -0.41)
+mesh = SubResource("B6")
+
+[node name="Post_1p01_0p41" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, 1.01, 0.4, 0.41)
+mesh = SubResource("B7")
+
+[node name="Slat_0p15" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, 0, 0.15, 0.44)
+mesh = SubResource("B8")
+
+[node name="Slat_0p4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, 0, 0.4, 0.44)
+mesh = SubResource("B9")
+
+[node name="Slat_0p65" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, 0, 0.65, 0.44)
+mesh = SubResource("B10")
+
+[node name="SideSlat_-1p05" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, -1.05, 0.4, 0)
+mesh = SubResource("B11")
+
+[node name="SideSlat_1p05" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, 1.05, 0.4, 0)
+mesh = SubResource("B12")
+
+[node name="BraceL" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.78801, -0.61566, 0.00000, 0.61566, 0.78801, -0.00000, 0.00000, 0.00000, 1.00000, -0.5, 0.4, 0.452)
+mesh = SubResource("B13")
+
+[node name="BraceR" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.78801, 0.61566, 0.00000, -0.61566, 0.78801, -0.00000, -0.00000, 0.00000, 1.00000, 0.5, 0.4, 0.452)
+mesh = SubResource("B14")
+
+[node name="Tag" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, 0, 0.62, 0.455)
+mesh = SubResource("B15")
+
+[node name="LidSoot" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, -0.3, 0.803, 0)
+mesh = SubResource("B16")

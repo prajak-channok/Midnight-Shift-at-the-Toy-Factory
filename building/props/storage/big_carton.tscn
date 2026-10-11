@@ -1,0 +1,57 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://building/props/materials/cardboard_burnt.tres" id="m_cardboard_burnt"]
+[ext_resource type="Material" path="res://building/props/materials/paper_aged.tres" id="m_paper_aged"]
+[ext_resource type="Material" path="res://building/props/materials/label_dirty.tres" id="m_label_dirty"]
+[ext_resource type="Material" path="res://building/props/materials/soot.tres" id="m_soot"]
+[ext_resource type="Material" path="res://building/props/materials/cardboard.tres" id="m_cardboard"]
+
+[sub_resource type="BoxMesh" id="B1"]
+material = ExtResource("m_cardboard_burnt")
+size = Vector3(1.1, 0.9, 0.9)
+
+[sub_resource type="BoxMesh" id="B2"]
+material = ExtResource("m_paper_aged")
+size = Vector3(0.12, 0.005, 0.9)
+
+[sub_resource type="BoxMesh" id="B3"]
+material = ExtResource("m_paper_aged")
+size = Vector3(0.12, 0.3, 0.004)
+
+[sub_resource type="BoxMesh" id="B4"]
+material = ExtResource("m_label_dirty")
+size = Vector3(0.3, 0.2, 0.004)
+
+[sub_resource type="BoxMesh" id="B5"]
+material = ExtResource("m_soot")
+size = Vector3(0.5, 0.35, 0.004)
+
+[sub_resource type="BoxMesh" id="B6"]
+material = ExtResource("m_cardboard")
+size = Vector3(1.12, 0.06, 0.92)
+
+[node name="BigCarton" type="Node3D"]
+
+[node name="Body" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, 0, 0.45, 0)
+mesh = SubResource("B1")
+
+[node name="TapeTop" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, 0, 0.902, 0)
+mesh = SubResource("B2")
+
+[node name="TapeFront" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, 0, 0.75, 0.452)
+mesh = SubResource("B3")
+
+[node name="Label" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, -0.28, 0.45, 0.452)
+mesh = SubResource("B4")
+
+[node name="BurnPatch" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, 0.3, 0.3, 0.453)
+mesh = SubResource("B5")
+
+[node name="BottomBand" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, 0, 0.03, 0)
+mesh = SubResource("B6")
