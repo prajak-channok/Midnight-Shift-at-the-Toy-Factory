@@ -1,4 +1,4 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://djnhgetdbli3g"]
 
 [ext_resource type="Material" path="res://building/props/materials/wood_dark.tres" id="1_46kc5"]
 [ext_resource type="Material" path="res://building/props/materials/cork.tres" id="2_2edjr"]
@@ -363,7 +363,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0.46, 0.0635)
 pixel_size = 0.0024
 modulate = Color(0.1, 0.06, 0.04, 1)
 text = "STAFF NOTICES"
-font_size = 64
+font_size = 50
 outline_size = 0
 
 [node name="Roster" type="Node3D" parent="." unique_id=805780212]
@@ -376,14 +376,6 @@ mesh = SubResource("BoxMesh_ogt4e")
 [node name="HeadBar" type="MeshInstance3D" parent="Roster" unique_id=449100386]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.26, 0.055)
 mesh = SubResource("BoxMesh_xuusf")
-
-[node name="Title" type="Label3D" parent="Roster" unique_id=2144914490]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.26, 0.059)
-pixel_size = 0.0017
-modulate = Color(0.95, 0.95, 0.9, 1)
-text = "SHIFT ROSTER"
-font_size = 64
-outline_size = 0
 
 [node name="Row0" type="MeshInstance3D" parent="Roster" unique_id=650849534]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.16, 0.056)
@@ -435,15 +427,6 @@ mesh = SubResource("BoxMesh_lcgc1")
 [node name="Sheet" type="MeshInstance3D" parent="Rules" unique_id=1998211269]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.055)
 mesh = SubResource("BoxMesh_iyp0q")
-
-[node name="Title" type="Label3D" parent="Rules" unique_id=1028979990]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0.0585)
-pixel_size = 0.0019
-modulate = Color(0.55, 0.06, 0.05, 1)
-text = "NIGHT SHIFT
-RULES"
-font_size = 64
-outline_size = 0
 
 [node name="Line0" type="MeshInstance3D" parent="Rules" unique_id=996133058]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.02, 0.06, 0.059)
@@ -594,15 +577,6 @@ mesh = SubResource("BoxMesh_tfud0")
 [node name="Tear" type="MeshInstance3D" parent="Flyer" unique_id=1652703869]
 transform = Transform3D(0.81915206, -0.57357645, 0, 0.57357645, 0.81915206, 0, 0, 0, 1, 0.1, -0.27, 0.0545)
 mesh = SubResource("BoxMesh_rmujb")
-
-[node name="Text" type="Label3D" parent="Flyer" unique_id=2010780734]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04, -0.09, 0.056)
-pixel_size = 0.0018
-modulate = Color(0.1, 0.06, 0.04, 1)
-text = "LOST
-PLUSH"
-font_size = 64
-outline_size = 0
 
 [node name="Pin" type="MeshInstance3D" parent="Flyer" unique_id=1410960979]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.7, 0.04, -0.01, 0.059)

@@ -1,11 +1,11 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://bww1cd36mi224"]
 
 [ext_resource type="Material" path="res://building/props/materials/paper_white.tres" id="1_0ctkg"]
 [ext_resource type="Material" path="res://building/props/materials/metal_grey.tres" id="2_gdifd"]
 [ext_resource type="Material" path="res://building/props/materials/black_text.tres" id="3_rt3nh"]
 [ext_resource type="Material" path="res://building/props/materials/plastic_black.tres" id="4_a3enk"]
 [ext_resource type="Material" path="res://building/props/materials/red_paint.tres" id="5_q8xa7"]
-[ext_resource type="Material" path="res://building/props/materials/led_green.tres" id="6_304a7"]
+[ext_resource type="Material" uid="uid://drg6bcmpkwwwj" path="res://building/props/materials/led_green.tres" id="6_304a7"]
 [ext_resource type="Material" path="res://building/props/materials/metal_dark.tres" id="7_l8oun"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8kplm"]
@@ -279,7 +279,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.19, 0.1465)
 pixel_size = 0.0012
 modulate = Color(0.1, 0.06, 0.04, 1)
 text = "PUNCH IN"
-font_size = 64
+font_size = 36
 outline_size = 0
 
 [node name="RackFrame" type="MeshInstance3D" parent="." unique_id=612660913]
