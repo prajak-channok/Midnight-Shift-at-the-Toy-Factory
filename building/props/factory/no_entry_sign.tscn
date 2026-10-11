@@ -1,4 +1,4 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://c11f7i3ipabvx"]
 
 [ext_resource type="Material" path="res://building/props/materials/steel_burnt.tres" id="1_7mqwu"]
 [ext_resource type="Material" path="res://building/props/materials/steel_dull.tres" id="2_kbult"]
@@ -168,9 +168,9 @@ mesh = SubResource("BoxMesh_mjbx3")
 [node name="PlateText" type="Label3D" parent="Sign" unique_id=773706873]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.46, 0.0085)
 pixel_size = 0.0026
-modulate = Color(0.4, 0.06, 0.04, 1)
+modulate = Color(0.43529412, 0.05882353, 0.039215688, 1)
 text = "KEEP OUT"
-font_size = 64
+font_size = 48
 outline_size = 0
 
 [node name="PlateBurn" type="MeshInstance3D" parent="Sign" unique_id=1442893069]

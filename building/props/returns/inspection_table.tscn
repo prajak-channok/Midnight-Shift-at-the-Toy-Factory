@@ -1,4 +1,4 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://c75exl30k33"]
 
 [ext_resource type="Material" path="res://building/props/materials/wood_desk.tres" id="1_5iuh4"]
 [ext_resource type="Material" path="res://building/props/materials/metal_dark.tres" id="2_ogulk"]
@@ -52,5 +52,5 @@ transform = Transform3D(0.99026805, -0.1391731, -6.0834497e-09, 0, -4.371139e-08
 pixel_size = 0.0019
 modulate = Color(0.1, 0.06, 0.04, 1)
 text = "DEFECT LOG"
-font_size = 64
+font_size = 48
 outline_size = 0

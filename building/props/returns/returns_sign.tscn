@@ -1,4 +1,4 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://bd12x1b050107"]
 
 [ext_resource type="Material" path="res://building/props/materials/board_dark.tres" id="1_skyb1"]
 
@@ -17,5 +17,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.065)
 pixel_size = 0.0034
 modulate = Color(0.62, 0.45, 0.08, 1)
 text = "RETURNS / DEFECTIVE"
-font_size = 64
+font_size = 48
 outline_size = 0

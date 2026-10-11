@@ -1,9 +1,9 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://1nb6kmk32hkq"]
 
 [ext_resource type="Material" path="res://building/props/materials/plastic_beige.tres" id="1_b8xs8"]
 [ext_resource type="Material" path="res://building/props/materials/plastic_beige_dark.tres" id="2_shnv0"]
-[ext_resource type="Material" path="res://building/props/materials/screen_glow.tres" id="3_amb6s"]
-[ext_resource type="Material" path="res://building/props/materials/led_green.tres" id="4_tnktr"]
+[ext_resource type="Material" uid="uid://b7l5fp3k5jout" path="res://building/props/materials/screen_glow.tres" id="3_amb6s"]
+[ext_resource type="Material" uid="uid://drg6bcmpkwwwj" path="res://building/props/materials/led_green.tres" id="4_tnktr"]
 [ext_resource type="Material" path="res://building/props/materials/plastic_black.tres" id="5_odfjb"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_157go"]

@@ -33,6 +33,7 @@ mesh = SubResource("BoxMesh_vsg8q")
 [node name="Text" type="Label3D" parent="." unique_id=119908571]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5225, 0.385)
 pixel_size = 0.0055
-modulate = Color(0.62, 0.1, 0.07, 1)
+modulate = Color(0.32156864, 0.101960786, 0.07058824, 1)
 text = "DEFECTIVE"
+font_size = 28
 outline_size = 0

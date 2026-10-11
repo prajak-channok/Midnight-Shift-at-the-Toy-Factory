@@ -1,4 +1,4 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://c1d8n40rgkafn"]
 
 [ext_resource type="Material" path="res://building/props/materials/burnt_wood.tres" id="1_xyi5d"]
 [ext_resource type="Material" path="res://building/props/materials/scorched_wood.tres" id="2_yac52"]
@@ -196,9 +196,9 @@ mesh = SubResource("BoxMesh_20ryy")
 [node name="Label" type="Label3D" parent="." unique_id=546130216]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.02, 0.15, 0.3045)
 pixel_size = 0.0034
-modulate = Color(0.55, 0.13, 0.09, 1)
+modulate = Color(0.32156864, 0.12941177, 0.09019608, 1)
 text = "TOYS"
-font_size = 64
+font_size = 50
 outline_size = 0
 
 [node name="LabelBurn" type="MeshInstance3D" parent="." unique_id=20971973]
@@ -256,19 +256,19 @@ mesh = SubResource("SphereMesh_fd4lk")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, 0.35, 0.1)
 mesh = SubResource("SphereMesh_fh2wx")
 
-[node name="TeddyHead" type="Node3D" parent="." unique_id=1877268272 instance=ExtResource("8_kyfj6")]
+[node name="TeddyHead" parent="." unique_id=1877268272 instance=ExtResource("8_kyfj6")]
 transform = Transform3D(1.4246261, -0.6361203, 0.67512316, 0.4134576, 1.5430448, 0.58143425, -0.8303573, -0.32305393, 1.4478062, -0.15, 0.3, 0.06)
 
-[node name="BlocksInside" type="Node3D" parent="." unique_id=1931365333 instance=ExtResource("9_f1mo2")]
+[node name="BlocksInside" parent="." unique_id=1931365333 instance=ExtResource("9_f1mo2")]
 transform = Transform3D(1.1276312, 0, 0.41042417, 0, 1.2, 0, -0.41042417, 0, 1.1276312, 0, 0.3, -0.1)
 
-[node name="DollHeadSpill" type="Node3D" parent="." unique_id=590647117 instance=ExtResource("10_kmkio")]
+[node name="DollHeadSpill" parent="." unique_id=590647117 instance=ExtResource("10_kmkio")]
 transform = Transform3D(1.0724622, 0, 0.8999026, 0, 1.4, 0, -0.8999026, 0, 1.0724622, 0.12, 0, 0.58)
 
-[node name="BlocksSpill" type="Node3D" parent="." unique_id=1067668796 instance=ExtResource("9_f1mo2")]
+[node name="BlocksSpill" parent="." unique_id=1067668796 instance=ExtResource("9_f1mo2")]
 transform = Transform3D(1.1258329, 0, -0.65, 0, 1.3, 0, 0.65, 0, 1.1258329, -0.35, 0, 0.62)
 
-[node name="BallSpill" type="Node3D" parent="." unique_id=1745784226 instance=ExtResource("11_4ewtn")]
+[node name="BallSpill" parent="." unique_id=1745784226 instance=ExtResource("11_4ewtn")]
 transform = Transform3D(1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, 0.5, 0, 0.7)
 
 [node name="SpillAsh" type="MeshInstance3D" parent="." unique_id=843354073]

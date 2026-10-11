@@ -1,6 +1,6 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://do65d45hnlt2b"]
 
-[ext_resource type="Material" path="res://building/props/materials/bin_blue.tres" id="1_lncxe"]
+[ext_resource type="Material" uid="uid://ifyhgoqvq1fc" path="res://building/props/materials/bin_blue.tres" id="1_lncxe"]
 [ext_resource type="Material" path="res://building/props/materials/metal_dark.tres" id="2_q1u81"]
 [ext_resource type="Material" path="res://building/props/materials/burnt_plush.tres" id="3_3vplf"]
 
