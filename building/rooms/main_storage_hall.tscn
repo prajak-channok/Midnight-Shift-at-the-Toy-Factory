@@ -218,7 +218,7 @@ transform = Transform3D(0.99904, 0.00000, 0.04379, 0.00000, 1.00000, -0.00000, -
 transform = Transform3D(0.99872, -0.00000, -0.05056, 0.00000, 1.00000, -0.00000, 0.05056, 0.00000, 0.99872, -4.097, 0.155, 4.583)
 
 [node name="Rack_R3_-11.3" type="Node3D" parent="Props" instance=ExtResource("p_rack")]
-transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, -11.3, 0, 1.6)
+transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, -11.24, 0, 1.6)
 
 [node name="Rack_R3_-8.9" type="Node3D" parent="Props" instance=ExtResource("p_rack")]
 transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, -8.9, 0, 1.6)
@@ -308,7 +308,7 @@ transform = Transform3D(0.25882, 0.00000, 0.96593, 0.00000, 1.00000, -0.00000, -
 transform = Transform3D(0.00000, 0.00000, 1.00000, 0.00000, 1.00000, -0.00000, -1.00000, 0.00000, 0.00000, 1.1, 0, 8.9)
 
 [node name="BarrierB" type="Node3D" parent="Props" instance=ExtResource("p_barrier")]
-transform = Transform3D(0.00000, 0.00000, 1.00000, 0.00000, 1.00000, -0.00000, -1.00000, 0.00000, 0.00000, 1.1, 0, 10.5)
+transform = Transform3D(0.00000, 0.00000, 1.00000, 0.00000, 1.00000, -0.00000, -1.00000, 0.00000, 0.00000, 1.1, 0, 10.35)
 
 [node name="PalletE" type="Node3D" parent="Props" instance=ExtResource("p_pallet")]
 transform = Transform3D(0.99027, -0.00000, -0.13917, 0.00000, 1.00000, -0.00000, 0.13917, 0.00000, 0.99027, 1.7, 0, 7.0)
@@ -341,7 +341,7 @@ transform = Transform3D(0.76604, 0.00000, 0.64279, 0.00000, 1.00000, -0.00000, -
 transform = Transform3D(0.00000, 0.00000, 1.00000, 0.00000, 1.00000, -0.00000, -1.00000, 0.00000, 0.00000, -12.5, 4.6, 4.0)
 
 [node name="WestExt" type="Node3D" parent="Props" instance=ExtResource("p_extg")]
-transform = Transform3D(0.00000, 0.00000, 1.00000, 0.00000, 1.00000, -0.00000, -1.00000, 0.00000, 0.00000, -12.45, 0, 9.6)
+transform = Transform3D(0.00000, 0.00000, 1.00000, 0.00000, 1.00000, -0.00000, -1.00000, 0.00000, 0.00000, -12.42, 0, 9.6)
 
 [node name="WestWarn" type="Node3D" parent="Props" instance=ExtResource("p_warn")]
 transform = Transform3D(0.00000, 0.00000, 1.00000, 0.00000, 1.00000, -0.00000, -1.00000, 0.00000, 0.00000, -12.45, 1.7, 8.6)

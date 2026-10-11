@@ -482,7 +482,7 @@ transform = Transform3D(-3.3484866e-08, -0.76604444, 0.6427876, 1, -4.371139e-08
 transform = Transform3D(3.0494375, -0.35201505, 0.34202012, 1.311123, 0.92718387, 0, -1.1099044, 0.12812299, 0.9396926, -2.4, 1.1, 1.2)
 
 [node name="FallenBeam2" type="Node3D" parent="Props/Debris" unique_id=664716288 instance=ExtResource("16_70tfh")]
-transform = Transform3D(1.0260605, 0, 0.9396926, 0, 1, 0, -2.819078, 0, 0.34202015, 3.6, 0.15, 2.8)
+transform = Transform3D(1.0260605, 0, 0.9396926, 0, 1, 0, -2.819078, 0, 0.34202015, 3.6, 0.15, 2.55)
 
 [node name="Rubble1" type="Node3D" parent="Props/Debris" unique_id=1332644814 instance=ExtResource("17_hfw3c")]
 transform = Transform3D(1.2124355, 0, 0.7, 0, 1.4, 0, -0.7, 0, 1.2124355, 3, 0, 1)

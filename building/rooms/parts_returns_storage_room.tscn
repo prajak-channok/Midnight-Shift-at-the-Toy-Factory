@@ -115,7 +115,7 @@ transform = Transform3D(-0.92050487, 0, -0.39073116, 0, 1, 0, 0.39073116, 0, -0.
 transform = Transform3D(0.9396926, 0, 0.34202012, 0, 1, 0, -0.34202012, 0, 0.9396926, -0.75, 0, -1)
 
 [node name="SootE" type="Node3D" parent="Props" unique_id=1370124161 instance=ExtResource("14_6w2fc")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 2.84, 0, 1.9)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 2.84, 0, 1.65)
 
 [node name="Puddle" type="Node3D" parent="Props" unique_id=565802731 instance=ExtResource("15_3ofmq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9, 0, -0.5)
