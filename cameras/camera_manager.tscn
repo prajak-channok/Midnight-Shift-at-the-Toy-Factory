@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://b4nbbl4e36j1d" path="res://common/static/static_frame_4.png" id="7_b4mdr"]
 [ext_resource type="Texture2D" uid="uid://brrmh86sbskvw" path="res://common/static/static_frame_5.png" id="8_ciquy"]
 [ext_resource type="AudioStream" uid="uid://ch5ikqjcyxkkt" path="res://sounds/cam_click.ogg" id="9_t54n1"]
-[ext_resource type="AudioStream" uid="uid://coremqfsmmlb3" path="res://sounds/337434__ev-dawg__speaker-buzz.wav" id="10_pyw2v"]
 [ext_resource type="Script" path="res://common/static/static_noise.gd" id="11_noise"]
 
 [sub_resource type="Animation" id="Animation_e0ubl"]
@@ -223,7 +222,3 @@ libraries/ = SubResource("AnimationLibrary_c5k7w")
 [node name="CamClickSound" type="AudioStreamPlayer" parent="." unique_id=283692509]
 stream = ExtResource("9_t54n1")
 
-[node name="CamFlashlightSound" type="AudioStreamPlayer" parent="." unique_id=166843971]
-stream = ExtResource("10_pyw2v")
-volume_db = -20.0
-pitch_scale = 0.8

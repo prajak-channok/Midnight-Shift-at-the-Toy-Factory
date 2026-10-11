@@ -181,10 +181,3 @@ mesh = SubResource("CylinderMesh_xwfq8")
 [node name="WireB" type="MeshInstance3D" parent="." unique_id=1585234384]
 transform = Transform3D(0.9702957, 0.2419219, 0, -0.2419219, 0.9702957, 0, 0, 0, 1, 0.4, -0.2, 0.09)
 mesh = SubResource("CylinderMesh_tq8vx")
-
-[node name="RedGlow" type="OmniLight3D" parent="." unique_id=1847338203]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5)
-light_color = Color(1, 0.1, 0.06, 1)
-light_energy = 1.3
-light_specular = 0.0
-omni_range = 3.6

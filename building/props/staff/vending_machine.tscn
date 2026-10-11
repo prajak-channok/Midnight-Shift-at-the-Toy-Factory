@@ -780,13 +780,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 1.6, 0.32)
 cast_shadow = 0
 mesh = SubResource("BoxMesh_jky85")
 
-[node name="Glow" type="OmniLight3D" parent="." unique_id=1835745880]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 1, 0.6)
-light_color = Color(0.75, 0.88, 1, 1)
-light_energy = 0.55
-light_specular = 0.0
-omni_range = 2.4
-
 [node name="MarqueeBox" type="MeshInstance3D" parent="." unique_id=200678550]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.735, 0.412)
 cast_shadow = 0

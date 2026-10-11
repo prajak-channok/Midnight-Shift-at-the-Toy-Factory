@@ -420,13 +420,6 @@ mesh = SubResource("CylinderMesh_2j2ip")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.36, 2.23, 0.3)
 mesh = SubResource("CylinderMesh_ln4cb")
 
-[node name="BeaconGlow" type="OmniLight3D" parent="." unique_id=1317957953]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.36, 2.4, 0.3)
-light_color = Color(1, 0.5, 0.1, 1)
-light_energy = 0.8
-light_specular = 0.0
-omni_range = 3.2
-
 [node name="Burn" type="MeshInstance3D" parent="." unique_id=2080266097]
 transform = Transform3D(0.9396926, 0, 0.34202012, 0, 1, 0, -0.34202012, 0, 0.9396926, 0.22, 0.806, 0)
 cast_shadow = 0

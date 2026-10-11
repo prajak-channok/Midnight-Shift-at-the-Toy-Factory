@@ -40,7 +40,7 @@
 [ext_resource type="PackedScene" path="res://building/props/factory/burnt_clock.tscn" id="38_l7fd5"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p0s0v"]
-albedo_color = Color(0.1, 0.075, 0.06, 1)
+albedo_color = Color(0.19, 0.165, 0.15, 1)
 roughness = 0.6
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_p0s0v"]
@@ -48,7 +48,7 @@ material = SubResource("StandardMaterial3D_p0s0v")
 size = Vector2(12, 8)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_snnwd"]
-albedo_color = Color(0.13, 0.097500004, 0.077999994, 1)
+albedo_color = Color(0.247, 0.2145, 0.19500001, 1)
 roughness = 0.9
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_sd6b0"]
@@ -56,7 +56,7 @@ material = SubResource("StandardMaterial3D_snnwd")
 size = Vector2(12, 8)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5rprl"]
-albedo_color = Color(0.2, 0.15, 0.12, 1)
+albedo_color = Color(0.38, 0.33, 0.3, 1)
 roughness = 0.9
 
 [sub_resource type="QuadMesh" id="QuadMesh_snnwd"]
