@@ -1,0 +1,30 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://building/props/materials/rug_dark.tres" id="1_kxy00"]
+[ext_resource type="Material" path="res://building/props/materials/metal_dark.tres" id="2_8i4g5"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_qpoj6"]
+material = ExtResource("1_kxy00")
+top_radius = 0.22
+bottom_radius = 0.22
+height = 0.08
+radial_segments = 16
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_7k82f"]
+material = ExtResource("2_8i4g5")
+top_radius = 0.05
+bottom_radius = 0.05
+height = 0.56
+radial_segments = 8
+rings = 1
+
+[node name="Stool" type="Node3D" unique_id=1648698331]
+
+[node name="Seat" type="MeshInstance3D" parent="." unique_id=1739182689]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
+mesh = SubResource("CylinderMesh_qpoj6")
+
+[node name="Post" type="MeshInstance3D" parent="." unique_id=338892899]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.28, 0)
+mesh = SubResource("CylinderMesh_7k82f")

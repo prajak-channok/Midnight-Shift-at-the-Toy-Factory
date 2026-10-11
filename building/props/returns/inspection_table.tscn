@@ -1,0 +1,56 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://building/props/materials/wood_desk.tres" id="1_5iuh4"]
+[ext_resource type="Material" path="res://building/props/materials/metal_dark.tres" id="2_ogulk"]
+[ext_resource type="Material" path="res://building/props/materials/ledger_cover.tres" id="3_hnsbp"]
+[ext_resource type="Material" path="res://building/props/materials/paper_aged.tres" id="4_xw6r7"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ny8it"]
+material = ExtResource("1_5iuh4")
+size = Vector3(2, 0.1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_vw8ui"]
+material = ExtResource("2_ogulk")
+size = Vector3(0.1, 0.9, 0.9)
+
+[sub_resource type="BoxMesh" id="BoxMesh_5rrnu"]
+material = ExtResource("2_ogulk")
+size = Vector3(0.1, 0.9, 0.9)
+
+[sub_resource type="BoxMesh" id="BoxMesh_nelf0"]
+material = ExtResource("3_hnsbp")
+size = Vector3(0.8, 0.05, 0.56)
+
+[sub_resource type="BoxMesh" id="BoxMesh_5sygp"]
+material = ExtResource("4_xw6r7")
+size = Vector3(0.74, 0.04, 0.5)
+
+[node name="InspectionTable" type="Node3D" unique_id=247343943]
+
+[node name="Top" type="MeshInstance3D" parent="." unique_id=730239719]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.95, 0)
+mesh = SubResource("BoxMesh_ny8it")
+
+[node name="SideL" type="MeshInstance3D" parent="." unique_id=2052059408]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9, 0.45, 0)
+mesh = SubResource("BoxMesh_vw8ui")
+
+[node name="SideR" type="MeshInstance3D" parent="." unique_id=1288436635]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9, 0.45, 0)
+mesh = SubResource("BoxMesh_5rrnu")
+
+[node name="LedgerCover" type="MeshInstance3D" parent="." unique_id=1263293963]
+transform = Transform3D(0.99026805, 0, 0.1391731, 0, 1, 0, -0.1391731, 0, 0.99026805, 0.1, 1.025, 0.05)
+mesh = SubResource("BoxMesh_nelf0")
+
+[node name="LedgerPages" type="MeshInstance3D" parent="." unique_id=2117941514]
+transform = Transform3D(0.99026805, 0, 0.1391731, 0, 1, 0, -0.1391731, 0, 0.99026805, 0.1, 1.07, 0.05)
+mesh = SubResource("BoxMesh_5sygp")
+
+[node name="Text" type="Label3D" parent="." unique_id=109510885]
+transform = Transform3D(0.99026805, -0.1391731, -6.0834497e-09, 0, -4.371139e-08, 1, -0.1391731, -0.99026805, -4.328599e-08, 0.1, 1.095, 0.05)
+pixel_size = 0.0019
+modulate = Color(0.1, 0.06, 0.04, 1)
+text = "DEFECT LOG"
+font_size = 64
+outline_size = 0

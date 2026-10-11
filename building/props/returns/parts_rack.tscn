@@ -1,0 +1,99 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://building/props/materials/steel_burnt.tres" id="1_1oph7"]
+[ext_resource type="Material" path="res://building/props/materials/shelf_steel.tres" id="2_5atut"]
+[ext_resource type="Material" path="res://building/props/materials/bin_blue.tres" id="3_dnbvr"]
+[ext_resource type="Material" path="res://building/props/materials/cardboard_burnt.tres" id="4_ep67c"]
+[ext_resource type="Material" path="res://building/props/materials/cardboard.tres" id="5_k20yt"]
+[ext_resource type="Material" path="res://building/props/materials/bin_red.tres" id="6_8ry8s"]
+[ext_resource type="Material" path="res://building/props/materials/bin_mustard.tres" id="7_q0v87"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_q84uk"]
+material = ExtResource("1_1oph7")
+size = Vector3(0.08, 2.2, 0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_p8xda"]
+material = ExtResource("1_1oph7")
+size = Vector3(0.08, 2.2, 0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_yh51h"]
+material = ExtResource("2_5atut")
+size = Vector3(2.08, 0.06, 0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_cnrar"]
+material = ExtResource("3_dnbvr")
+size = Vector3(0.8, 0.4, 0.4)
+
+[sub_resource type="BoxMesh" id="BoxMesh_0yvnt"]
+material = ExtResource("4_ep67c")
+size = Vector3(0.7, 0.32, 0.4)
+
+[sub_resource type="BoxMesh" id="BoxMesh_u2vb7"]
+material = ExtResource("2_5atut")
+size = Vector3(2.08, 0.06, 0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_j4cpu"]
+material = ExtResource("5_k20yt")
+size = Vector3(0.8, 0.4, 0.4)
+
+[sub_resource type="BoxMesh" id="BoxMesh_fd7om"]
+material = ExtResource("6_8ry8s")
+size = Vector3(0.7, 0.32, 0.4)
+
+[sub_resource type="BoxMesh" id="BoxMesh_j2dqe"]
+material = ExtResource("2_5atut")
+size = Vector3(2.08, 0.06, 0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_0mwhe"]
+material = ExtResource("7_q0v87")
+size = Vector3(0.8, 0.4, 0.4)
+
+[sub_resource type="BoxMesh" id="BoxMesh_82ewr"]
+material = ExtResource("5_k20yt")
+size = Vector3(0.7, 0.32, 0.4)
+
+[node name="PartsRack" type="Node3D" unique_id=2147068575]
+
+[node name="UprightL" type="MeshInstance3D" parent="." unique_id=1172290658]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1.1, 0.25)
+mesh = SubResource("BoxMesh_q84uk")
+
+[node name="UprightR" type="MeshInstance3D" parent="." unique_id=771948139]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1.1, 0.25)
+mesh = SubResource("BoxMesh_p8xda")
+
+[node name="Shelf0" type="MeshInstance3D" parent="." unique_id=1792346720]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0.25)
+mesh = SubResource("BoxMesh_yh51h")
+
+[node name="PartsBoxA0" type="MeshInstance3D" parent="." unique_id=1525311374]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.63, 0.26)
+mesh = SubResource("BoxMesh_cnrar")
+
+[node name="PartsBoxB0" type="MeshInstance3D" parent="." unique_id=258156408]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.59, 0.26)
+mesh = SubResource("BoxMesh_0yvnt")
+
+[node name="Shelf1" type="MeshInstance3D" parent="." unique_id=355687379]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.15, 0.25)
+mesh = SubResource("BoxMesh_u2vb7")
+
+[node name="PartsBoxA1" type="MeshInstance3D" parent="." unique_id=1836461763]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1.38, 0.26)
+mesh = SubResource("BoxMesh_j4cpu")
+
+[node name="PartsBoxB1" type="MeshInstance3D" parent="." unique_id=1910652915]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1.34, 0.26)
+mesh = SubResource("BoxMesh_fd7om")
+
+[node name="Shelf2" type="MeshInstance3D" parent="." unique_id=1676062955]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9, 0.25)
+mesh = SubResource("BoxMesh_j2dqe")
+
+[node name="PartsBoxA2" type="MeshInstance3D" parent="." unique_id=594804132]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 2.13, 0.26)
+mesh = SubResource("BoxMesh_0mwhe")
+
+[node name="PartsBoxB2" type="MeshInstance3D" parent="." unique_id=139092845]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 2.09, 0.26)
+mesh = SubResource("BoxMesh_82ewr")

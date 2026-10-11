@@ -1,0 +1,38 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://building/props/materials/cardboard.tres" id="1_5nnxh"]
+[ext_resource type="Material" path="res://building/props/materials/cardboard_burnt.tres" id="2_vodgt"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_3uomn"]
+material = ExtResource("1_5nnxh")
+size = Vector3(1.2, 0.7, 0.9)
+
+[sub_resource type="BoxMesh" id="BoxMesh_p4bgf"]
+material = ExtResource("2_vodgt")
+size = Vector3(1, 0.6, 0.8)
+
+[sub_resource type="BoxMesh" id="BoxMesh_q4drm"]
+material = ExtResource("1_5nnxh")
+size = Vector3(0.8, 0.5, 0.65)
+
+[node name="ReturnStackA" type="Node3D" unique_id=609179675]
+
+[node name="BoxBottom" type="MeshInstance3D" parent="." unique_id=750328182]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35, 0)
+mesh = SubResource("BoxMesh_3uomn")
+
+[node name="BoxMid" type="MeshInstance3D" parent="." unique_id=1043120998]
+transform = Transform3D(0.99026805, 0, 0.1391731, 0, 1, 0, -0.1391731, 0, 0.99026805, 0.05, 1, 0)
+mesh = SubResource("BoxMesh_p4bgf")
+
+[node name="BoxTop" type="MeshInstance3D" parent="." unique_id=978145947]
+transform = Transform3D(0.9781476, 0, -0.2079117, 0, 1, 0, 0.2079117, 0, 0.9781476, -0.05, 1.55, 0)
+mesh = SubResource("BoxMesh_q4drm")
+
+[node name="Text" type="Label3D" parent="." unique_id=911689830]
+transform = Transform3D(0.99026805, 0, 0.1391731, 0, 1, 0, -0.1391731, 0, 0.99026805, 0.05, 1, 0.42)
+pixel_size = 0.0045
+modulate = Color(0.1, 0.06, 0.04, 1)
+text = "RETURN"
+font_size = 64
+outline_size = 0

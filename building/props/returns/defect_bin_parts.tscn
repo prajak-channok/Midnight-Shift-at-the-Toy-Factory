@@ -1,0 +1,31 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://building/props/materials/bin_blue.tres" id="1_lncxe"]
+[ext_resource type="Material" path="res://building/props/materials/metal_dark.tres" id="2_q1u81"]
+[ext_resource type="Material" path="res://building/props/materials/burnt_plush.tres" id="3_3vplf"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_yui4s"]
+material = ExtResource("1_lncxe")
+size = Vector3(1, 0.95, 0.75)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ypmwc"]
+material = ExtResource("2_q1u81")
+size = Vector3(1.08, 0.08, 0.83)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ulwg8"]
+material = ExtResource("3_3vplf")
+size = Vector3(0.8, 0.22, 0.525)
+
+[node name="DefectBinParts" type="Node3D" unique_id=2057739727]
+
+[node name="Body" type="MeshInstance3D" parent="." unique_id=1917816865]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.475, 0)
+mesh = SubResource("BoxMesh_yui4s")
+
+[node name="Rim" type="MeshInstance3D" parent="." unique_id=1876124265]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.99, 0)
+mesh = SubResource("BoxMesh_ypmwc")
+
+[node name="Heap" type="MeshInstance3D" parent="." unique_id=189853653]
+transform = Transform3D(0.9781476, 0, 0.2079117, 0, 1, 0, -0.2079117, 0, 0.9781476, 0, 1.05, 0)
+mesh = SubResource("BoxMesh_ulwg8")
