@@ -1,0 +1,241 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://building/props/materials/steel_burnt.tres" id="m_steel_burnt"]
+[ext_resource type="Material" path="res://building/props/materials/board_dark.tres" id="m_board_dark"]
+[ext_resource type="Material" path="res://building/props/materials/faded_yellow.tres" id="m_faded_yellow"]
+[ext_resource type="Material" path="res://building/props/materials/paper_aged.tres" id="m_paper_aged"]
+[ext_resource type="Material" path="res://building/props/materials/red_paint.tres" id="m_red_paint"]
+[ext_resource type="Material" path="res://building/props/materials/label_dirty.tres" id="m_label_dirty"]
+[ext_resource type="Material" path="res://building/props/materials/grime_dark.tres" id="m_grime_dark"]
+
+[sub_resource type="BoxMesh" id="s1"]
+material = ExtResource("m_steel_burnt")
+size = Vector3(2, 1.2, 0.04)
+
+[sub_resource type="BoxMesh" id="s2"]
+material = ExtResource("m_board_dark")
+size = Vector3(1.9, 1.1, 0.01)
+
+[sub_resource type="BoxMesh" id="s3"]
+material = ExtResource("m_faded_yellow")
+size = Vector3(1.9, 0.16, 0.008)
+
+[sub_resource type="BoxMesh" id="s4"]
+material = ExtResource("m_paper_aged")
+size = Vector3(0.5, 0.3, 0.006)
+
+[sub_resource type="CylinderMesh" id="s5"]
+material = ExtResource("m_red_paint")
+top_radius = 0.012
+bottom_radius = 0.012
+height = 0.012
+radial_segments = 14
+rings = 1
+
+[sub_resource type="BoxMesh" id="s6"]
+material = ExtResource("m_paper_aged")
+size = Vector3(0.5, 0.3, 0.006)
+
+[sub_resource type="CylinderMesh" id="s7"]
+material = ExtResource("m_red_paint")
+top_radius = 0.012
+bottom_radius = 0.012
+height = 0.012
+radial_segments = 14
+rings = 1
+
+[sub_resource type="BoxMesh" id="s8"]
+material = ExtResource("m_paper_aged")
+size = Vector3(0.5, 0.3, 0.006)
+
+[sub_resource type="CylinderMesh" id="s9"]
+material = ExtResource("m_red_paint")
+top_radius = 0.012
+bottom_radius = 0.012
+height = 0.012
+radial_segments = 14
+rings = 1
+
+[sub_resource type="BoxMesh" id="s10"]
+material = ExtResource("m_label_dirty")
+size = Vector3(0.5, 0.3, 0.006)
+
+[sub_resource type="CylinderMesh" id="s11"]
+material = ExtResource("m_red_paint")
+top_radius = 0.012
+bottom_radius = 0.012
+height = 0.012
+radial_segments = 14
+rings = 1
+
+[sub_resource type="BoxMesh" id="s12"]
+material = ExtResource("m_paper_aged")
+size = Vector3(0.5, 0.3, 0.006)
+
+[sub_resource type="CylinderMesh" id="s13"]
+material = ExtResource("m_red_paint")
+top_radius = 0.012
+bottom_radius = 0.012
+height = 0.012
+radial_segments = 14
+rings = 1
+
+[sub_resource type="BoxMesh" id="s14"]
+material = ExtResource("m_paper_aged")
+size = Vector3(0.5, 0.3, 0.006)
+
+[sub_resource type="CylinderMesh" id="s15"]
+material = ExtResource("m_red_paint")
+top_radius = 0.012
+bottom_radius = 0.012
+height = 0.012
+radial_segments = 14
+rings = 1
+
+[sub_resource type="BoxMesh" id="s16"]
+material = ExtResource("m_red_paint")
+size = Vector3(0.3, 0.1, 0.007)
+
+[sub_resource type="BoxMesh" id="s17"]
+material = ExtResource("m_grime_dark")
+size = Vector3(1.9, 0.2, 0.002)
+
+[node name="LotLabelBoard" type="Node3D"]
+
+[node name="Frame" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.02)
+mesh = SubResource("s1")
+
+[node name="Board" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.045)
+mesh = SubResource("s2")
+
+[node name="Header" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.47, 0.054)
+mesh = SubResource("s3")
+
+[node name="HeaderT" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.47, 0.06)
+pixel_size = 0.0016
+modulate = Color(0.07, 0.06, 0.04, 1)
+text = "LOT NO.  /  MFG DATE"
+font_size = 64
+outline_size = 0
+
+[node name="Tag0" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.99939084, 0.034899496, 0, -0.034899496, 0.99939084, 0, 0, 0, 1, -0.62, 0.2, 0.06)
+mesh = SubResource("s4")
+
+[node name="TagT0" type="Label3D" parent="."]
+transform = Transform3D(0.99939084, 0.034899496, 0, -0.034899496, 0.99939084, 0, 0, 0, 1, -0.62, 0.2, 0.065)
+pixel_size = 0.0012
+modulate = Color(0.07, 0.06, 0.04, 1)
+text = "LOT 0417-B
+MFG 12.03.1987"
+font_size = 56
+outline_size = 0
+
+[node name="Pin0" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -0.62, 0.32, 0.068)
+mesh = SubResource("s5")
+
+[node name="Tag1" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.9986295, -0.05233596, 0, 0.05233596, 0.9986295, 0, 0, 0, 1, 0, 0.2, 0.06)
+mesh = SubResource("s6")
+
+[node name="TagT1" type="Label3D" parent="."]
+transform = Transform3D(0.9986295, -0.05233596, 0, 0.05233596, 0.9986295, 0, 0, 0, 1, 0, 0.2, 0.065)
+pixel_size = 0.0012
+modulate = Color(0.07, 0.06, 0.04, 1)
+text = "LOT 0418-A
+MFG 14.03.1987"
+font_size = 56
+outline_size = 0
+
+[node name="Pin1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.32, 0.068)
+mesh = SubResource("s7")
+
+[node name="Tag2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.9998477, -0.017452406, 0, 0.017452406, 0.9998477, 0, 0, 0, 1, 0.62, 0.2, 0.06)
+mesh = SubResource("s8")
+
+[node name="TagT2" type="Label3D" parent="."]
+transform = Transform3D(0.9998477, -0.017452406, 0, 0.017452406, 0.9998477, 0, 0, 0, 1, 0.62, 0.2, 0.065)
+pixel_size = 0.0012
+modulate = Color(0.07, 0.06, 0.04, 1)
+text = "LOT 0422-C
+MFG 02.04.1987"
+font_size = 56
+outline_size = 0
+
+[node name="Pin2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.62, 0.32, 0.068)
+mesh = SubResource("s9")
+
+[node name="Tag3" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.9975641, -0.06975647, 0, 0.06975647, 0.9975641, 0, 0, 0, 1, -0.62, -0.2, 0.06)
+mesh = SubResource("s10")
+
+[node name="TagT3" type="Label3D" parent="."]
+transform = Transform3D(0.9975641, -0.06975647, 0, 0.06975647, 0.9975641, 0, 0, 0, 1, -0.62, -0.2, 0.065)
+pixel_size = 0.0012
+modulate = Color(0.07, 0.06, 0.04, 1)
+text = "LOT 0431-B
+MFG 19.04.1987"
+font_size = 56
+outline_size = 0
+
+[node name="Pin3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -0.62, -0.08, 0.068)
+mesh = SubResource("s11")
+
+[node name="Tag4" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.9986295, 0.05233596, 0, -0.05233596, 0.9986295, 0, 0, 0, 1, 0, -0.2, 0.06)
+mesh = SubResource("s12")
+
+[node name="TagT4" type="Label3D" parent="."]
+transform = Transform3D(0.9986295, 0.05233596, 0, -0.05233596, 0.9986295, 0, 0, 0, 1, 0, -0.2, 0.065)
+pixel_size = 0.0012
+modulate = Color(0.07, 0.06, 0.04, 1)
+text = "LOT 0433-A
+MFG 21.04.1987"
+font_size = 56
+outline_size = 0
+
+[node name="Pin4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, -0.08, 0.068)
+mesh = SubResource("s13")
+
+[node name="Tag5" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.62, -0.2, 0.06)
+mesh = SubResource("s14")
+
+[node name="TagT5" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.62, -0.2, 0.065)
+pixel_size = 0.0012
+modulate = Color(0.07, 0.06, 0.04, 1)
+text = "LOT 0440-D
+MFG 05.05.1987"
+font_size = 56
+outline_size = 0
+
+[node name="Pin5" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.62, -0.08, 0.068)
+mesh = SubResource("s15")
+
+[node name="Hold" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.9945219, 0.104528464, 0, -0.104528464, 0.9945219, 0, 0, 0, 1, 0.62, -0.3, 0.07)
+mesh = SubResource("s16")
+
+[node name="HoldT" type="Label3D" parent="."]
+transform = Transform3D(0.9945219, 0.104528464, 0, -0.104528464, 0.9945219, 0, 0, 0, 1, 0.62, -0.3, 0.076)
+pixel_size = 0.0016
+modulate = Color(0.8, 0.75, 0.65, 1)
+text = "HOLD"
+font_size = 64
+outline_size = 0
+
+[node name="Grime" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0.052)
+mesh = SubResource("s17")

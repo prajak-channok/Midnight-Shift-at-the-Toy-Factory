@@ -1,7 +1,26 @@
 [gd_scene format=3]
 
+[ext_resource type="PackedScene" path="res://building/props/inventory/weighing_table.tscn" id="p_wt"]
+[ext_resource type="PackedScene" path="res://building/props/inventory/barcode_scanner.tscn" id="p_sc"]
+[ext_resource type="PackedScene" path="res://building/props/inventory/sample_shelf_a.tscn" id="p_sha"]
+[ext_resource type="PackedScene" path="res://building/props/inventory/sample_shelf_b.tscn" id="p_shb"]
+[ext_resource type="PackedScene" path="res://building/props/inventory/stock_binder_rack.tscn" id="p_br"]
+[ext_resource type="PackedScene" path="res://building/props/inventory/receiving_desk.tscn" id="p_ds"]
+[ext_resource type="PackedScene" path="res://building/props/inventory/lot_label_board.tscn" id="p_lb"]
+[ext_resource type="PackedScene" path="res://building/props/inventory/qc_checklist_poster.tscn" id="p_po"]
+[ext_resource type="PackedScene" path="res://building/props/inventory/inspection_clipboard.tscn" id="p_cb"]
+[ext_resource type="PackedScene" path="res://building/props/inventory/stock_pallet.tscn" id="p_sp"]
+[ext_resource type="PackedScene" path="res://building/props/inventory/trash_bin.tscn" id="p_bin"]
+[ext_resource type="PackedScene" path="res://building/props/common/cardboard_box.tscn" id="p_cbx"]
+[ext_resource type="PackedScene" path="res://building/props/factory/burnt_clock.tscn" id="p_clk"]
+[ext_resource type="PackedScene" path="res://building/props/factory/soot_stain.tscn" id="p_soot"]
+[ext_resource type="PackedScene" path="res://building/props/common/fire_extinguisher.tscn" id="p_fe"]
+[ext_resource type="PackedScene" path="res://building/props/common/paper_ball.tscn" id="p_pb"]
+[ext_resource type="PackedScene" path="res://building/props/factory/puddle.tscn" id="p_pud"]
+[ext_resource type="Material" path="res://building/props/materials/faded_yellow.tres" id="m_tape"]
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cqq4f"]
-albedo_color = Color(0.13, 0.31, 0.29, 1)
+albedo_color = Color(0.1, 0.23, 0.21, 1)
 roughness = 0.6
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_cqq4f"]
@@ -9,7 +28,7 @@ material = SubResource("StandardMaterial3D_cqq4f")
 size = Vector2(11, 7.5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m2gya"]
-albedo_color = Color(0.16899998, 0.403, 0.37699997, 1)
+albedo_color = Color(0.11, 0.27, 0.25, 1)
 roughness = 0.9
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_i23dv"]
@@ -17,7 +36,7 @@ material = SubResource("StandardMaterial3D_m2gya")
 size = Vector2(11, 7.5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ptcn3"]
-albedo_color = Color(0.26, 0.62, 0.58, 1)
+albedo_color = Color(0.15, 0.36, 0.34, 1)
 roughness = 0.9
 
 [sub_resource type="QuadMesh" id="QuadMesh_m2gya"]
@@ -35,6 +54,22 @@ size = Vector2(7.5, 3.5)
 [sub_resource type="QuadMesh" id="QuadMesh_atdi8"]
 material = SubResource("StandardMaterial3D_ptcn3")
 size = Vector2(7.5, 3.5)
+
+[sub_resource type="BoxMesh" id="tape0"]
+material = ExtResource("m_tape")
+size = Vector3(2, 0.006, 0.06)
+
+[sub_resource type="BoxMesh" id="tape1"]
+material = ExtResource("m_tape")
+size = Vector3(2, 0.006, 0.06)
+
+[sub_resource type="BoxMesh" id="tape2"]
+material = ExtResource("m_tape")
+size = Vector3(0.06, 0.006, 2.2)
+
+[sub_resource type="BoxMesh" id="tape3"]
+material = ExtResource("m_tape")
+size = Vector3(0.06, 0.006, 2.2)
 
 [node name="InventoryCheckRoom" type="Node3D" unique_id=1283579601]
 
@@ -68,3 +103,86 @@ mesh = SubResource("QuadMesh_ptcn3")
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -5.5, 1.75, 0)
 cast_shadow = 2
 mesh = SubResource("QuadMesh_atdi8")
+
+[node name="Props" type="Node3D" parent="."]
+
+[node name="SampleShelfA" parent="Props" instance=ExtResource("p_sha")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6, 0, -3.75)
+
+[node name="SampleShelfB" parent="Props" instance=ExtResource("p_shb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4, 0, -3.75)
+
+[node name="LotLabelBoard" parent="Props" instance=ExtResource("p_lb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1.75, -3.75)
+
+[node name="BinderRack" parent="Props" instance=ExtResource("p_br")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.75, 1.45, -3.75)
+
+[node name="ReceivingDesk" parent="Props" instance=ExtResource("p_ds")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -3.75)
+
+[node name="ClipboardWall" parent="Props" instance=ExtResource("p_cb")]
+transform = Transform3D(0.9975641, -0.06975647, 0, 0.06975647, 0.9975641, 0, 0, 0, 1, 4.95, 1.4, -3.75)
+
+[node name="QcPoster" parent="Props" instance=ExtResource("p_po")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 5.5, 1.45, -2.4)
+
+[node name="WallClock" parent="Props" instance=ExtResource("p_clk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 2.9, -3.75)
+
+[node name="FireExtinguisher" parent="Props" instance=ExtResource("p_fe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4, 0, -3.4)
+
+[node name="WeighingTable" parent="Props" instance=ExtResource("p_wt")]
+transform = Transform3D(0.9975641, 0, -0.06975647, 0, 1, 0, 0.06975647, 0, 0.9975641, 0.9, 0, -2)
+
+[node name="BarcodeScanner" parent="Props" instance=ExtResource("p_sc")]
+transform = Transform3D(0.9702957, 0, 0.2419219, 0, 1, 0, -0.2419219, 0, 0.9702957, 1.5, 0.9, -1.9)
+
+[node name="StockPallet" parent="Props" instance=ExtResource("p_sp")]
+transform = Transform3D(0.9702957, 0, 0.2419219, 0, 1, 0, -0.2419219, 0, 0.9702957, -3.3, 0, -1.7)
+
+[node name="TrashBin" parent="Props" instance=ExtResource("p_bin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2, 0, -3.2)
+
+[node name="PaperBall" parent="Props" instance=ExtResource("p_pb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, -2.9)
+
+[node name="CornerBox1" parent="Props" instance=ExtResource("p_cbx")]
+transform = Transform3D(0.99026805, 0, 0.1391731, 0, 1, 0, -0.1391731, 0, 0.99026805, -5.1, 0.15, -3.45)
+
+[node name="CornerBox2" parent="Props" instance=ExtResource("p_cbx")]
+transform = Transform3D(0.9961947, 0, -0.08715574, 0, 1, 0, 0.08715574, 0, 0.9961947, -4.6, 0.15, -3.5)
+
+[node name="CornerBox3" parent="Props" instance=ExtResource("p_cbx")]
+transform = Transform3D(0.9781476, 0, 0.2079117, 0, 1, 0, -0.2079117, 0, 0.9781476, -4.85, 0.45, -3.47)
+
+[node name="SootShelf" parent="Props" instance=ExtResource("p_soot")]
+transform = Transform3D(0.5, 0, 0, 0, 0.8, 0, 0, 0, 1, -3.6, 0, -3.745)
+
+[node name="Puddle" parent="Props" instance=ExtResource("p_pud")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 0, -0.8)
+
+[node name="TapeF" type="MeshInstance3D" parent="Props"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9, 0.003, -0.85)
+mesh = SubResource("tape0")
+
+[node name="TapeB" type="MeshInstance3D" parent="Props"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9, 0.003, -3)
+mesh = SubResource("tape1")
+
+[node name="TapeL" type="MeshInstance3D" parent="Props"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, 0.003, -1.92)
+mesh = SubResource("tape2")
+
+[node name="TapeR" type="MeshInstance3D" parent="Props"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9, 0.003, -1.92)
+mesh = SubResource("tape3")
+
+[node name="WeighLabel" type="Label3D" parent="Props"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.9, 0.006, -0.55)
+pixel_size = 0.004
+modulate = Color(0.45, 0.34, 0.06, 1)
+text = "WEIGH ZONE"
+font_size = 64
+outline_size = 0

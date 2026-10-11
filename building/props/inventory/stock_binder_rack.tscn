@@ -1,0 +1,685 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://building/props/materials/metal_dark.tres" id="m_metal_dark"]
+[ext_resource type="Material" path="res://building/props/materials/shelf_steel.tres" id="m_shelf_steel"]
+[ext_resource type="Material" path="res://building/props/materials/binder_maroon.tres" id="m_binder_maroon"]
+[ext_resource type="Material" path="res://building/props/materials/label_dirty.tres" id="m_label_dirty"]
+[ext_resource type="Material" path="res://building/props/materials/binder_grey.tres" id="m_binder_grey"]
+[ext_resource type="Material" path="res://building/props/materials/binder_navy.tres" id="m_binder_navy"]
+[ext_resource type="Material" path="res://building/props/materials/binder_olive.tres" id="m_binder_olive"]
+[ext_resource type="Material" path="res://building/props/materials/paper_aged.tres" id="m_paper_aged"]
+[ext_resource type="Material" path="res://building/props/materials/board_dark.tres" id="m_board_dark"]
+
+[sub_resource type="BoxMesh" id="s1"]
+material = ExtResource("m_metal_dark")
+size = Vector3(1.5, 0.95, 0.01)
+
+[sub_resource type="BoxMesh" id="s2"]
+material = ExtResource("m_shelf_steel")
+size = Vector3(0.03, 0.95, 0.3)
+
+[sub_resource type="BoxMesh" id="s3"]
+material = ExtResource("m_shelf_steel")
+size = Vector3(0.03, 0.95, 0.3)
+
+[sub_resource type="BoxMesh" id="s4"]
+material = ExtResource("m_shelf_steel")
+size = Vector3(1.5, 0.025, 0.3)
+
+[sub_resource type="BoxMesh" id="s5"]
+material = ExtResource("m_shelf_steel")
+size = Vector3(1.5, 0.025, 0.3)
+
+[sub_resource type="BoxMesh" id="s6"]
+material = ExtResource("m_shelf_steel")
+size = Vector3(1.5, 0.025, 0.3)
+
+[sub_resource type="BoxMesh" id="s7"]
+material = ExtResource("m_binder_maroon")
+size = Vector3(0.0708763, 0.33364657, 0.24)
+
+[sub_resource type="BoxMesh" id="s8"]
+material = ExtResource("m_label_dirty")
+size = Vector3(0.04961341, 0.16682328, 0.004)
+
+[sub_resource type="BoxMesh" id="s9"]
+material = ExtResource("m_binder_grey")
+size = Vector3(0.05800862, 0.30230924, 0.24)
+
+[sub_resource type="BoxMesh" id="s10"]
+material = ExtResource("m_label_dirty")
+size = Vector3(0.040606033, 0.15115462, 0.004)
+
+[sub_resource type="BoxMesh" id="s11"]
+material = ExtResource("m_binder_navy")
+size = Vector3(0.070279, 0.3433445, 0.24)
+
+[sub_resource type="BoxMesh" id="s12"]
+material = ExtResource("m_label_dirty")
+size = Vector3(0.0491953, 0.17167225, 0.004)
+
+[sub_resource type="BoxMesh" id="s13"]
+material = ExtResource("m_binder_maroon")
+size = Vector3(0.06468695, 0.3511416, 0.24)
+
+[sub_resource type="BoxMesh" id="s14"]
+material = ExtResource("m_label_dirty")
+size = Vector3(0.045280863, 0.1755708, 0.004)
+
+[sub_resource type="BoxMesh" id="s15"]
+material = ExtResource("m_binder_maroon")
+size = Vector3(0.05477824, 0.35915446, 0.24)
+
+[sub_resource type="BoxMesh" id="s16"]
+material = ExtResource("m_label_dirty")
+size = Vector3(0.038344767, 0.17957723, 0.004)
+
+[sub_resource type="BoxMesh" id="s17"]
+material = ExtResource("m_binder_grey")
+size = Vector3(0.05598142, 0.33886752, 0.24)
+
+[sub_resource type="BoxMesh" id="s18"]
+material = ExtResource("m_label_dirty")
+size = Vector3(0.039186995, 0.16943376, 0.004)
+
+[sub_resource type="BoxMesh" id="s19"]
+material = ExtResource("m_binder_grey")
+size = Vector3(0.05840064, 0.31398827, 0.24)
+
+[sub_resource type="BoxMesh" id="s20"]
+material = ExtResource("m_label_dirty")
+size = Vector3(0.040880445, 0.15699413, 0.004)
+
+[sub_resource type="BoxMesh" id="s21"]
+material = ExtResource("m_binder_olive")
+size = Vector3(0.07128021, 0.32126907, 0.24)
+
+[sub_resource type="BoxMesh" id="s22"]
+material = ExtResource("m_label_dirty")
+size = Vector3(0.049896147, 0.16063453, 0.004)
+
+[sub_resource type="BoxMesh" id="s23"]
+material = ExtResource("m_binder_olive")
+size = Vector3(0.07498967, 0.34514606, 0.24)
+
+[sub_resource type="BoxMesh" id="s24"]
+material = ExtResource("m_label_dirty")
+size = Vector3(0.052492768, 0.17257303, 0.004)
+
+[sub_resource type="BoxMesh" id="s25"]
+material = ExtResource("m_binder_navy")
+size = Vector3(0.050348368, 0.32166475, 0.24)
+
+[sub_resource type="BoxMesh" id="s26"]
+material = ExtResource("m_label_dirty")
+size = Vector3(0.035243858, 0.16083238, 0.004)
+
+[sub_resource type="BoxMesh" id="s27"]
+material = ExtResource("m_binder_maroon")
+size = Vector3(0.07401535, 0.3097114, 0.24)
+
+[sub_resource type="BoxMesh" id="s28"]
+material = ExtResource("m_label_dirty")
+size = Vector3(0.051810745, 0.1548557, 0.004)
+
+[sub_resource type="BoxMesh" id="s29"]
+material = ExtResource("m_binder_navy")
+size = Vector3(0.070384264, 0.3011529, 0.24)
+
+[sub_resource type="BoxMesh" id="s30"]
+material = ExtResource("m_label_dirty")
+size = Vector3(0.049268983, 0.15057646, 0.004)
+
+[sub_resource type="BoxMesh" id="s31"]
+material = ExtResource("m_binder_navy")
+size = Vector3(0.061238173, 0.3268776, 0.24)
+
+[sub_resource type="BoxMesh" id="s32"]
+material = ExtResource("m_label_dirty")
+size = Vector3(0.04286672, 0.1634388, 0.004)
+
+[sub_resource type="BoxMesh" id="s33"]
+material = ExtResource("m_binder_grey")
+size = Vector3(0.061489604, 0.35679245, 0.24)
+
+[sub_resource type="BoxMesh" id="s34"]
+material = ExtResource("m_label_dirty")
+size = Vector3(0.043042723, 0.17839622, 0.004)
+
+[sub_resource type="BoxMesh" id="s35"]
+material = ExtResource("m_binder_grey")
+size = Vector3(0.060624544, 0.3381439, 0.24)
+
+[sub_resource type="BoxMesh" id="s36"]
+material = ExtResource("m_label_dirty")
+size = Vector3(0.04243718, 0.16907194, 0.004)
+
+[sub_resource type="BoxMesh" id="s37"]
+material = ExtResource("m_binder_olive")
+size = Vector3(0.059152026, 0.35711715, 0.24)
+
+[sub_resource type="BoxMesh" id="s38"]
+material = ExtResource("m_label_dirty")
+size = Vector3(0.04140642, 0.17855857, 0.004)
+
+[sub_resource type="BoxMesh" id="s39"]
+material = ExtResource("m_binder_olive")
+size = Vector3(0.057216357, 0.32460046, 0.24)
+
+[sub_resource type="BoxMesh" id="s40"]
+material = ExtResource("m_label_dirty")
+size = Vector3(0.04005145, 0.16230023, 0.004)
+
+[sub_resource type="BoxMesh" id="s41"]
+material = ExtResource("m_binder_grey")
+size = Vector3(0.058039498, 0.3469879, 0.24)
+
+[sub_resource type="BoxMesh" id="s42"]
+material = ExtResource("m_label_dirty")
+size = Vector3(0.040627647, 0.17349395, 0.004)
+
+[sub_resource type="BoxMesh" id="s43"]
+material = ExtResource("m_paper_aged")
+size = Vector3(0.26, 0.1, 0.24)
+
+[sub_resource type="BoxMesh" id="s44"]
+material = ExtResource("m_label_dirty")
+size = Vector3(0.26, 0.012, 0.2)
+
+[sub_resource type="BoxMesh" id="s45"]
+material = ExtResource("m_binder_olive")
+size = Vector3(0.06800084, 0.3512396, 0.24)
+
+[sub_resource type="BoxMesh" id="s46"]
+material = ExtResource("m_label_dirty")
+size = Vector3(0.047600586, 0.1756198, 0.004)
+
+[sub_resource type="BoxMesh" id="s47"]
+material = ExtResource("m_binder_navy")
+size = Vector3(0.061487235, 0.33855802, 0.24)
+
+[sub_resource type="BoxMesh" id="s48"]
+material = ExtResource("m_label_dirty")
+size = Vector3(0.043041065, 0.16927901, 0.004)
+
+[sub_resource type="BoxMesh" id="s49"]
+material = ExtResource("m_binder_maroon")
+size = Vector3(0.069899894, 0.3473943, 0.24)
+
+[sub_resource type="BoxMesh" id="s50"]
+material = ExtResource("m_label_dirty")
+size = Vector3(0.048929926, 0.17369714, 0.004)
+
+[sub_resource type="BoxMesh" id="s51"]
+material = ExtResource("m_binder_navy")
+size = Vector3(0.054076616, 0.3096775, 0.24)
+
+[sub_resource type="BoxMesh" id="s52"]
+material = ExtResource("m_label_dirty")
+size = Vector3(0.037853632, 0.15483876, 0.004)
+
+[sub_resource type="BoxMesh" id="s53"]
+material = ExtResource("m_binder_olive")
+size = Vector3(0.07053515, 0.34369966, 0.24)
+
+[sub_resource type="BoxMesh" id="s54"]
+material = ExtResource("m_label_dirty")
+size = Vector3(0.049374606, 0.17184983, 0.004)
+
+[sub_resource type="BoxMesh" id="s55"]
+material = ExtResource("m_binder_olive")
+size = Vector3(0.054921206, 0.35283047, 0.24)
+
+[sub_resource type="BoxMesh" id="s56"]
+material = ExtResource("m_label_dirty")
+size = Vector3(0.038444843, 0.17641523, 0.004)
+
+[sub_resource type="BoxMesh" id="s57"]
+material = ExtResource("m_binder_grey")
+size = Vector3(0.06568626, 0.3278475, 0.24)
+
+[sub_resource type="BoxMesh" id="s58"]
+material = ExtResource("m_label_dirty")
+size = Vector3(0.045980383, 0.16392376, 0.004)
+
+[sub_resource type="BoxMesh" id="s59"]
+material = ExtResource("m_binder_olive")
+size = Vector3(0.07264745, 0.35213512, 0.24)
+
+[sub_resource type="BoxMesh" id="s60"]
+material = ExtResource("m_label_dirty")
+size = Vector3(0.050853215, 0.17606756, 0.004)
+
+[sub_resource type="BoxMesh" id="s61"]
+material = ExtResource("m_binder_grey")
+size = Vector3(0.07043472, 0.34652784, 0.24)
+
+[sub_resource type="BoxMesh" id="s62"]
+material = ExtResource("m_label_dirty")
+size = Vector3(0.049304303, 0.17326392, 0.004)
+
+[sub_resource type="BoxMesh" id="s63"]
+material = ExtResource("m_binder_maroon")
+size = Vector3(0.059105452, 0.31132904, 0.24)
+
+[sub_resource type="BoxMesh" id="s64"]
+material = ExtResource("m_label_dirty")
+size = Vector3(0.041373815, 0.15566452, 0.004)
+
+[sub_resource type="BoxMesh" id="s65"]
+material = ExtResource("m_binder_grey")
+size = Vector3(0.06877422, 0.30294642, 0.24)
+
+[sub_resource type="BoxMesh" id="s66"]
+material = ExtResource("m_label_dirty")
+size = Vector3(0.048141956, 0.15147321, 0.004)
+
+[sub_resource type="BoxMesh" id="s67"]
+material = ExtResource("m_binder_olive")
+size = Vector3(0.06584176, 0.31808794, 0.24)
+
+[sub_resource type="BoxMesh" id="s68"]
+material = ExtResource("m_label_dirty")
+size = Vector3(0.04608923, 0.15904397, 0.004)
+
+[sub_resource type="BoxMesh" id="s69"]
+material = ExtResource("m_binder_grey")
+size = Vector3(0.059618734, 0.35351184, 0.24)
+
+[sub_resource type="BoxMesh" id="s70"]
+material = ExtResource("m_label_dirty")
+size = Vector3(0.041733112, 0.17675592, 0.004)
+
+[sub_resource type="BoxMesh" id="s71"]
+material = ExtResource("m_binder_navy")
+size = Vector3(0.054102995, 0.35616073, 0.24)
+
+[sub_resource type="BoxMesh" id="s72"]
+material = ExtResource("m_label_dirty")
+size = Vector3(0.037872095, 0.17808037, 0.004)
+
+[sub_resource type="BoxMesh" id="s73"]
+material = ExtResource("m_binder_grey")
+size = Vector3(0.05431943, 0.31467563, 0.24)
+
+[sub_resource type="BoxMesh" id="s74"]
+material = ExtResource("m_label_dirty")
+size = Vector3(0.038023602, 0.15733781, 0.004)
+
+[sub_resource type="BoxMesh" id="s75"]
+material = ExtResource("m_binder_navy")
+size = Vector3(0.05998996, 0.35967186, 0.24)
+
+[sub_resource type="BoxMesh" id="s76"]
+material = ExtResource("m_label_dirty")
+size = Vector3(0.04199297, 0.17983593, 0.004)
+
+[sub_resource type="BoxMesh" id="s77"]
+material = ExtResource("m_binder_navy")
+size = Vector3(0.07427342, 0.35728857, 0.24)
+
+[sub_resource type="BoxMesh" id="s78"]
+material = ExtResource("m_label_dirty")
+size = Vector3(0.051991396, 0.17864428, 0.004)
+
+[sub_resource type="BoxMesh" id="s79"]
+material = ExtResource("m_binder_navy")
+size = Vector3(0.06869155, 0.34173855, 0.24)
+
+[sub_resource type="BoxMesh" id="s80"]
+material = ExtResource("m_label_dirty")
+size = Vector3(0.048084088, 0.17086928, 0.004)
+
+[sub_resource type="BoxMesh" id="s81"]
+material = ExtResource("m_paper_aged")
+size = Vector3(0.26, 0.14, 0.24)
+
+[sub_resource type="BoxMesh" id="s82"]
+material = ExtResource("m_label_dirty")
+size = Vector3(0.26, 0.012, 0.2)
+
+[sub_resource type="BoxMesh" id="s83"]
+material = ExtResource("m_board_dark")
+size = Vector3(0.6, 0.08, 0.004)
+
+[node name="StockBinderRack" type="Node3D"]
+
+[node name="Back" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.005)
+mesh = SubResource("s1")
+
+[node name="SideL" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.735, 0, 0.15)
+mesh = SubResource("s2")
+
+[node name="SideR" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.735, 0, 0.15)
+mesh = SubResource("s3")
+
+[node name="Plank0" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.46, 0.15)
+mesh = SubResource("s4")
+
+[node name="Plank1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.15)
+mesh = SubResource("s5")
+
+[node name="Plank2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.46, 0.15)
+mesh = SubResource("s6")
+
+[node name="Bind0_0" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6445618, -0.28067672, 0.17)
+mesh = SubResource("s7")
+
+[node name="Spine0_0" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6445618, -0.2639944, 0.292)
+mesh = SubResource("s8")
+
+[node name="Bind0_1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.57611936, -0.29634538, 0.17)
+mesh = SubResource("s9")
+
+[node name="Spine0_1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.57611936, -0.2812299, 0.292)
+mesh = SubResource("s10")
+
+[node name="Bind0_2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5079756, -0.27582774, 0.17)
+mesh = SubResource("s11")
+
+[node name="Spine0_2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5079756, -0.25866053, 0.292)
+mesh = SubResource("s12")
+
+[node name="Bind0_3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4364926, -0.2719292, 0.17)
+mesh = SubResource("s13")
+
+[node name="Spine0_3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4364926, -0.25437212, 0.292)
+mesh = SubResource("s14")
+
+[node name="Bind0_4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.37276, -0.26792276, 0.17)
+mesh = SubResource("s15")
+
+[node name="Spine0_4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.37276, -0.24996504, 0.292)
+mesh = SubResource("s16")
+
+[node name="Bind0_5" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.31338018, -0.27806625, 0.17)
+mesh = SubResource("s17")
+
+[node name="Spine0_5" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.31338018, -0.26112285, 0.292)
+mesh = SubResource("s18")
+
+[node name="Bind0_6" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25218916, -0.29050586, 0.17)
+mesh = SubResource("s19")
+
+[node name="Spine0_6" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25218916, -0.27480644, 0.292)
+mesh = SubResource("s20")
+
+[node name="Bind0_7" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.9955855, -0.09385873, 0, 0.09385873, 0.9955855, 0, 0, 0, 1, -0.18334873, -0.28686547, 0.17)
+mesh = SubResource("s21")
+
+[node name="Spine0_7" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.9955855, -0.09385873, 0, 0.09385873, 0.9955855, 0, 0, 0, 1, -0.18334873, -0.27080202, 0.292)
+mesh = SubResource("s22")
+
+[node name="Bind0_8" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.106213786, -0.27492696, 0.17)
+mesh = SubResource("s23")
+
+[node name="Spine0_8" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.106213786, -0.25766966, 0.292)
+mesh = SubResource("s24")
+
+[node name="Bind0_9" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03954477, -0.28666762, 0.17)
+mesh = SubResource("s25")
+
+[node name="Spine0_9" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03954477, -0.27058437, 0.292)
+mesh = SubResource("s26")
+
+[node name="Bind0_10" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.026637089, -0.2926443, 0.17)
+mesh = SubResource("s27")
+
+[node name="Spine0_10" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.026637089, -0.27715874, 0.292)
+mesh = SubResource("s28")
+
+[node name="Bind0_11" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10283689, -0.29692355, 0.17)
+mesh = SubResource("s29")
+
+[node name="Spine0_11" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10283689, -0.2818659, 0.292)
+mesh = SubResource("s30")
+
+[node name="Bind0_12" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17264812, -0.2840612, 0.17)
+mesh = SubResource("s31")
+
+[node name="Spine0_12" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17264812, -0.26771733, 0.292)
+mesh = SubResource("s32")
+
+[node name="Bind0_13" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.238012, -0.26910377, 0.17)
+mesh = SubResource("s33")
+
+[node name="Spine0_13" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.238012, -0.25126415, 0.292)
+mesh = SubResource("s34")
+
+[node name="Bind0_14" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.30306908, -0.27842805, 0.17)
+mesh = SubResource("s35")
+
+[node name="Spine0_14" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.30306908, -0.26152086, 0.292)
+mesh = SubResource("s36")
+
+[node name="Bind0_15" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.36695737, -0.26894143, 0.17)
+mesh = SubResource("s37")
+
+[node name="Spine0_15" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.36695737, -0.25108558, 0.292)
+mesh = SubResource("s38")
+
+[node name="Bind0_16" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.42914155, -0.28519976, 0.17)
+mesh = SubResource("s39")
+
+[node name="Spine0_16" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.42914155, -0.26896974, 0.292)
+mesh = SubResource("s40")
+
+[node name="Bind0_17" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.49076948, -0.27400604, 0.17)
+mesh = SubResource("s41")
+
+[node name="Spine0_17" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.49076948, -0.25665665, 0.292)
+mesh = SubResource("s42")
+
+[node name="Forms0" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.9975641, 0, 0.06975647, 0, 1, 0, -0.06975647, 0, 0.9975641, 0.62, -0.3975, 0.17)
+mesh = SubResource("s43")
+
+[node name="FormsEdge0" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.98768836, 0, -0.15643448, 0, 1, 0, 0.15643448, 0, 0.98768836, 0.62, -0.3475, 0.17)
+mesh = SubResource("s44")
+
+[node name="Bind1_0" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6459996, 0.1881198, 0.17)
+mesh = SubResource("s45")
+
+[node name="Spine1_0" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6459996, 0.20568177, 0.292)
+mesh = SubResource("s46")
+
+[node name="Bind1_1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.57725555, 0.18177901, 0.17)
+mesh = SubResource("s47")
+
+[node name="Spine1_1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.57725555, 0.19870691, 0.292)
+mesh = SubResource("s48")
+
+[node name="Bind1_2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.507562, 0.18619715, 0.17)
+mesh = SubResource("s49")
+
+[node name="Spine1_2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.507562, 0.20356686, 0.292)
+mesh = SubResource("s50")
+
+[node name="Bind1_3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.44157374, 0.16733876, 0.17)
+mesh = SubResource("s51")
+
+[node name="Spine1_3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.44157374, 0.18282263, 0.292)
+mesh = SubResource("s52")
+
+[node name="Bind1_4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.37526783, 0.18434983, 0.17)
+mesh = SubResource("s53")
+
+[node name="Spine1_4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.37526783, 0.20153482, 0.292)
+mesh = SubResource("s54")
+
+[node name="Bind1_5" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.30853966, 0.18891524, 0.17)
+mesh = SubResource("s55")
+
+[node name="Spine1_5" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.30853966, 0.20655675, 0.292)
+mesh = SubResource("s56")
+
+[node name="Bind1_6" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.24423593, 0.17642376, 0.17)
+mesh = SubResource("s57")
+
+[node name="Spine1_6" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.24423593, 0.19281614, 0.292)
+mesh = SubResource("s58")
+
+[node name="Bind1_7" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.17106907, 0.18856756, 0.17)
+mesh = SubResource("s59")
+
+[node name="Spine1_7" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.17106907, 0.20617431, 0.292)
+mesh = SubResource("s60")
+
+[node name="Bind1_8" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.095527984, 0.18576393, 0.17)
+mesh = SubResource("s61")
+
+[node name="Spine1_8" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.095527984, 0.20309031, 0.292)
+mesh = SubResource("s62")
+
+[node name="Bind1_9" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.026757896, 0.16816452, 0.17)
+mesh = SubResource("s63")
+
+[node name="Spine1_9" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.026757896, 0.18373097, 0.292)
+mesh = SubResource("s64")
+
+[node name="Bind1_10" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04118194, 0.16397321, 0.17)
+mesh = SubResource("s65")
+
+[node name="Spine1_10" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04118194, 0.17912053, 0.292)
+mesh = SubResource("s66")
+
+[node name="Bind1_11" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11248993, 0.17154397, 0.17)
+mesh = SubResource("s67")
+
+[node name="Spine1_11" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11248993, 0.18744837, 0.292)
+mesh = SubResource("s68")
+
+[node name="Bind1_12" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17922017, 0.18925592, 0.17)
+mesh = SubResource("s69")
+
+[node name="Spine1_12" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17922017, 0.20693152, 0.292)
+mesh = SubResource("s70")
+
+[node name="Bind1_13" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.24008104, 0.19058037, 0.17)
+mesh = SubResource("s71")
+
+[node name="Spine1_13" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.24008104, 0.2083884, 0.292)
+mesh = SubResource("s72")
+
+[node name="Bind1_14" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.29829225, 0.16983782, 0.17)
+mesh = SubResource("s73")
+
+[node name="Spine1_14" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.29829225, 0.1855716, 0.292)
+mesh = SubResource("s74")
+
+[node name="Bind1_15" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.35944694, 0.19233593, 0.17)
+mesh = SubResource("s75")
+
+[node name="Spine1_15" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.35944694, 0.21031952, 0.292)
+mesh = SubResource("s76")
+
+[node name="Bind1_16" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.43057865, 0.19114429, 0.17)
+mesh = SubResource("s77")
+
+[node name="Spine1_16" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.43057865, 0.20900871, 0.292)
+mesh = SubResource("s78")
+
+[node name="Bind1_17" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.50606114, 0.18336928, 0.17)
+mesh = SubResource("s79")
+
+[node name="Spine1_17" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.50606114, 0.2004562, 0.292)
+mesh = SubResource("s80")
+
+[node name="Forms1" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.9975641, 0, 0.06975647, 0, 1, 0, -0.06975647, 0, 0.9975641, 0.62, 0.0825, 0.17)
+mesh = SubResource("s81")
+
+[node name="FormsEdge1" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.98768836, 0, -0.15643448, 0, 1, 0, 0.15643448, 0, 0.98768836, 0.62, 0.1525, 0.17)
+mesh = SubResource("s82")
+
+[node name="Plate" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.56, 0.006)
+mesh = SubResource("s83")
+
+[node name="Title" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.56, 0.01)
+pixel_size = 0.001
+modulate = Color(0.55, 0.5, 0.35, 1)
+text = "STOCK RECORDS"
+font_size = 64
+outline_size = 0

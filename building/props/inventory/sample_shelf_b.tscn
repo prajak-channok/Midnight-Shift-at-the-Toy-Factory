@@ -1,0 +1,775 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://building/props/materials/metal_dark.tres" id="m_metal_dark"]
+[ext_resource type="Material" path="res://building/props/materials/shelf_steel.tres" id="m_shelf_steel"]
+[ext_resource type="Material" path="res://building/props/materials/steel_burnt.tres" id="m_steel_burnt"]
+[ext_resource type="Material" path="res://building/props/materials/label_dirty.tres" id="m_label_dirty"]
+[ext_resource type="Material" path="res://building/props/materials/sample_green.tres" id="m_sample_green"]
+[ext_resource type="Material" path="res://building/props/materials/plastic_black.tres" id="m_plastic_black"]
+[ext_resource type="Material" path="res://building/props/materials/sample_blue.tres" id="m_sample_blue"]
+[ext_resource type="Material" path="res://building/props/materials/sample_red.tres" id="m_sample_red"]
+[ext_resource type="Material" path="res://building/props/materials/cardboard.tres" id="m_cardboard"]
+[ext_resource type="Material" path="res://building/props/materials/metal_grey.tres" id="m_metal_grey"]
+[ext_resource type="Material" path="res://building/props/materials/led_amber.tres" id="m_led_amber"]
+[ext_resource type="Material" path="res://building/props/materials/tan_plush.tres" id="m_tan_plush"]
+[ext_resource type="Material" path="res://building/props/materials/sample_yellow.tres" id="m_sample_yellow"]
+[ext_resource type="Material" path="res://building/props/materials/brown_plush.tres" id="m_brown_plush"]
+[ext_resource type="Material" path="res://building/props/materials/grime_dark.tres" id="m_grime_dark"]
+
+[sub_resource type="BoxMesh" id="s1"]
+material = ExtResource("m_metal_dark")
+size = Vector3(1.9, 2.1, 0.01)
+
+[sub_resource type="BoxMesh" id="s2"]
+material = ExtResource("m_shelf_steel")
+size = Vector3(0.04, 2.1, 0.04)
+
+[sub_resource type="BoxMesh" id="s3"]
+material = ExtResource("m_shelf_steel")
+size = Vector3(0.04, 2.1, 0.04)
+
+[sub_resource type="BoxMesh" id="s4"]
+material = ExtResource("m_shelf_steel")
+size = Vector3(0.04, 2.1, 0.04)
+
+[sub_resource type="BoxMesh" id="s5"]
+material = ExtResource("m_shelf_steel")
+size = Vector3(0.04, 2.1, 0.04)
+
+[sub_resource type="BoxMesh" id="s6"]
+material = ExtResource("m_steel_burnt")
+size = Vector3(1.9, 0.03, 0.46)
+
+[sub_resource type="BoxMesh" id="s7"]
+material = ExtResource("m_shelf_steel")
+size = Vector3(1.9, 0.025, 0.45)
+
+[sub_resource type="BoxMesh" id="s8"]
+material = ExtResource("m_label_dirty")
+size = Vector3(0.36, 0.035, 0.004)
+
+[sub_resource type="BoxMesh" id="s9"]
+material = ExtResource("m_sample_green")
+size = Vector3(0.20345937, 0.29279685, 0.3)
+
+[sub_resource type="BoxMesh" id="s10"]
+material = ExtResource("m_label_dirty")
+size = Vector3(0.1627675, 0.08783905, 0.004)
+
+[sub_resource type="BoxMesh" id="s11"]
+material = ExtResource("m_plastic_black")
+size = Vector3(0.1627675, 0.08198312, 0.004)
+
+[sub_resource type="BoxMesh" id="s12"]
+material = ExtResource("m_sample_blue")
+size = Vector3(0.2673633, 0.39330444, 0.3)
+
+[sub_resource type="BoxMesh" id="s13"]
+material = ExtResource("m_label_dirty")
+size = Vector3(0.21389064, 0.11799133, 0.004)
+
+[sub_resource type="BoxMesh" id="s14"]
+material = ExtResource("m_plastic_black")
+size = Vector3(0.21389064, 0.11012524, 0.004)
+
+[sub_resource type="BoxMesh" id="s15"]
+material = ExtResource("m_sample_red")
+size = Vector3(0.26800442, 0.38470757, 0.3)
+
+[sub_resource type="BoxMesh" id="s16"]
+material = ExtResource("m_label_dirty")
+size = Vector3(0.21440354, 0.11541227, 0.004)
+
+[sub_resource type="BoxMesh" id="s17"]
+material = ExtResource("m_plastic_black")
+size = Vector3(0.21440354, 0.10771812, 0.004)
+
+[sub_resource type="BoxMesh" id="s18"]
+material = ExtResource("m_cardboard")
+size = Vector3(0.22303829, 0.38880122, 0.3)
+
+[sub_resource type="BoxMesh" id="s19"]
+material = ExtResource("m_label_dirty")
+size = Vector3(0.17843063, 0.11664037, 0.004)
+
+[sub_resource type="BoxMesh" id="s20"]
+material = ExtResource("m_plastic_black")
+size = Vector3(0.17843063, 0.10886434, 0.004)
+
+[sub_resource type="BoxMesh" id="s21"]
+material = ExtResource("m_sample_green")
+size = Vector3(0.23449552, 0.37421742, 0.3)
+
+[sub_resource type="BoxMesh" id="s22"]
+material = ExtResource("m_label_dirty")
+size = Vector3(0.18759641, 0.11226523, 0.004)
+
+[sub_resource type="BoxMesh" id="s23"]
+material = ExtResource("m_plastic_black")
+size = Vector3(0.18759641, 0.104780875, 0.004)
+
+[sub_resource type="BoxMesh" id="s24"]
+material = ExtResource("m_sample_red")
+size = Vector3(0.2288091, 0.32970822, 0.3)
+
+[sub_resource type="BoxMesh" id="s25"]
+material = ExtResource("m_label_dirty")
+size = Vector3(0.18304728, 0.09891246, 0.004)
+
+[sub_resource type="BoxMesh" id="s26"]
+material = ExtResource("m_plastic_black")
+size = Vector3(0.18304728, 0.092318304, 0.004)
+
+[sub_resource type="BoxMesh" id="s27"]
+material = ExtResource("m_shelf_steel")
+size = Vector3(1.9, 0.025, 0.45)
+
+[sub_resource type="BoxMesh" id="s28"]
+material = ExtResource("m_label_dirty")
+size = Vector3(0.36, 0.035, 0.004)
+
+[sub_resource type="BoxMesh" id="s29"]
+material = ExtResource("m_cardboard")
+size = Vector3(0.26451823, 0.35952994, 0.3)
+
+[sub_resource type="BoxMesh" id="s30"]
+material = ExtResource("m_label_dirty")
+size = Vector3(0.21161458, 0.107858986, 0.004)
+
+[sub_resource type="BoxMesh" id="s31"]
+material = ExtResource("m_plastic_black")
+size = Vector3(0.21161458, 0.100668386, 0.004)
+
+[sub_resource type="BoxMesh" id="s32"]
+material = ExtResource("m_sample_blue")
+size = Vector3(0.29477465, 0.38054067, 0.3)
+
+[sub_resource type="BoxMesh" id="s33"]
+material = ExtResource("m_label_dirty")
+size = Vector3(0.23581973, 0.1141622, 0.004)
+
+[sub_resource type="BoxMesh" id="s34"]
+material = ExtResource("m_plastic_black")
+size = Vector3(0.23581973, 0.10655139, 0.004)
+
+[sub_resource type="BoxMesh" id="s35"]
+material = ExtResource("m_metal_grey")
+size = Vector3(0.16, 0.2, 0.12)
+
+[sub_resource type="BoxMesh" id="s36"]
+material = ExtResource("m_sample_blue")
+size = Vector3(0.11, 0.09, 0.1)
+
+[sub_resource type="BoxMesh" id="s37"]
+material = ExtResource("m_led_amber")
+size = Vector3(0.07, 0.015, 0.006)
+
+[sub_resource type="BoxMesh" id="s38"]
+material = ExtResource("m_metal_grey")
+size = Vector3(0.04, 0.1, 0.04)
+
+[sub_resource type="BoxMesh" id="s39"]
+material = ExtResource("m_metal_grey")
+size = Vector3(0.04, 0.1, 0.04)
+
+[sub_resource type="BoxMesh" id="s40"]
+material = ExtResource("m_metal_grey")
+size = Vector3(0.16, 0.2, 0.12)
+
+[sub_resource type="BoxMesh" id="s41"]
+material = ExtResource("m_sample_red")
+size = Vector3(0.11, 0.09, 0.1)
+
+[sub_resource type="BoxMesh" id="s42"]
+material = ExtResource("m_led_amber")
+size = Vector3(0.07, 0.015, 0.006)
+
+[sub_resource type="BoxMesh" id="s43"]
+material = ExtResource("m_metal_grey")
+size = Vector3(0.04, 0.1, 0.04)
+
+[sub_resource type="BoxMesh" id="s44"]
+material = ExtResource("m_metal_grey")
+size = Vector3(0.04, 0.1, 0.04)
+
+[sub_resource type="BoxMesh" id="s45"]
+material = ExtResource("m_shelf_steel")
+size = Vector3(1.9, 0.025, 0.45)
+
+[sub_resource type="BoxMesh" id="s46"]
+material = ExtResource("m_label_dirty")
+size = Vector3(0.36, 0.035, 0.004)
+
+[sub_resource type="BoxMesh" id="s47"]
+material = ExtResource("m_metal_grey")
+size = Vector3(0.16, 0.2, 0.12)
+
+[sub_resource type="BoxMesh" id="s48"]
+material = ExtResource("m_sample_blue")
+size = Vector3(0.11, 0.09, 0.1)
+
+[sub_resource type="BoxMesh" id="s49"]
+material = ExtResource("m_led_amber")
+size = Vector3(0.07, 0.015, 0.006)
+
+[sub_resource type="BoxMesh" id="s50"]
+material = ExtResource("m_metal_grey")
+size = Vector3(0.04, 0.1, 0.04)
+
+[sub_resource type="BoxMesh" id="s51"]
+material = ExtResource("m_metal_grey")
+size = Vector3(0.04, 0.1, 0.04)
+
+[sub_resource type="BoxMesh" id="s52"]
+material = ExtResource("m_sample_green")
+size = Vector3(0.25560954, 0.38075036, 0.3)
+
+[sub_resource type="BoxMesh" id="s53"]
+material = ExtResource("m_label_dirty")
+size = Vector3(0.20448764, 0.114225104, 0.004)
+
+[sub_resource type="BoxMesh" id="s54"]
+material = ExtResource("m_plastic_black")
+size = Vector3(0.20448764, 0.1066101, 0.004)
+
+[sub_resource type="SphereMesh" id="s55"]
+material = ExtResource("m_tan_plush")
+radius = 0.1
+height = 0.2
+radial_segments = 14
+rings = 8
+
+[sub_resource type="SphereMesh" id="s56"]
+material = ExtResource("m_tan_plush")
+radius = 0.07
+height = 0.14
+radial_segments = 14
+rings = 8
+
+[sub_resource type="SphereMesh" id="s57"]
+material = ExtResource("m_tan_plush")
+radius = 0.025
+height = 0.05
+radial_segments = 14
+rings = 8
+
+[sub_resource type="SphereMesh" id="s58"]
+material = ExtResource("m_tan_plush")
+radius = 0.025
+height = 0.05
+radial_segments = 14
+rings = 8
+
+[sub_resource type="BoxMesh" id="s59"]
+material = ExtResource("m_sample_blue")
+size = Vector3(0.24453254, 0.37108073, 0.3)
+
+[sub_resource type="BoxMesh" id="s60"]
+material = ExtResource("m_label_dirty")
+size = Vector3(0.19562604, 0.11132422, 0.004)
+
+[sub_resource type="BoxMesh" id="s61"]
+material = ExtResource("m_plastic_black")
+size = Vector3(0.19562604, 0.1039026, 0.004)
+
+[sub_resource type="BoxMesh" id="s62"]
+material = ExtResource("m_cardboard")
+size = Vector3(0.20705104, 0.3666262, 0.3)
+
+[sub_resource type="BoxMesh" id="s63"]
+material = ExtResource("m_label_dirty")
+size = Vector3(0.16564083, 0.10998786, 0.004)
+
+[sub_resource type="BoxMesh" id="s64"]
+material = ExtResource("m_plastic_black")
+size = Vector3(0.16564083, 0.102655336, 0.004)
+
+[sub_resource type="BoxMesh" id="s65"]
+material = ExtResource("m_shelf_steel")
+size = Vector3(1.9, 0.025, 0.45)
+
+[sub_resource type="BoxMesh" id="s66"]
+material = ExtResource("m_label_dirty")
+size = Vector3(0.36, 0.035, 0.004)
+
+[sub_resource type="BoxMesh" id="s67"]
+material = ExtResource("m_sample_yellow")
+size = Vector3(0.24377629, 0.39947265, 0.3)
+
+[sub_resource type="BoxMesh" id="s68"]
+material = ExtResource("m_label_dirty")
+size = Vector3(0.19502103, 0.1198418, 0.004)
+
+[sub_resource type="BoxMesh" id="s69"]
+material = ExtResource("m_plastic_black")
+size = Vector3(0.19502103, 0.11185234, 0.004)
+
+[sub_resource type="SphereMesh" id="s70"]
+material = ExtResource("m_brown_plush")
+radius = 0.1
+height = 0.2
+radial_segments = 14
+rings = 8
+
+[sub_resource type="SphereMesh" id="s71"]
+material = ExtResource("m_brown_plush")
+radius = 0.07
+height = 0.14
+radial_segments = 14
+rings = 8
+
+[sub_resource type="SphereMesh" id="s72"]
+material = ExtResource("m_brown_plush")
+radius = 0.025
+height = 0.05
+radial_segments = 14
+rings = 8
+
+[sub_resource type="SphereMesh" id="s73"]
+material = ExtResource("m_brown_plush")
+radius = 0.025
+height = 0.05
+radial_segments = 14
+rings = 8
+
+[sub_resource type="BoxMesh" id="s74"]
+material = ExtResource("m_metal_grey")
+size = Vector3(0.16, 0.2, 0.12)
+
+[sub_resource type="BoxMesh" id="s75"]
+material = ExtResource("m_sample_red")
+size = Vector3(0.11, 0.09, 0.1)
+
+[sub_resource type="BoxMesh" id="s76"]
+material = ExtResource("m_led_amber")
+size = Vector3(0.07, 0.015, 0.006)
+
+[sub_resource type="BoxMesh" id="s77"]
+material = ExtResource("m_metal_grey")
+size = Vector3(0.04, 0.1, 0.04)
+
+[sub_resource type="BoxMesh" id="s78"]
+material = ExtResource("m_metal_grey")
+size = Vector3(0.04, 0.1, 0.04)
+
+[sub_resource type="BoxMesh" id="s79"]
+material = ExtResource("m_sample_red")
+size = Vector3(0.22811736, 0.3638903, 0.3)
+
+[sub_resource type="BoxMesh" id="s80"]
+material = ExtResource("m_label_dirty")
+size = Vector3(0.1824939, 0.109167084, 0.004)
+
+[sub_resource type="BoxMesh" id="s81"]
+material = ExtResource("m_plastic_black")
+size = Vector3(0.1824939, 0.10188928, 0.004)
+
+[sub_resource type="SphereMesh" id="s82"]
+material = ExtResource("m_brown_plush")
+radius = 0.1
+height = 0.2
+radial_segments = 14
+rings = 8
+
+[sub_resource type="SphereMesh" id="s83"]
+material = ExtResource("m_brown_plush")
+radius = 0.07
+height = 0.14
+radial_segments = 14
+rings = 8
+
+[sub_resource type="SphereMesh" id="s84"]
+material = ExtResource("m_brown_plush")
+radius = 0.025
+height = 0.05
+radial_segments = 14
+rings = 8
+
+[sub_resource type="SphereMesh" id="s85"]
+material = ExtResource("m_brown_plush")
+radius = 0.025
+height = 0.05
+radial_segments = 14
+rings = 8
+
+[sub_resource type="BoxMesh" id="s86"]
+material = ExtResource("m_grime_dark")
+size = Vector3(0.9, 0.5, 0.004)
+
+[node name="SampleShelfB" type="Node3D"]
+
+[node name="Back" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.05, 0.005)
+mesh = SubResource("s1")
+
+[node name="Up-1_4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.93, 1.05, 0.04)
+mesh = SubResource("s2")
+
+[node name="Up-1_41" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.93, 1.05, 0.41)
+mesh = SubResource("s3")
+
+[node name="Up1_4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.93, 1.05, 0.04)
+mesh = SubResource("s4")
+
+[node name="Up1_41" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.93, 1.05, 0.41)
+mesh = SubResource("s5")
+
+[node name="TopCap" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.115, 0.225)
+mesh = SubResource("s6")
+
+[node name="Plank0" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0.225)
+mesh = SubResource("s7")
+
+[node name="Strip0" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, 0.15, 0.452)
+mesh = SubResource("s8")
+
+[node name="StripT0" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, 0.15, 0.455)
+pixel_size = 0.0005
+modulate = Color(0.07, 0.06, 0.04, 1)
+text = "LOT 0441  MFG 12/03/87"
+font_size = 48
+outline_size = 0
+
+[node name="Box0_0" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6982703, 0.30889842, 0.2)
+mesh = SubResource("s9")
+
+[node name="Box0_0L" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6982703, 0.2649789, 0.352)
+mesh = SubResource("s10")
+
+[node name="Box0_0W" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6982703, 0.37331372, 0.352)
+mesh = SubResource("s11")
+
+[node name="Box0_1" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.9992965, -0.037503675, 0, 0.037503675, 0.9992965, 0, 0, 0, 1, -0.42445213, 0.35915223, 0.2)
+mesh = SubResource("s12")
+
+[node name="Box0_1L" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.9992965, -0.037503675, 0, 0.037503675, 0.9992965, 0, 0, 0, 1, -0.42445213, 0.30015656, 0.352)
+mesh = SubResource("s13")
+
+[node name="Box0_1W" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.9992965, -0.037503675, 0, 0.037503675, 0.9992965, 0, 0, 0, 1, -0.42445213, 0.4456792, 0.352)
+mesh = SubResource("s14")
+
+[node name="Box0_2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.9981373, 0.061008066, 0, -0.061008066, 0.9981373, 0, 0, 0, 1, -0.110610396, 0.35485378, 0.2)
+mesh = SubResource("s15")
+
+[node name="Box0_2L" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.9981373, 0.061008066, 0, -0.061008066, 0.9981373, 0, 0, 0, 1, -0.110610396, 0.29714766, 0.352)
+mesh = SubResource("s16")
+
+[node name="Box0_2W" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.9981373, 0.061008066, 0, -0.061008066, 0.9981373, 0, 0, 0, 1, -0.110610396, 0.43948945, 0.352)
+mesh = SubResource("s17")
+
+[node name="Box0_3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15674399, 0.3569006, 0.2)
+mesh = SubResource("s18")
+
+[node name="Box0_3L" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15674399, 0.29858044, 0.352)
+mesh = SubResource("s19")
+
+[node name="Box0_3W" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15674399, 0.44243687, 0.352)
+mesh = SubResource("s20")
+
+[node name="Box0_4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.44542587, 0.34960872, 0.2)
+mesh = SubResource("s21")
+
+[node name="Box0_4L" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.44542587, 0.2934761, 0.352)
+mesh = SubResource("s22")
+
+[node name="Box0_4W" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.44542587, 0.43193653, 0.352)
+mesh = SubResource("s23")
+
+[node name="Box0_5" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75317955, 0.3273541, 0.2)
+mesh = SubResource("s24")
+
+[node name="Box0_5L" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75317955, 0.27789786, 0.352)
+mesh = SubResource("s25")
+
+[node name="Box0_5W" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75317955, 0.39988992, 0.352)
+mesh = SubResource("s26")
+
+[node name="Plank1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.65, 0.225)
+mesh = SubResource("s27")
+
+[node name="Strip1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.65, 0.452)
+mesh = SubResource("s28")
+
+[node name="StripT1" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.65, 0.455)
+pixel_size = 0.0005
+modulate = Color(0.07, 0.06, 0.04, 1)
+text = "LOT 0436  MFG 20/02/87"
+font_size = 48
+outline_size = 0
+
+[node name="Box1_0" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.9999463, 0.010364779, 0, -0.010364779, 0.9999463, 0, 0, 0, 1, -0.6677409, 0.84226495, 0.2)
+mesh = SubResource("s29")
+
+[node name="Box1_0L" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.9999463, 0.010364779, 0, -0.010364779, 0.9999463, 0, 0, 0, 1, -0.6677409, 0.7883355, 0.352)
+mesh = SubResource("s30")
+
+[node name="Box1_0W" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.9999463, 0.010364779, 0, -0.010364779, 0.9999463, 0, 0, 0, 1, -0.6677409, 0.92136157, 0.352)
+mesh = SubResource("s31")
+
+[node name="Box1_1" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.996919, -0.07843798, 0, 0.07843798, 0.996919, 0, 0, 0, 1, -0.049991183, 0.8527703, 0.2)
+mesh = SubResource("s32")
+
+[node name="Box1_1L" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.996919, -0.07843798, 0, 0.07843798, 0.996919, 0, 0, 0, 1, -0.049991183, 0.7956892, 0.352)
+mesh = SubResource("s33")
+
+[node name="Box1_1W" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.996919, -0.07843798, 0, 0.07843798, 0.996919, 0, 0, 0, 1, -0.049991183, 0.9364893, 0.352)
+mesh = SubResource("s34")
+
+[node name="RobB1_2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5239499, 0.8025, 0.2)
+mesh = SubResource("s35")
+
+[node name="RobH1_2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5239499, 0.9475, 0.2)
+mesh = SubResource("s36")
+
+[node name="RobE1_2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5239499, 0.9575, 0.252)
+mesh = SubResource("s37")
+
+[node name="RobL1_2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4439499, 0.7125, 0.2)
+mesh = SubResource("s38")
+
+[node name="RobR1_2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6039499, 0.7125, 0.2)
+mesh = SubResource("s39")
+
+[node name="RobB1_3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8639499, 0.8025, 0.2)
+mesh = SubResource("s40")
+
+[node name="RobH1_3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8639499, 0.9475, 0.2)
+mesh = SubResource("s41")
+
+[node name="RobE1_3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8639499, 0.9575, 0.252)
+mesh = SubResource("s42")
+
+[node name="RobL1_3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7839499, 0.7125, 0.2)
+mesh = SubResource("s43")
+
+[node name="RobR1_3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9439499, 0.7125, 0.2)
+mesh = SubResource("s44")
+
+[node name="Plank2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.15, 0.225)
+mesh = SubResource("s45")
+
+[node name="Strip2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, 1.15, 0.452)
+mesh = SubResource("s46")
+
+[node name="StripT2" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, 1.15, 0.455)
+pixel_size = 0.0005
+modulate = Color(0.07, 0.06, 0.04, 1)
+text = "LOT 0484  MFG 26/09/87"
+font_size = 48
+outline_size = 0
+
+[node name="RobB2_0" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7, 1.3025, 0.2)
+mesh = SubResource("s47")
+
+[node name="RobH2_0" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7, 1.4475, 0.2)
+mesh = SubResource("s48")
+
+[node name="RobE2_0" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7, 1.4575, 0.252)
+mesh = SubResource("s49")
+
+[node name="RobL2_0" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.78, 1.2125, 0.2)
+mesh = SubResource("s50")
+
+[node name="RobR2_0" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.62, 1.2125, 0.2)
+mesh = SubResource("s51")
+
+[node name="Box2_1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.33219522, 1.3528752, 0.2)
+mesh = SubResource("s52")
+
+[node name="Box2_1L" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.33219522, 1.2957627, 0.352)
+mesh = SubResource("s53")
+
+[node name="Box2_1W" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.33219522, 1.4366403, 0.352)
+mesh = SubResource("s54")
+
+[node name="TedB2_2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1.1, 0, 0, 0, 0.9, -0.015020486, 1.2625, 0.2)
+mesh = SubResource("s55")
+
+[node name="TedH2_2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.015020486, 1.4325, 0.2)
+mesh = SubResource("s56")
+
+[node name="TedE12_2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.075020485, 1.4925, 0.2)
+mesh = SubResource("s57")
+
+[node name="TedE22_2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.044979513, 1.4925, 0.2)
+mesh = SubResource("s58")
+
+[node name="Box2_3" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.9968031, 0.07989719, 0, -0.07989719, 0.9968031, 0, 0, 0, 1, 0.32724577, 1.3480403, 0.2)
+mesh = SubResource("s59")
+
+[node name="Box2_3L" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.9968031, 0.07989719, 0, -0.07989719, 0.9968031, 0, 0, 0, 1, 0.32724577, 1.2923783, 0.352)
+mesh = SubResource("s60")
+
+[node name="Box2_3W" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.9968031, 0.07989719, 0, -0.07989719, 0.9968031, 0, 0, 0, 1, 0.32724577, 1.4296781, 0.352)
+mesh = SubResource("s61")
+
+[node name="Box2_4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.62474656, 1.3458132, 0.2)
+mesh = SubResource("s62")
+
+[node name="Box2_4L" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.62474656, 1.2908192, 0.352)
+mesh = SubResource("s63")
+
+[node name="Box2_4W" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.62474656, 1.4264709, 0.352)
+mesh = SubResource("s64")
+
+[node name="Plank3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.65, 0.225)
+mesh = SubResource("s65")
+
+[node name="Strip3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 1.65, 0.452)
+mesh = SubResource("s66")
+
+[node name="StripT3" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 1.65, 0.455)
+pixel_size = 0.0005
+modulate = Color(0.07, 0.06, 0.04, 1)
+text = "LOT 0461  MFG 07/01/87"
+font_size = 48
+outline_size = 0
+
+[node name="Box3_0" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.67811185, 1.8622364, 0.2)
+mesh = SubResource("s67")
+
+[node name="Box3_0L" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.67811185, 1.8023155, 0.352)
+mesh = SubResource("s68")
+
+[node name="Box3_0W" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.67811185, 1.9501203, 0.352)
+mesh = SubResource("s69")
+
+[node name="TedB3_1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1.1, 0, 0, 0, 0.9, -0.3747535, 1.7625, 0.2)
+mesh = SubResource("s70")
+
+[node name="TedH3_1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3747535, 1.9325, 0.2)
+mesh = SubResource("s71")
+
+[node name="TedE13_1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4347535, 1.9925, 0.2)
+mesh = SubResource("s72")
+
+[node name="TedE23_1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3147535, 1.9925, 0.2)
+mesh = SubResource("s73")
+
+[node name="RobB3_2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0547535, 1.8025, 0.2)
+mesh = SubResource("s74")
+
+[node name="RobH3_2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0547535, 1.9475, 0.2)
+mesh = SubResource("s75")
+
+[node name="RobE3_2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0547535, 1.9575, 0.252)
+mesh = SubResource("s76")
+
+[node name="RobL3_2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1347535, 1.7125, 0.2)
+mesh = SubResource("s77")
+
+[node name="RobR3_2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0252465, 1.7125, 0.2)
+mesh = SubResource("s78")
+
+[node name="Box3_3" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.99979687, 0.020155206, 0, -0.020155206, 0.99979687, 0, 0, 0, 1, 0.5175483, 1.8444451, 0.2)
+mesh = SubResource("s79")
+
+[node name="Box3_3L" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.99979687, 0.020155206, 0, -0.020155206, 0.99979687, 0, 0, 0, 1, 0.5175483, 1.7898616, 0.352)
+mesh = SubResource("s80")
+
+[node name="Box3_3W" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.99979687, 0.020155206, 0, -0.020155206, 0.99979687, 0, 0, 0, 1, 0.5175483, 1.9245011, 0.352)
+mesh = SubResource("s81")
+
+[node name="TedB3_4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1.1, 0, 0, 0, 0.9, 0.81807065, 1.7625, 0.2)
+mesh = SubResource("s82")
+
+[node name="TedH3_4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.81807065, 1.9325, 0.2)
+mesh = SubResource("s83")
+
+[node name="TedE13_4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75807065, 1.9925, 0.2)
+mesh = SubResource("s84")
+
+[node name="TedE23_4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.87807065, 1.9925, 0.2)
+mesh = SubResource("s85")
+
+[node name="Grime" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.4, 0.472)
+mesh = SubResource("s86")
