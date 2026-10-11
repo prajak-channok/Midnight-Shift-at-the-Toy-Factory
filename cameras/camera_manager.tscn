@@ -6,9 +6,626 @@
 [ext_resource type="Texture2D" uid="uid://cpkqfqi3f7q3a" path="res://common/static/static_frame_2.png" id="5_al0ie"]
 [ext_resource type="Texture2D" uid="uid://uttouagqr20b" path="res://common/static/static_frame_3.png" id="6_qhegm"]
 [ext_resource type="Texture2D" uid="uid://b4nbbl4e36j1d" path="res://common/static/static_frame_4.png" id="7_b4mdr"]
+[ext_resource type="Texture2D" uid="uid://bdmkbt42vbp5n" path="res://cameras/Map.png" id="8_6ilct"]
 [ext_resource type="Texture2D" uid="uid://brrmh86sbskvw" path="res://common/static/static_frame_5.png" id="8_ciquy"]
 [ext_resource type="AudioStream" uid="uid://ch5ikqjcyxkkt" path="res://sounds/cam_click.ogg" id="9_t54n1"]
-[ext_resource type="Script" path="res://common/static/static_noise.gd" id="11_noise"]
+[ext_resource type="Script" uid="uid://ba7cdhmwwwj6b" path="res://common/static/static_noise.gd" id="11_noise"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6ilct"]
+content_margin_left = 4.0
+content_margin_top = 2.0
+content_margin_right = 4.0
+content_margin_bottom = 2.0
+bg_color = Color(0.075, 0.1125, 0.18, 0.5)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.3, 0.45, 0.72, 0.75)
+corner_radius_top_left = 9
+corner_radius_top_right = 2
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 2
+shadow_color = Color(0.3, 0.45, 0.72, 0.1)
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5rghb"]
+content_margin_left = 4.0
+content_margin_top = 2.0
+content_margin_right = 4.0
+content_margin_bottom = 2.0
+bg_color = Color(0.18, 0.27, 0.43200004, 0.75)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.51, 0.615, 0.804, 0.9)
+corner_radius_top_left = 9
+corner_radius_top_right = 2
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 2
+shadow_color = Color(0.3, 0.45, 0.72, 0.35)
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qtv1k"]
+content_margin_left = 4.0
+content_margin_top = 2.0
+content_margin_right = 4.0
+content_margin_bottom = 2.0
+bg_color = Color(0.12, 0.17999998, 0.288, 0.6)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.51, 0.615, 0.804, 0.9)
+corner_radius_top_left = 9
+corner_radius_top_right = 2
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 2
+shadow_color = Color(0.3, 0.45, 0.72, 0.25)
+shadow_size = 4
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qf01s"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k5wej"]
+content_margin_left = 4.0
+content_margin_top = 2.0
+content_margin_right = 4.0
+content_margin_bottom = 2.0
+bg_color = Color(0.155, 0.075, 0.13, 0.5)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.62, 0.3, 0.52, 0.75)
+corner_radius_top_left = 9
+corner_radius_top_right = 2
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 2
+shadow_color = Color(0.62, 0.3, 0.52, 0.1)
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rcsv0"]
+content_margin_left = 4.0
+content_margin_top = 2.0
+content_margin_right = 4.0
+content_margin_bottom = 2.0
+bg_color = Color(0.372, 0.18, 0.312, 0.75)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.734, 0.51, 0.664, 0.9)
+corner_radius_top_left = 9
+corner_radius_top_right = 2
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 2
+shadow_color = Color(0.62, 0.3, 0.52, 0.35)
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yv0h0"]
+content_margin_left = 4.0
+content_margin_top = 2.0
+content_margin_right = 4.0
+content_margin_bottom = 2.0
+bg_color = Color(0.24799998, 0.12, 0.20799997, 0.6)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.734, 0.51, 0.664, 0.9)
+corner_radius_top_left = 9
+corner_radius_top_right = 2
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 2
+shadow_color = Color(0.62, 0.3, 0.52, 0.25)
+shadow_size = 4
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bc27t"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1w6cb"]
+content_margin_left = 4.0
+content_margin_top = 2.0
+content_margin_right = 4.0
+content_margin_bottom = 2.0
+bg_color = Color(0.075, 0.1375, 0.1625, 0.5)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.3, 0.55, 0.65, 0.75)
+corner_radius_top_left = 9
+corner_radius_top_right = 2
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 2
+shadow_color = Color(0.3, 0.55, 0.65, 0.1)
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kwasj"]
+content_margin_left = 4.0
+content_margin_top = 2.0
+content_margin_right = 4.0
+content_margin_bottom = 2.0
+bg_color = Color(0.18, 0.33, 0.39000002, 0.75)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.51, 0.685, 0.755, 0.9)
+corner_radius_top_left = 9
+corner_radius_top_right = 2
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 2
+shadow_color = Color(0.3, 0.55, 0.65, 0.35)
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ftev0"]
+content_margin_left = 4.0
+content_margin_top = 2.0
+content_margin_right = 4.0
+content_margin_bottom = 2.0
+bg_color = Color(0.12, 0.22, 0.25999996, 0.6)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.51, 0.685, 0.755, 0.9)
+corner_radius_top_left = 9
+corner_radius_top_right = 2
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 2
+shadow_color = Color(0.3, 0.55, 0.65, 0.25)
+shadow_size = 4
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kol2s"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_imrlk"]
+content_margin_left = 4.0
+content_margin_top = 2.0
+content_margin_right = 4.0
+content_margin_bottom = 2.0
+bg_color = Color(0.1875, 0.12, 0.0625, 0.5)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.75, 0.48, 0.25, 0.75)
+corner_radius_top_left = 9
+corner_radius_top_right = 2
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 2
+shadow_color = Color(0.75, 0.48, 0.25, 0.1)
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i2xy6"]
+content_margin_left = 4.0
+content_margin_top = 2.0
+content_margin_right = 4.0
+content_margin_bottom = 2.0
+bg_color = Color(0.45000002, 0.28800002, 0.15, 0.75)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.825, 0.636, 0.47500002, 0.9)
+corner_radius_top_left = 9
+corner_radius_top_right = 2
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 2
+shadow_color = Color(0.75, 0.48, 0.25, 0.35)
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h1rpf"]
+content_margin_left = 4.0
+content_margin_top = 2.0
+content_margin_right = 4.0
+content_margin_bottom = 2.0
+bg_color = Color(0.29999998, 0.19199999, 0.099999994, 0.6)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.825, 0.636, 0.47500002, 0.9)
+corner_radius_top_left = 9
+corner_radius_top_right = 2
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 2
+shadow_color = Color(0.75, 0.48, 0.25, 0.25)
+shadow_size = 4
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yu7vk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mbyu2"]
+content_margin_left = 4.0
+content_margin_top = 2.0
+content_margin_right = 4.0
+content_margin_bottom = 2.0
+bg_color = Color(0.12, 0.085, 0.175, 0.5)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.48, 0.34, 0.7, 0.75)
+corner_radius_top_left = 9
+corner_radius_top_right = 2
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 2
+shadow_color = Color(0.48, 0.34, 0.7, 0.1)
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1p5sd"]
+content_margin_left = 4.0
+content_margin_top = 2.0
+content_margin_right = 4.0
+content_margin_bottom = 2.0
+bg_color = Color(0.28800002, 0.20400001, 0.42000002, 0.75)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.636, 0.538, 0.78999996, 0.9)
+corner_radius_top_left = 9
+corner_radius_top_right = 2
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 2
+shadow_color = Color(0.48, 0.34, 0.7, 0.35)
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wwyjb"]
+content_margin_left = 4.0
+content_margin_top = 2.0
+content_margin_right = 4.0
+content_margin_bottom = 2.0
+bg_color = Color(0.19199999, 0.13599999, 0.27999997, 0.6)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.636, 0.538, 0.78999996, 0.9)
+corner_radius_top_left = 9
+corner_radius_top_right = 2
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 2
+shadow_color = Color(0.48, 0.34, 0.7, 0.25)
+shadow_size = 4
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0rtu3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6w8w3"]
+content_margin_left = 4.0
+content_margin_top = 2.0
+content_margin_right = 4.0
+content_margin_bottom = 2.0
+bg_color = Color(0.145, 0.105, 0.07, 0.5)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.58, 0.42, 0.28, 0.75)
+corner_radius_top_left = 9
+corner_radius_top_right = 2
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 2
+shadow_color = Color(0.58, 0.42, 0.28, 0.1)
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sbdq1"]
+content_margin_left = 4.0
+content_margin_top = 2.0
+content_margin_right = 4.0
+content_margin_bottom = 2.0
+bg_color = Color(0.348, 0.252, 0.16800001, 0.75)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.706, 0.594, 0.49600002, 0.9)
+corner_radius_top_left = 9
+corner_radius_top_right = 2
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 2
+shadow_color = Color(0.58, 0.42, 0.28, 0.35)
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vywqr"]
+content_margin_left = 4.0
+content_margin_top = 2.0
+content_margin_right = 4.0
+content_margin_bottom = 2.0
+bg_color = Color(0.23199998, 0.16799998, 0.111999996, 0.6)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.706, 0.594, 0.49600002, 0.9)
+corner_radius_top_left = 9
+corner_radius_top_right = 2
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 2
+shadow_color = Color(0.58, 0.42, 0.28, 0.25)
+shadow_size = 4
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l7rjj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g4wq7"]
+content_margin_left = 4.0
+content_margin_top = 2.0
+content_margin_right = 4.0
+content_margin_bottom = 2.0
+bg_color = Color(0.0625, 0.145, 0.13, 0.5)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.25, 0.58, 0.52, 0.75)
+corner_radius_top_left = 9
+corner_radius_top_right = 2
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 2
+shadow_color = Color(0.25, 0.58, 0.52, 0.1)
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mcwol"]
+content_margin_left = 4.0
+content_margin_top = 2.0
+content_margin_right = 4.0
+content_margin_bottom = 2.0
+bg_color = Color(0.15, 0.348, 0.312, 0.75)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.47500002, 0.706, 0.664, 0.9)
+corner_radius_top_left = 9
+corner_radius_top_right = 2
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 2
+shadow_color = Color(0.25, 0.58, 0.52, 0.35)
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xiguk"]
+content_margin_left = 4.0
+content_margin_top = 2.0
+content_margin_right = 4.0
+content_margin_bottom = 2.0
+bg_color = Color(0.099999994, 0.23199998, 0.20799997, 0.6)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.47500002, 0.706, 0.664, 0.9)
+corner_radius_top_left = 9
+corner_radius_top_right = 2
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 2
+shadow_color = Color(0.25, 0.58, 0.52, 0.25)
+shadow_size = 4
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fabkf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u0vfr"]
+content_margin_left = 4.0
+content_margin_top = 2.0
+content_margin_right = 4.0
+content_margin_bottom = 2.0
+bg_color = Color(0.18, 0.155, 0.07, 0.5)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.72, 0.62, 0.28, 0.75)
+corner_radius_top_left = 9
+corner_radius_top_right = 2
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 2
+shadow_color = Color(0.72, 0.62, 0.28, 0.1)
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4hdh3"]
+content_margin_left = 4.0
+content_margin_top = 2.0
+content_margin_right = 4.0
+content_margin_bottom = 2.0
+bg_color = Color(0.43200004, 0.372, 0.16800001, 0.75)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.804, 0.734, 0.49600002, 0.9)
+corner_radius_top_left = 9
+corner_radius_top_right = 2
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 2
+shadow_color = Color(0.72, 0.62, 0.28, 0.35)
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ghmud"]
+content_margin_left = 4.0
+content_margin_top = 2.0
+content_margin_right = 4.0
+content_margin_bottom = 2.0
+bg_color = Color(0.288, 0.24799998, 0.111999996, 0.6)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.804, 0.734, 0.49600002, 0.9)
+corner_radius_top_left = 9
+corner_radius_top_right = 2
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 2
+shadow_color = Color(0.72, 0.62, 0.28, 0.25)
+shadow_size = 4
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vklgl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j4f6k"]
+content_margin_left = 4.0
+content_margin_top = 2.0
+content_margin_right = 4.0
+content_margin_bottom = 2.0
+bg_color = Color(0.1375, 0.1625, 0.07, 0.5)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.55, 0.65, 0.28, 0.75)
+corner_radius_top_left = 9
+corner_radius_top_right = 2
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 2
+shadow_color = Color(0.55, 0.65, 0.28, 0.1)
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5eqgx"]
+content_margin_left = 4.0
+content_margin_top = 2.0
+content_margin_right = 4.0
+content_margin_bottom = 2.0
+bg_color = Color(0.33, 0.39000002, 0.16800001, 0.75)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.685, 0.755, 0.49600002, 0.9)
+corner_radius_top_left = 9
+corner_radius_top_right = 2
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 2
+shadow_color = Color(0.55, 0.65, 0.28, 0.35)
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eq8x2"]
+content_margin_left = 4.0
+content_margin_top = 2.0
+content_margin_right = 4.0
+content_margin_bottom = 2.0
+bg_color = Color(0.22, 0.25999996, 0.111999996, 0.6)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.685, 0.755, 0.49600002, 0.9)
+corner_radius_top_left = 9
+corner_radius_top_right = 2
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 2
+shadow_color = Color(0.55, 0.65, 0.28, 0.25)
+shadow_size = 4
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_270vn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jsnb6"]
+content_margin_left = 4.0
+content_margin_top = 2.0
+content_margin_right = 4.0
+content_margin_bottom = 2.0
+bg_color = Color(0.08, 0.145, 0.09, 0.5)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.32, 0.58, 0.36, 0.75)
+corner_radius_top_left = 9
+corner_radius_top_right = 2
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 2
+shadow_color = Color(0.32, 0.58, 0.36, 0.1)
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_202di"]
+content_margin_left = 4.0
+content_margin_top = 2.0
+content_margin_right = 4.0
+content_margin_bottom = 2.0
+bg_color = Color(0.192, 0.348, 0.21600002, 0.75)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.524, 0.706, 0.55200005, 0.9)
+corner_radius_top_left = 9
+corner_radius_top_right = 2
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 2
+shadow_color = Color(0.32, 0.58, 0.36, 0.35)
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4nxrm"]
+content_margin_left = 4.0
+content_margin_top = 2.0
+content_margin_right = 4.0
+content_margin_bottom = 2.0
+bg_color = Color(0.12799999, 0.23199998, 0.144, 0.6)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.524, 0.706, 0.55200005, 0.9)
+corner_radius_top_left = 9
+corner_radius_top_right = 2
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 2
+shadow_color = Color(0.32, 0.58, 0.36, 0.25)
+shadow_size = 4
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w4moy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m0y0a"]
+content_margin_left = 4.0
+content_margin_top = 2.0
+content_margin_right = 4.0
+content_margin_bottom = 2.0
+bg_color = Color(0.17, 0.07, 0.08, 0.5)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.68, 0.28, 0.32, 0.75)
+corner_radius_top_left = 9
+corner_radius_top_right = 2
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 2
+shadow_color = Color(0.68, 0.28, 0.32, 0.1)
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bv86e"]
+content_margin_left = 4.0
+content_margin_top = 2.0
+content_margin_right = 4.0
+content_margin_bottom = 2.0
+bg_color = Color(0.40800002, 0.16800001, 0.192, 0.75)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.776, 0.49600002, 0.524, 0.9)
+corner_radius_top_left = 9
+corner_radius_top_right = 2
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 2
+shadow_color = Color(0.68, 0.28, 0.32, 0.35)
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1fhj4"]
+content_margin_left = 4.0
+content_margin_top = 2.0
+content_margin_right = 4.0
+content_margin_bottom = 2.0
+bg_color = Color(0.27199998, 0.111999996, 0.12799999, 0.6)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.776, 0.49600002, 0.524, 0.9)
+corner_radius_top_left = 9
+corner_radius_top_right = 2
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 2
+shadow_color = Color(0.68, 0.28, 0.32, 0.25)
+shadow_size = 4
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q0l8m"]
 
 [sub_resource type="Animation" id="Animation_e0ubl"]
 length = 0.001
@@ -71,22 +688,36 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 expand_mode = 1
-metadata/_edit_lock_ = true
 script = ExtResource("11_noise")
 frames = Array[Texture2D]([ExtResource("4_im107"), ExtResource("5_al0ie"), ExtResource("6_qhegm"), ExtResource("7_b4mdr"), ExtResource("8_ciquy")])
+metadata/_edit_lock_ = true
 
-[node name="Map" type="Control" parent="CameraUI"]
+[node name="MapPicture" type="TextureRect" parent="CameraUI" unique_id=1609088673]
 layout_mode = 1
-anchors_preset = -1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 192.0
+offset_top = 69.0
+offset_bottom = -39.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_6ilct")
+expand_mode = 1
+
+[node name="Map" type="Control" parent="CameraUI" unique_id=1214970583]
+layout_mode = 1
 anchor_left = 0.62
 anchor_top = 0.2
 anchor_right = 0.99
 anchor_bottom = 0.85
+offset_top = -41.0
+offset_bottom = -41.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="CamButtonsParent" type="Control" parent="CameraUI/Map"]
+[node name="CamButtonsParent" type="Control" parent="CameraUI/Map" unique_id=1094056851]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
@@ -95,130 +726,316 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ToyFactoryBtn" type="Button" parent="CameraUI/Map/CamButtonsParent"]
+[node name="ToyFactoryBtn" type="Button" parent="CameraUI/Map/CamButtonsParent" unique_id=1537103807]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.355
-anchor_top = 0.040
-anchor_right = 0.505
-anchor_bottom = 0.120
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -326.19995
+offset_top = -283.0
+offset_right = -261.19995
+offset_bottom = -248.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.51, 0.615, 0.804, 1)
+theme_override_colors/font_pressed_color = Color(0.72, 0.78, 0.888, 1)
+theme_override_colors/font_hover_color = Color(0.72, 0.78, 0.888, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.85)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_6ilct")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5rghb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_qtv1k")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_qf01s")
 text = "Cam 1"
 script = ExtResource("3_k2tk3")
 camera_node_name = "ToyFactory"
+accent_color = Color(0.3, 0.45, 0.72, 1)
 
-[node name="FactoryTransferCorridorBtn" type="Button" parent="CameraUI/Map/CamButtonsParent"]
+[node name="FactoryTransferCorridorBtn" type="Button" parent="CameraUI/Map/CamButtonsParent" unique_id=2014334562]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.355
-anchor_top = 0.170
-anchor_right = 0.505
-anchor_bottom = 0.250
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -276.19995
+offset_top = -211.0
+offset_right = -211.19995
+offset_bottom = -176.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.734, 0.51, 0.664, 1)
+theme_override_colors/font_pressed_color = Color(0.848, 0.72, 0.80799997, 1)
+theme_override_colors/font_hover_color = Color(0.848, 0.72, 0.80799997, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.85)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_k5wej")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rcsv0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yv0h0")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_bc27t")
 text = "Cam 2"
 script = ExtResource("3_k2tk3")
 camera_node_name = "FactoryTransferCorridor"
+accent_color = Color(0.62, 0.3, 0.52, 1)
 
-[node name="MainStorageHallBtn" type="Button" parent="CameraUI/Map/CamButtonsParent"]
+[node name="MainStorageHallBtn" type="Button" parent="CameraUI/Map/CamButtonsParent" unique_id=103612585]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.355
-anchor_top = 0.470
-anchor_right = 0.505
-anchor_bottom = 0.550
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -344.19995
+offset_top = -98.0
+offset_right = -279.19995
+offset_bottom = -63.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.51, 0.685, 0.755, 1)
+theme_override_colors/font_pressed_color = Color(0.72, 0.82000005, 0.86, 1)
+theme_override_colors/font_hover_color = Color(0.72, 0.82000005, 0.86, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.85)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_1w6cb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kwasj")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ftev0")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_kol2s")
 text = "Cam 3"
 script = ExtResource("3_k2tk3")
 camera_node_name = "MainStorageHall"
+accent_color = Color(0.3, 0.55, 0.65, 1)
 
-[node name="PartsReturnsStorageRoomBtn" type="Button" parent="CameraUI/Map/CamButtonsParent"]
+[node name="PartsReturnsStorageRoomBtn" type="Button" parent="CameraUI/Map/CamButtonsParent" unique_id=1356308825]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.035
-anchor_top = 0.360
-anchor_right = 0.185
-anchor_bottom = 0.440
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -467.19995
+offset_top = -190.0
+offset_right = -402.19995
+offset_bottom = -155.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.825, 0.636, 0.47500002, 1)
+theme_override_colors/font_pressed_color = Color(0.9, 0.792, 0.70000005, 1)
+theme_override_colors/font_hover_color = Color(0.9, 0.792, 0.70000005, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.85)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_imrlk")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_i2xy6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_h1rpf")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_yu7vk")
 text = "Cam 4"
 script = ExtResource("3_k2tk3")
 camera_node_name = "PartsReturnsStorageRoom"
+accent_color = Color(0.75, 0.48, 0.25, 1)
 
-[node name="StaffRoomBtn" type="Button" parent="CameraUI/Map/CamButtonsParent"]
+[node name="StaffRoomBtn" type="Button" parent="CameraUI/Map/CamButtonsParent" unique_id=112462295]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.065
-anchor_top = 0.580
-anchor_right = 0.215
-anchor_bottom = 0.660
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -465.19995
+offset_top = -117.0
+offset_right = -400.19995
+offset_bottom = -82.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.636, 0.538, 0.78999996, 1)
+theme_override_colors/font_pressed_color = Color(0.792, 0.736, 0.88, 1)
+theme_override_colors/font_hover_color = Color(0.792, 0.736, 0.88, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.85)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_mbyu2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1p5sd")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wwyjb")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_0rtu3")
 text = "Cam 5"
 script = ExtResource("3_k2tk3")
 camera_node_name = "StaffRoom"
+accent_color = Color(0.48, 0.34, 0.7, 1)
 
-[node name="PackingRoomBtn" type="Button" parent="CameraUI/Map/CamButtonsParent"]
+[node name="PackingRoomBtn" type="Button" parent="CameraUI/Map/CamButtonsParent" unique_id=349227613]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.675
-anchor_top = 0.370
-anchor_right = 0.825
-anchor_bottom = 0.450
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -164.19995
+offset_top = -187.0
+offset_right = -99.19995
+offset_bottom = -152.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.706, 0.594, 0.49600002, 1)
+theme_override_colors/font_pressed_color = Color(0.832, 0.768, 0.712, 1)
+theme_override_colors/font_hover_color = Color(0.832, 0.768, 0.712, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.85)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_6w8w3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_sbdq1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vywqr")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_l7rjj")
 text = "Cam 6"
 script = ExtResource("3_k2tk3")
 camera_node_name = "PackingRoom"
+accent_color = Color(0.58, 0.42, 0.28, 1)
 
-[node name="InventoryCheckRoomBtn" type="Button" parent="CameraUI/Map/CamButtonsParent"]
+[node name="InventoryCheckRoomBtn" type="Button" parent="CameraUI/Map/CamButtonsParent" unique_id=2010361723]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.675
-anchor_top = 0.580
-anchor_right = 0.825
-anchor_bottom = 0.660
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -156.19995
+offset_top = -85.0
+offset_right = -91.19995
+offset_bottom = -50.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.47500002, 0.706, 0.664, 1)
+theme_override_colors/font_pressed_color = Color(0.70000005, 0.832, 0.80799997, 1)
+theme_override_colors/font_hover_color = Color(0.70000005, 0.832, 0.80799997, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.85)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_g4wq7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_mcwol")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xiguk")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fabkf")
 text = "Cam 7"
 script = ExtResource("3_k2tk3")
 camera_node_name = "InventoryCheckRoom"
+accent_color = Color(0.25, 0.58, 0.52, 1)
 
-[node name="LoadingBayBtn" type="Button" parent="CameraUI/Map/CamButtonsParent"]
+[node name="LoadingBayBtn" type="Button" parent="CameraUI/Map/CamButtonsParent" unique_id=1015226860]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.835
-anchor_top = 0.470
-anchor_right = 0.985
-anchor_bottom = 0.550
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -61.19995
+offset_top = -67.0
+offset_right = 3.8000488
+offset_bottom = -32.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.804, 0.734, 0.49600002, 1)
+theme_override_colors/font_pressed_color = Color(0.888, 0.848, 0.712, 1)
+theme_override_colors/font_hover_color = Color(0.888, 0.848, 0.712, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.85)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_u0vfr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_4hdh3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ghmud")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_vklgl")
 text = "Cam 8"
 script = ExtResource("3_k2tk3")
 camera_node_name = "LoadingBay"
+accent_color = Color(0.72, 0.62, 0.28, 1)
 
-[node name="ElectricalRoomBtn" type="Button" parent="CameraUI/Map/CamButtonsParent"]
+[node name="ElectricalRoomBtn" type="Button" parent="CameraUI/Map/CamButtonsParent" unique_id=1220239918]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.005
-anchor_top = 0.790
-anchor_right = 0.155
-anchor_bottom = 0.870
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -454.19995
+offset_top = -7.0
+offset_right = -389.19995
+offset_bottom = 28.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.685, 0.755, 0.49600002, 1)
+theme_override_colors/font_pressed_color = Color(0.82000005, 0.86, 0.712, 1)
+theme_override_colors/font_hover_color = Color(0.82000005, 0.86, 0.712, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.85)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_j4f6k")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5eqgx")
+theme_override_styles/hover = SubResource("StyleBoxFlat_eq8x2")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_270vn")
 text = "Cam 9"
 script = ExtResource("3_k2tk3")
 camera_node_name = "ElectricalRoom"
+accent_color = Color(0.55, 0.65, 0.28, 1)
 
-[node name="LeftHallBtn" type="Button" parent="CameraUI/Map/CamButtonsParent"]
+[node name="LeftHallBtn" type="Button" parent="CameraUI/Map/CamButtonsParent" unique_id=1253893005]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.225
-anchor_top = 0.820
-anchor_right = 0.375
-anchor_bottom = 0.900
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -342.19995
+offset_top = -30.0
+offset_right = -277.19995
+offset_bottom = 5.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.524, 0.706, 0.55200005, 1)
+theme_override_colors/font_pressed_color = Color(0.72800004, 0.832, 0.744, 1)
+theme_override_colors/font_hover_color = Color(0.72800004, 0.832, 0.744, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.85)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_jsnb6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_202di")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4nxrm")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_w4moy")
 text = "Cam 10"
 script = ExtResource("3_k2tk3")
 camera_node_name = "LeftHall"
+accent_color = Color(0.32, 0.58, 0.36, 1)
 
-[node name="RightHallBtn" type="Button" parent="CameraUI/Map/CamButtonsParent"]
+[node name="RightHallBtn" type="Button" parent="CameraUI/Map/CamButtonsParent" unique_id=49211580]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.485
-anchor_top = 0.820
-anchor_right = 0.635
-anchor_bottom = 0.900
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -239.19995
+offset_top = -31.0
+offset_right = -174.19995
+offset_bottom = 4.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.776, 0.49600002, 0.524, 1)
+theme_override_colors/font_pressed_color = Color(0.872, 0.712, 0.72800004, 1)
+theme_override_colors/font_hover_color = Color(0.872, 0.712, 0.72800004, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.85)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_m0y0a")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bv86e")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1fhj4")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_q0l8m")
 text = "Cam 11"
 script = ExtResource("3_k2tk3")
 camera_node_name = "RightHall"
+accent_color = Color(0.68, 0.28, 0.32, 1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CameraUI" unique_id=785406415]
 libraries/ = SubResource("AnimationLibrary_c5k7w")
 
 [node name="CamClickSound" type="AudioStreamPlayer" parent="." unique_id=283692509]
 stream = ExtResource("9_t54n1")
-

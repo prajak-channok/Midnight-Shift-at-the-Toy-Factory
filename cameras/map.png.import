@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://lyt8huuwqniu"
-path="res://.godot/imported/map.png-e4b6fb5f666619c376b22b5871bb8cd8.ctex"
+uid="uid://bdmkbt42vbp5n"
+path="res://.godot/imported/Map.png-475242721f164621a943df4f6e6503e5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://cameras/map.png"
-dest_files=["res://.godot/imported/map.png-e4b6fb5f666619c376b22b5871bb8cd8.ctex"]
+source_file="res://cameras/Map.png"
+dest_files=["res://.godot/imported/Map.png-475242721f164621a943df4f6e6503e5.ctex"]
 
 [params]
 
@@ -31,10 +31,10 @@ process/channel_remap/red=0
 process/channel_remap/green=1
 process/channel_remap/blue=2
 process/channel_remap/alpha=3
-process/fix_alpha_border=false
+process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1
