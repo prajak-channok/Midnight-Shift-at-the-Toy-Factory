@@ -1,0 +1,145 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://building/props/materials/metal_dark.tres" id="m_metal_dark"]
+[ext_resource type="Material" path="res://building/props/materials/rust.tres" id="m_rust"]
+[ext_resource type="Material" path="res://building/props/materials/shelf_steel.tres" id="m_shelf_steel"]
+[ext_resource type="Material" path="res://building/props/materials/metal_grey.tres" id="m_metal_grey"]
+[ext_resource type="Material" path="res://building/props/materials/steel_burnt.tres" id="m_steel_burnt"]
+
+[sub_resource type="BoxMesh" id="B1"]
+material = ExtResource("m_metal_dark")
+size = Vector3(0.07, 2.4, 0.07)
+
+[sub_resource type="BoxMesh" id="B2"]
+material = ExtResource("m_rust")
+size = Vector3(0.16, 0.012, 0.16)
+
+[sub_resource type="BoxMesh" id="B3"]
+material = ExtResource("m_metal_dark")
+size = Vector3(0.07, 2.4, 0.07)
+
+[sub_resource type="BoxMesh" id="B4"]
+material = ExtResource("m_rust")
+size = Vector3(0.16, 0.012, 0.16)
+
+[sub_resource type="BoxMesh" id="B5"]
+material = ExtResource("m_metal_dark")
+size = Vector3(0.07, 2.4, 0.07)
+
+[sub_resource type="BoxMesh" id="B6"]
+material = ExtResource("m_rust")
+size = Vector3(0.16, 0.012, 0.16)
+
+[sub_resource type="BoxMesh" id="B7"]
+material = ExtResource("m_metal_dark")
+size = Vector3(0.07, 2.4, 0.07)
+
+[sub_resource type="BoxMesh" id="B8"]
+material = ExtResource("m_rust")
+size = Vector3(0.16, 0.012, 0.16)
+
+[sub_resource type="BoxMesh" id="B9"]
+material = ExtResource("m_shelf_steel")
+size = Vector3(2.4, 0.09, 0.04)
+
+[sub_resource type="BoxMesh" id="B10"]
+material = ExtResource("m_shelf_steel")
+size = Vector3(2.4, 0.09, 0.04)
+
+[sub_resource type="BoxMesh" id="B11"]
+material = ExtResource("m_shelf_steel")
+size = Vector3(2.4, 0.09, 0.04)
+
+[sub_resource type="BoxMesh" id="B12"]
+material = ExtResource("m_shelf_steel")
+size = Vector3(2.4, 0.09, 0.04)
+
+[sub_resource type="BoxMesh" id="B13"]
+material = ExtResource("m_metal_dark")
+size = Vector3(0.04, 0.06, 0.94)
+
+[sub_resource type="BoxMesh" id="B14"]
+material = ExtResource("m_metal_dark")
+size = Vector3(0.04, 0.06, 0.94)
+
+[sub_resource type="BoxMesh" id="B15"]
+material = ExtResource("m_metal_grey")
+size = Vector3(2.34, 0.03, 0.94)
+
+[sub_resource type="BoxMesh" id="B16"]
+material = ExtResource("m_metal_grey")
+size = Vector3(2.34, 0.03, 0.94)
+
+[sub_resource type="BoxMesh" id="B17"]
+material = ExtResource("m_steel_burnt")
+size = Vector3(2.3, 0.012, 0.5)
+
+[node name="StorageRackBay" type="Node3D"]
+
+[node name="Upright_-1p17_-0p47" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, -1.17, 1.2, -0.47)
+mesh = SubResource("B1")
+
+[node name="Foot_-1p17_-0p47" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, -1.17, 0.006, -0.47)
+mesh = SubResource("B2")
+
+[node name="Upright_-1p17_0p47" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, -1.17, 1.2, 0.47)
+mesh = SubResource("B3")
+
+[node name="Foot_-1p17_0p47" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, -1.17, 0.006, 0.47)
+mesh = SubResource("B4")
+
+[node name="Upright_1p17_-0p47" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, 1.17, 1.2, -0.47)
+mesh = SubResource("B5")
+
+[node name="Foot_1p17_-0p47" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, 1.17, 0.006, -0.47)
+mesh = SubResource("B6")
+
+[node name="Upright_1p17_0p47" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, 1.17, 1.2, 0.47)
+mesh = SubResource("B7")
+
+[node name="Foot_1p17_0p47" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, 1.17, 0.006, 0.47)
+mesh = SubResource("B8")
+
+[node name="Beam_1p15_-0p49" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, 0, 1.15, -0.49)
+mesh = SubResource("B9")
+
+[node name="Beam_1p15_0p49" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, 0, 1.15, 0.49)
+mesh = SubResource("B10")
+
+[node name="Beam_2p37_-0p49" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, 0, 2.37, -0.49)
+mesh = SubResource("B11")
+
+[node name="Beam_2p37_0p49" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, 0, 2.37, 0.49)
+mesh = SubResource("B12")
+
+[node name="EndTie_-1p2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, -1.2, 2.37, 0)
+mesh = SubResource("B13")
+
+[node name="EndTie_1p2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, 1.2, 2.37, 0)
+mesh = SubResource("B14")
+
+[node name="Deck1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, 0, 0.14, 0)
+mesh = SubResource("B15")
+
+[node name="Deck2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, 0, 1.2, 0)
+mesh = SubResource("B16")
+
+[node name="GrimeStrip" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, 0, 1.218, 0.1)
+mesh = SubResource("B17")

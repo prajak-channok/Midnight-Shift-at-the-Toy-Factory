@@ -1,0 +1,267 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://building/props/materials/cabinet_grimy.tres" id="m_cabinet_grimy"]
+[ext_resource type="Material" path="res://building/props/materials/steel_burnt.tres" id="m_steel_burnt"]
+[ext_resource type="Material" path="res://building/props/materials/grime_dark.tres" id="m_grime_dark"]
+[ext_resource type="Material" path="res://building/props/materials/plastic_black.tres" id="m_plastic_black"]
+[ext_resource type="Material" path="res://building/props/materials/steel_dull.tres" id="m_steel_dull"]
+[ext_resource type="Material" path="res://building/props/materials/led_red.tres" id="m_led_red"]
+[ext_resource type="Material" path="res://building/props/materials/wire_black.tres" id="m_wire_black"]
+[ext_resource type="Material" path="res://building/props/materials/rust.tres" id="m_rust"]
+
+[sub_resource type="BoxMesh" id="s1"]
+material = ExtResource("m_cabinet_grimy")
+size = Vector3(0.55, 0.8, 0.14)
+
+[sub_resource type="BoxMesh" id="s2"]
+material = ExtResource("m_steel_burnt")
+size = Vector3(0.57, 0.82, 0.02)
+
+[sub_resource type="BoxMesh" id="s3"]
+material = ExtResource("m_grime_dark")
+size = Vector3(0.46, 0.7, 0.01)
+
+[sub_resource type="BoxMesh" id="s4"]
+material = ExtResource("m_plastic_black")
+size = Vector3(0.1, 0.07, 0.03)
+
+[sub_resource type="BoxMesh" id="s5"]
+material = ExtResource("m_steel_dull")
+size = Vector3(0.03, 0.035, 0.03)
+
+[sub_resource type="BoxMesh" id="s6"]
+material = ExtResource("m_plastic_black")
+size = Vector3(0.1, 0.07, 0.03)
+
+[sub_resource type="BoxMesh" id="s7"]
+material = ExtResource("m_steel_dull")
+size = Vector3(0.03, 0.035, 0.03)
+
+[sub_resource type="BoxMesh" id="s8"]
+material = ExtResource("m_plastic_black")
+size = Vector3(0.1, 0.07, 0.03)
+
+[sub_resource type="BoxMesh" id="s9"]
+material = ExtResource("m_steel_dull")
+size = Vector3(0.03, 0.035, 0.03)
+
+[sub_resource type="BoxMesh" id="s10"]
+material = ExtResource("m_plastic_black")
+size = Vector3(0.1, 0.07, 0.03)
+
+[sub_resource type="BoxMesh" id="s11"]
+material = ExtResource("m_steel_dull")
+size = Vector3(0.03, 0.035, 0.03)
+
+[sub_resource type="BoxMesh" id="s12"]
+material = ExtResource("m_plastic_black")
+size = Vector3(0.1, 0.07, 0.03)
+
+[sub_resource type="BoxMesh" id="s13"]
+material = ExtResource("m_steel_dull")
+size = Vector3(0.03, 0.035, 0.03)
+
+[sub_resource type="BoxMesh" id="s14"]
+material = ExtResource("m_plastic_black")
+size = Vector3(0.1, 0.07, 0.03)
+
+[sub_resource type="BoxMesh" id="s15"]
+material = ExtResource("m_steel_dull")
+size = Vector3(0.03, 0.035, 0.03)
+
+[sub_resource type="BoxMesh" id="s16"]
+material = ExtResource("m_plastic_black")
+size = Vector3(0.1, 0.07, 0.03)
+
+[sub_resource type="BoxMesh" id="s17"]
+material = ExtResource("m_steel_dull")
+size = Vector3(0.03, 0.035, 0.03)
+
+[sub_resource type="BoxMesh" id="s18"]
+material = ExtResource("m_plastic_black")
+size = Vector3(0.1, 0.07, 0.03)
+
+[sub_resource type="BoxMesh" id="s19"]
+material = ExtResource("m_steel_dull")
+size = Vector3(0.03, 0.035, 0.03)
+
+[sub_resource type="BoxMesh" id="s20"]
+material = ExtResource("m_plastic_black")
+size = Vector3(0.1, 0.07, 0.03)
+
+[sub_resource type="BoxMesh" id="s21"]
+material = ExtResource("m_steel_dull")
+size = Vector3(0.03, 0.035, 0.03)
+
+[sub_resource type="BoxMesh" id="s22"]
+material = ExtResource("m_plastic_black")
+size = Vector3(0.1, 0.07, 0.03)
+
+[sub_resource type="BoxMesh" id="s23"]
+material = ExtResource("m_steel_dull")
+size = Vector3(0.03, 0.035, 0.03)
+
+[sub_resource type="BoxMesh" id="s24"]
+material = ExtResource("m_plastic_black")
+size = Vector3(0.1, 0.07, 0.03)
+
+[sub_resource type="BoxMesh" id="s25"]
+material = ExtResource("m_steel_dull")
+size = Vector3(0.03, 0.035, 0.03)
+
+[sub_resource type="BoxMesh" id="s26"]
+material = ExtResource("m_plastic_black")
+size = Vector3(0.1, 0.07, 0.03)
+
+[sub_resource type="BoxMesh" id="s27"]
+material = ExtResource("m_steel_dull")
+size = Vector3(0.03, 0.035, 0.03)
+
+[sub_resource type="BoxMesh" id="s28"]
+material = ExtResource("m_led_red")
+size = Vector3(0.03, 0.03, 0.02)
+
+[sub_resource type="CylinderMesh" id="s29"]
+material = ExtResource("m_wire_black")
+top_radius = 0.012
+bottom_radius = 0.012
+height = 0.35
+radial_segments = 14
+rings = 1
+
+[sub_resource type="BoxMesh" id="s30"]
+material = ExtResource("m_cabinet_grimy")
+size = Vector3(0.5, 0.75, 0.015)
+
+[sub_resource type="BoxMesh" id="s31"]
+material = ExtResource("m_rust")
+size = Vector3(0.2, 0.3, 0.004)
+
+[node name="SubBreakerPanelOpen" type="Node3D"]
+
+[node name="Body" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.07)
+mesh = SubResource("s1")
+
+[node name="Rim" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.01)
+mesh = SubResource("s2")
+
+[node name="Interior" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.145)
+mesh = SubResource("s3")
+
+[node name="Sw0_0" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, 0.26, 0.16)
+mesh = SubResource("s4")
+
+[node name="Lv0_0" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, 0.24, 0.185)
+mesh = SubResource("s5")
+
+[node name="Sw0_1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 0.26, 0.16)
+mesh = SubResource("s6")
+
+[node name="Lv0_1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 0.28, 0.185)
+mesh = SubResource("s7")
+
+[node name="Sw1_0" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, 0.16, 0.16)
+mesh = SubResource("s8")
+
+[node name="Lv1_0" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, 0.18, 0.185)
+mesh = SubResource("s9")
+
+[node name="Sw1_1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 0.16, 0.16)
+mesh = SubResource("s10")
+
+[node name="Lv1_1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 0.18, 0.185)
+mesh = SubResource("s11")
+
+[node name="Sw2_0" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, 0.06, 0.16)
+mesh = SubResource("s12")
+
+[node name="Lv2_0" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, 0.08, 0.185)
+mesh = SubResource("s13")
+
+[node name="Sw2_1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 0.06, 0.16)
+mesh = SubResource("s14")
+
+[node name="Lv2_1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 0.04, 0.185)
+mesh = SubResource("s15")
+
+[node name="Sw3_0" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, -0.04, 0.16)
+mesh = SubResource("s16")
+
+[node name="Lv3_0" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, -0.06, 0.185)
+mesh = SubResource("s17")
+
+[node name="Sw3_1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, -0.04, 0.16)
+mesh = SubResource("s18")
+
+[node name="Lv3_1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, -0.02, 0.185)
+mesh = SubResource("s19")
+
+[node name="Sw4_0" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, -0.14, 0.16)
+mesh = SubResource("s20")
+
+[node name="Lv4_0" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, -0.12, 0.185)
+mesh = SubResource("s21")
+
+[node name="Sw4_1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, -0.14, 0.16)
+mesh = SubResource("s22")
+
+[node name="Lv4_1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, -0.12, 0.185)
+mesh = SubResource("s23")
+
+[node name="Sw5_0" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, -0.24, 0.16)
+mesh = SubResource("s24")
+
+[node name="Lv5_0" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, -0.22, 0.185)
+mesh = SubResource("s25")
+
+[node name="Sw5_1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, -0.24, 0.16)
+mesh = SubResource("s26")
+
+[node name="Lv5_1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, -0.26, 0.185)
+mesh = SubResource("s27")
+
+[node name="Led" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18, 0.32, 0.155)
+mesh = SubResource("s28")
+
+[node name="Wire" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.9945219, -0.104528464, 0, 0.104528464, 0.9945219, 0, 0, 0, 1, -0.2, -0.45, 0.16)
+mesh = SubResource("s29")
+
+[node name="Door" type="Node3D" parent="."]
+transform = Transform3D(0.34202015, 0, -0.9396926, 0, 1, 0, 0.9396926, 0, 0.34202015, -0.25, 0, 0.15)
+
+[node name="Leaf" type="MeshInstance3D" parent="Door"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 0, 0)
+mesh = SubResource("s30")
+
+[node name="Rust" type="MeshInstance3D" parent="Door"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, -0.2, 0.01)
+mesh = SubResource("s31")

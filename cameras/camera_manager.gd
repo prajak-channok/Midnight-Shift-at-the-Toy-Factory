@@ -14,7 +14,6 @@ var all_cams = {}
 @onready var cam_buttons_parent = $%CamButtonsParent
 @onready var cam_click_sound = $CamClickSound
 @onready var ui_animation_player = $CameraUI/AnimationPlayer
-@onready var cam_flashlight_sound = $CamFlashlightSound
 
 
 func _ready():
@@ -26,7 +25,6 @@ func _ready():
 		if c is Camera3D:
 			all_cams[c.name.to_lower()] = c
 			c.current = false
-			c.visible = false
 	
 	# Connect the cam_button_pressed signal from each camera button
 	# to the set_current_cam function
@@ -41,25 +39,9 @@ func _ready():
 		printerr("no cameras are under camera manager")
 
 
-func _process(delta):
-	# Turning on flashlight on the current camera if the action is pressed
-	# We are just changing the camera's visibility (which does not 
-	# affect the camera in itself, just its child SpotLight3D)
-	if selected_cam == null:
-		return
-	if Input.is_action_pressed("flashlight") and selected_cam.current:
-		selected_cam.visible = true
-		if not cam_flashlight_sound.playing:
-			cam_flashlight_sound.play()
-	else:
-		selected_cam.visible = false
-		cam_flashlight_sound.stop()
-
-
 func set_current_cam(cam : String):
 	# set the previous camera as not current and hide it, switch to the new one and make that one current
 	selected_cam.current = false
-	selected_cam.visible = false
 	selected_cam = all_cams[cam.to_lower()]
 	selected_cam.current = true
 	cam_click_sound.play()
@@ -74,6 +56,8 @@ func lose_communication(time_scale : float):
 
 ## True while the monitor is up and the selected camera is the one named after [param position_name]
 ## (camera node names match AnimatronicPosition names, case-insensitive).
+
+
 func is_watching(position_name : StringName) -> bool:
 	return cam_ui.visible and selected_cam != null and selected_cam.name.to_lower() == String(position_name).to_lower()
 

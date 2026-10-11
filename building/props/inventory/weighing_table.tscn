@@ -1,0 +1,209 @@
+[gd_scene format=3 uid="uid://1gt1vod1v5h8"]
+
+[ext_resource type="Material" path="res://building/props/materials/cardboard.tres" id="m_cardboard"]
+[ext_resource type="Material" path="res://building/props/materials/hazard_dark.tres" id="m_hazard_dark"]
+[ext_resource type="Material" path="res://building/props/materials/label_dirty.tres" id="m_label_dirty"]
+[ext_resource type="Material" path="res://building/props/materials/led_red.tres" id="m_led_red"]
+[ext_resource type="Material" path="res://building/props/materials/metal_grey.tres" id="m_metal_grey"]
+[ext_resource type="Material" path="res://building/props/materials/paper_aged.tres" id="m_paper_aged"]
+[ext_resource type="Material" path="res://building/props/materials/plastic_black.tres" id="m_plastic_black"]
+[ext_resource type="Material" path="res://building/props/materials/rust.tres" id="m_rust"]
+[ext_resource type="Material" path="res://building/props/materials/screen_dim.tres" id="m_screen_dim"]
+[ext_resource type="Material" path="res://building/props/materials/steel_burnt.tres" id="m_steel_burnt"]
+[ext_resource type="Material" path="res://building/props/materials/steel_dull.tres" id="m_steel_dull"]
+[ext_resource type="Material" path="res://building/props/materials/wire_black.tres" id="m_wire_black"]
+
+[sub_resource type="BoxMesh" id="s1"]
+material = ExtResource("m_steel_dull")
+size = Vector3(0.05, 0.86, 0.05)
+
+[sub_resource type="BoxMesh" id="s2"]
+material = ExtResource("m_steel_dull")
+size = Vector3(0.05, 0.86, 0.05)
+
+[sub_resource type="BoxMesh" id="s3"]
+material = ExtResource("m_steel_dull")
+size = Vector3(0.05, 0.86, 0.05)
+
+[sub_resource type="BoxMesh" id="s4"]
+material = ExtResource("m_steel_dull")
+size = Vector3(0.05, 0.86, 0.05)
+
+[sub_resource type="BoxMesh" id="s5"]
+material = ExtResource("m_metal_grey")
+size = Vector3(1.5, 0.04, 0.75)
+
+[sub_resource type="BoxMesh" id="s6"]
+material = ExtResource("m_steel_burnt")
+size = Vector3(1.4, 0.025, 0.65)
+
+[sub_resource type="BoxMesh" id="s7"]
+material = ExtResource("m_steel_dull")
+size = Vector3(1.4, 0.04, 0.03)
+
+[sub_resource type="BoxMesh" id="s8"]
+material = ExtResource("m_rust")
+size = Vector3(0.5, 0.004, 0.3)
+
+[sub_resource type="BoxMesh" id="s9"]
+material = ExtResource("m_steel_burnt")
+size = Vector3(0.62, 0.06, 0.5)
+
+[sub_resource type="BoxMesh" id="s10"]
+material = ExtResource("m_metal_grey")
+size = Vector3(0.58, 0.012, 0.46)
+
+[sub_resource type="BoxMesh" id="s11"]
+material = ExtResource("m_hazard_dark")
+size = Vector3(0.62, 0.008, 0.02)
+
+[sub_resource type="BoxMesh" id="s12"]
+material = ExtResource("m_steel_dull")
+size = Vector3(0.04, 0.34, 0.04)
+
+[sub_resource type="BoxMesh" id="s13"]
+material = ExtResource("m_plastic_black")
+size = Vector3(0.34, 0.17, 0.1)
+
+[sub_resource type="BoxMesh" id="s14"]
+material = ExtResource("m_screen_dim")
+size = Vector3(0.26, 0.09, 0.005)
+
+[sub_resource type="BoxMesh" id="s15"]
+material = ExtResource("m_led_red")
+size = Vector3(0.02, 0.02, 0.005)
+
+[sub_resource type="BoxMesh" id="s16"]
+material = ExtResource("m_cardboard")
+size = Vector3(0.34, 0.24, 0.26)
+
+[sub_resource type="BoxMesh" id="s17"]
+material = ExtResource("m_label_dirty")
+size = Vector3(0.272, 0.072, 0.004)
+
+[sub_resource type="BoxMesh" id="s18"]
+material = ExtResource("m_plastic_black")
+size = Vector3(0.272, 0.0672, 0.004)
+
+[sub_resource type="BoxMesh" id="s19"]
+material = ExtResource("m_paper_aged")
+size = Vector3(0.22, 0.012, 0.3)
+
+[sub_resource type="BoxMesh" id="s20"]
+material = ExtResource("m_label_dirty")
+size = Vector3(0.22, 0.006, 0.3)
+
+[sub_resource type="BoxMesh" id="s21"]
+material = ExtResource("m_wire_black")
+size = Vector3(0.004, 0.2, 0.004)
+
+[sub_resource type="BoxMesh" id="s22"]
+material = ExtResource("m_label_dirty")
+size = Vector3(0.1, 0.07, 0.004)
+
+[node name="WeighingTable" type="Node3D" unique_id=2120815986]
+
+[node name="Leg-1-1" type="MeshInstance3D" parent="." unique_id=1274720570]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7, 0.43, -0.33)
+mesh = SubResource("s1")
+
+[node name="Leg-11" type="MeshInstance3D" parent="." unique_id=1236817740]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7, 0.43, 0.33)
+mesh = SubResource("s2")
+
+[node name="Leg1-1" type="MeshInstance3D" parent="." unique_id=1331555349]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7, 0.43, -0.33)
+mesh = SubResource("s3")
+
+[node name="Leg11" type="MeshInstance3D" parent="." unique_id=2139987871]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7, 0.43, 0.33)
+mesh = SubResource("s4")
+
+[node name="Top" type="MeshInstance3D" parent="." unique_id=1731111670]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.88, 0)
+mesh = SubResource("s5")
+
+[node name="Lower" type="MeshInstance3D" parent="." unique_id=1933229696]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+mesh = SubResource("s6")
+
+[node name="RailF" type="MeshInstance3D" parent="." unique_id=1669459964]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0.33)
+mesh = SubResource("s7")
+
+[node name="Rust" type="MeshInstance3D" parent="." unique_id=1569615410]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45, 0.903, 0.1)
+mesh = SubResource("s8")
+
+[node name="PlatBase" type="MeshInstance3D" parent="." unique_id=326045635]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0.94, 0.02)
+mesh = SubResource("s9")
+
+[node name="PlatTop" type="MeshInstance3D" parent="." unique_id=1677168252]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0.976, 0.02)
+mesh = SubResource("s10")
+
+[node name="PlatEdge" type="MeshInstance3D" parent="." unique_id=1799113079]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0.98, 0.265)
+mesh = SubResource("s11")
+
+[node name="Pole" type="MeshInstance3D" parent="." unique_id=845155779]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 1.07, -0.2)
+mesh = SubResource("s12")
+
+[node name="Head" type="MeshInstance3D" parent="." unique_id=968835079]
+transform = Transform3D(1, 0, 0, 0, 0.99026805, -0.1391731, 0, 0.1391731, 0.99026805, 0.2, 1.3, -0.2)
+mesh = SubResource("s13")
+
+[node name="Screen" type="MeshInstance3D" parent="." unique_id=756623561]
+transform = Transform3D(1, 0, 0, 0, 0.99026805, -0.1391731, 0, 0.1391731, 0.99026805, 0.2, 1.31, -0.147)
+mesh = SubResource("s14")
+
+[node name="Readout" type="Label3D" parent="." unique_id=389498609]
+transform = Transform3D(1, 0, 0, 0, 0.99026805, -0.1391731, 0, 0.1391731, 0.99026805, 0.2, 1.31, -0.143)
+pixel_size = 0.0011
+modulate = Color(0, 0, 0, 1)
+text = "12.40 kg"
+font_size = 64
+outline_size = 0
+
+[node name="Led" type="MeshInstance3D" parent="." unique_id=1456173419]
+transform = Transform3D(1, 0, 0, 0, 0.99026805, -0.1391731, 0, 0.1391731, 0.99026805, 0.33, 1.25, -0.145)
+mesh = SubResource("s15")
+
+[node name="Sample" type="MeshInstance3D" parent="." unique_id=1838397711]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 1.102, 0.02)
+mesh = SubResource("s16")
+
+[node name="SampleL" type="MeshInstance3D" parent="." unique_id=970550245]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 1.066, 0.152)
+mesh = SubResource("s17")
+
+[node name="SampleW" type="MeshInstance3D" parent="." unique_id=1064922478]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 1.1548, 0.152)
+mesh = SubResource("s18")
+
+[node name="Form1" type="MeshInstance3D" parent="." unique_id=330083352]
+transform = Transform3D(0.9781476, 0, 0.2079117, 0, 1, 0, -0.2079117, 0, 0.9781476, 0.52, 0.91, 0.08)
+mesh = SubResource("s19")
+
+[node name="Form2" type="MeshInstance3D" parent="." unique_id=660536958]
+transform = Transform3D(0.9945219, 0, -0.104528464, 0, 1, 0, 0.104528464, 0, 0.9945219, 0.5, 0.925, 0.1)
+mesh = SubResource("s20")
+
+[node name="TagStr" type="MeshInstance3D" parent="." unique_id=322775920]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, 0.78, 0.345)
+mesh = SubResource("s21")
+
+[node name="Tag" type="MeshInstance3D" parent="." unique_id=674957123]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, 0.66, 0.35)
+mesh = SubResource("s22")
+
+[node name="TagText" type="Label3D" parent="." unique_id=1676217656]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, 0.66, 0.353)
+pixel_size = 0.0006
+modulate = Color(0.07, 0.06, 0.04, 1)
+text = "LOT
+0417"
+font_size = 64
+outline_size = 0

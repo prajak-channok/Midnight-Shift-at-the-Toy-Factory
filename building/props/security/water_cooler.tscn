@@ -1,0 +1,86 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://building/props/materials/white_paint.tres" id="1_i8u64"]
+[ext_resource type="Material" path="res://building/props/materials/metal_grey.tres" id="2_nervf"]
+[ext_resource type="Material" path="res://building/props/materials/paper_blue.tres" id="3_drkqi"]
+[ext_resource type="Material" path="res://building/props/materials/red_paint.tres" id="4_yx75t"]
+[ext_resource type="Material" path="res://building/props/materials/metal_dark.tres" id="5_d50km"]
+[ext_resource type="Material" path="res://building/props/materials/water_jug.tres" id="6_had2p"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_8ocw5"]
+material = ExtResource("1_i8u64")
+size = Vector3(0.32, 0.95, 0.32)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ls6ve"]
+material = ExtResource("2_nervf")
+size = Vector3(0.3, 0.1, 0.02)
+
+[sub_resource type="BoxMesh" id="BoxMesh_dxtl8"]
+material = ExtResource("3_drkqi")
+size = Vector3(0.03, 0.04, 0.05)
+
+[sub_resource type="BoxMesh" id="BoxMesh_q2y43"]
+material = ExtResource("4_yx75t")
+size = Vector3(0.03, 0.04, 0.05)
+
+[sub_resource type="BoxMesh" id="BoxMesh_dh1oy"]
+material = ExtResource("5_d50km")
+size = Vector3(0.2, 0.012, 0.1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_xeff4"]
+material = ExtResource("6_had2p")
+top_radius = 0.05
+bottom_radius = 0.08
+height = 0.06
+radial_segments = 14
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_g3udq"]
+material = ExtResource("6_had2p")
+top_radius = 0.14
+bottom_radius = 0.14
+height = 0.38
+radial_segments = 14
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_jus3d"]
+material = ExtResource("6_had2p")
+top_radius = 0.04
+bottom_radius = 0.04
+height = 0.02
+radial_segments = 14
+rings = 1
+
+[node name="WaterCooler" type="Node3D" unique_id=485819792]
+
+[node name="Cabinet" type="MeshInstance3D" parent="." unique_id=507828017]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.475, 0)
+mesh = SubResource("BoxMesh_8ocw5")
+
+[node name="Dispenser" type="MeshInstance3D" parent="." unique_id=1382458014]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.78, 0.165)
+mesh = SubResource("BoxMesh_ls6ve")
+
+[node name="TapCold" type="MeshInstance3D" parent="." unique_id=1426611977]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06, 0.74, 0.19)
+mesh = SubResource("BoxMesh_dxtl8")
+
+[node name="TapHot" type="MeshInstance3D" parent="." unique_id=206020283]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06, 0.74, 0.19)
+mesh = SubResource("BoxMesh_q2y43")
+
+[node name="Tray" type="MeshInstance3D" parent="." unique_id=563585092]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.62, 0.19)
+mesh = SubResource("BoxMesh_dh1oy")
+
+[node name="JugNeck" type="MeshInstance3D" parent="." unique_id=1061774050]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CylinderMesh_xeff4")
+
+[node name="Jug" type="MeshInstance3D" parent="." unique_id=79501391]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.22, 0)
+mesh = SubResource("CylinderMesh_g3udq")
+
+[node name="JugCap" type="MeshInstance3D" parent="." unique_id=48316565]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.42, 0)
+mesh = SubResource("CylinderMesh_jus3d")

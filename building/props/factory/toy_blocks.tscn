@@ -1,0 +1,122 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://building/props/materials/burnt_red.tres" id="1_qyv4r"]
+[ext_resource type="Material" path="res://building/props/materials/soot.tres" id="2_b24gf"]
+[ext_resource type="Material" path="res://building/props/materials/burnt_blue.tres" id="3_xf6to"]
+[ext_resource type="Material" path="res://building/props/materials/burnt_yellow.tres" id="4_nm3vm"]
+[ext_resource type="Material" path="res://building/props/materials/char.tres" id="5_0l4ec"]
+[ext_resource type="Material" path="res://building/props/materials/burnt_green.tres" id="6_tle0k"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_3m0gd"]
+material = ExtResource("1_qyv4r")
+size = Vector3(0.09, 0.09, 0.09)
+
+[sub_resource type="BoxMesh" id="BoxMesh_y61it"]
+material = ExtResource("2_b24gf")
+size = Vector3(0.092, 0.03, 0.092)
+
+[sub_resource type="BoxMesh" id="BoxMesh_yuot7"]
+material = ExtResource("3_xf6to")
+size = Vector3(0.09, 0.09, 0.09)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ivgi5"]
+material = ExtResource("2_b24gf")
+size = Vector3(0.092, 0.03, 0.092)
+
+[sub_resource type="BoxMesh" id="BoxMesh_3yqfn"]
+material = ExtResource("4_nm3vm")
+size = Vector3(0.09, 0.09, 0.09)
+
+[sub_resource type="BoxMesh" id="BoxMesh_3sc3b"]
+material = ExtResource("2_b24gf")
+size = Vector3(0.092, 0.03, 0.092)
+
+[sub_resource type="BoxMesh" id="BoxMesh_qiuyq"]
+material = ExtResource("5_0l4ec")
+size = Vector3(0.09, 0.09, 0.09)
+
+[sub_resource type="BoxMesh" id="BoxMesh_iajku"]
+material = ExtResource("2_b24gf")
+size = Vector3(0.092, 0.03, 0.092)
+
+[sub_resource type="BoxMesh" id="BoxMesh_srsw0"]
+material = ExtResource("6_tle0k")
+size = Vector3(0.09, 0.09, 0.09)
+
+[sub_resource type="BoxMesh" id="BoxMesh_6yhlh"]
+material = ExtResource("2_b24gf")
+size = Vector3(0.092, 0.03, 0.092)
+
+[node name="ToyBlocks" type="Node3D" unique_id=1931365333]
+
+[node name="Block0" type="MeshInstance3D" parent="." unique_id=1531046552]
+transform = Transform3D(0.99026805, 0, 0.1391731, 0, 1, 0, -0.1391731, 0, 0.99026805, 0, 0.045, 0)
+mesh = SubResource("BoxMesh_3m0gd")
+
+[node name="Soot0" type="MeshInstance3D" parent="." unique_id=845166697]
+transform = Transform3D(0.99026805, 0, 0.1391731, 0, 1, 0, -0.1391731, 0, 0.99026805, 0, 0.075, 0)
+mesh = SubResource("BoxMesh_y61it")
+
+[node name="Letter0" type="Label3D" parent="." unique_id=1921922088]
+transform = Transform3D(0.99026805, 0, 0.1391731, 0, 1, 0, -0.1391731, 0, 0.99026805, 0.0064158803, 0.045, 0.045651358)
+pixel_size = 0.0008
+modulate = Color(0.02, 0.02, 0.02, 1)
+text = "A"
+font_size = 64
+outline_size = 0
+
+[node name="Block1" type="MeshInstance3D" parent="." unique_id=367395041]
+transform = Transform3D(0.9975641, 0, -0.06975647, 0, 1, 0, 0.06975647, 0, 0.9975641, 0.1, 0.045, 0.02)
+mesh = SubResource("BoxMesh_yuot7")
+
+[node name="Soot1" type="MeshInstance3D" parent="." unique_id=1757936592]
+transform = Transform3D(0.9975641, 0, -0.06975647, 0, 1, 0, 0.06975647, 0, 0.9975641, 0.1, 0.075, 0.02)
+mesh = SubResource("BoxMesh_ivgi5")
+
+[node name="Letter1" type="Label3D" parent="." unique_id=793237942]
+transform = Transform3D(0.9975641, 0, -0.06975647, 0, 1, 0, 0.06975647, 0, 0.9975641, 0.09678423, 0.045, 0.065987706)
+pixel_size = 0.0008
+modulate = Color(0.02, 0.02, 0.02, 1)
+text = "B"
+font_size = 64
+outline_size = 0
+
+[node name="Block2" type="MeshInstance3D" parent="." unique_id=1701216047]
+transform = Transform3D(0.9702957, 0, 0.2419219, 0, 1, 0, -0.2419219, 0, 0.9702957, 0.2, 0.045, -0.02)
+mesh = SubResource("BoxMesh_3yqfn")
+
+[node name="Soot2" type="MeshInstance3D" parent="." unique_id=494675618]
+transform = Transform3D(0.9702957, 0, 0.2419219, 0, 1, 0, -0.2419219, 0, 0.9702957, 0.2, 0.075, -0.02)
+mesh = SubResource("BoxMesh_3sc3b")
+
+[node name="Letter2" type="Label3D" parent="." unique_id=1467743697]
+transform = Transform3D(0.9702957, 0, 0.2419219, 0, 1, 0, -0.2419219, 0, 0.9702957, 0.2111526, 0.045, 0.024730634)
+pixel_size = 0.0008
+modulate = Color(0.02, 0.02, 0.02, 1)
+text = "C"
+font_size = 64
+outline_size = 0
+
+[node name="Block3" type="MeshInstance3D" parent="." unique_id=338778301]
+transform = Transform3D(0.9396926, 0, 0.34202012, 0, 1, 0, -0.34202012, 0, 0.9396926, 0.05, 0.135, 0.01)
+mesh = SubResource("BoxMesh_qiuyq")
+
+[node name="Soot3" type="MeshInstance3D" parent="." unique_id=1099340541]
+transform = Transform3D(0.9396926, 0, 0.34202012, 0, 1, 0, -0.34202012, 0, 0.9396926, 0.05, 0.165, 0.01)
+mesh = SubResource("BoxMesh_iajku")
+
+[node name="Block4" type="MeshInstance3D" parent="." unique_id=1328157343]
+transform = Transform3D(0.64278764, 0, 0.76604444, 0, 1, 0, -0.76604444, 0, 0.64278764, 0.28, 0.04, 0.12)
+mesh = SubResource("BoxMesh_srsw0")
+
+[node name="Soot4" type="MeshInstance3D" parent="." unique_id=1038717912]
+transform = Transform3D(0.64278764, 0, 0.76604444, 0, 1, 0, -0.76604444, 0, 0.64278764, 0.28, 0.07, 0.12)
+mesh = SubResource("BoxMesh_6yhlh")
+
+[node name="Letter4" type="Label3D" parent="." unique_id=1010352885]
+transform = Transform3D(0.64278764, 0, 0.76604444, 0, 1, 0, -0.76604444, 0, 0.64278764, 0.31531465, 0.04, 0.14963251)
+pixel_size = 0.0008
+modulate = Color(0.02, 0.02, 0.02, 1)
+text = "D"
+font_size = 64
+outline_size = 0

@@ -1,0 +1,75 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://building/props/materials/cabinet_grimy.tres" id="m_cabinet_grimy"]
+[ext_resource type="Material" path="res://building/props/materials/steel_burnt.tres" id="m_steel_burnt"]
+[ext_resource type="Material" path="res://building/props/materials/rust.tres" id="m_rust"]
+[ext_resource type="Material" path="res://building/props/materials/steel_dull.tres" id="m_steel_dull"]
+[ext_resource type="Material" path="res://building/props/materials/faded_yellow.tres" id="m_faded_yellow"]
+[ext_resource type="Material" path="res://building/props/materials/led_amber.tres" id="m_led_amber"]
+
+[sub_resource type="BoxMesh" id="s1"]
+material = ExtResource("m_cabinet_grimy")
+size = Vector3(0.55, 0.8, 0.14)
+
+[sub_resource type="BoxMesh" id="s2"]
+material = ExtResource("m_steel_burnt")
+size = Vector3(0.57, 0.82, 0.02)
+
+[sub_resource type="BoxMesh" id="s3"]
+material = ExtResource("m_cabinet_grimy")
+size = Vector3(0.5, 0.75, 0.015)
+
+[sub_resource type="BoxMesh" id="s4"]
+material = ExtResource("m_rust")
+size = Vector3(0.22, 0.35, 0.004)
+
+[sub_resource type="BoxMesh" id="s5"]
+material = ExtResource("m_steel_dull")
+size = Vector3(0.02, 0.1, 0.03)
+
+[sub_resource type="BoxMesh" id="s6"]
+material = ExtResource("m_faded_yellow")
+size = Vector3(0.3, 0.14, 0.004)
+
+[sub_resource type="BoxMesh" id="s7"]
+material = ExtResource("m_led_amber")
+size = Vector3(0.03, 0.03, 0.02)
+
+[node name="SubBreakerPanel" type="Node3D"]
+
+[node name="Body" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.07)
+mesh = SubResource("s1")
+
+[node name="Rim" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.01)
+mesh = SubResource("s2")
+
+[node name="Door" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.147)
+mesh = SubResource("s3")
+
+[node name="Rust" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, -0.2, 0.156)
+mesh = SubResource("s4")
+
+[node name="Handle" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18, 0, 0.17)
+mesh = SubResource("s5")
+
+[node name="Plate" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.04, 0.22, 0.157)
+mesh = SubResource("s6")
+
+[node name="Text" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.04, 0.22, 0.16)
+pixel_size = 0.0006
+modulate = Color(0.04, 0.035, 0.02, 1)
+text = "DANGER
+HIGH VOLTAGE"
+font_size = 64
+outline_size = 0
+
+[node name="Led" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0.3, 0.16)
+mesh = SubResource("s7")

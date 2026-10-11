@@ -1,0 +1,104 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://building/props/materials/faded_yellow.tres" id="1_ykk63"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_xsef6"]
+material = ExtResource("1_ykk63")
+size = Vector3(0.12, 0.006, 1.4)
+
+[sub_resource type="BoxMesh" id="BoxMesh_nflrx"]
+material = ExtResource("1_ykk63")
+size = Vector3(0.12, 0.006, 1.4)
+
+[sub_resource type="BoxMesh" id="BoxMesh_l1uqx"]
+material = ExtResource("1_ykk63")
+size = Vector3(0.12, 0.006, 1.4)
+
+[sub_resource type="BoxMesh" id="BoxMesh_goek1"]
+material = ExtResource("1_ykk63")
+size = Vector3(0.12, 0.006, 1.4)
+
+[sub_resource type="BoxMesh" id="BoxMesh_s37f0"]
+material = ExtResource("1_ykk63")
+size = Vector3(0.12, 0.006, 1.4)
+
+[sub_resource type="BoxMesh" id="BoxMesh_02mqv"]
+material = ExtResource("1_ykk63")
+size = Vector3(0.12, 0.006, 1.4)
+
+[sub_resource type="BoxMesh" id="BoxMesh_mvhy2"]
+material = ExtResource("1_ykk63")
+size = Vector3(0.12, 0.006, 1.4)
+
+[sub_resource type="BoxMesh" id="BoxMesh_q8arl"]
+material = ExtResource("1_ykk63")
+size = Vector3(0.12, 0.006, 1.4)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ct473"]
+material = ExtResource("1_ykk63")
+size = Vector3(0.12, 0.006, 1.4)
+
+[sub_resource type="BoxMesh" id="BoxMesh_3lmoe"]
+material = ExtResource("1_ykk63")
+size = Vector3(0.12, 0.006, 1.4)
+
+[sub_resource type="BoxMesh" id="BoxMesh_wsi1f"]
+material = ExtResource("1_ykk63")
+size = Vector3(0.12, 0.006, 1.4)
+
+[node name="AisleLine" type="Node3D" unique_id=1218075622]
+
+[node name="Dash0" type="MeshInstance3D" parent="." unique_id=890845241]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.003, -10)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_xsef6")
+
+[node name="Dash1" type="MeshInstance3D" parent="." unique_id=1017857993]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.003, -8)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_nflrx")
+
+[node name="Dash2" type="MeshInstance3D" parent="." unique_id=605696392]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.003, -6)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_l1uqx")
+
+[node name="Dash3" type="MeshInstance3D" parent="." unique_id=1661265411]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.003, -4)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_goek1")
+
+[node name="Dash4" type="MeshInstance3D" parent="." unique_id=1515427903]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.003, -2)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_s37f0")
+
+[node name="Dash5" type="MeshInstance3D" parent="." unique_id=1311831199]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.003, 0)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_02mqv")
+
+[node name="Dash6" type="MeshInstance3D" parent="." unique_id=1675161907]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.003, 2)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_mvhy2")
+
+[node name="Dash7" type="MeshInstance3D" parent="." unique_id=1506290010]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.003, 4)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_q8arl")
+
+[node name="Dash8" type="MeshInstance3D" parent="." unique_id=768584008]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.003, 6)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_ct473")
+
+[node name="Dash9" type="MeshInstance3D" parent="." unique_id=1548427090]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.003, 8)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_3lmoe")
+
+[node name="Dash10" type="MeshInstance3D" parent="." unique_id=489432918]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.003, 10)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_wsi1f")

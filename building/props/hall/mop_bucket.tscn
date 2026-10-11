@@ -1,0 +1,83 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://building/props/materials/faded_yellow.tres" id="1_txexi"]
+[ext_resource type="Material" path="res://building/props/materials/water_dark.tres" id="2_u1gq7"]
+[ext_resource type="Material" path="res://building/props/materials/grime_dark.tres" id="3_l44o8"]
+[ext_resource type="Material" path="res://building/props/materials/metal_grey.tres" id="4_ck15s"]
+[ext_resource type="Material" path="res://building/props/materials/steel_dull.tres" id="5_rs50f"]
+[ext_resource type="Material" path="res://building/props/materials/wood_dark.tres" id="6_nat48"]
+[ext_resource type="Material" path="res://building/props/materials/paper_aged.tres" id="7_kxnj8"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_vi06j"]
+material = ExtResource("1_txexi")
+top_radius = 0.21
+bottom_radius = 0.16
+height = 0.38
+radial_segments = 14
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_6fw0e"]
+material = ExtResource("2_u1gq7")
+top_radius = 0.195
+bottom_radius = 0.195
+height = 0.01
+radial_segments = 14
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_g17d8"]
+material = ExtResource("3_l44o8")
+top_radius = 0.222
+bottom_radius = 0.222
+height = 0.025
+radial_segments = 14
+rings = 1
+
+[sub_resource type="BoxMesh" id="BoxMesh_ii5d1"]
+material = ExtResource("4_ck15s")
+size = Vector3(0.3, 0.22, 0.08)
+
+[sub_resource type="BoxMesh" id="BoxMesh_l6tq1"]
+material = ExtResource("5_rs50f")
+size = Vector3(0.04, 0.2, 0.04)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_euxyp"]
+material = ExtResource("6_nat48")
+top_radius = 0.014
+bottom_radius = 0.014
+height = 1.4
+radial_segments = 14
+rings = 1
+
+[sub_resource type="BoxMesh" id="BoxMesh_ew27b"]
+material = ExtResource("7_kxnj8")
+size = Vector3(0.22, 0.1, 0.12)
+
+[node name="MopBucket" type="Node3D" unique_id=1866793900]
+
+[node name="Bucket" type="MeshInstance3D" parent="." unique_id=2084238209]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.19, 0)
+mesh = SubResource("CylinderMesh_vi06j")
+
+[node name="Water" type="MeshInstance3D" parent="." unique_id=182506411]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.33, 0)
+mesh = SubResource("CylinderMesh_6fw0e")
+
+[node name="Rim" type="MeshInstance3D" parent="." unique_id=780143817]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.375, 0)
+mesh = SubResource("CylinderMesh_g17d8")
+
+[node name="Wringer" type="MeshInstance3D" parent="." unique_id=819573230]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.46, -0.2)
+mesh = SubResource("BoxMesh_ii5d1")
+
+[node name="WringerPost" type="MeshInstance3D" parent="." unique_id=698300553]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, -0.19)
+mesh = SubResource("BoxMesh_l6tq1")
+
+[node name="Handle" type="MeshInstance3D" parent="." unique_id=253216612]
+transform = Transform3D(0.99820054, 0.059964005, 0, -0.05851872, 0.97414136, 0.21822962, 0.013085922, -0.21783693, 0.97589743, 0.03, 0.82, -0.12)
+mesh = SubResource("CylinderMesh_euxyp")
+
+[node name="MopHead" type="MeshInstance3D" parent="." unique_id=1418859614]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, -0.04)
+mesh = SubResource("BoxMesh_ew27b")

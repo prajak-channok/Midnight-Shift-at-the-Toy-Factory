@@ -1,0 +1,69 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" path="res://building/props/factory/pallet.tscn" id="p_pallet"]
+[ext_resource type="PackedScene" path="res://building/props/common/cardboard_box.tscn" id="p_cardboard_box"]
+[ext_resource type="PackedScene" path="res://building/props/common/cardboard_box_burnt.tscn" id="p_cardboard_box_burnt"]
+[ext_resource type="Material" path="res://building/props/materials/label_dirty.tres" id="m_label_dirty"]
+[ext_resource type="Material" path="res://building/props/materials/wire_black.tres" id="m_wire_black"]
+
+[sub_resource type="BoxMesh" id="s1"]
+material = ExtResource("m_label_dirty")
+size = Vector3(0.14, 0.09, 0.003)
+
+[sub_resource type="BoxMesh" id="s2"]
+material = ExtResource("m_label_dirty")
+size = Vector3(0.14, 0.09, 0.003)
+
+[sub_resource type="BoxMesh" id="s3"]
+material = ExtResource("m_wire_black")
+size = Vector3(0.9, 0.02, 0.003)
+
+[node name="StockPallet" type="Node3D"]
+
+[node name="Pallet" parent="." instance=ExtResource("p_pallet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Box0_0" parent="." instance=ExtResource("p_cardboard_box")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23, 0.16, -0.34)
+
+[node name="Box0_1" parent="." instance=ExtResource("p_cardboard_box")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23, 0.16, -0.34)
+
+[node name="Box0_2" parent="." instance=ExtResource("p_cardboard_box")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23, 0.16, 0)
+
+[node name="Box0_3" parent="." instance=ExtResource("p_cardboard_box")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23, 0.16, 0)
+
+[node name="Box0_4" parent="." instance=ExtResource("p_cardboard_box")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23, 0.16, 0.34)
+
+[node name="Box0_5" parent="." instance=ExtResource("p_cardboard_box")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23, 0.16, 0.34)
+
+[node name="Box1_0" parent="." instance=ExtResource("p_cardboard_box")]
+transform = Transform3D(0.9975641, 0, 0.06975647, 0, 1, 0, -0.06975647, 0, 0.9975641, -0.21000001, 0.46, -0.34)
+
+[node name="Box1_1" parent="." instance=ExtResource("p_cardboard_box_burnt")]
+transform = Transform3D(0.9975641, 0, -0.06975647, 0, 1, 0, 0.06975647, 0, 0.9975641, 0.25, 0.46, -0.34)
+
+[node name="Box1_2" parent="." instance=ExtResource("p_cardboard_box")]
+transform = Transform3D(0.9975641, 0, 0.06975647, 0, 1, 0, -0.06975647, 0, 0.9975641, -0.21000001, 0.46, 0)
+
+[node name="Box1_3" parent="." instance=ExtResource("p_cardboard_box")]
+transform = Transform3D(0.9975641, 0, -0.06975647, 0, 1, 0, 0.06975647, 0, 0.9975641, 0.25, 0.46, 0)
+
+[node name="Box1_4" parent="." instance=ExtResource("p_cardboard_box")]
+transform = Transform3D(0.9975641, 0, 0.06975647, 0, 1, 0, -0.06975647, 0, 0.9975641, -0.21000001, 0.46, 0.34)
+
+[node name="Sticker0" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23, 0.33, 0.51)
+mesh = SubResource("s1")
+
+[node name="Sticker1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23, 0.63, 0.51)
+mesh = SubResource("s2")
+
+[node name="StrapF" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.36, 0.512)
+mesh = SubResource("s3")

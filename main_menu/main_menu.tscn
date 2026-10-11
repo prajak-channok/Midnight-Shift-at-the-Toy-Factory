@@ -685,18 +685,6 @@ layout_mode = 2
 text = "Raise / lower the camera monitor"
 vertical_alignment = 1
 
-[node name="KeyFlashlight" type="Label" parent="ControlsPopup/CenterContainer/Panel/VBox/Rows" unique_id=714015528]
-custom_minimum_size = Vector2(88, 0)
-layout_mode = 2
-theme_type_variation = &"KeyLabel"
-text = "CTRL"
-horizontal_alignment = 1
-
-[node name="DescFlashlight" type="Label" parent="ControlsPopup/CenterContainer/Panel/VBox/Rows" unique_id=1906125829]
-layout_mode = 2
-text = "Hold to flash the camera you are watching"
-vertical_alignment = 1
-
 [node name="KeyMouse" type="Label" parent="ControlsPopup/CenterContainer/Panel/VBox/Rows" unique_id=1750976859]
 custom_minimum_size = Vector2(88, 0)
 layout_mode = 2

@@ -6,9 +6,9 @@ class_name BurnedPlushBot
 ## with one it attacks through it, without one it walks straight into the office.
 ## Each time it arrives somewhere it strikes a random pose from [member pose_animations].
 
-@export var frozen_when_watched_at: Array[StringName] = [&"RightVent"] ## Positions where a camera on the plush-bot holds it in place.
+@export var frozen_when_watched_at: Array[StringName] = [&"RightHall"] ## Positions where a camera on the plush-bot holds it in place.
 @export var pose_animations: Array[StringName] = [&"normal", &"slump", &"stare", &"reach"] ## Poses picked at random on arrival.
-@export var fixed_pose_positions: Array[StringName] = [&"RightVent"] ## Positions that always use their own AnimatronicPosition animation (the vent is too low to stand in).
+@export var fixed_pose_positions: Array[StringName] = [&"RightHall"] ## Positions that always use their own AnimatronicPosition animation (crawling in the hall is too low to stand in).
 
 var _last_pose: StringName = &""
 

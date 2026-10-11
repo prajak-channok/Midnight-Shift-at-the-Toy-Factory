@@ -1,0 +1,122 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://building/props/materials/burnt_blue.tres" id="1_1us5k"]
+[ext_resource type="Material" path="res://building/props/materials/char.tres" id="2_t77bo"]
+[ext_resource type="Material" path="res://building/props/materials/burnt_red.tres" id="3_pm2pw"]
+[ext_resource type="Material" path="res://building/props/materials/burnt_yellow.tres" id="4_i8x0j"]
+[ext_resource type="Material" path="res://building/props/materials/burnt_plush.tres" id="5_jf43s"]
+[ext_resource type="Material" path="res://building/props/materials/burnt_green.tres" id="6_mbbfc"]
+[ext_resource type="Material" path="res://building/props/materials/melted_plastic.tres" id="7_7wrle"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_bkfno"]
+material = ExtResource("1_1us5k")
+size = Vector3(0.5, 0.02, 0.35)
+
+[sub_resource type="BoxMesh" id="BoxMesh_lvr03"]
+material = ExtResource("1_1us5k")
+size = Vector3(0.5, 0.25, 0.02)
+
+[sub_resource type="BoxMesh" id="BoxMesh_wacjm"]
+material = ExtResource("1_1us5k")
+size = Vector3(0.5, 0.25, 0.02)
+
+[sub_resource type="BoxMesh" id="BoxMesh_d0dpg"]
+material = ExtResource("2_t77bo")
+size = Vector3(0.02, 0.25, 0.35)
+
+[sub_resource type="BoxMesh" id="BoxMesh_slu4f"]
+material = ExtResource("1_1us5k")
+size = Vector3(0.02, 0.18, 0.35)
+
+[sub_resource type="SphereMesh" id="SphereMesh_ayxwa"]
+material = ExtResource("2_t77bo")
+radius = 0.2
+height = 0.4
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_cn4ga"]
+material = ExtResource("3_pm2pw")
+radius = 0.045
+height = 0.09
+radial_segments = 14
+rings = 7
+
+[sub_resource type="BoxMesh" id="BoxMesh_ken34"]
+material = ExtResource("4_i8x0j")
+size = Vector3(0.07, 0.07, 0.07)
+
+[sub_resource type="SphereMesh" id="SphereMesh_j0ac7"]
+material = ExtResource("5_jf43s")
+radius = 0.05
+height = 0.1
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_q32j5"]
+material = ExtResource("2_t77bo")
+radius = 0.02
+height = 0.04
+radial_segments = 14
+rings = 7
+
+[sub_resource type="BoxMesh" id="BoxMesh_gibxu"]
+material = ExtResource("6_mbbfc")
+size = Vector3(0.06, 0.06, 0.06)
+
+[sub_resource type="SphereMesh" id="SphereMesh_lr300"]
+material = ExtResource("7_7wrle")
+radius = 0.06
+height = 0.12
+radial_segments = 14
+rings = 7
+
+[node name="ToyBin" type="Node3D" unique_id=2044306508]
+
+[node name="Base" type="MeshInstance3D" parent="." unique_id=1732996473]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, 0)
+mesh = SubResource("BoxMesh_bkfno")
+
+[node name="WallF" type="MeshInstance3D" parent="." unique_id=1129797183]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.135, 0.165)
+mesh = SubResource("BoxMesh_lvr03")
+
+[node name="WallB" type="MeshInstance3D" parent="." unique_id=1694268630]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.135, -0.165)
+mesh = SubResource("BoxMesh_wacjm")
+
+[node name="WallL" type="MeshInstance3D" parent="." unique_id=453003702]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.24, 0.135, 0)
+mesh = SubResource("BoxMesh_d0dpg")
+
+[node name="WallR" type="MeshInstance3D" parent="." unique_id=458891550]
+transform = Transform3D(0.99026805, -0.1391731, 0, 0.1391731, 0.99026805, 0, 0, 0, 1, 0.24, 0.1, 0)
+mesh = SubResource("BoxMesh_slu4f")
+
+[node name="Pile" type="MeshInstance3D" parent="." unique_id=688511997]
+transform = Transform3D(1.1, 0, 0, 0, 0.55, 0, 0, 0, 0.8, 0, 0.1, 0)
+mesh = SubResource("SphereMesh_ayxwa")
+
+[node name="Ball" type="MeshInstance3D" parent="." unique_id=112960953]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, 0.22, 0.02)
+mesh = SubResource("SphereMesh_cn4ga")
+
+[node name="Block" type="MeshInstance3D" parent="." unique_id=1175231003]
+transform = Transform3D(0.88256407, 0.018028304, 0.4698463, 0.16317591, 0.9254165, -0.34202012, -0.44096962, 0.37852228, 0.81379765, 0.08, 0.2, -0.04)
+mesh = SubResource("BoxMesh_ken34")
+
+[node name="BearHead" type="MeshInstance3D" parent="." unique_id=1229692031]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0.06)
+mesh = SubResource("SphereMesh_j0ac7")
+
+[node name="BearEar" type="MeshInstance3D" parent="." unique_id=386185203]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.03, 0.245, 0.06)
+mesh = SubResource("SphereMesh_q32j5")
+
+[node name="Block2" type="MeshInstance3D" parent="." unique_id=55685394]
+transform = Transform3D(0.76604444, 0, 0.6427876, 0, 1, 0, -0.6427876, 0, 0.76604444, -0.17, 0.12, -0.05)
+mesh = SubResource("BoxMesh_gibxu")
+
+[node name="Melt" type="MeshInstance3D" parent="." unique_id=1557457019]
+transform = Transform3D(1.5, 0, 0, 0, 0.15, 0, 0, 0, 1.2, 0.28, 0.02, 0.1)
+mesh = SubResource("SphereMesh_lr300")

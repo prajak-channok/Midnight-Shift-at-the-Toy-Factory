@@ -1,0 +1,64 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://building/props/materials/metal_dark.tres" id="1_gu16a"]
+[ext_resource type="Material" path="res://building/props/materials/steel_burnt.tres" id="2_wmo1n"]
+[ext_resource type="Material" path="res://building/props/materials/led_red.tres" id="3_pt6sd"]
+[ext_resource type="Material" path="res://building/props/materials/led_green_off.tres" id="4_xilqu"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_dadd1"]
+material = ExtResource("1_gu16a")
+size = Vector3(0.2, 0.48, 0.1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_mswox"]
+material = ExtResource("2_wmo1n")
+size = Vector3(0.18, 0.03, 0.06)
+
+[sub_resource type="BoxMesh" id="BoxMesh_g6map"]
+material = ExtResource("2_wmo1n")
+size = Vector3(0.18, 0.03, 0.06)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_pt7d5"]
+material = ExtResource("3_pt6sd")
+top_radius = 0.065
+bottom_radius = 0.065
+height = 0.05
+radial_segments = 14
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_5v0kf"]
+material = ExtResource("4_xilqu")
+top_radius = 0.065
+bottom_radius = 0.065
+height = 0.05
+radial_segments = 14
+rings = 1
+
+[sub_resource type="BoxMesh" id="BoxMesh_6shvv"]
+material = ExtResource("2_wmo1n")
+size = Vector3(0.05, 0.05, 0.1)
+
+[node name="DockSignalRed" type="Node3D" unique_id=23724083]
+
+[node name="Housing" type="MeshInstance3D" parent="." unique_id=79166266]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.05)
+mesh = SubResource("BoxMesh_dadd1")
+
+[node name="Hood1" type="MeshInstance3D" parent="." unique_id=433494453]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0.11)
+mesh = SubResource("BoxMesh_mswox")
+
+[node name="Hood2" type="MeshInstance3D" parent="." unique_id=1821827804]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.07, 0.11)
+mesh = SubResource("BoxMesh_g6map")
+
+[node name="Red" type="MeshInstance3D" parent="." unique_id=501157949]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.09, 0.115)
+mesh = SubResource("CylinderMesh_pt7d5")
+
+[node name="Green" type="MeshInstance3D" parent="." unique_id=274885157]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, -0.13, 0.115)
+mesh = SubResource("CylinderMesh_5v0kf")
+
+[node name="Bracket" type="MeshInstance3D" parent="." unique_id=801215631]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.26, 0.05)
+mesh = SubResource("BoxMesh_6shvv")

@@ -1,0 +1,90 @@
+[gd_scene format=3]
+
+[sub_resource type="Gradient" id="Gradient_2m6k1"]
+offsets = PackedFloat32Array(0, 0.45, 1)
+colors = PackedColorArray(0.03, 0.028, 0.025, 0.9, 0.03, 0.028, 0.025, 0.5, 0.03, 0.028, 0.025, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_fg3o5"]
+gradient = SubResource("Gradient_2m6k1")
+width = 128
+height = 128
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bucxi"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0.55)
+albedo_texture = SubResource("GradientTexture2D_fg3o5")
+metallic_specular = 0.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_ub3j3"]
+material = SubResource("StandardMaterial3D_bucxi")
+size = Vector2(3.2, 2.2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6spow"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0.95)
+albedo_texture = SubResource("GradientTexture2D_fg3o5")
+metallic_specular = 0.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_n1iq7"]
+material = SubResource("StandardMaterial3D_6spow")
+size = Vector2(2.4, 2.5)
+
+[sub_resource type="QuadMesh" id="QuadMesh_46o7g"]
+material = SubResource("StandardMaterial3D_6spow")
+size = Vector2(1.4, 1.1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_rmenc"]
+material = SubResource("StandardMaterial3D_6spow")
+size = Vector2(0.28, 2.3)
+
+[sub_resource type="QuadMesh" id="QuadMesh_wjlly"]
+material = SubResource("StandardMaterial3D_6spow")
+size = Vector2(0.3, 3)
+
+[sub_resource type="QuadMesh" id="QuadMesh_trtdp"]
+material = SubResource("StandardMaterial3D_6spow")
+size = Vector2(0.26, 2.6)
+
+[sub_resource type="QuadMesh" id="QuadMesh_6wmmd"]
+material = SubResource("StandardMaterial3D_6spow")
+size = Vector2(0.24, 1.9)
+
+[node name="SootStain" type="Node3D" unique_id=1370124161]
+
+[node name="Haze" type="MeshInstance3D" parent="." unique_id=156398766]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.9, 0.004)
+cast_shadow = 0
+mesh = SubResource("QuadMesh_ub3j3")
+
+[node name="Plume" type="MeshInstance3D" parent="." unique_id=416094180]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.85, 0.006)
+cast_shadow = 0
+mesh = SubResource("QuadMesh_n1iq7")
+
+[node name="Core" type="MeshInstance3D" parent="." unique_id=760095743]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, 0.65, 0.008)
+cast_shadow = 0
+mesh = SubResource("QuadMesh_46o7g")
+
+[node name="Streak1" type="MeshInstance3D" parent="." unique_id=394022495]
+transform = Transform3D(0.9986295, -0.05233596, 0, 0.05233596, 0.9986295, 0, 0, 0, 1, -0.75, 2.3, 0.01)
+cast_shadow = 0
+mesh = SubResource("QuadMesh_rmenc")
+
+[node name="Streak2" type="MeshInstance3D" parent="." unique_id=2097493919]
+transform = Transform3D(0.99939084, 0.034899496, 0, -0.034899496, 0.99939084, 0, 0, 0, 1, -0.2, 2.5, 0.011)
+cast_shadow = 0
+mesh = SubResource("QuadMesh_wjlly")
+
+[node name="Streak3" type="MeshInstance3D" parent="." unique_id=227723668]
+transform = Transform3D(0.9975641, -0.06975647, 0, 0.06975647, 0.9975641, 0, 0, 0, 1, 0.38, 2.3, 0.012)
+cast_shadow = 0
+mesh = SubResource("QuadMesh_trtdp")
+
+[node name="Streak4" type="MeshInstance3D" parent="." unique_id=1841620206]
+transform = Transform3D(0.9986295, 0.05233596, 0, -0.05233596, 0.9986295, 0, 0, 0, 1, 0.85, 1.8, 0.01)
+cast_shadow = 0
+mesh = SubResource("QuadMesh_6wmmd")

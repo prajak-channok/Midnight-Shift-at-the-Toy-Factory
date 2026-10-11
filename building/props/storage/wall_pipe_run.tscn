@@ -1,0 +1,120 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://building/props/materials/metal_grey.tres" id="m_metal_grey"]
+[ext_resource type="Material" path="res://building/props/materials/metal_dark.tres" id="m_metal_dark"]
+[ext_resource type="Material" path="res://building/props/materials/wire_black.tres" id="m_wire_black"]
+[ext_resource type="Material" path="res://building/props/materials/rust.tres" id="m_rust"]
+
+[sub_resource type="CylinderMesh" id="C1"]
+material = ExtResource("m_metal_grey")
+top_radius = 0.07
+bottom_radius = 0.07
+height = 10
+radial_segments = 12
+rings = 1
+
+[sub_resource type="CylinderMesh" id="C2"]
+material = ExtResource("m_metal_dark")
+top_radius = 0.05
+bottom_radius = 0.05
+height = 10
+radial_segments = 12
+rings = 1
+
+[sub_resource type="CylinderMesh" id="C3"]
+material = ExtResource("m_wire_black")
+top_radius = 0.03
+bottom_radius = 0.03
+height = 10
+radial_segments = 12
+rings = 1
+
+[sub_resource type="BoxMesh" id="B4"]
+material = ExtResource("m_metal_dark")
+size = Vector3(0.05, 0.9, 0.04)
+
+[sub_resource type="BoxMesh" id="B5"]
+material = ExtResource("m_metal_dark")
+size = Vector3(0.05, 0.9, 0.04)
+
+[sub_resource type="BoxMesh" id="B6"]
+material = ExtResource("m_metal_dark")
+size = Vector3(0.05, 0.9, 0.04)
+
+[sub_resource type="BoxMesh" id="B7"]
+material = ExtResource("m_metal_dark")
+size = Vector3(0.05, 0.9, 0.04)
+
+[sub_resource type="BoxMesh" id="B8"]
+material = ExtResource("m_metal_dark")
+size = Vector3(0.05, 0.9, 0.04)
+
+[sub_resource type="CylinderMesh" id="C9"]
+material = ExtResource("m_rust")
+top_radius = 0.09
+bottom_radius = 0.09
+height = 0.06
+radial_segments = 12
+rings = 1
+
+[sub_resource type="CylinderMesh" id="C10"]
+material = ExtResource("m_rust")
+top_radius = 0.09
+bottom_radius = 0.09
+height = 0.06
+radial_segments = 12
+rings = 1
+
+[sub_resource type="CylinderMesh" id="C11"]
+material = ExtResource("m_rust")
+top_radius = 0.075
+bottom_radius = 0.075
+height = 0.03
+radial_segments = 12
+rings = 1
+
+[node name="WallPipeRun" type="Node3D"]
+
+[node name="PipeBig" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.00000, -1.00000, 0.00000, 1.00000, 0.00000, -0.00000, 0.00000, 0.00000, 1.00000, 0, 0.2, 0.12)
+mesh = SubResource("C1")
+
+[node name="PipeMid" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.00000, -1.00000, 0.00000, 1.00000, 0.00000, -0.00000, 0.00000, 0.00000, 1.00000, 0, -0.1, 0.1)
+mesh = SubResource("C2")
+
+[node name="Conduit" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.00000, -1.00000, 0.00000, 1.00000, 0.00000, -0.00000, 0.00000, 0.00000, 1.00000, 0, 0.46, 0.08)
+mesh = SubResource("C3")
+
+[node name="Bracket_-4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, -4, 0.18, 0.04)
+mesh = SubResource("B4")
+
+[node name="Bracket_-2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, -2, 0.18, 0.04)
+mesh = SubResource("B5")
+
+[node name="Bracket_0" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, 0, 0.18, 0.04)
+mesh = SubResource("B6")
+
+[node name="Bracket_2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, 2, 0.18, 0.04)
+mesh = SubResource("B7")
+
+[node name="Bracket_4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, 4, 0.18, 0.04)
+mesh = SubResource("B8")
+
+[node name="Flange_-2p5" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.00000, -1.00000, 0.00000, 1.00000, 0.00000, -0.00000, 0.00000, 0.00000, 1.00000, -2.5, 0.2, 0.12)
+mesh = SubResource("C9")
+
+[node name="Flange_2p5" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.00000, -1.00000, 0.00000, 1.00000, 0.00000, -0.00000, 0.00000, 0.00000, 1.00000, 2.5, 0.2, 0.12)
+mesh = SubResource("C10")
+
+[node name="Drip" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.00000, -1.00000, 0.00000, 1.00000, 0.00000, -0.00000, 0.00000, 0.00000, 1.00000, -0.6, 0.2, 0.12)
+mesh = SubResource("C11")

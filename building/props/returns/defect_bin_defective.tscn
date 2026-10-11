@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://d2voam5yktw33"]
+
+[ext_resource type="Material" path="res://building/props/materials/bin_red.tres" id="1_2ypoc"]
+[ext_resource type="Material" path="res://building/props/materials/metal_dark.tres" id="2_su8pm"]
+[ext_resource type="Material" path="res://building/props/materials/burnt_plush.tres" id="3_uto75"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_qyxqw"]
+material = ExtResource("1_2ypoc")
+size = Vector3(1, 0.95, 0.75)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ohrao"]
+material = ExtResource("2_su8pm")
+size = Vector3(1.08, 0.08, 0.83)
+
+[sub_resource type="BoxMesh" id="BoxMesh_vsg8q"]
+material = ExtResource("3_uto75")
+size = Vector3(0.8, 0.22, 0.525)
+
+[node name="DefectBinDefective" type="Node3D" unique_id=1202663440]
+
+[node name="Body" type="MeshInstance3D" parent="." unique_id=1564678939]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.475, 0)
+mesh = SubResource("BoxMesh_qyxqw")
+
+[node name="Rim" type="MeshInstance3D" parent="." unique_id=1716459422]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.99, 0)
+mesh = SubResource("BoxMesh_ohrao")
+
+[node name="Heap" type="MeshInstance3D" parent="." unique_id=919832107]
+transform = Transform3D(0.9781476, 0, 0.2079117, 0, 1, 0, -0.2079117, 0, 0.9781476, 0, 1.05, 0)
+mesh = SubResource("BoxMesh_vsg8q")
+
+[node name="Text" type="Label3D" parent="." unique_id=119908571]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5225, 0.385)
+pixel_size = 0.0055
+modulate = Color(0.32156864, 0.101960786, 0.07058824, 1)
+text = "DEFECTIVE"
+font_size = 28
+outline_size = 0

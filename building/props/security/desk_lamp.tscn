@@ -1,0 +1,65 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://building/props/materials/metal_dark.tres" id="1_wf4cl"]
+[ext_resource type="Material" path="res://building/props/materials/light_emit.tres" id="2_c6fv4"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_bd300"]
+material = ExtResource("1_wf4cl")
+top_radius = 0.07
+bottom_radius = 0.08
+height = 0.03
+radial_segments = 14
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_0kl3m"]
+material = ExtResource("1_wf4cl")
+top_radius = 0.008
+bottom_radius = 0.008
+height = 0.2879236
+radial_segments = 6
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_xd55u"]
+material = ExtResource("1_wf4cl")
+top_radius = 0.008
+bottom_radius = 0.008
+height = 0.16401218
+radial_segments = 6
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_t0h3f"]
+material = ExtResource("1_wf4cl")
+top_radius = 0.025
+bottom_radius = 0.07
+height = 0.09
+radial_segments = 14
+rings = 1
+
+[sub_resource type="SphereMesh" id="SphereMesh_ysmft"]
+material = ExtResource("2_c6fv4")
+radius = 0.022
+height = 0.044
+radial_segments = 14
+rings = 7
+
+[node name="DeskLamp" type="Node3D" unique_id=1554621417]
+
+[node name="Base" type="MeshInstance3D" parent="." unique_id=1288108023]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.015, 0)
+mesh = SubResource("CylinderMesh_bd300")
+
+[node name="Arm1" type="MeshInstance3D" parent="." unique_id=454295742]
+transform = Transform3D(0.9377488, 0.34731436, 0, -0.34731436, 0.9377488, 0, 0, 0, 1, 0.05, 0.165, 0)
+mesh = SubResource("CylinderMesh_0kl3m")
+
+[node name="Arm2" type="MeshInstance3D" parent="." unique_id=1817916348]
+transform = Transform3D(0.78532225, -0.6097108, 0.10733887, 0.6097108, 0.73165286, -0.3048554, 0.10733887, 0.3048554, 0.94633055, 0.05, 0.36, 0.025)
+mesh = SubResource("CylinderMesh_xd55u")
+
+[node name="Shade" type="MeshInstance3D" parent="." unique_id=1622350415]
+transform = Transform3D(1, 0, 0, 0, 0.64278764, 0.76604444, 0, -0.76604444, 0.64278764, 0, 0.4, 0.08)
+mesh = SubResource("CylinderMesh_t0h3f")
+
+[node name="Bulb" type="MeshInstance3D" parent="." unique_id=1153181108]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.385, 0.105)
+mesh = SubResource("SphereMesh_ysmft")

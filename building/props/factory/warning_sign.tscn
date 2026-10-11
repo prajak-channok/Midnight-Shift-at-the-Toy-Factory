@@ -1,0 +1,53 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://building/props/materials/char.tres" id="1_iwc8m"]
+[ext_resource type="Material" path="res://building/props/materials/burnt_yellow.tres" id="2_y7hs6"]
+[ext_resource type="Material" path="res://building/props/materials/soot.tres" id="3_bj810"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_6c1av"]
+material = ExtResource("1_iwc8m")
+size = Vector3(0.56, 0.56, 0.01)
+
+[sub_resource type="BoxMesh" id="BoxMesh_f0wyq"]
+material = ExtResource("2_y7hs6")
+size = Vector3(0.5, 0.5, 0.012)
+
+[sub_resource type="SphereMesh" id="SphereMesh_xryus"]
+material = ExtResource("1_iwc8m")
+radius = 0.22
+height = 0.44
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_1tmsu"]
+material = ExtResource("3_bj810")
+radius = 0.12
+height = 0.24
+radial_segments = 14
+rings = 7
+
+[node name="WarningSign" type="Node3D" unique_id=812539151]
+
+[node name="Border" type="MeshInstance3D" parent="." unique_id=1598064093]
+transform = Transform3D(0.70710677, -0.70710677, 0, 0.70710677, 0.70710677, 0, 0, 0, 1, 0, 0, 0.005)
+mesh = SubResource("BoxMesh_6c1av")
+
+[node name="Board" type="MeshInstance3D" parent="." unique_id=1467551261]
+transform = Transform3D(0.70710677, -0.70710677, 0, 0.70710677, 0.70710677, 0, 0, 0, 1, 0, 0, 0.007)
+mesh = SubResource("BoxMesh_f0wyq")
+
+[node name="Mark" type="Label3D" parent="." unique_id=1647725627]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.02, 0.016)
+pixel_size = 0.006
+modulate = Color(0.03, 0.03, 0.03, 1)
+text = "!"
+font_size = 64
+outline_size = 0
+
+[node name="Burn" type="MeshInstance3D" parent="." unique_id=159736123]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.05, 0.12, -0.1, 0.012)
+mesh = SubResource("SphereMesh_xryus")
+
+[node name="Burn2" type="MeshInstance3D" parent="." unique_id=2054821888]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.05, -0.15, 0.2, 0.012)
+mesh = SubResource("SphereMesh_1tmsu")

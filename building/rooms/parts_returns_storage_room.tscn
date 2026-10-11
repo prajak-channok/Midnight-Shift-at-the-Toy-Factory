@@ -1,0 +1,121 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://building/props/materials/floor_grimy.tres" id="1_n8d47"]
+[ext_resource type="Material" path="res://building/props/materials/ceiling_dark.tres" id="2_0rxfx"]
+[ext_resource type="Material" path="res://building/props/materials/wall_rust.tres" id="3_2eyf4"]
+[ext_resource type="Material" path="res://building/props/materials/wall_wainscot.tres" id="4_oa60x"]
+[ext_resource type="PackedScene" path="res://building/props/returns/defect_bin_defective.tscn" id="5_c77rb"]
+[ext_resource type="PackedScene" path="res://building/props/returns/defect_bin_scrap.tscn" id="6_h80mt"]
+[ext_resource type="PackedScene" path="res://building/props/returns/defect_bin_parts.tscn" id="7_58jjq"]
+[ext_resource type="PackedScene" path="res://building/props/returns/returns_sign.tscn" id="8_g68gr"]
+[ext_resource type="PackedScene" path="res://building/props/returns/parts_rack.tscn" id="9_upw3s"]
+[ext_resource type="PackedScene" path="res://building/props/returns/return_stack_a.tscn" id="10_ds47e"]
+[ext_resource type="PackedScene" path="res://building/props/returns/defective_crate.tscn" id="11_5s0vu"]
+[ext_resource type="PackedScene" path="res://building/props/returns/inspection_table.tscn" id="12_ta55e"]
+[ext_resource type="PackedScene" path="res://building/props/returns/stool.tscn" id="13_ysr1k"]
+[ext_resource type="PackedScene" path="res://building/props/factory/soot_stain.tscn" id="14_6w2fc"]
+[ext_resource type="PackedScene" path="res://building/props/factory/puddle.tscn" id="15_3ofmq"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_r5to8"]
+material = ExtResource("1_n8d47")
+size = Vector2(5.7, 6.5)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_512be"]
+material = ExtResource("2_0rxfx")
+size = Vector2(5.7, 6.5)
+
+[sub_resource type="QuadMesh" id="QuadMesh_ry4a7"]
+material = ExtResource("3_2eyf4")
+size = Vector2(5.7, 3.5)
+
+[sub_resource type="QuadMesh" id="QuadMesh_nf6op"]
+material = ExtResource("3_2eyf4")
+size = Vector2(5.7, 3.5)
+
+[sub_resource type="QuadMesh" id="QuadMesh_0axou"]
+material = ExtResource("3_2eyf4")
+size = Vector2(6.5, 3.5)
+
+[sub_resource type="QuadMesh" id="QuadMesh_sagkr"]
+material = ExtResource("3_2eyf4")
+size = Vector2(6.5, 3.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_h2bvj"]
+material = ExtResource("4_oa60x")
+size = Vector3(0.03, 1.05, 6.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ipmxl"]
+material = ExtResource("4_oa60x")
+size = Vector3(5.7, 1.05, 0.03)
+
+[node name="PartsReturnsStorageRoom" type="Node3D" unique_id=96907008]
+
+[node name="Floor" type="MeshInstance3D" parent="." unique_id=871981469]
+mesh = SubResource("PlaneMesh_r5to8")
+
+[node name="Ceiling" type="MeshInstance3D" parent="." unique_id=1918051794]
+transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 3.5, 0)
+mesh = SubResource("PlaneMesh_512be")
+
+[node name="Walls" type="Node3D" parent="." unique_id=1814930634]
+
+[node name="WallN" type="MeshInstance3D" parent="Walls" unique_id=660149536]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.75, -3.25)
+mesh = SubResource("QuadMesh_ry4a7")
+
+[node name="WallS" type="MeshInstance3D" parent="Walls" unique_id=781151521]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 1.75, 3.25)
+mesh = SubResource("QuadMesh_nf6op")
+
+[node name="WallE" type="MeshInstance3D" parent="Walls" unique_id=1104120325]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 2.85, 1.75, 0)
+mesh = SubResource("QuadMesh_0axou")
+
+[node name="WallW" type="MeshInstance3D" parent="Walls" unique_id=403891092]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.85, 1.75, 0)
+mesh = SubResource("QuadMesh_sagkr")
+
+[node name="WainscotE" type="MeshInstance3D" parent="Walls" unique_id=2109558790]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.835, 0.525, 0)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_h2bvj")
+
+[node name="WainscotS" type="MeshInstance3D" parent="Walls" unique_id=1059262376]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.525, 3.235)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_ipmxl")
+
+[node name="Props" type="Node3D" parent="." unique_id=271050076]
+
+[node name="BinDefective" type="Node3D" parent="Props" unique_id=1202663440 instance=ExtResource("5_c77rb")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.45, 0, 2.75)
+
+[node name="BinScrap" type="Node3D" parent="Props" unique_id=2000809210 instance=ExtResource("6_h80mt")]
+transform = Transform3D(-0.9986295, 0, 0.05233605, 0, 1, 0, -0.05233605, 0, -0.9986295, 0.2, 0, 2.75)
+
+[node name="BinParts" type="Node3D" parent="Props" unique_id=2057739727 instance=ExtResource("7_58jjq")]
+transform = Transform3D(-0.9986295, 0, -0.052335985, 0, 1, 0, 0.052335985, 0, -0.9986295, -1.05, 0, 2.72)
+
+[node name="ReturnsSign" type="Node3D" parent="Props" unique_id=1348901584 instance=ExtResource("8_g68gr")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.9, 2.2, 3.25)
+
+[node name="PartsRack" type="Node3D" parent="Props" unique_id=2147068575 instance=ExtResource("9_upw3s")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 2.85, 0, -1.55)
+
+[node name="ReturnStackA" type="Node3D" parent="Props" unique_id=609179675 instance=ExtResource("10_ds47e")]
+transform = Transform3D(-0.76604444, 0, -0.64278764, 0, 1, 0, 0.64278764, 0, -0.76604444, 2.1, 0, 0.6)
+
+[node name="DefectiveCrate" type="Node3D" parent="Props" unique_id=646265131 instance=ExtResource("11_5s0vu")]
+transform = Transform3D(-0.1736482, 0, -0.9848077, 0, 1, 0, 0.9848077, 0, -0.1736482, 1.6, 0, -0.6)
+
+[node name="InspectionTable" type="Node3D" parent="Props" unique_id=247343943 instance=ExtResource("12_ta55e")]
+transform = Transform3D(-0.92050487, 0, -0.39073116, 0, 1, 0, 0.39073116, 0, -0.92050487, -0.4, 0, -0.4)
+
+[node name="Stool" type="Node3D" parent="Props" unique_id=1648698331 instance=ExtResource("13_ysr1k")]
+transform = Transform3D(0.9396926, 0, 0.34202012, 0, 1, 0, -0.34202012, 0, 0.9396926, -0.75, 0, -1)
+
+[node name="SootE" type="Node3D" parent="Props" unique_id=1370124161 instance=ExtResource("14_6w2fc")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 2.84, 0, 1.65)
+
+[node name="Puddle" type="Node3D" parent="Props" unique_id=565802731 instance=ExtResource("15_3ofmq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9, 0, -0.5)

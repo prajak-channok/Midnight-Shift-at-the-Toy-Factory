@@ -1,0 +1,118 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://building/props/materials/steel_burnt.tres" id="m_steel_burnt"]
+[ext_resource type="Material" path="res://building/props/materials/plastic_black.tres" id="m_plastic_black"]
+[ext_resource type="Material" path="res://building/props/materials/screen_dim.tres" id="m_screen_dim"]
+[ext_resource type="Material" path="res://building/props/materials/led_green.tres" id="m_led_green"]
+[ext_resource type="Material" path="res://building/props/materials/screen_dead.tres" id="m_screen_dead"]
+[ext_resource type="Material" path="res://building/props/materials/led_red.tres" id="m_led_red"]
+[ext_resource type="Material" path="res://building/props/materials/wire_black.tres" id="m_wire_black"]
+[ext_resource type="Material" path="res://building/props/materials/rust.tres" id="m_rust"]
+
+[sub_resource type="BoxMesh" id="s1"]
+material = ExtResource("m_steel_burnt")
+size = Vector3(1, 0.7, 0.1)
+
+[sub_resource type="BoxMesh" id="s2"]
+material = ExtResource("m_plastic_black")
+size = Vector3(0.92, 0.62, 0.01)
+
+[sub_resource type="BoxMesh" id="s3"]
+material = ExtResource("m_screen_dim")
+size = Vector3(0.8, 0.34, 0.005)
+
+[sub_resource type="BoxMesh" id="s4"]
+material = ExtResource("m_led_green")
+size = Vector3(0.06, 0.03, 0.01)
+
+[sub_resource type="BoxMesh" id="s5"]
+material = ExtResource("m_screen_dead")
+size = Vector3(0.06, 0.03, 0.01)
+
+[sub_resource type="BoxMesh" id="s6"]
+material = ExtResource("m_led_green")
+size = Vector3(0.06, 0.03, 0.01)
+
+[sub_resource type="BoxMesh" id="s7"]
+material = ExtResource("m_led_red")
+size = Vector3(0.06, 0.03, 0.01)
+
+[sub_resource type="BoxMesh" id="s8"]
+material = ExtResource("m_led_green")
+size = Vector3(0.06, 0.03, 0.01)
+
+[sub_resource type="BoxMesh" id="s9"]
+material = ExtResource("m_led_red")
+size = Vector3(0.06, 0.03, 0.01)
+
+[sub_resource type="BoxMesh" id="s10"]
+material = ExtResource("m_wire_black")
+size = Vector3(0.003, 0.4, 0.002)
+
+[sub_resource type="BoxMesh" id="s11"]
+material = ExtResource("m_rust")
+size = Vector3(0.35, 0.1, 0.004)
+
+[node name="CameraStatusPanel" type="Node3D"]
+
+[node name="Body" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.05)
+mesh = SubResource("s1")
+
+[node name="Bezel" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.105)
+mesh = SubResource("s2")
+
+[node name="Screen" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.08, 0.112)
+mesh = SubResource("s3")
+
+[node name="Title" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0.112)
+pixel_size = 0.0008
+modulate = Color(0.55, 0.5, 0.35, 1)
+text = "CAMERA SYSTEM"
+font_size = 64
+outline_size = 0
+
+[node name="Readout" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.08, 0.116)
+pixel_size = 0.0008
+modulate = Color(0.3, 0.85, 0.5, 1)
+text = "STATUS: DEGRADED
+01 OK  02 OK  03 OK
+04 LOST  05 OK  06 LOST"
+font_size = 48
+outline_size = 0
+
+[node name="Led0" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, -0.18, 0.112)
+mesh = SubResource("s4")
+
+[node name="Led1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.18, -0.18, 0.112)
+mesh = SubResource("s5")
+
+[node name="Led2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06, -0.18, 0.112)
+mesh = SubResource("s6")
+
+[node name="Led3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06, -0.18, 0.112)
+mesh = SubResource("s7")
+
+[node name="Led4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18, -0.18, 0.112)
+mesh = SubResource("s8")
+
+[node name="Led5" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, -0.18, 0.112)
+mesh = SubResource("s9")
+
+[node name="Crack" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.90630776, -0.42261827, 0, 0.42261827, 0.90630776, 0, 0, 0, 1, 0.25, 0.08, 0.116)
+mesh = SubResource("s10")
+
+[node name="Rust" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, -0.3, 0.108)
+mesh = SubResource("s11")

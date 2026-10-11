@@ -1,0 +1,63 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://building/props/materials/metal_dark.tres" id="m_metal_dark"]
+[ext_resource type="Material" path="res://building/props/materials/steel_dull.tres" id="m_steel_dull"]
+[ext_resource type="Material" path="res://building/props/materials/paper_aged.tres" id="m_paper_aged"]
+[ext_resource type="Material" path="res://building/props/materials/label_dirty.tres" id="m_label_dirty"]
+[ext_resource type="Material" path="res://building/props/materials/grime_dark.tres" id="m_grime_dark"]
+
+[sub_resource type="CylinderMesh" id="s1"]
+material = ExtResource("m_metal_dark")
+top_radius = 0.17
+bottom_radius = 0.17
+height = 0.5
+radial_segments = 14
+rings = 1
+
+[sub_resource type="CylinderMesh" id="s2"]
+material = ExtResource("m_steel_dull")
+top_radius = 0.18
+bottom_radius = 0.18
+height = 0.03
+radial_segments = 14
+rings = 1
+
+[sub_resource type="SphereMesh" id="s3"]
+material = ExtResource("m_paper_aged")
+radius = 0.07
+height = 0.14
+radial_segments = 14
+rings = 8
+
+[sub_resource type="SphereMesh" id="s4"]
+material = ExtResource("m_label_dirty")
+radius = 0.06
+height = 0.12
+radial_segments = 14
+rings = 8
+
+[sub_resource type="BoxMesh" id="s5"]
+material = ExtResource("m_grime_dark")
+size = Vector3(0.1, 0.2, 0.004)
+
+[node name="TrashBin" type="Node3D"]
+
+[node name="Body" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+mesh = SubResource("s1")
+
+[node name="Rim" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+mesh = SubResource("s2")
+
+[node name="Paper1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.53, 0.02)
+mesh = SubResource("s3")
+
+[node name="Paper2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06, 0.54, -0.04)
+mesh = SubResource("s4")
+
+[node name="Dent" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0.169)
+mesh = SubResource("s5")

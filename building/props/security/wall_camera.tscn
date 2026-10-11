@@ -1,0 +1,68 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://building/props/materials/metal_dark.tres" id="1_ho5bu"]
+[ext_resource type="Material" path="res://building/props/materials/plastic_beige.tres" id="2_k8l5i"]
+[ext_resource type="Material" path="res://building/props/materials/screen_off.tres" id="3_diuja"]
+[ext_resource type="Material" path="res://building/props/materials/plastic_beige_dark.tres" id="4_voowc"]
+[ext_resource type="Material" path="res://building/props/materials/led_red.tres" id="5_oqdw5"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_frwq3"]
+material = ExtResource("1_ho5bu")
+size = Vector3(0.12, 0.12, 0.02)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_rdxgm"]
+material = ExtResource("1_ho5bu")
+top_radius = 0.015
+bottom_radius = 0.015
+height = 0.16000001
+radial_segments = 6
+rings = 1
+
+[sub_resource type="BoxMesh" id="BoxMesh_glcqy"]
+material = ExtResource("2_k8l5i")
+size = Vector3(0.1, 0.1, 0.26)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_wslbf"]
+material = ExtResource("3_diuja")
+top_radius = 0.032
+bottom_radius = 0.04
+height = 0.05
+radial_segments = 14
+rings = 1
+
+[sub_resource type="BoxMesh" id="BoxMesh_qwq8a"]
+material = ExtResource("4_voowc")
+size = Vector3(0.12, 0.012, 0.2)
+
+[sub_resource type="SphereMesh" id="SphereMesh_ka3hv"]
+material = ExtResource("5_oqdw5")
+radius = 0.008
+height = 0.016
+radial_segments = 14
+rings = 7
+
+[node name="WallCamera" type="Node3D" unique_id=1859773379]
+
+[node name="Plate" type="MeshInstance3D" parent="." unique_id=931965707]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.01)
+mesh = SubResource("BoxMesh_frwq3")
+
+[node name="Arm" type="MeshInstance3D" parent="." unique_id=1990225562]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0.1)
+mesh = SubResource("CylinderMesh_rdxgm")
+
+[node name="Body" type="MeshInstance3D" parent="." unique_id=996512212]
+transform = Transform3D(1, 0, 0, 0, 0.9781476, -0.2079117, 0, 0.2079117, 0.9781476, 0, -0.02, 0.28)
+mesh = SubResource("BoxMesh_glcqy")
+
+[node name="Lens" type="MeshInstance3D" parent="." unique_id=1490688921]
+transform = Transform3D(1, 0, 0, 0, -0.20791163, -0.9781476, 0, 0.9781476, -0.20791163, 0, -0.04, 0.42)
+mesh = SubResource("CylinderMesh_wslbf")
+
+[node name="Visor" type="MeshInstance3D" parent="." unique_id=251514816]
+transform = Transform3D(1, 0, 0, 0, 0.9781476, -0.2079117, 0, 0.2079117, 0.9781476, 0, 0.04, 0.31)
+mesh = SubResource("BoxMesh_qwq8a")
+
+[node name="Led" type="MeshInstance3D" parent="." unique_id=2121616175]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.035, 0, 0.43)
+mesh = SubResource("SphereMesh_ka3hv")

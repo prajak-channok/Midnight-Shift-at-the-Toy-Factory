@@ -1,0 +1,39 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://building/props/materials/metal_grey.tres" id="1_gmgp1"]
+[ext_resource type="Material" path="res://building/props/materials/light_emit.tres" id="2_lf82r"]
+[ext_resource type="Material" path="res://building/props/materials/metal_dark.tres" id="3_rilgj"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_v7pqm"]
+material = ExtResource("1_gmgp1")
+size = Vector3(1.25, 0.06, 0.3)
+
+[sub_resource type="BoxMesh" id="BoxMesh_vtq2g"]
+material = ExtResource("2_lf82r")
+size = Vector3(1.15, 0.015, 0.24)
+
+[sub_resource type="BoxMesh" id="BoxMesh_3d6pu"]
+material = ExtResource("3_rilgj")
+size = Vector3(0.03, 0.07, 0.32)
+
+[sub_resource type="BoxMesh" id="BoxMesh_7tjaa"]
+material = ExtResource("3_rilgj")
+size = Vector3(0.03, 0.07, 0.32)
+
+[node name="CeilingLight" type="Node3D" unique_id=1592699557]
+
+[node name="Housing" type="MeshInstance3D" parent="." unique_id=871567488]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.03, 0)
+mesh = SubResource("BoxMesh_v7pqm")
+
+[node name="Diffuser" type="MeshInstance3D" parent="." unique_id=1241934429]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.067, 0)
+mesh = SubResource("BoxMesh_vtq2g")
+
+[node name="End1" type="MeshInstance3D" parent="." unique_id=1731736023]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.625, -0.035, 0)
+mesh = SubResource("BoxMesh_3d6pu")
+
+[node name="End2" type="MeshInstance3D" parent="." unique_id=626900273]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.625, -0.035, 0)
+mesh = SubResource("BoxMesh_7tjaa")
