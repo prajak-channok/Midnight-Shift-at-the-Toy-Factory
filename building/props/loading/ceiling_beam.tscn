@@ -1,0 +1,29 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://building/props/materials/steel_burnt.tres" id="1_ql6nj"]
+[ext_resource type="Material" path="res://building/props/materials/metal_dark.tres" id="2_6o4vi"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_1n3tq"]
+material = ExtResource("1_ql6nj")
+size = Vector3(8, 0.03, 0.22)
+
+[sub_resource type="BoxMesh" id="BoxMesh_hb6ql"]
+material = ExtResource("1_ql6nj")
+size = Vector3(8, 0.03, 0.22)
+
+[sub_resource type="BoxMesh" id="BoxMesh_qjwyp"]
+material = ExtResource("2_6o4vi")
+size = Vector3(8, 0.28, 0.03)
+
+[node name="CeilingBeam" type="Node3D" unique_id=1716347671]
+
+[node name="TopFlange" type="MeshInstance3D" parent="." unique_id=1381832146]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.155, 0)
+mesh = SubResource("BoxMesh_1n3tq")
+
+[node name="BottomFlange" type="MeshInstance3D" parent="." unique_id=905804961]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.155, 0)
+mesh = SubResource("BoxMesh_hb6ql")
+
+[node name="Web" type="MeshInstance3D" parent="." unique_id=1595392488]
+mesh = SubResource("BoxMesh_qjwyp")
