@@ -1,4 +1,4 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://d2voam5yktw33"]
 
 [ext_resource type="Material" path="res://building/props/materials/bin_red.tres" id="1_2ypoc"]
 [ext_resource type="Material" path="res://building/props/materials/metal_dark.tres" id="2_su8pm"]
@@ -35,5 +35,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5225, 0.385)
 pixel_size = 0.0055
 modulate = Color(0.62, 0.1, 0.07, 1)
 text = "DEFECTIVE"
-font_size = 64
 outline_size = 0

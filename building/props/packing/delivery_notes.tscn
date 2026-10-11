@@ -1,0 +1,112 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://building/props/materials/paper_white.tres" id="1_u2mrr"]
+[ext_resource type="Material" path="res://building/props/materials/paper_pink.tres" id="2_w33ol"]
+[ext_resource type="Material" path="res://building/props/materials/paper_yellow.tres" id="3_ccthd"]
+[ext_resource type="Material" path="res://building/props/materials/board_dark.tres" id="4_q1sxx"]
+[ext_resource type="Material" path="res://building/props/materials/paper_aged.tres" id="5_m64xc"]
+[ext_resource type="Material" path="res://building/props/materials/black_text.tres" id="6_rvvl6"]
+[ext_resource type="Material" path="res://building/props/materials/metal_grey.tres" id="7_q0m2n"]
+[ext_resource type="Material" path="res://building/props/materials/yellow_paint.tres" id="8_2qs8k"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_psjm4"]
+material = ExtResource("1_u2mrr")
+size = Vector3(0.21, 0.006, 0.3)
+
+[sub_resource type="BoxMesh" id="BoxMesh_b0xms"]
+material = ExtResource("2_w33ol")
+size = Vector3(0.21, 0.006, 0.3)
+
+[sub_resource type="BoxMesh" id="BoxMesh_nrrmk"]
+material = ExtResource("3_ccthd")
+size = Vector3(0.21, 0.006, 0.3)
+
+[sub_resource type="BoxMesh" id="BoxMesh_cui0i"]
+material = ExtResource("4_q1sxx")
+size = Vector3(0.24, 0.012, 0.32)
+
+[sub_resource type="BoxMesh" id="BoxMesh_avoai"]
+material = ExtResource("5_m64xc")
+size = Vector3(0.2, 0.003, 0.26)
+
+[sub_resource type="BoxMesh" id="BoxMesh_mpdum"]
+material = ExtResource("6_rvvl6")
+size = Vector3(0.15, 0.0015, 0.008)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ck5vo"]
+material = ExtResource("6_rvvl6")
+size = Vector3(0.135, 0.0015, 0.008)
+
+[sub_resource type="BoxMesh" id="BoxMesh_8mnri"]
+material = ExtResource("6_rvvl6")
+size = Vector3(0.12, 0.0015, 0.008)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ajrw7"]
+material = ExtResource("6_rvvl6")
+size = Vector3(0.105, 0.0015, 0.008)
+
+[sub_resource type="BoxMesh" id="BoxMesh_q2rk5"]
+material = ExtResource("7_q0m2n")
+size = Vector3(0.08, 0.016, 0.03)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_k0htg"]
+material = ExtResource("8_2qs8k")
+top_radius = 0.006
+bottom_radius = 0.006
+height = 0.15
+radial_segments = 6
+rings = 1
+
+[node name="DeliveryNotes" type="Node3D" unique_id=195100503]
+
+[node name="PaperA" type="MeshInstance3D" parent="." unique_id=409297292]
+transform = Transform3D(0.9945219, 0, 0.104528464, 0, 1, 0, -0.104528464, 0, 0.9945219, 0, 0.003, 0)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_psjm4")
+
+[node name="PaperB" type="MeshInstance3D" parent="." unique_id=38103440]
+transform = Transform3D(0.9975641, 0, -0.06975647, 0, 1, 0, 0.06975647, 0, 0.9975641, 0.01, 0.009, 0.005)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_b0xms")
+
+[node name="PaperC" type="MeshInstance3D" parent="." unique_id=1267202221]
+transform = Transform3D(0.9986295, 0, 0.05233596, 0, 1, 0, -0.05233596, 0, 0.9986295, -0.005, 0.015, 0)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_nrrmk")
+
+[node name="Clip" type="MeshInstance3D" parent="." unique_id=275136591]
+transform = Transform3D(0.9848077, 0, 0.17364818, 0, 1, 0, -0.17364818, 0, 0.9848077, 0.02, 0.024, -0.01)
+mesh = SubResource("BoxMesh_cui0i")
+
+[node name="ClipSheet" type="MeshInstance3D" parent="." unique_id=449320780]
+transform = Transform3D(0.9848077, 0, 0.17364818, 0, 1, 0, -0.17364818, 0, 0.9848077, 0.02, 0.031, 0.01)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_avoai")
+
+[node name="Line0" type="MeshInstance3D" parent="." unique_id=24420334]
+transform = Transform3D(0.9848077, 0, 0.17364818, 0, 1, 0, -0.17364818, 0, 0.9848077, 0.02, 0.0335, -0.06)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_mpdum")
+
+[node name="Line1" type="MeshInstance3D" parent="." unique_id=1848484522]
+transform = Transform3D(0.9848077, 0, 0.17364818, 0, 1, 0, -0.17364818, 0, 0.9848077, 0.02, 0.0335, -0.015)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_ck5vo")
+
+[node name="Line2" type="MeshInstance3D" parent="." unique_id=1960557134]
+transform = Transform3D(0.9848077, 0, 0.17364818, 0, 1, 0, -0.17364818, 0, 0.9848077, 0.02, 0.0335, 0.03)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_8mnri")
+
+[node name="Line3" type="MeshInstance3D" parent="." unique_id=946867131]
+transform = Transform3D(0.9848077, 0, 0.17364818, 0, 1, 0, -0.17364818, 0, 0.9848077, 0.02, 0.0335, 0.075)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_ajrw7")
+
+[node name="Metal" type="MeshInstance3D" parent="." unique_id=1370659276]
+transform = Transform3D(0.9848077, 0, 0.17364818, 0, 1, 0, -0.17364818, 0, 0.9848077, 0, 0.034, -0.15)
+mesh = SubResource("BoxMesh_q2rk5")
+
+[node name="Pen" type="MeshInstance3D" parent="." unique_id=33408597]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0.19, 0.01, 0.03)
+mesh = SubResource("CylinderMesh_k0htg")
