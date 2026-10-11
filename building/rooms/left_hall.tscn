@@ -1,15 +1,25 @@
 [gd_scene format=3]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ifmyj"]
-albedo_color = Color(0.2, 0.25, 0.12, 1)
-roughness = 0.6
+[ext_resource type="PackedScene" path="res://building/props/hall/hall_doorway.tscn" id="99_doorway"]
+[ext_resource type="Texture2D" path="res://building/models/building_floor_color.png" id="1_x6ing"]
+[ext_resource type="PackedScene" path="res://building/props/factory/burnt_clock.tscn" id="2_huatw"]
+[ext_resource type="PackedScene" path="res://building/props/common/fire_extinguisher.tscn" id="3_3njjj"]
+[ext_resource type="PackedScene" path="res://building/props/hall/mop_bucket.tscn" id="4_8eahk"]
+[ext_resource type="PackedScene" path="res://building/props/hall/wet_floor_sign.tscn" id="5_qwwoa"]
+[ext_resource type="PackedScene" path="res://building/props/hall/trash_bin.tscn" id="6_kk0cl"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nhwi2"]
+albedo_color = Color(0.34, 0.37, 0.3, 1)
+albedo_texture = ExtResource("1_x6ing")
+roughness = 0.55
+uv1_scale = Vector3(4, 12.444, 1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_ifmyj"]
-material = SubResource("StandardMaterial3D_ifmyj")
+material = SubResource("StandardMaterial3D_nhwi2")
 size = Vector2(4.5, 14)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r40f2"]
-albedo_color = Color(0.26, 0.325, 0.15599999, 1)
+albedo_color = Color(0.14, 0.17, 0.09, 1)
 roughness = 0.9
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_orcae"]
@@ -17,7 +27,7 @@ material = SubResource("StandardMaterial3D_r40f2")
 size = Vector2(4.5, 14)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d4kj4"]
-albedo_color = Color(0.4, 0.5, 0.24, 1)
+albedo_color = Color(0.27, 0.33, 0.17, 1)
 roughness = 0.9
 
 [sub_resource type="QuadMesh" id="QuadMesh_r40f2"]
@@ -118,9 +128,29 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 2.25
 cast_shadow = 2
 mesh = SubResource("QuadMesh_3njjj")
 
-[node name="Partition" type="Node3D" parent="."]
+[node name="Partition" type="Node3D" parent="." unique_id=427206654]
 
-[node name="PartitionWall" type="MeshInstance3D" parent="Partition"]
+[node name="PartitionWall" type="MeshInstance3D" parent="Partition" unique_id=974483057]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.75, 0)
 cast_shadow = 2
 mesh = SubResource("BoxMesh_partition_pier")
+
+[node name="Props" type="Node3D" parent="." unique_id=933642222]
+
+[node name="Clock" type="Node3D" parent="Props" unique_id=134114211 instance=ExtResource("2_huatw")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.24, 2.3, -5.2)
+
+[node name="FireExt" type="Node3D" parent="Props" unique_id=417360508 instance=ExtResource("3_3njjj")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 2, 0, -5.6)
+
+[node name="MopBucket" type="Node3D" parent="Props" unique_id=1866793900 instance=ExtResource("4_8eahk")]
+transform = Transform3D(0.90630776, 0, 0.42261827, 0, 1, 0, -0.42261827, 0, 0.90630776, -1.5, 0, -3.3)
+
+[node name="WetSign" type="Node3D" parent="Props" unique_id=1296211816 instance=ExtResource("5_qwwoa")]
+transform = Transform3D(0.9659258, 0, -0.25881904, 0, 1, 0, 0.25881904, 0, 0.9659258, 0.3, 0, -4.6)
+
+[node name="TrashBin" type="Node3D" parent="Props" unique_id=121533599 instance=ExtResource("6_kk0cl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.35, 0, -3)
+
+[node name="Doorway" type="Node3D" parent="Props" instance=ExtResource("99_doorway")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.99)
