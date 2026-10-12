@@ -355,8 +355,18 @@ transform = Transform3D(-0.8705628, 0, -0.49205735, 0, 1, 0, 0.49205735, 0, -0.8
 script = ExtResource("19")
 animation_to_play = "normal"
 
+[node name="PartsReturnsStorageRoom" type="Marker3D" parent="AnimatronicPositionsContainers/BurnedPlushBotPositionsContainer" unique_id=1169700101]
+transform = Transform3D(0.927, 0, 0.375, 0, 1, 0, -0.375, 0, 0.927, 15.35, 0, 27.25)
+script = ExtResource("19")
+animation_to_play = "normal"
+
 [node name="MainStorageHall" type="Marker3D" parent="AnimatronicPositionsContainers/BurnedPlushBotPositionsContainer" unique_id=978166050]
 transform = Transform3D(-0.7142996, 0, 0.69984, 0, 1, 0, -0.69984, 0, -0.7142996, 0, 0, 22.75)
+script = ExtResource("19")
+animation_to_play = "normal"
+
+[node name="PackingRoom" type="Marker3D" parent="AnimatronicPositionsContainers/BurnedPlushBotPositionsContainer" unique_id=1169700102]
+transform = Transform3D(0.817, 0, -0.576, 0, 1, 0, 0.576, 0, 0.817, -18, 0, 26.25)
 script = ExtResource("19")
 animation_to_play = "normal"
 
