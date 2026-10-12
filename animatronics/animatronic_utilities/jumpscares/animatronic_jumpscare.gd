@@ -10,7 +10,10 @@ class_name AnimatronicJumpscare
 
 @export var jumpscare_anim_name := "jumpscare"
 @export var scene_to_go_after : PackedScene = preload("res://game_over/game_over.tscn")
-@export var test_jumpscare: bool = false: 
+@export var audio_delay: float = 0.0
+## Rotates the jumpscare around the player camera so it plays in front of wherever the player is looking.
+@export var face_camera_yaw: bool = false
+@export var test_jumpscare: bool = false:
 	set(value):
 		play_jumpscare()
 
@@ -40,8 +43,10 @@ func _ready():
 func play_jumpscare():
 	if not model_anim:
 		return
+	if face_camera_yaw and not Engine.is_editor_hint():
+		_align_to_camera()
 	if audio:
-		audio.play()
+		_play_audio()
 	model_anim.play(jumpscare_anim_name)
 	await get_tree().process_frame
 	model.show()
@@ -49,3 +54,18 @@ func play_jumpscare():
 	model.hide()
 	if not Engine.is_editor_hint():
 		get_tree().change_scene_to_file("res://game_over/game_over.tscn")
+
+
+func _play_audio() -> void:
+	if audio_delay > 0.0:
+		await get_tree().create_timer(audio_delay).timeout
+	audio.play()
+
+
+func _align_to_camera() -> void:
+	var cam := get_viewport().get_camera_3d()
+	if cam == null:
+		return
+	var pivot := cam.global_position
+	var yaw_basis := Basis(Vector3.UP, cam.global_rotation.y)
+	global_transform = Transform3D(yaw_basis, pivot) * Transform3D(Basis.IDENTITY, -pivot) * global_transform
