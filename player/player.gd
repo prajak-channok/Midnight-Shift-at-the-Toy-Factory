@@ -18,12 +18,16 @@ class_name Player
 @onready var cam: Camera3D = $Camera3D
 @onready var monitor: Monitor = $%Monitor
 
+var _view_locked: bool = false
+
 
 func _ready():
 	cam.current = true
 
 
 func _process(delta):
+	if _view_locked:
+		return
 	var mouse_pos = get_viewport().get_mouse_position()
 	var viewport_width = get_viewport().get_visible_rect().size.x
 
@@ -58,6 +62,20 @@ func panning_edge(delta: float, mouse_x: float):
 			right_rotation_limit,
 			left_rotation_limit
 		)
+
+
+## Stops mouse panning for good (used when a jumpscare is about to play).
+func lock_view() -> void:
+	_view_locked = true
+
+
+## Locks the view and smoothly turns the camera to face straight ahead. Finishes once it is centered.
+func center_view(time: float = 0.4) -> void:
+	_view_locked = true
+	var target := roundf(cam.rotation_degrees.y / 360.0) * 360.0
+	var tween := create_tween().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	tween.tween_property(cam, "rotation_degrees:y", target, time)
+	await tween.finished
 
 
 func toggle_monitor():
