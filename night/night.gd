@@ -56,7 +56,12 @@ func _ready() -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
-	if game_over or night_complete:
+	if night_complete:
+		return
+	if event.is_action_pressed("toggle_monitor"):
+		toggle_monitor()
+		return
+	if game_over:
 		return
 	if event.is_action_pressed("left_door"):
 		toggle_left_door()
@@ -66,8 +71,6 @@ func _unhandled_input(event: InputEvent) -> void:
 		toggle_left_light()
 	elif event.is_action_pressed("right_light"):
 		toggle_right_light()
-	elif event.is_action_pressed("toggle_monitor"):
-		toggle_monitor()
 
 
 func can_use_office_controls() -> bool:
@@ -95,7 +98,9 @@ func toggle_right_light() -> void:
 
 
 func toggle_monitor() -> void:
-	if game_over or night_complete:
+	if night_complete:
+		return
+	if game_over and not player.is_monitor_on():
 		return
 	if power_system.has_power():
 		player.toggle_monitor()
@@ -110,9 +115,8 @@ func trigger_game_over(animatronic: AnimatronicBase) -> void:
 	left_door.force_open()
 	right_door.force_open()
 
-	player.lock_view()
-	await player.force_monitor_down()
-	await player.center_view()
+	while player.is_monitor_on() or player.monitor.refuse_requests:
+		await get_tree().process_frame
 	await get_tree().create_timer(0.25).timeout
 
 	if animatronic.jumpscare == null:
