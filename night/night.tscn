@@ -321,6 +321,16 @@ transform = Transform3D(-0.6236432, 0, 0.78170913, 0, 1, 0, -0.78170913, 0, -0.6
 script = ExtResource("19")
 animation_to_play = "vibing"
 
+[node name="PackingRoom" type="Marker3D" parent="AnimatronicPositionsContainers/YellowAnimatronicPositionsContainer" unique_id=1556350801]
+transform = Transform3D(0.817, 0, -0.576, 0, 1, 0, 0.576, 0, 0.817, -19.5, 1.37, 26.25)
+script = ExtResource("19")
+animation_to_play = "vibing"
+
+[node name="LoadingBay" type="Marker3D" parent="AnimatronicPositionsContainers/YellowAnimatronicPositionsContainer" unique_id=1556350802]
+transform = Transform3D(-0.964, 0, 0.265, 0, 1, 0, -0.265, 0, -0.964, -29, 1.37, 21.5)
+script = ExtResource("19")
+animation_to_play = "oneleg2"
+
 [node name="StaffRoom" type="Marker3D" parent="AnimatronicPositionsContainers/YellowAnimatronicPositionsContainer" unique_id=1556350695]
 transform = Transform3D(-0.48782158, 0, 0.87294334, 0, 1, 0, -0.87294334, 0, -0.48782158, 15, 1.37, 15.75)
 script = ExtResource("19")
