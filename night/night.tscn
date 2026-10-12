@@ -277,8 +277,18 @@ transform = Transform3D(-0.6031081, 0, -0.79765946, 0, 1, 0, 0.79765946, 0, -0.6
 script = ExtResource("19")
 animation_to_play = "squatting"
 
+[node name="PartsReturnsStorageRoom" type="Marker3D" parent="AnimatronicPositionsContainers/BlueAnimatronicPositionsContainer" unique_id=1860400101]
+transform = Transform3D(-0.8050558, 0, 0.5931991, 0, 1, 0, -0.5931991, 0, -0.8050558, 15.35, 1.48, 27.25)
+script = ExtResource("19")
+animation_to_play = "squatting"
+
 [node name="MainStorageHall" type="Marker3D" parent="AnimatronicPositionsContainers/BlueAnimatronicPositionsContainer" unique_id=1845033015]
 transform = Transform3D(-0.7152995, 0, 0.698818, 0, 1, 0, -0.698818, 0, -0.7152995, 1.5, 0.73, 21.25)
+script = ExtResource("19")
+animation_to_play = "normal"
+
+[node name="LoadingBay" type="Marker3D" parent="AnimatronicPositionsContainers/BlueAnimatronicPositionsContainer" unique_id=1860400102]
+transform = Transform3D(-0.45260966, 0, -0.89170873, 0, 1, 0, 0.89170873, 0, -0.45260966, -27.5, 1.37, 21.5)
 script = ExtResource("19")
 animation_to_play = "normal"
 
@@ -291,6 +301,11 @@ animation_to_play = "squatting"
 transform = Transform3D(-0.45260966, 0, -0.89170873, 0, 1, 0, 0.89170873, 0, -0.45260966, -16.5, 1.48, 15.75)
 script = ExtResource("19")
 animation_to_play = "normal"
+
+[node name="ElectricalRoom" type="Marker3D" parent="AnimatronicPositionsContainers/BlueAnimatronicPositionsContainer" unique_id=1860400103]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 9.7, 0.7, 4.5)
+script = ExtResource("19")
+animation_to_play = "crawling"
 
 [node name="LeftHall" type="Marker3D" parent="AnimatronicPositionsContainers/BlueAnimatronicPositionsContainer" unique_id=598162881]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 4.65, 0.63, 6)

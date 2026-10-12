@@ -7,58 +7,78 @@
 script = ExtResource("2_node")
 position_name = &"ToyFactory"
 destinations = Dictionary[StringName, float]({
-&"FactoryTransferCorridor": 80.0,
-&"InventoryCheckRoom": 5.0,
-&"LeftHall": 5.0,
-&"MainStorageHall": 5.0,
-&"StaffRoom": 5.0
+&"ElectricalRoom": 15.0,
+&"FactoryTransferCorridor": 10.0,
+&"LoadingBay": 20.0,
+&"MainStorageHall": 30.0,
+&"PartsReturnsStorageRoom": 25.0
 })
 
 [sub_resource type="Resource" id="Resource_ftc"]
 script = ExtResource("2_node")
 position_name = &"FactoryTransferCorridor"
 destinations = Dictionary[StringName, float]({
-&"InventoryCheckRoom": 5.0,
-&"LeftDoor": 5.0,
-&"MainStorageHall": 70.0,
-&"ToyFactory": 20.0
+&"ElectricalRoom": 20.0,
+&"LeftHall": 25.0,
+&"LoadingBay": 20.0,
+&"MainStorageHall": 10.0,
+&"PartsReturnsStorageRoom": 20.0,
+&"ToyFactory": 5.0
+})
+
+[sub_resource type="Resource" id="Resource_parts"]
+script = ExtResource("2_node")
+position_name = &"PartsReturnsStorageRoom"
+destinations = Dictionary[StringName, float]({
+&"ElectricalRoom": 25.0,
+&"FactoryTransferCorridor": 10.0,
+&"LeftHall": 20.0,
+&"LoadingBay": 25.0,
+&"MainStorageHall": 10.0,
+&"ToyFactory": 10.0
 })
 
 [sub_resource type="Resource" id="Resource_main"]
 script = ExtResource("2_node")
 position_name = &"MainStorageHall"
 destinations = Dictionary[StringName, float]({
-&"FactoryTransferCorridor": 20.0,
-&"InventoryCheckRoom": 35.0,
-&"LeftDoor": 5.0,
-&"StaffRoom": 40.0
+&"ElectricalRoom": 30.0,
+&"FactoryTransferCorridor": 5.0,
+&"LeftHall": 15.0,
+&"LoadingBay": 30.0,
+&"PartsReturnsStorageRoom": 5.0,
+&"ToyFactory": 15.0
 })
 
-[sub_resource type="Resource" id="Resource_staff"]
+[sub_resource type="Resource" id="Resource_loading"]
 script = ExtResource("2_node")
-position_name = &"StaffRoom"
+position_name = &"LoadingBay"
 destinations = Dictionary[StringName, float]({
-&"InventoryCheckRoom": 20.0,
-&"LeftDoor": 10.0,
+&"ElectricalRoom": 10.0,
+&"LeftDoor": 30.0,
+&"LeftHall": 35.0,
+&"PartsReturnsStorageRoom": 15.0,
+&"ToyFactory": 10.0
+})
+
+[sub_resource type="Resource" id="Resource_elec"]
+script = ExtResource("2_node")
+position_name = &"ElectricalRoom"
+destinations = Dictionary[StringName, float]({
+&"LeftDoor": 30.0,
 &"LeftHall": 40.0,
-&"MainStorageHall": 30.0
+&"LoadingBay": 10.0,
+&"MainStorageHall": 10.0,
+&"PartsReturnsStorageRoom": 10.0
 })
 
 [sub_resource type="Resource" id="Resource_lhall"]
 script = ExtResource("2_node")
 position_name = &"LeftHall"
 destinations = Dictionary[StringName, float]({
-&"LeftDoor": 75.0,
-&"StaffRoom": 25.0
-})
-
-[sub_resource type="Resource" id="Resource_inv"]
-script = ExtResource("2_node")
-position_name = &"InventoryCheckRoom"
-destinations = Dictionary[StringName, float]({
-&"LeftDoor": 20.0,
-&"MainStorageHall": 40.0,
-&"StaffRoom": 40.0
+&"ElectricalRoom": 10.0,
+&"LeftDoor": 80.0,
+&"MainStorageHall": 10.0
 })
 
 [sub_resource type="Resource" id="Resource_ldoor"]
@@ -75,4 +95,4 @@ decision_time_min = 4.0
 decision_time_max = 4.1
 blocked_retreat_delay_min = 4.0
 blocked_retreat_delay_max = 6.0
-nodes = Array[ExtResource("2_node")]([SubResource("Resource_toy"), SubResource("Resource_ftc"), SubResource("Resource_main"), SubResource("Resource_staff"), SubResource("Resource_lhall"), SubResource("Resource_inv"), SubResource("Resource_ldoor")])
+nodes = Array[ExtResource("2_node")]([SubResource("Resource_toy"), SubResource("Resource_ftc"), SubResource("Resource_parts"), SubResource("Resource_main"), SubResource("Resource_loading"), SubResource("Resource_elec"), SubResource("Resource_lhall"), SubResource("Resource_ldoor")])
