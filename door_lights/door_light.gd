@@ -1,5 +1,5 @@
 extends OmniLight3D
-class_name VentLight
+class_name DoorLight
 
 @onready var light_sound = $LightSound
 
