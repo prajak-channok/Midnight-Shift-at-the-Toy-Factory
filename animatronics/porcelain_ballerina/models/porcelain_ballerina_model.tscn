@@ -1,6 +1,6 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://qgb2mxtxucr1"]
 
-[ext_resource type="Shader" path="res://animatronics/porcelain_ballerina/models/porcelain.gdshader" id="1_sco8u"]
+[ext_resource type="Shader" uid="uid://btmxfc7wvaiqx" path="res://animatronics/porcelain_ballerina/models/porcelain.gdshader" id="1_sco8u"]
 [ext_resource type="ArrayMesh" path="res://animatronics/porcelain_ballerina/models/meshes/waist.res" id="2_4r0qr"]
 [ext_resource type="ArrayMesh" path="res://animatronics/porcelain_ballerina/models/meshes/chest.res" id="3_xjlvp"]
 [ext_resource type="ArrayMesh" path="res://animatronics/porcelain_ballerina/models/meshes/head_upper.res" id="4_hkcj7"]
@@ -1417,6 +1417,7 @@ tracks/28/keys = {
 
 [sub_resource type="Animation" id="Animation_m8hts"]
 length = 2.8
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -1778,20 +1779,20 @@ _data = {
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ki3ku"]
 render_priority = 0
 shader = ExtResource("1_sco8u")
-shader_parameter/glaze_color = null
-shader_parameter/bisque_color = null
-shader_parameter/crack_color = null
-shader_parameter/grime_color = null
+shader_parameter/glaze_color = Color(0.94, 0.92, 0.87, 1)
+shader_parameter/bisque_color = Color(0.6, 0.56, 0.48, 1)
+shader_parameter/crack_color = Color(0.04, 0.03, 0.025, 1)
+shader_parameter/grime_color = Color(0.46, 0.4, 0.31, 1)
 shader_parameter/pattern_offset = Vector3(9.4, 2.2, 1.1)
 shader_parameter/fine_scale = 20.0
 shader_parameter/fracture_scale = 5.0
-shader_parameter/fine_width = null
+shader_parameter/fine_width = 0.05
 shader_parameter/fracture_width = 0.03
-shader_parameter/fine_strength = null
-shader_parameter/fracture_strength = null
-shader_parameter/chip_amount = null
-shader_parameter/grime_amount = null
-shader_parameter/glaze_roughness = null
+shader_parameter/fine_strength = 0.5
+shader_parameter/fracture_strength = 1.0
+shader_parameter/chip_amount = 0.04
+shader_parameter/grime_amount = 0.35
+shader_parameter/glaze_roughness = 0.16
 
 [sub_resource type="SphereMesh" id="SphereMesh_0ls3f"]
 radial_segments = 16
@@ -1801,19 +1802,19 @@ rings = 8
 render_priority = 0
 shader = ExtResource("1_sco8u")
 shader_parameter/glaze_color = Color(0.88, 0.89, 0.9, 1)
-shader_parameter/bisque_color = null
-shader_parameter/crack_color = null
-shader_parameter/grime_color = null
+shader_parameter/bisque_color = Color(0.6, 0.56, 0.48, 1)
+shader_parameter/crack_color = Color(0.04, 0.03, 0.025, 1)
+shader_parameter/grime_color = Color(0.46, 0.4, 0.31, 1)
 shader_parameter/pattern_offset = Vector3(6.2, 3.3, 8.8)
 shader_parameter/fine_scale = 36.0
 shader_parameter/fracture_scale = 14.0
-shader_parameter/fine_width = null
+shader_parameter/fine_width = 0.05
 shader_parameter/fracture_width = 0.045
-shader_parameter/fine_strength = null
-shader_parameter/fracture_strength = null
+shader_parameter/fine_strength = 0.5
+shader_parameter/fracture_strength = 1.0
 shader_parameter/chip_amount = 0.08
 shader_parameter/grime_amount = 0.55
-shader_parameter/glaze_roughness = null
+shader_parameter/glaze_roughness = 0.16
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_5om8g"]
 top_radius = 0.1
@@ -1929,20 +1930,20 @@ rings = 1
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_abpn4"]
 render_priority = 0
 shader = ExtResource("1_sco8u")
-shader_parameter/glaze_color = null
-shader_parameter/bisque_color = null
-shader_parameter/crack_color = null
-shader_parameter/grime_color = null
+shader_parameter/glaze_color = Color(0.94, 0.92, 0.87, 1)
+shader_parameter/bisque_color = Color(0.6, 0.56, 0.48, 1)
+shader_parameter/crack_color = Color(0.04, 0.03, 0.025, 1)
+shader_parameter/grime_color = Color(0.46, 0.4, 0.31, 1)
 shader_parameter/pattern_offset = Vector3(4.7, 8.1, 2.9)
 shader_parameter/fine_scale = 40.0
 shader_parameter/fracture_scale = 12.0
 shader_parameter/fine_width = 0.06
 shader_parameter/fracture_width = 0.04
-shader_parameter/fine_strength = null
-shader_parameter/fracture_strength = null
-shader_parameter/chip_amount = null
-shader_parameter/grime_amount = null
-shader_parameter/glaze_roughness = null
+shader_parameter/fine_strength = 0.5
+shader_parameter/fracture_strength = 1.0
+shader_parameter/chip_amount = 0.04
+shader_parameter/grime_amount = 0.35
+shader_parameter/glaze_roughness = 0.16
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_e4rvv"]
 top_radius = 0.027
@@ -1960,20 +1961,20 @@ ring_segments = 6
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gnajm"]
 render_priority = 0
 shader = ExtResource("1_sco8u")
-shader_parameter/glaze_color = null
-shader_parameter/bisque_color = null
-shader_parameter/crack_color = null
-shader_parameter/grime_color = null
+shader_parameter/glaze_color = Color(0.94, 0.92, 0.87, 1)
+shader_parameter/bisque_color = Color(0.6, 0.56, 0.48, 1)
+shader_parameter/crack_color = Color(0.04, 0.03, 0.025, 1)
+shader_parameter/grime_color = Color(0.46, 0.4, 0.31, 1)
 shader_parameter/pattern_offset = Vector3(3.1, 1.7, 5.3)
 shader_parameter/fine_scale = 26.0
 shader_parameter/fracture_scale = 7.0
-shader_parameter/fine_width = null
+shader_parameter/fine_width = 0.05
 shader_parameter/fracture_width = 0.035
-shader_parameter/fine_strength = null
-shader_parameter/fracture_strength = null
+shader_parameter/fine_strength = 0.5
+shader_parameter/fracture_strength = 1.0
 shader_parameter/chip_amount = 0.03
 shader_parameter/grime_amount = 0.5
-shader_parameter/glaze_roughness = null
+shader_parameter/glaze_roughness = 0.16
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pk7el"]
 albedo_color = Color(0.025, 0.02, 0.025, 1)
@@ -2115,20 +2116,20 @@ rings = 1
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_cngs7"]
 render_priority = 0
 shader = ExtResource("1_sco8u")
-shader_parameter/glaze_color = null
-shader_parameter/bisque_color = null
-shader_parameter/crack_color = null
-shader_parameter/grime_color = null
+shader_parameter/glaze_color = Color(0.94, 0.92, 0.87, 1)
+shader_parameter/bisque_color = Color(0.6, 0.56, 0.48, 1)
+shader_parameter/crack_color = Color(0.04, 0.03, 0.025, 1)
+shader_parameter/grime_color = Color(0.46, 0.4, 0.31, 1)
 shader_parameter/pattern_offset = Vector3(1.3, 6.6, 7.7)
 shader_parameter/fine_scale = 60.0
 shader_parameter/fracture_scale = 30.0
-shader_parameter/fine_width = null
+shader_parameter/fine_width = 0.05
 shader_parameter/fracture_width = 0.05
 shader_parameter/fine_strength = 0.3
-shader_parameter/fracture_strength = null
-shader_parameter/chip_amount = null
-shader_parameter/grime_amount = null
-shader_parameter/glaze_roughness = null
+shader_parameter/fracture_strength = 1.0
+shader_parameter/chip_amount = 0.04
+shader_parameter/grime_amount = 0.35
+shader_parameter/glaze_roughness = 0.16
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_qd5wi"]
 top_radius = 0.0062
@@ -2246,19 +2247,19 @@ rings = 1
 render_priority = 0
 shader = ExtResource("1_sco8u")
 shader_parameter/glaze_color = Color(0.9, 0.72, 0.74, 1)
-shader_parameter/bisque_color = null
-shader_parameter/crack_color = null
-shader_parameter/grime_color = null
+shader_parameter/bisque_color = Color(0.6, 0.56, 0.48, 1)
+shader_parameter/crack_color = Color(0.04, 0.03, 0.025, 1)
+shader_parameter/grime_color = Color(0.46, 0.4, 0.31, 1)
 shader_parameter/pattern_offset = Vector3(2.5, 7.4, 0.6)
 shader_parameter/fine_scale = 45.0
 shader_parameter/fracture_scale = 20.0
-shader_parameter/fine_width = null
-shader_parameter/fracture_width = null
-shader_parameter/fine_strength = null
-shader_parameter/fracture_strength = null
-shader_parameter/chip_amount = null
+shader_parameter/fine_width = 0.05
+shader_parameter/fracture_width = 0.03
+shader_parameter/fine_strength = 0.5
+shader_parameter/fracture_strength = 1.0
+shader_parameter/chip_amount = 0.04
 shader_parameter/grime_amount = 0.5
-shader_parameter/glaze_roughness = null
+shader_parameter/glaze_roughness = 0.16
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_4pumj"]
 top_radius = 0.026
@@ -2611,7 +2612,7 @@ material_override = SubResource("StandardMaterial3D_mky0u")
 mesh = SubResource("TorusMesh_infip")
 
 [node name="Chest" type="Node3D" parent="Body/Hips/Waist" unique_id=565960423]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.19, 0)
+transform = Transform3D(1, 0, 0, 0, 0.9945219, 0.104528464, 0, -0.104528464, 0.9945219, 0, 0.19, 0)
 
 [node name="ChestMesh" type="MeshInstance3D" parent="Body/Hips/Waist/Chest" unique_id=1003935380]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.72, 0, 0, 0)
@@ -2805,7 +2806,7 @@ material_override = SubResource("StandardMaterial3D_16hb1")
 mesh = SubResource("TorusMesh_gsbrp")
 
 [node name="NeckA" type="Node3D" parent="Body/Hips/Waist/Chest" unique_id=767891405]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.235, 0)
+transform = Transform3D(1, 0, 0, 0, 0.9975641, 0.06975647, 0, -0.06975647, 0.9975641, 0, 0.235, 0)
 
 [node name="NeckCore0" type="MeshInstance3D" parent="Body/Hips/Waist/Chest/NeckA" unique_id=1441318822]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.032, 0)
@@ -2823,7 +2824,7 @@ material_override = SubResource("StandardMaterial3D_15lku")
 mesh = SubResource("TorusMesh_42fep")
 
 [node name="NeckB" type="Node3D" parent="Body/Hips/Waist/Chest/NeckA" unique_id=1244693671]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.065, 0)
+transform = Transform3D(0.9945219, -0.104528464, 0, 0.10427384, 0.99209934, 0.06975647, -0.007291537, -0.06937434, 0.9975641, 0, 0.065, 0)
 
 [node name="NeckCore1" type="MeshInstance3D" parent="Body/Hips/Waist/Chest/NeckA/NeckB" unique_id=1736860278]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.032, 0)
@@ -2841,7 +2842,7 @@ material_override = SubResource("StandardMaterial3D_mky0u")
 mesh = SubResource("TorusMesh_42fep")
 
 [node name="NeckC" type="Node3D" parent="Body/Hips/Waist/Chest/NeckA/NeckB" unique_id=1405591290]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.065, 0)
+transform = Transform3D(0.99026805, -0.1391731, 0, 0.13883409, 0.98785585, 0.06975647, -0.009708225, -0.0690776, 0.9975641, 0, 0.065, 0)
 
 [node name="NeckCore2" type="MeshInstance3D" parent="Body/Hips/Waist/Chest/NeckA/NeckB/NeckC" unique_id=717471755]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.032, 0)
@@ -2859,7 +2860,7 @@ material_override = SubResource("StandardMaterial3D_15lku")
 mesh = SubResource("TorusMesh_42fep")
 
 [node name="Head" type="Node3D" parent="Body/Hips/Waist/Chest/NeckA/NeckB/NeckC" unique_id=866368470]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.065, 0)
+transform = Transform3D(0.9702957, -0.2419219, 0, 0.24059664, 0.96498036, 0.104528464, -0.025287725, -0.101423524, 0.9945219, 0, 0.065, 0)
 
 [node name="Skull" type="Node3D" parent="Body/Hips/Waist/Chest/NeckA/NeckB/NeckC/Head" unique_id=1110683311]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.14, 0)
@@ -3204,7 +3205,7 @@ material_override = SubResource("StandardMaterial3D_16hb1")
 mesh = SubResource("BoxMesh_xpi2j")
 
 [node name="ShoulderL" type="Node3D" parent="Body/Hips/Waist/Chest" unique_id=1553984421]
-transform = Transform3D(0.9961947, -0.08715574, 0, 0.08715574, 0.9961947, 0, 0, 0, 1, 0.15, 0.19, 0)
+transform = Transform3D(-0.90630776, -0.42261833, 0, 0.42261833, -0.90630776, 0, 0, 0, 1, 0.15, 0.19, 0)
 
 [node name="ShoulderLBall" type="MeshInstance3D" parent="Body/Hips/Waist/Chest/ShoulderL" unique_id=1553283990]
 transform = Transform3D(0.072, 0, 0, 0, 0.072, 0, 0, 0, 0.072, 0, 0, 0)
@@ -3222,7 +3223,7 @@ material_override = SubResource("ShaderMaterial_abpn4")
 mesh = SubResource("CylinderMesh_lxu3q")
 
 [node name="ElbowL" type="Node3D" parent="Body/Hips/Waist/Chest/ShoulderL" unique_id=716687074]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.26, 0)
+transform = Transform3D(0.76604444, -0.6427876, 0, 0.6427876, 0.76604444, 0, 0, 0, 1, 0, -0.26, 0)
 
 [node name="ElbowLBall" type="MeshInstance3D" parent="Body/Hips/Waist/Chest/ShoulderL/ElbowL" unique_id=1208022132]
 transform = Transform3D(0.0576, 0, 0, 0, 0.0576, 0, 0, 0, 0.0576, 0, 0, 0)
@@ -3240,7 +3241,7 @@ material_override = SubResource("ShaderMaterial_abpn4")
 mesh = SubResource("CylinderMesh_ynu1g")
 
 [node name="Elbow2L" type="Node3D" parent="Body/Hips/Waist/Chest/ShoulderL/ElbowL" unique_id=945345595]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.16, 0)
+transform = Transform3D(0.76604444, -0.6427876, 0, 0.6427876, 0.76604444, 0, 0, 0, 1, 0, -0.16, 0)
 
 [node name="Elbow2LBall" type="MeshInstance3D" parent="Body/Hips/Waist/Chest/ShoulderL/ElbowL/Elbow2L" unique_id=1456792227]
 transform = Transform3D(0.048, 0, 0, 0, 0.048, 0, 0, 0, 0.048, 0, 0, 0)
@@ -3258,7 +3259,7 @@ material_override = SubResource("ShaderMaterial_abpn4")
 mesh = SubResource("CylinderMesh_oky6j")
 
 [node name="WristL" type="Node3D" parent="Body/Hips/Waist/Chest/ShoulderL/ElbowL/Elbow2L" unique_id=705054614]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.16, 0)
+transform = Transform3D(0.9396926, -0.34202012, 0, 0.34202012, 0.9396926, 0, 0, 0, 1, 0, -0.16, 0)
 
 [node name="WristBallL" type="MeshInstance3D" parent="Body/Hips/Waist/Chest/ShoulderL/ElbowL/Elbow2L/WristL" unique_id=616310369]
 transform = Transform3D(0.038, 0, 0, 0, 0.038, 0, 0, 0, 0.038, 0, 0, 0)
@@ -3376,7 +3377,7 @@ material_override = SubResource("ShaderMaterial_cngs7")
 mesh = SubResource("CylinderMesh_nf01m")
 
 [node name="ShoulderR" type="Node3D" parent="Body/Hips/Waist/Chest" unique_id=901031381]
-transform = Transform3D(0.9961947, 0.08715574, 0, -0.08715574, 0.9961947, 0, 0, 0, 1, -0.15, 0.19, 0)
+transform = Transform3D(-0.90630776, 0.42261833, 0, -0.42261833, -0.90630776, 0, 0, 0, 1, -0.15, 0.19, 0)
 
 [node name="ShoulderRBall" type="MeshInstance3D" parent="Body/Hips/Waist/Chest/ShoulderR" unique_id=597350252]
 transform = Transform3D(0.072, 0, 0, 0, 0.072, 0, 0, 0, 0.072, 0, 0, 0)
@@ -3394,7 +3395,7 @@ material_override = SubResource("ShaderMaterial_abpn4")
 mesh = SubResource("CylinderMesh_lxu3q")
 
 [node name="ElbowR" type="Node3D" parent="Body/Hips/Waist/Chest/ShoulderR" unique_id=1874398513]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.26, 0)
+transform = Transform3D(0.76604444, 0.6427876, 0, -0.6427876, 0.76604444, 0, 0, 0, 1, 0, -0.26, 0)
 
 [node name="ElbowRBall" type="MeshInstance3D" parent="Body/Hips/Waist/Chest/ShoulderR/ElbowR" unique_id=1316994856]
 transform = Transform3D(0.0576, 0, 0, 0, 0.0576, 0, 0, 0, 0.0576, 0, 0, 0)
@@ -3412,7 +3413,7 @@ material_override = SubResource("ShaderMaterial_abpn4")
 mesh = SubResource("CylinderMesh_ynu1g")
 
 [node name="Elbow2R" type="Node3D" parent="Body/Hips/Waist/Chest/ShoulderR/ElbowR" unique_id=334469324]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.16, 0)
+transform = Transform3D(0.76604444, 0.6427876, 0, -0.49240384, 0.58682406, -0.6427876, -0.41317588, 0.49240384, 0.76604444, 0, -0.16, 0)
 
 [node name="Elbow2RBall" type="MeshInstance3D" parent="Body/Hips/Waist/Chest/ShoulderR/ElbowR/Elbow2R" unique_id=911264895]
 transform = Transform3D(0.048, 0, 0, 0, 0.048, 0, 0, 0, 0.048, 0, 0, 0)
@@ -3430,7 +3431,7 @@ material_override = SubResource("ShaderMaterial_abpn4")
 mesh = SubResource("CylinderMesh_oky6j")
 
 [node name="WristR" type="Node3D" parent="Body/Hips/Waist/Chest/ShoulderR/ElbowR/Elbow2R" unique_id=257440123]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.16, 0)
+transform = Transform3D(0.9396926, 0.34202012, 0, -0.34202012, 0.9396926, 0, 0, 0, 1, 0, -0.16, 0)
 
 [node name="WristBallR" type="MeshInstance3D" parent="Body/Hips/Waist/Chest/ShoulderR/ElbowR/Elbow2R/WristR" unique_id=1625307891]
 transform = Transform3D(0.038, 0, 0, 0, 0.038, 0, 0, 0, 0.038, 0, 0, 0)
@@ -3645,7 +3646,7 @@ material_override = SubResource("StandardMaterial3D_huqa6")
 mesh = SubResource("TorusMesh_xfydt")
 
 [node name="HipR" type="Node3D" parent="Body/Hips" unique_id=1404647007]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.075, -0.03, 0)
+transform = Transform3D(0.49999997, 0.86602545, 0, -0.75, 0.43301266, 0.5, 0.43301272, -0.24999999, 0.8660254, -0.075, -0.03, 0)
 
 [node name="HipRBall" type="MeshInstance3D" parent="Body/Hips/HipR" unique_id=199246605]
 transform = Transform3D(0.12, 0, 0, 0, 0.12, 0, 0, 0, 0.12, 0, 0, 0)
@@ -3663,7 +3664,7 @@ material_override = SubResource("ShaderMaterial_abpn4")
 mesh = SubResource("CylinderMesh_suf3v")
 
 [node name="KneeR" type="Node3D" parent="Body/Hips/HipR" unique_id=54646226]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.36, 0)
+transform = Transform3D(-0.50000006, -0.8660254, 0, 0.8660254, -0.50000006, 0, 0, 0, 1, 0, -0.36, 0)
 
 [node name="KneeRBall" type="MeshInstance3D" parent="Body/Hips/HipR/KneeR" unique_id=1454472300]
 transform = Transform3D(0.0912, 0, 0, 0, 0.0912, 0, 0, 0, 0.0912, 0, 0, 0)
@@ -3681,7 +3682,7 @@ material_override = SubResource("ShaderMaterial_abpn4")
 mesh = SubResource("CylinderMesh_8a2ll")
 
 [node name="Knee2R" type="Node3D" parent="Body/Hips/HipR/KneeR" unique_id=871119314]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2, 0)
+transform = Transform3D(0.8660254, -0.5, 0, 0.5, 0.8660254, 0, 0, 0, 1, 0, -0.2, 0)
 
 [node name="Knee2RBall" type="MeshInstance3D" parent="Body/Hips/HipR/KneeR/Knee2R" unique_id=797952024]
 transform = Transform3D(0.0768, 0, 0, 0, 0.0768, 0, 0, 0, 0.0768, 0, 0, 0)
