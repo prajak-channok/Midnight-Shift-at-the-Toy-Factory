@@ -658,7 +658,7 @@ horizontal_alignment = 1
 
 [node name="DescLeftLight" type="Label" parent="ControlsPopup/CenterContainer/Panel/VBox/Rows" unique_id=987599625]
 layout_mode = 2
-text = "Left vent light on / off"
+text = "Left door light on / off"
 vertical_alignment = 1
 
 [node name="KeyRightLight" type="Label" parent="ControlsPopup/CenterContainer/Panel/VBox/Rows" unique_id=1295689171]
@@ -670,7 +670,7 @@ horizontal_alignment = 1
 
 [node name="DescRightLight" type="Label" parent="ControlsPopup/CenterContainer/Panel/VBox/Rows" unique_id=1370613891]
 layout_mode = 2
-text = "Right vent light on / off"
+text = "Right door light on / off"
 vertical_alignment = 1
 
 [node name="KeyMonitor" type="Label" parent="ControlsPopup/CenterContainer/Panel/VBox/Rows" unique_id=176020602]

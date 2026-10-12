@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://csnv5nuayg5p2"]
 
-[ext_resource type="Script" path="res://vent_lights/vent_light.gd" id="1_lg3ea"]
+[ext_resource type="Script" path="res://door_lights/door_light.gd" id="1_lg3ea"]
 [ext_resource type="AudioStream" uid="uid://coremqfsmmlb3" path="res://sounds/337434__ev-dawg__speaker-buzz.wav" id="2_ulk8d"]
 
 [node name="RightLight" type="OmniLight3D"]

@@ -7,8 +7,8 @@ class_name Night
 
 @onready var left_door: Door = $Doors/LeftDoor
 @onready var right_door: Door = $Doors/RightDoor
-@onready var left_light: VentLight = $VentLights/LeftHallButtonLight
-@onready var right_light: VentLight = $VentLights/RightHallButtonLight
+@onready var left_light: DoorLight = $DoorLights/LeftHallButtonLight
+@onready var right_light: DoorLight = $DoorLights/RightHallButtonLight
 @onready var player: Player = $Player
 @onready var hud: NightHud = $PlayerControlsGUI
 @onready var power_system: PowerSystem = $PowerSystem
@@ -48,7 +48,7 @@ func _ready() -> void:
 		animatronic.reached_office.connect(trigger_game_over.bind(animatronic))
 
 	var doors: Array[Door] = [left_door, right_door]
-	var lights: Array[VentLight] = [left_light, right_light]
+	var lights: Array[DoorLight] = [left_light, right_light]
 	power_system.start(difficulty, doors, lights, player)
 
 	for animatronic in animatronics:

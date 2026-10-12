@@ -8,16 +8,16 @@ var power: float = 100.0
 
 var _difficulty: NightDifficulty
 var _doors: Array[Door] = []
-var _vent_lights: Array[VentLight] = []
+var _door_lights: Array[DoorLight] = []
 var _player: Player
 var _running: bool = false
 var _last_percent: int = -1
 
 
-func start(difficulty: NightDifficulty, doors: Array[Door], vent_lights: Array[VentLight], player: Player) -> void:
+func start(difficulty: NightDifficulty, doors: Array[Door], door_lights: Array[DoorLight], player: Player) -> void:
 	_difficulty = difficulty
 	_doors = doors
-	_vent_lights = vent_lights
+	_door_lights = door_lights
 	_player = player
 	_running = true
 	_emit_percent()
@@ -48,7 +48,7 @@ func _drain_rate() -> float:
 	for door in _doors:
 		if door.is_closed:
 			rate += _difficulty.door_drain
-	for light in _vent_lights:
+	for light in _door_lights:
 		if light.is_turned_on():
 			rate += _difficulty.light_drain
 	if _player.is_monitor_on():
