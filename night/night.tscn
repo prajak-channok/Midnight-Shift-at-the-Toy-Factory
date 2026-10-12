@@ -442,8 +442,8 @@ visible = false
 stream = ExtResource("15")
 
 [node name="PorcelainBallerinaJumpscare" type="Node3D" parent="AnimatronicJumpscares" unique_id=2103279495]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0.2, 0)
 script = ExtResource("12")
-audio_delay = 0.45
 
 [node name="porcelain_ballerina_model" parent="AnimatronicJumpscares/PorcelainBallerinaJumpscare" unique_id=789605806 instance=ExtResource("14")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
@@ -453,6 +453,7 @@ visible = false
 stream = ExtResource("15")
 
 [node name="BurnedPlushBotJumpscare" type="Node3D" parent="AnimatronicJumpscares" unique_id=599127328]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, 0, 0)
 script = ExtResource("12")
 
 [node name="burned_plush_model" parent="AnimatronicJumpscares/BurnedPlushBotJumpscare" unique_id=1145942918 instance=ExtResource("28")]
