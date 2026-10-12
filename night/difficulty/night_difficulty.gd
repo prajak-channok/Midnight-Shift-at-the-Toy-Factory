@@ -10,7 +10,7 @@ class_name NightDifficulty
 @export var base_drain: float = 0.10
 @export var door_drain: float = 0.12 ## Per closed door.
 @export var monitor_drain: float = 0.04
-@export var light_drain: float = 0.0 ## Per vent light turned on.
+@export var light_drain: float = 0.0 ## Per door light turned on.
 
 
 ## Returns null if the animatronic has no profile this night.

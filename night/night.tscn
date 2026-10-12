@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" path="res://animatronics/springy_clown/models/springy_clown_model.tscn" id="13"]
 [ext_resource type="PackedScene" uid="uid://qgb2mxtxucr1" path="res://animatronics/porcelain_ballerina/models/porcelain_ballerina_model.tscn" id="14"]
 [ext_resource type="AudioStream" uid="uid://c5u7x2bdjkgrq" path="res://sounds/341668__dangthaiduy007__jump-scare-sound.ogg" id="15"]
-[ext_resource type="PackedScene" uid="uid://csnv5nuayg5p2" path="res://vent_lights/vent_light.tscn" id="17"]
+[ext_resource type="PackedScene" uid="uid://csnv5nuayg5p2" path="res://door_lights/door_light.tscn" id="17"]
 [ext_resource type="Script" uid="uid://ds33puhymypo5" path="res://animatronics/animatronic_utilities/positions/animatronic_positions_container.gd" id="18"]
 [ext_resource type="Script" uid="uid://mt2gvhceyred" path="res://animatronics/animatronic_utilities/positions/animatronic_position.gd" id="19"]
 [ext_resource type="Script" uid="uid://b7t4ttuluvpqw" path="res://night/difficulty/night_difficulty.gd" id="20"]
@@ -29,6 +29,7 @@
 [ext_resource type="Resource" uid="uid://c4jtnmn0vhf2w" path="res://animatronics/burned_plush_bot/burned_plush_graph.tres" id="27"]
 [ext_resource type="PackedScene" uid="uid://ciptxvcinddjg" path="res://animatronics/burned_plush_bot/models/burned_plush_model.tscn" id="28"]
 [ext_resource type="PackedScene" uid="uid://bbqlexv4hg21l" path="res://door_button/door_button.tscn" id="door_button"]
+[ext_resource type="PackedScene" path="res://light_blocker/light_blocker.tscn" id="light_blocker"]
 [ext_resource type="Resource" uid="uid://dhcugt8nq8cnm" path="res://night/difficulty/night_3.tres" id="night_3"]
 [ext_resource type="Resource" uid="uid://ddni26uyxp4uw" path="res://night/difficulty/night_4.tres" id="night_4"]
 [ext_resource type="Resource" uid="uid://bc4c2e6xr5fjm" path="res://night/difficulty/night_5.tres" id="night_5"]
@@ -201,35 +202,53 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.4
 [node name="RightDoor" parent="Doors" unique_id=540398250 instance=ExtResource("11")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.4, 0, 1)
 
-[node name="VentLights" type="Node" parent="." unique_id=872790081]
+[node name="DoorLights" type="Node" parent="." unique_id=872790081]
 
-[node name="RightHallButtonLight" parent="VentLights" unique_id=762967397 instance=ExtResource("17")]
+[node name="RightHallButtonLight" parent="DoorLights" unique_id=762967397 instance=ExtResource("17")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.65, 2.4, -0.215)
 light_energy = 3.0
 shadow_enabled = false
 omni_range = 4.5
 
-[node name="LeftHallButtonLight" parent="VentLights" unique_id=1582409440 instance=ExtResource("17")]
+[node name="LeftHallButtonLight" parent="DoorLights" unique_id=1582409440 instance=ExtResource("17")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.65, 2.4, -0.21507502)
 light_energy = 3.0
 shadow_enabled = false
 omni_range = 4.5
 
-[node name="LightButtonLeft" parent="VentLights" unique_id=1829273767 instance=ExtResource("9_0mj8d")]
+[node name="LightButtonLeft" parent="DoorLights" unique_id=1829273767 instance=ExtResource("9_0mj8d")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.328, 1.197, 2.2)
 
-[node name="LightButtonRight" parent="VentLights" unique_id=869361540 instance=ExtResource("9_0mj8d")]
+[node name="LightButtonRight" parent="DoorLights" unique_id=869361540 instance=ExtResource("9_0mj8d")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.32, 1.197, 2.2)
 side = "Right"
 
-[node name="DoorButtonLeft" parent="VentLights" unique_id=727255812 node_paths=PackedStringArray("door") instance=ExtResource("door_button")]
+[node name="DoorButtonLeft" parent="DoorLights" unique_id=727255812 node_paths=PackedStringArray("door") instance=ExtResource("door_button")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.323, 1.806, 2.2)
 door = NodePath("../../Doors/LeftDoor")
 
-[node name="DoorButtonRight" parent="VentLights" unique_id=219653460 node_paths=PackedStringArray("door") instance=ExtResource("door_button")]
+[node name="DoorButtonRight" parent="DoorLights" unique_id=219653460 node_paths=PackedStringArray("door") instance=ExtResource("door_button")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 2.32, 1.806, 2.2)
 side = "Right"
 door = NodePath("../../Doors/RightDoor")
+
+[node name="LightBlockers" type="Node3D" parent="." unique_id=1860400201]
+
+[node name="LeftDoorBlocker" parent="LightBlockers" unique_id=1860400202 node_paths=PackedStringArray("light") instance=ExtResource("light_blocker")]
+transform = Transform3D(0.01, 0, 0, 0, 3.22, 0, 0, 0, 1.64, -2.5, 1.61, 1)
+light = NodePath("../../DoorLights/LeftHallButtonLight")
+
+[node name="LeftWindowBlocker" parent="LightBlockers" unique_id=1860400203 node_paths=PackedStringArray("light") instance=ExtResource("light_blocker")]
+transform = Transform3D(0.01, 0, 0, 0, 1.04, 0, 0, 0, 1.24, -2.5, 1.9, -1.2)
+light = NodePath("../../DoorLights/LeftHallButtonLight")
+
+[node name="RightDoorBlocker" parent="LightBlockers" unique_id=1860400204 node_paths=PackedStringArray("light") instance=ExtResource("light_blocker")]
+transform = Transform3D(0.01, 0, 0, 0, 3.22, 0, 0, 0, 1.64, 2.5, 1.61, 1)
+light = NodePath("../../DoorLights/RightHallButtonLight")
+
+[node name="RightWindowBlocker" parent="LightBlockers" unique_id=1860400205 node_paths=PackedStringArray("light") instance=ExtResource("light_blocker")]
+transform = Transform3D(0.01, 0, 0, 0, 1.04, 0, 0, 0, 1.24, 2.5, 1.9, -1.2)
+light = NodePath("../../DoorLights/RightHallButtonLight")
 
 [node name="PlayerControlsGUI" parent="." unique_id=560756014 instance=ExtResource("5")]
 
@@ -425,7 +444,7 @@ visible = false
 stream = ExtResource("15")
 
 [node name="PorcelainBallerinaJumpscare" type="Node3D" parent="AnimatronicJumpscares" unique_id=2103279495]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.38334966, 0, -1.6756745e-08)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.11332679, 0, -4.9536713e-09)
 script = ExtResource("12")
 audio_delay = 0.45
 face_camera_yaw = true
