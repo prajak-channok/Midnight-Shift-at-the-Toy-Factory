@@ -162,7 +162,7 @@ cam_manager = NodePath("../CameraManager")
 lights_root = NodePath("../Lights")
 
 [node name="MainStorageHall" parent="CameraManager" unique_id=1850270255 instance=ExtResource("7")]
-transform = Transform3D(0.9000903, -0.29449055, 0.32111165, 0.087645546, 0.8443095, 0.5286394, -0.42679694, -0.4476792, 0.78576547, -3.893489, 4.8721695, -12.408768)
+transform = Transform3D(0.9365719, -0.2506199, 0.24499571, 0.08764559, 0.8443095, 0.5286394, -0.33933973, -0.473636, 0.8127222, -3.893489, 4.8721695, -12.408768)
 
 [node name="LeftHall" parent="CameraManager" unique_id=1425505900 instance=ExtResource("7")]
 transform = Transform3D(0.9998876, -0.0026360776, 0.014762025, -0.010164525, 0.6046198, 0.7964494, -0.011024917, -0.7965099, 0.604525, -4.65, 3.2108781, -4.5766625)
@@ -180,16 +180,16 @@ transform = Transform3D(-0.724025, 0.37366885, -0.5797928, -0.048266616, 0.81104
 transform = Transform3D(0.7541568, -0.33654103, 0.56390405, 0.0051421034, 0.8617008, 0.5073908, -0.6566743, -0.37975255, 0.651588, -14.529025, 2.5393581, -14.371076)
 
 [node name="PackingRoom" parent="CameraManager" unique_id=1885544568 instance=ExtResource("7")]
-transform = Transform3D(-0.7925342, -0.41229242, 0.44933793, 0.031901974, 0.7077887, 0.70570344, -0.6089925, 0.57362884, -0.5477938, 20.35913, 3.6063006, -29.6)
+transform = Transform3D(-0.79228294, -0.4249853, 0.43780738, 0.011883554, 0.70665205, 0.7074615, -0.61003816, 0.5657124, -0.55481803, 17.772396, 3.062394, -27.77104)
 
 [node name="InventoryCheckRoom" parent="CameraManager" unique_id=2090164874 instance=ExtResource("7")]
-transform = Transform3D(0.9695649, -0.04066074, 0.24143443, -0.0012635468, 0.985269, 0.17100652, -0.24483107, -0.166107, 0.95523083, 20.744791, 1.6781943, -14.784687)
+transform = Transform3D(0.92468137, -0.14339878, 0.35270563, 0.0069883573, 0.9326, 0.36084402, -0.38067785, -0.3312009, 0.8633599, 20.744791, 1.7574191, -15.188421)
 
 [node name="LoadingBay" parent="CameraManager" unique_id=1878098312 instance=ExtResource("7")]
 transform = Transform3D(0.8993819, 0.24364999, -0.3629696, 0.0033268614, 0.82644403, 0.5630091, 0.43715122, -0.5075677, 0.74247825, 24.662188, 4.55, -11.170988)
 
 [node name="FactoryTransferCorridor" parent="CameraManager" unique_id=588856696 instance=ExtResource("7")]
-transform = Transform3D(0.88529795, -0.25306782, 0.39013344, -0.025662234, 0.8110877, 0.5843614, -0.4643154, -0.52734566, 0.71155995, 2.1608908, 3.7511516, -33.32935)
+transform = Transform3D(0.9298475, -0.19526385, 0.31185856, -0.022848686, 0.8152893, 0.5786031, -0.36723518, -0.5451382, 0.75363314, 1.889015, 3.1080933, -34.02896)
 
 [node name="ToyFactory" parent="CameraManager" unique_id=1156935844 instance=ExtResource("7")]
 transform = Transform3D(0.639015, 0.37750795, -0.67018473, 5.7834068e-08, 0.8712816, 0.49078366, 0.76919425, -0.31361815, 0.556762, -5.6, 3.0841756, -41.795185)
@@ -295,7 +295,7 @@ script = ExtResource("19")
 animation_to_play = "normal"
 
 [node name="FactoryTransferCorridor" type="Marker3D" parent="AnimatronicPositionsContainers/SpringyClownPositionsContainer" unique_id=140905970]
-transform = Transform3D(-0.27892038, 0, 0.96031433, 0, 1, 0, -0.96031433, 0, -0.27892038, 2.1858, 0, 37.298885)
+transform = Transform3D(-0.27892038, 0, 0.96031433, 0, 1, 0, -0.96031433, 0, -0.27892038, 1.2046344, 0, 37.298885)
 script = ExtResource("19")
 animation_to_play = "slide"
 
@@ -310,7 +310,7 @@ script = ExtResource("19")
 animation_to_play = "turn"
 
 [node name="LoadingBay" type="Marker3D" parent="AnimatronicPositionsContainers/SpringyClownPositionsContainer" unique_id=1860400102]
-transform = Transform3D(0.9999929, 0, -0.00379801, 0, 1, 0, 0.00379801, 0, 0.9999929, -25.73294, 0.7789891, 23.032001)
+transform = Transform3D(0.9999929, 0, -0.00379801, 0, 1, 0, 0.00379801, 0, 0.9999929, -24.519033, 1.3377482, 20.290253)
 script = ExtResource("19")
 animation_to_play = "normal"
 
@@ -320,7 +320,7 @@ script = ExtResource("19")
 animation_to_play = "shake"
 
 [node name="InventoryCheckRoom" type="Marker3D" parent="AnimatronicPositionsContainers/SpringyClownPositionsContainer" unique_id=1291303270]
-transform = Transform3D(-0.4558904, 0, -0.89003605, 0, 1, 0, 0.89003605, 0, -0.4558904, -15.980925, 0, 17.556063)
+transform = Transform3D(-0.4558904, 0, -0.89003605, 0, 1, 0, 0.89003605, 0, -0.4558904, -18.773184, 0, 16.86873)
 script = ExtResource("19")
 animation_to_play = "slide"
 
@@ -332,7 +332,7 @@ animation_to_play = "agitated"
 [node name="LeftHall" type="Marker3D" parent="AnimatronicPositionsContainers/SpringyClownPositionsContainer" unique_id=598162881]
 transform = Transform3D(0.6494465, 0, 0.76040727, 0, 1, 0, -0.76040727, 0, 0.6494465, 6.015035, 0, 8.065389)
 script = ExtResource("19")
-animation_to_play = "agitated"
+animation_to_play = "shake"
 
 [node name="LeftDoor" type="Marker3D" parent="AnimatronicPositionsContainers/SpringyClownPositionsContainer" unique_id=1733835606]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3.2383962, 0, -0.8665963)
@@ -344,12 +344,12 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 
 script = ExtResource("18")
 
 [node name="ToyFactory" type="Marker3D" parent="AnimatronicPositionsContainers/PorcelainBallerinaPositionsContainer" unique_id=117391043]
-transform = Transform3D(-0.99999994, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0, -0.99999994, 4.213236, 0, 41.692394)
+transform = Transform3D(0.47318, 0, -0.88096577, 0, 1, 0, 0.88096577, 0, 0.47318, 3.9053266, 0.10305524, 42.686375)
 script = ExtResource("19")
 animation_to_play = "normal"
 
 [node name="FactoryTransferCorridor" type="Marker3D" parent="AnimatronicPositionsContainers/PorcelainBallerinaPositionsContainer" unique_id=249556045]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9452183, 0, 38.1248)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6368885, 0, 37.71651)
 script = ExtResource("19")
 animation_to_play = "arabesque"
 
@@ -359,12 +359,12 @@ script = ExtResource("19")
 animation_to_play = "pirouette"
 
 [node name="PackingRoom" type="Marker3D" parent="AnimatronicPositionsContainers/PorcelainBallerinaPositionsContainer" unique_id=1556350801]
-transform = Transform3D(0.817, 0, -0.576, 0, 1, 0, 0.576, 0, 0.817, -19.233255, 0, 28.992546)
+transform = Transform3D(0.817, 0, -0.576, 0, 1, 0, 0.576, 0, 0.817, -17.221466, 0, 24.448492)
 script = ExtResource("19")
 animation_to_play = "pirouette"
 
 [node name="LoadingBay" type="Marker3D" parent="AnimatronicPositionsContainers/PorcelainBallerinaPositionsContainer" unique_id=1556350802]
-transform = Transform3D(-0.964, 0, 0.265, 0, 1, 0, -0.265, 0, -0.964, -25.834505, 2.166303, 15.531007)
+transform = Transform3D(0.9897207, 0, 0.14132892, 0, 0.9999999, 0, -0.14132892, 0, 0.9897207, -25.834505, 2.0179813, 15.531007)
 script = ExtResource("19")
 animation_to_play = "crawling"
 
@@ -374,7 +374,7 @@ script = ExtResource("19")
 animation_to_play = "arabesque"
 
 [node name="InventoryCheckRoom" type="Marker3D" parent="AnimatronicPositionsContainers/PorcelainBallerinaPositionsContainer" unique_id=1613483291]
-transform = Transform3D(-0.99874586, 0, 0.05006737, 0, 1, 0, -0.05006737, 0, -0.99874586, -22.042002, 0, 16.744493)
+transform = Transform3D(-0.99874586, 0, 0.05006737, 0, 1, 0, -0.05006737, 0, -0.99874586, -20.269424, 0, 18.954615)
 script = ExtResource("19")
 animation_to_play = "pirouette"
 
@@ -398,12 +398,12 @@ script = ExtResource("19")
 animation_to_play = "normal"
 
 [node name="FactoryTransferCorridor" type="Marker3D" parent="AnimatronicPositionsContainers/BurnedPlushBotPositionsContainer" unique_id=1169606631]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.68035996, 0, 34.691902)
+transform = Transform3D(0.9515881, 0, 0.30737612, 0, 1, 0, -0.30737612, 0, 0.9515881, 0.4384362, 0, 35.432693)
 script = ExtResource("19")
-animation_to_play = "normal"
+animation_to_play = "reach"
 
 [node name="PartsReturnsStorageRoom" type="Marker3D" parent="AnimatronicPositionsContainers/BurnedPlushBotPositionsContainer" unique_id=1169700101]
-transform = Transform3D(-0.024933081, 0, 0.999666, 0, 1, 0, -0.999666, 0, -0.024933081, 17.232378, 0, 25.727242)
+transform = Transform3D(-0.22449386, 0, 0.9744517, 0, 1, 0, -0.9744517, 0, -0.22449386, 16.044289, 0.5, 25.727)
 script = ExtResource("19")
 animation_to_play = "crawling"
 
@@ -413,12 +413,12 @@ script = ExtResource("19")
 animation_to_play = "stare"
 
 [node name="PackingRoom" type="Marker3D" parent="AnimatronicPositionsContainers/BurnedPlushBotPositionsContainer" unique_id=1169700102]
-transform = Transform3D(-0.19207245, 0, 0.9810061, 0, 1, 0, -0.9810061, 0, -0.19207245, -12.992919, 0, 23.471107)
+transform = Transform3D(0.20970829, 0, 0.97738796, 0, 1, 0, -0.97738796, 0, 0.20970829, -12.992919, 0, 24.09332)
 script = ExtResource("19")
 animation_to_play = "reach"
 
 [node name="InventoryCheckRoom" type="Marker3D" parent="AnimatronicPositionsContainers/BurnedPlushBotPositionsContainer" unique_id=997522403]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.317968, 0, 19.09703)
+transform = Transform3D(0.8084437, 0, 0.58857346, 0, 1, 0, -0.58857346, 0, 0.8084437, -17.271505, 0, 18.362799)
 script = ExtResource("19")
 animation_to_play = "slump"
 
