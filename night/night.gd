@@ -37,6 +37,7 @@ func _ready() -> void:
 		(node as DoorButton).pressed.connect(_on_door_button_pressed)
 
 	hud.monitor_requested.connect(toggle_monitor)
+	hud.quit_confirmed.connect(quit_to_menu)
 
 	power_system.power_changed.connect(hud.set_power)
 	power_system.power_depleted.connect(_on_power_depleted)
@@ -110,6 +111,7 @@ func trigger_game_over(animatronic: AnimatronicBase) -> void:
 	if game_over or night_complete:
 		return
 	game_over = true
+	hud.hide_quit_button()
 	_stop_animatronics()
 	power_system.stop()
 	left_door.force_open()
@@ -137,6 +139,12 @@ func night_done() -> void:
 	_stop_animatronics()
 	power_system.stop()
 	get_tree().change_scene_to_file("res://night/six_am/six_am.tscn")
+
+
+## Abandons the night without saving progress; the tree must be unpaused or the menu would load frozen.
+func quit_to_menu() -> void:
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://main_menu/main_menu.tscn")
 
 
 func _stop_animatronics() -> void:

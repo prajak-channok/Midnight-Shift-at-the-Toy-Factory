@@ -2,8 +2,160 @@
 
 [ext_resource type="Script" uid="uid://c70o4ylpbc3os" path="res://player_gui/player_gui.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://c0bh75lyk1vh3" path="res://player_gui/monitor_button.png" id="2_fo4co"]
+[ext_resource type="FontFile" uid="uid://cnxaexrmbbmvj" path="res://main_menu/fonts/RubikGlitch-Regular.ttf" id="3_rubik"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_focus"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_purple_hover"]
+content_margin_left = 22.0
+content_margin_top = 8.0
+content_margin_right = 22.0
+content_margin_bottom = 10.0
+bg_color = Color(0.18, 0.1, 0.27, 0.96)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 5
+border_color = Color(0.55, 0.38, 0.78, 1)
+shadow_color = Color(0.5, 0.3, 0.8, 0.35)
+shadow_size = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_purple_normal"]
+content_margin_left = 22.0
+content_margin_top = 8.0
+content_margin_right = 22.0
+content_margin_bottom = 10.0
+bg_color = Color(0.075, 0.045, 0.11, 0.92)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 5
+border_color = Color(0.32, 0.2, 0.46, 1)
+shadow_color = Color(0, 0, 0, 0.7)
+shadow_size = 4
+shadow_offset = Vector2(2, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_purple_pressed"]
+content_margin_left = 22.0
+content_margin_top = 11.0
+content_margin_right = 22.0
+content_margin_bottom = 7.0
+bg_color = Color(0.38, 0.24, 0.55, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.8, 0.7, 0.95, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_danger_hover"]
+content_margin_left = 22.0
+content_margin_top = 8.0
+content_margin_right = 22.0
+content_margin_bottom = 10.0
+bg_color = Color(0.17, 0.06, 0.12, 0.96)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 5
+border_color = Color(0.62, 0.16, 0.24, 1)
+shadow_color = Color(0.8, 0.15, 0.2, 0.3)
+shadow_size = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_danger_pressed"]
+content_margin_left = 22.0
+content_margin_top = 11.0
+content_margin_right = 22.0
+content_margin_bottom = 7.0
+bg_color = Color(0.36, 0.07, 0.11, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.95, 0.5, 0.52, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_primary_hover"]
+content_margin_left = 28.0
+content_margin_top = 12.0
+content_margin_right = 28.0
+content_margin_bottom = 14.0
+bg_color = Color(0.47, 0.3, 0.7, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 5
+border_color = Color(0.88, 0.78, 1, 1)
+shadow_color = Color(0.6, 0.4, 0.9, 0.55)
+shadow_size = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_primary_normal"]
+content_margin_left = 28.0
+content_margin_top = 12.0
+content_margin_right = 28.0
+content_margin_bottom = 14.0
+bg_color = Color(0.36, 0.22, 0.55, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 5
+border_color = Color(0.75, 0.6, 0.95, 1)
+shadow_color = Color(0.5, 0.3, 0.8, 0.4)
+shadow_size = 10
+shadow_offset = Vector2(0, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_primary_pressed"]
+content_margin_left = 28.0
+content_margin_top = 15.0
+content_margin_right = 28.0
+content_margin_bottom = 11.0
+bg_color = Color(0.64, 0.47, 0.88, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.95, 0.9, 1, 1)
+
+[sub_resource type="Theme" id="Theme_dark_purple"]
+Button/colors/font_color = Color(0.78, 0.7, 0.92, 1)
+Button/colors/font_hover_color = Color(0.93, 0.88, 1, 1)
+Button/colors/font_outline_color = Color(0.02, 0.02, 0.03, 1)
+Button/colors/font_pressed_color = Color(0.08, 0.04, 0.12, 1)
+Button/constants/outline_size = 4
+Button/font_sizes/font_size = 22
+Button/styles/focus = SubResource("StyleBoxEmpty_focus")
+Button/styles/hover = SubResource("StyleBoxFlat_purple_hover")
+Button/styles/normal = SubResource("StyleBoxFlat_purple_normal")
+Button/styles/pressed = SubResource("StyleBoxFlat_purple_pressed")
+DangerButton/base_type = &"Button"
+DangerButton/colors/font_color = Color(0.92, 0.2, 0.22, 1)
+DangerButton/colors/font_hover_color = Color(1, 0.38, 0.4, 1)
+DangerButton/colors/font_pressed_color = Color(1, 0.86, 0.86, 1)
+DangerButton/styles/hover = SubResource("StyleBoxFlat_danger_hover")
+DangerButton/styles/pressed = SubResource("StyleBoxFlat_danger_pressed")
+PrimaryButton/base_type = &"Button"
+PrimaryButton/colors/font_color = Color(0.98, 0.95, 1, 1)
+PrimaryButton/colors/font_hover_color = Color(1, 1, 1, 1)
+PrimaryButton/colors/font_pressed_color = Color(0.12, 0.06, 0.2, 1)
+PrimaryButton/font_sizes/font_size = 26
+PrimaryButton/styles/hover = SubResource("StyleBoxFlat_primary_hover")
+PrimaryButton/styles/normal = SubResource("StyleBoxFlat_primary_normal")
+PrimaryButton/styles/pressed = SubResource("StyleBoxFlat_primary_pressed")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_purple_popup_panel"]
+content_margin_left = 28.0
+content_margin_top = 14.0
+content_margin_right = 28.0
+content_margin_bottom = 20.0
+bg_color = Color(0.035, 0.025, 0.05, 0.98)
+border_width_left = 3
+border_width_top = 8
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.3, 0.19, 0.43, 1)
+shadow_color = Color(0.45, 0.25, 0.7, 0.14)
+shadow_size = 16
 
 [node name="PlayerControlsGUI" type="Control" unique_id=1149973589]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -29,9 +181,9 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -275.0
+offset_left = -215.0
 offset_top = -60.0
-offset_right = 275.0
+offset_right = 335.0
 offset_bottom = -10.0
 grow_horizontal = 2
 grow_vertical = 0
@@ -40,6 +192,100 @@ texture_normal = ExtResource("2_fo4co")
 texture_hover = ExtResource("2_fo4co")
 ignore_texture_size = true
 stretch_mode = 0
+
+[node name="QuitButton" type="Button" parent="." unique_id=1068101710]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 17.0
+offset_top = -62.0
+offset_right = 247.0
+offset_bottom = -12.0
+grow_vertical = 0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = SubResource("Theme_dark_purple")
+theme_override_fonts/font = ExtResource("3_rubik")
+theme_override_font_sizes/font_size = 20
+text = "FLEE THE SHIFT"
+
+[node name="QuitPopup" type="Control" parent="." unique_id=1068101711]
+unique_name_in_owner = true
+visible = false
+z_index = 10
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Dim" type="ColorRect" parent="QuitPopup" unique_id=1068101712]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.8)
+
+[node name="CenterContainer" type="CenterContainer" parent="QuitPopup" unique_id=1068101713]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="PanelContainer" parent="QuitPopup/CenterContainer" unique_id=1068101714]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_purple_popup_panel")
+
+[node name="VBox" type="VBoxContainer" parent="QuitPopup/CenterContainer/Panel" unique_id=1068101715]
+layout_mode = 2
+theme = SubResource("Theme_dark_purple")
+theme_override_constants/separation = 16
+
+[node name="Title" type="Label" parent="QuitPopup/CenterContainer/Panel/VBox" unique_id=1068101716]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6, 0.47, 0.8, 1)
+theme_override_font_sizes/font_size = 28
+text = "ABANDON YOUR POST?"
+horizontal_alignment = 1
+
+[node name="Message" type="Label" parent="QuitPopup/CenterContainer/Panel/VBox" unique_id=1068101717]
+custom_minimum_size = Vector2(460, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.72, 0.67, 0.8, 1)
+theme_override_font_sizes/font_size = 19
+text = "Run now and tonight's shift is lost. The toys will remember that you left."
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Buttons" type="HBoxContainer" parent="QuitPopup/CenterContainer/Panel/VBox" unique_id=1068101718]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="CancelButton" type="Button" parent="QuitPopup/CenterContainer/Panel/VBox/Buttons" unique_id=1068101719]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(230, 0)
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_type_variation = &"PrimaryButton"
+text = "STAY AT YOUR POST"
+
+[node name="ConfirmQuitButton" type="Button" parent="QuitPopup/CenterContainer/Panel/VBox/Buttons" unique_id=1068101720]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_type_variation = &"DangerButton"
+text = "RUN AWAY"
 
 [connection signal="mouse_entered" from="Monitor" to="." method="_on_monitor_mouse_entered"]
 [connection signal="pressed" from="Monitor" to="." method="_on_monitor_pressed"]
