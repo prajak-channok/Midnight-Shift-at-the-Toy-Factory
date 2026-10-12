@@ -17,7 +17,7 @@ func toggle_fullscreen() -> void:
 	if OS.has_feature("mobile"):
 		DisplayServer.screen_set_orientation(DisplayServer.SCREEN_LANDSCAPE)
 
-	if _is_fullscreen():
+	if is_fullscreen():
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 		return
 
@@ -26,6 +26,14 @@ func toggle_fullscreen() -> void:
 		JavaScriptBridge.eval(WEB_LOCK_LANDSCAPE_JS)
 
 
-func _is_fullscreen() -> bool:
+func is_fullscreen() -> bool:
 	var mode := DisplayServer.window_get_mode()
 	return mode == DisplayServer.WINDOW_MODE_FULLSCREEN or mode == DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN
+
+
+func is_muted() -> bool:
+	return AudioServer.is_bus_mute(AudioServer.get_bus_index(&"Master"))
+
+
+func toggle_mute() -> void:
+	AudioServer.set_bus_mute(AudioServer.get_bus_index(&"Master"), not is_muted())
