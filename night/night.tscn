@@ -431,8 +431,8 @@ animation_to_play = "stare"
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
 
 [node name="SpringyClownJumpscare" type="Node3D" parent="AnimatronicJumpscares" unique_id=419895813]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35, -0.2, 0)
 script = ExtResource("12")
-audio_delay = 1.0
 
 [node name="springy_clown_model" parent="AnimatronicJumpscares/SpringyClownJumpscare" unique_id=737317356 instance=ExtResource("13")]
 transform = Transform3D(1.1924882e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924882e-08, 0, 0, 0)
