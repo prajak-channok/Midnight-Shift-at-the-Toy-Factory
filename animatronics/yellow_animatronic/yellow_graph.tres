@@ -14,40 +14,52 @@ destinations = Dictionary[StringName, float]({
 script = ExtResource("2_node")
 position_name = &"FactoryTransferCorridor"
 destinations = Dictionary[StringName, float]({
-&"MainStorageHall": 70.0,
-&"ToyFactory": 30.0
+&"MainStorageHall": 80.0,
+&"ToyFactory": 20.0
 })
 
 [sub_resource type="Resource" id="Resource_main"]
 script = ExtResource("2_node")
 position_name = &"MainStorageHall"
 destinations = Dictionary[StringName, float]({
-&"FactoryTransferCorridor": 20.0,
-&"InventoryCheckRoom": 40.0,
-&"StaffRoom": 40.0
+&"FactoryTransferCorridor": 5.0,
+&"InventoryCheckRoom": 30.0,
+&"PackingRoom": 25.0,
+&"RightHall": 40.0
 })
 
-[sub_resource type="Resource" id="Resource_staff"]
+[sub_resource type="Resource" id="Resource_packing"]
 script = ExtResource("2_node")
-position_name = &"StaffRoom"
+position_name = &"PackingRoom"
 destinations = Dictionary[StringName, float]({
-&"MainStorageHall": 100.0
+&"LoadingBay": 70.0,
+&"MainStorageHall": 30.0
+})
+
+[sub_resource type="Resource" id="Resource_loading"]
+script = ExtResource("2_node")
+position_name = &"LoadingBay"
+destinations = Dictionary[StringName, float]({
+&"InventoryCheckRoom": 70.0,
+&"PackingRoom": 30.0
 })
 
 [sub_resource type="Resource" id="Resource_inv"]
 script = ExtResource("2_node")
 position_name = &"InventoryCheckRoom"
 destinations = Dictionary[StringName, float]({
-&"MainStorageHall": 35.0,
-&"RightHall": 65.0
+&"LoadingBay": 10.0,
+&"MainStorageHall": 10.0,
+&"RightHall": 80.0
 })
 
 [sub_resource type="Resource" id="Resource_rhall"]
 script = ExtResource("2_node")
 position_name = &"RightHall"
 destinations = Dictionary[StringName, float]({
-&"InventoryCheckRoom": 25.0,
-&"RightDoor": 75.0
+&"InventoryCheckRoom": 12.0,
+&"MainStorageHall": 8.0,
+&"RightDoor": 80.0
 })
 
 [sub_resource type="Resource" id="Resource_rdoor"]
@@ -64,4 +76,4 @@ decision_time_min = 3.0
 decision_time_max = 3.1
 blocked_retreat_delay_min = 3.0
 blocked_retreat_delay_max = 5.0
-nodes = Array[ExtResource("2_node")]([SubResource("Resource_toy"), SubResource("Resource_ftc"), SubResource("Resource_main"), SubResource("Resource_staff"), SubResource("Resource_inv"), SubResource("Resource_rhall"), SubResource("Resource_rdoor")])
+nodes = Array[ExtResource("2_node")]([SubResource("Resource_toy"), SubResource("Resource_ftc"), SubResource("Resource_main"), SubResource("Resource_packing"), SubResource("Resource_loading"), SubResource("Resource_inv"), SubResource("Resource_rhall"), SubResource("Resource_rdoor")])
