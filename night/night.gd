@@ -110,12 +110,16 @@ func trigger_game_over(animatronic: AnimatronicBase) -> void:
 	left_door.force_open()
 	right_door.force_open()
 
+	player.lock_view()
 	await player.force_monitor_down()
+	await player.center_view()
 	await get_tree().create_timer(0.25).timeout
 
 	if animatronic.jumpscare == null:
 		push_error("Night: animatronic '%s' has no jumpscare assigned." % animatronic.name)
 		return
+	for map_animatronic in animatronics:
+		map_animatronic.hide()
 	animatronic.jumpscare.play_jumpscare()
 
 
