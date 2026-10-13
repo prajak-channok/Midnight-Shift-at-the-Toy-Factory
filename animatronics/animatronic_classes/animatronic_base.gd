@@ -13,6 +13,7 @@ const MAX_AI_LEVEL := 20
 @export var jumpscare: AnimatronicJumpscare ## Played when this animatronic reaches the office.
 
 var ai_level := 0
+var forces_monitor_down := false ## True if the camera monitor must be forced down before the jumpscare plays.
 
 
 func start_ai() -> void:

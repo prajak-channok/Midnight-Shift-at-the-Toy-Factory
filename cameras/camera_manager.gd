@@ -9,6 +9,12 @@ class_name CameraManager
 ## which matches the AnimatronicPosition name of that room.
 signal audio_lure_requested(room: StringName)
 
+## Emitted when the player starts ([param held] true) or stops holding the "wind up" button.
+signal wind_up_held_changed(held: bool)
+
+const WIND_READY_TEXT := "WIND UP"
+const WIND_HELD_TEXT := "WINDING..."
+
 const DEFAULT_CAM_INDEX = 0
 const LURE_MARKER_COLOR := Color(0.95, 0.7, 0.25)
 
@@ -35,6 +41,8 @@ var _lure_tween: Tween
 @onready var audio_lure_button: AudioLureButton = %AudioLureButton
 @onready var audio_lure_hint: Label = %AudioLureHint
 @onready var audio_lure_sound: AudioStreamPlayer = $AudioLureSound
+@onready var wind_up_button: Button = %WindUpButton
+@onready var wind_cooldown_ring: CooldownRing = %WindCooldownRing
 
 
 func _ready():
@@ -42,6 +50,10 @@ func _ready():
 	audio_lure_button.hide()
 	audio_lure_hint.hide()
 	audio_lure_button.pressed.connect(_on_audio_lure_button_pressed)
+	wind_up_button.hide()
+	wind_cooldown_ring.hide()
+	wind_up_button.button_down.connect(_set_wind_up_held.bind(true))
+	wind_up_button.button_up.connect(_set_wind_up_held.bind(false))
 
 	# Add all cameras to the camera dictionary
 	# Each key is the name of the camera in lowercase and the value is a reference to the Camera3D node.
@@ -97,6 +109,18 @@ func setup_audio_lure(cooldown : float):
 	audio_lure_button.show()
 
 
+## Shows the "wind up" button and its cooldown ring.
+func setup_wind_up():
+	wind_up_button.show()
+	wind_cooldown_ring.show()
+
+
+## [param ratio] is the remaining share of the wind-up timer (1 = full); [param urgent] turns the ring red.
+func set_wind_up_progress(ratio : float, urgent : bool):
+	wind_cooldown_ring.ratio = ratio
+	wind_cooldown_ring.urgent = urgent
+
+
 func set_current_cam(cam : String):
 	if _lure_selecting:
 		_play_audio_lure(cam)
@@ -136,7 +160,15 @@ func disable_camera_display():
 		selected_cam.current = false
 	cam_ui.visible = false
 	_set_lure_selecting(false)
+	_set_wind_up_held(false)
 	_update_lights()
+
+
+func _set_wind_up_held(held : bool):
+	wind_up_button.text = WIND_HELD_TEXT if held else WIND_READY_TEXT
+	if held:
+		cam_click_sound.play()
+	wind_up_held_changed.emit(held)
 
 
 func _on_audio_lure_button_pressed():
