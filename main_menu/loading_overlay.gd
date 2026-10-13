@@ -9,12 +9,29 @@ const SPIN_SPEED := TAU * 0.9
 
 const TITLE_TEXT := "Loading..."
 const HINT_TEXT := "The first load may take longer than usual."
+const GROUP := &"loading_overlay"
+
+var _dim: ColorRect
+
+
+## Frees every overlay; the night calls this once it has finished warming up.
+static func dismiss(tree: SceneTree) -> void:
+	for overlay in tree.get_nodes_in_group(GROUP):
+		overlay.queue_free()
+
+
+## Hides whatever is behind the overlay, so scene setup can happen unseen.
+func make_opaque() -> void:
+	_dim.color.a = 1.0
 
 
 func _init() -> void:
 	layer = 100
+	process_mode = Node.PROCESS_MODE_ALWAYS  # keeps spinning while the night is paused
+	add_to_group(GROUP)
 
 	var dim := ColorRect.new()
+	_dim = dim
 	dim.color = Color(0, 0, 0, 0.78)
 	dim.set_anchors_preset(Control.PRESET_FULL_RECT)
 	dim.mouse_filter = Control.MOUSE_FILTER_STOP  # swallow clicks so nothing underneath can be pressed

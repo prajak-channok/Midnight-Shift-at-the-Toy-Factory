@@ -29,6 +29,14 @@ const LURE_MARKER_COLOR := Color(0.95, 0.7, 0.25)
 ## Cameras whose lights stay on even when the monitor is down because they are visible from the office.
 @export var always_lit_cams: PackedStringArray = ["LeftHall", "RightHall"]
 
+## Parent of the room scenes (FactoryMap). Only the rooms visible from the current view are rendered.
+@export var rooms_root: Node3D
+## Rooms that can be seen from the office; the halls stay on because the doors and windows look into them.
+@export var office_rooms: PackedStringArray = ["SecurityRoom", "LeftHall", "RightHall"]
+
+## Rooms a camera can see besides its own, e.g. the corridor camera looks into the ToyFactory.
+@export var extra_cam_rooms: Dictionary = {"FactoryTransferCorridor": ["ToyFactory"]}
+
 var selected_cam : Camera3D
 var all_cams = {}
 var cam_lights = {}	# Camera3D name -> Array[Light3D]
@@ -88,6 +96,55 @@ func _ready():
 
 	_collect_cam_lights()
 	_update_lights()
+	_update_rooms()
+	_warm_up()
+
+
+## While the loading overlay is still up, the night is paused and every camera is shown for one frame,
+## so the shaders of each room and light setup compile (one frame at a time) behind the loading screen
+## instead of causing a hitch the first time the player opens that camera.
+func _warm_up():
+	var tree := get_tree()
+	if tree.get_nodes_in_group(LoadingOverlay.GROUP).is_empty() or all_cams.is_empty():
+		return
+	tree.paused = true
+	await tree.process_frame # the office gets drawn first
+
+	var office_cam := selected_cam
+	cam_ui.visible = true
+	for cam: Camera3D in all_cams.values():
+		selected_cam.current = false
+		selected_cam = cam
+		cam.current = true
+		_update_lights()
+		_update_rooms()
+		await tree.process_frame
+	selected_cam.current = false
+	selected_cam = office_cam
+	cam_ui.visible = false
+	_update_lights()
+	_update_rooms()
+
+	await tree.process_frame
+	tree.paused = false
+	LoadingOverlay.dismiss(tree)
+
+
+## Each camera only sees the room it is named after, and the office only sees [member office_rooms];
+## everything else is hidden so its meshes are not sent to the GPU.
+func _update_rooms():
+	if rooms_root == null:
+		return
+	var watching: bool = cam_ui.visible and selected_cam != null
+	var extra: Array = []
+	if watching:
+		extra = extra_cam_rooms.get(String(selected_cam.name), [])
+	for room in rooms_root.get_children():
+		if room is Node3D:
+			if watching:
+				room.visible = room.name == selected_cam.name or String(room.name) in extra
+			else:
+				room.visible = office_rooms.has(String(room.name))
 
 
 func _collect_cam_lights():
@@ -158,6 +215,7 @@ func set_current_cam(cam : String):
 	selected_cam = all_cams[cam.to_lower()]
 	selected_cam.current = true
 	_update_lights()
+	_update_rooms()
 	_update_wind_up_visibility()
 	cam_click_sound.play()
 	lose_communication(1.0)
@@ -182,6 +240,7 @@ func enable_camera_display():
 		selected_cam.current = true
 	cam_ui.visible = true
 	_update_lights()
+	_update_rooms()
 	_update_wind_up_visibility()
 
 
@@ -192,6 +251,7 @@ func disable_camera_display():
 	_set_lure_selecting(false)
 	_set_wind_up_held(false)
 	_update_lights()
+	_update_rooms()
 	_update_wind_up_visibility()
 
 

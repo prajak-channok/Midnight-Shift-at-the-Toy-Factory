@@ -160,8 +160,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.3789568)
 gui_node = NodePath("../PlayerControlsGUI")
 cam_manager = NodePath("../CameraManager")
 
-[node name="CameraManager" parent="." unique_id=200658623 node_paths=PackedStringArray("lights_root") instance=ExtResource("6")]
+[node name="CameraManager" parent="." unique_id=200658623 node_paths=PackedStringArray("lights_root", "rooms_root") instance=ExtResource("6")]
 lights_root = NodePath("../Lights")
+rooms_root = NodePath("../FactoryMap")
 
 [node name="MainStorageHall" parent="CameraManager" unique_id=1850270255 instance=ExtResource("7")]
 transform = Transform3D(0.9365719, -0.2506199, 0.24499571, 0.08764559, 0.8443095, 0.5286394, -0.33933973, -0.473636, 0.8127222, -3.893489, 4.8721695, -12.408768)

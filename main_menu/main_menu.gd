@@ -79,23 +79,27 @@ func start_night(night: int) -> void:
 
 
 ## Shows the loading overlay, then loads the scene in the background so the overlay keeps animating.
+## The overlay is moved to the root so it survives the scene change; the night dismisses it once it has warmed up.
 func _load_and_change_scene(path: String) -> void:
-	add_child(LoadingOverlay.new())
+	var overlay := LoadingOverlay.new()
+	add_child(overlay)
 	# Let the overlay get drawn before any (possibly blocking) loading begins.
 	await get_tree().process_frame
 	await get_tree().process_frame
 
-	if ResourceLoader.load_threaded_request(path) != OK:
-		get_tree().change_scene_to_file(path)
-		return
-	while ResourceLoader.load_threaded_get_status(path) == ResourceLoader.THREAD_LOAD_IN_PROGRESS:
-		await get_tree().process_frame
+	var scene: PackedScene = null
+	if ResourceLoader.load_threaded_request(path) == OK:
+		while ResourceLoader.load_threaded_get_status(path) == ResourceLoader.THREAD_LOAD_IN_PROGRESS:
+			await get_tree().process_frame
+		scene = ResourceLoader.load_threaded_get(path) as PackedScene
 
-	var scene := ResourceLoader.load_threaded_get(path) as PackedScene
+	overlay.make_opaque()
+	remove_child(overlay)
+	get_tree().root.add_child(overlay)
 	if scene == null:
 		get_tree().change_scene_to_file(path)
-		return
-	get_tree().change_scene_to_packed(scene)
+	else:
+		get_tree().change_scene_to_packed(scene)
 
 
 func _on_mute_pressed() -> void:
