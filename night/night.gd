@@ -5,6 +5,13 @@ class_name Night
 @export var animatronics: Array[AnimatronicBase] = []
 @export var difficulties: Array[NightDifficulty] ## Index 0 = night 1.
 
+const NIGHT_HINT_TITLE := "It seems some things are changing..."
+## Night number -> second line of the start-of-night hint. Nights missing here show no hint.
+const NIGHT_HINT_DETAIL := {
+	2: "Some of them respond to PLAY AUDIO.",
+	4: "Try checking CAM 5.",
+}
+
 @onready var left_door: Door = $Doors/LeftDoor
 @onready var right_door: Door = $Doors/RightDoor
 @onready var left_light: DoorLight = $DoorLights/LeftHallButtonLight
@@ -54,6 +61,9 @@ func _ready() -> void:
 
 	for animatronic in animatronics:
 		animatronic.start_ai()
+
+	if NIGHT_HINT_DETAIL.has(Global.current_night):
+		hud.show_hint(NIGHT_HINT_TITLE, NIGHT_HINT_DETAIL[Global.current_night])
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -112,6 +122,7 @@ func trigger_game_over(animatronic: AnimatronicBase) -> void:
 		return
 	game_over = true
 	hud.hide_quit_button()
+	hud.hide_hint()
 	_stop_animatronics()
 	power_system.stop()
 	left_door.force_open()

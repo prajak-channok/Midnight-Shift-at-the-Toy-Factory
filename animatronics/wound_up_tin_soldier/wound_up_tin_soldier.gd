@@ -7,7 +7,7 @@ class_name WoundUpTinSoldier
 
 const ACTIVE_NIGHTS: Array[int] = [4, 5]
 const START_COOLDOWN := 25.0
-const WIND_RATE := 1.5 ## Timer seconds gained per real second while winding.
+const WIND_RATE := 2.5 ## Timer seconds gained per real second while winding.
 const AWAKE_AT := 5.0
 const WARNING_AT := 3.0 ## The monitor's cooldown ring turns red at or below this.
 

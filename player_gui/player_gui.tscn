@@ -211,6 +211,39 @@ theme_override_fonts/font = ExtResource("3_rubik")
 theme_override_font_sizes/font_size = 20
 text = "FLEE THE SHIFT"
 
+[node name="Hint" type="VBoxContainer" parent="." unique_id=64031356]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -206.0
+offset_right = 640.0
+offset_bottom = -110.0
+grow_vertical = 0
+mouse_filter = 2
+theme_override_constants/separation = 4
+alignment = 2
+
+[node name="HintTitle" type="Label" parent="Hint" unique_id=688650246]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_rubik")
+theme_override_font_sizes/font_size = 32
+
+[node name="HintDetail" type="Label" parent="Hint" unique_id=2126966520]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_rubik")
+theme_override_font_sizes/font_size = 20
+
 [node name="QuitPopup" type="Control" parent="." unique_id=1068101711]
 unique_name_in_owner = true
 visible = false

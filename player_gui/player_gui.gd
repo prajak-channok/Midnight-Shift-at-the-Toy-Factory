@@ -7,13 +7,21 @@ signal quit_confirmed
 ## A tap on touch screens also fires mouse_entered right before pressed; presses this soon after a hover are ignored.
 const HOVER_PRESS_GRACE_MSEC := 300
 
+const HINT_DURATION := 12.0
+const HINT_BLINK_PERIOD := 3.0
+const HINT_DIM_ALPHA := 0.15
+
 @onready var status: Label = $Status
 @onready var quit_button: Button = %QuitButton
 @onready var quit_popup: Control = %QuitPopup
 @onready var cancel_button: Button = %CancelButton
 @onready var confirm_quit_button: Button = %ConfirmQuitButton
+@onready var hint: Control = %Hint
+@onready var hint_title: Label = %HintTitle
+@onready var hint_detail: Label = %HintDetail
 
 var _last_hover_msec: int = -HOVER_PRESS_GRACE_MSEC
+var _hint_tween: Tween
 
 
 func _ready() -> void:
@@ -30,6 +38,30 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func hide_quit_button() -> void:
 	quit_button.hide()
+
+
+## Shows a blinking two-line hint above the quit button, then hides it after [param duration] seconds.
+func show_hint(title: String, detail: String, duration: float = HINT_DURATION) -> void:
+	hide_hint()
+	hint_title.text = title
+	hint_detail.text = detail
+	hint_detail.visible = not detail.is_empty()
+	hint.modulate.a = 1.0
+	hint.show()
+
+	var blinks := maxi(1, roundi(duration / HINT_BLINK_PERIOD))
+	_hint_tween = create_tween().set_pause_mode(Tween.TWEEN_PAUSE_STOP)
+	for i in blinks:
+		_hint_tween.tween_property(hint, "modulate:a", HINT_DIM_ALPHA, HINT_BLINK_PERIOD * 0.5)
+		_hint_tween.tween_property(hint, "modulate:a", 1.0, HINT_BLINK_PERIOD * 0.5)
+	_hint_tween.tween_callback(hint.hide)
+
+
+func hide_hint() -> void:
+	if _hint_tween != null:
+		_hint_tween.kill()
+		_hint_tween = null
+	hint.hide()
 
 
 func set_power(percent: int) -> void:
