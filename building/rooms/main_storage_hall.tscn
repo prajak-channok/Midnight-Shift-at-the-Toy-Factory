@@ -1,36 +1,22 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://cgg8rib48mlqh"]
 
-[ext_resource type="PackedScene" path="res://building/props/storage/storage_rack_bay.tscn" id="p_rack"]
-[ext_resource type="PackedScene" path="res://building/props/storage/big_crate.tscn" id="p_bcrate"]
-[ext_resource type="PackedScene" path="res://building/props/storage/wide_crate.tscn" id="p_wcrate"]
-[ext_resource type="PackedScene" path="res://building/props/storage/big_carton.tscn" id="p_carton"]
-[ext_resource type="PackedScene" path="res://building/props/storage/hand_truck.tscn" id="p_htruck"]
-[ext_resource type="PackedScene" path="res://building/props/storage/rolling_ladder.tscn" id="p_ladder"]
+[ext_resource type="PackedScene" path="res://building/props/factory/ash_pile.tscn" id="p_ash"]
 [ext_resource type="PackedScene" path="res://building/props/storage/aisle_sign.tscn" id="p_asign"]
-[ext_resource type="PackedScene" path="res://building/props/storage/floor_stripe.tscn" id="p_stripe"]
+[ext_resource type="PackedScene" path="res://building/props/storage/big_crate.tscn" id="p_bcrate"]
+[ext_resource type="PackedScene" path="res://building/props/loading/ceiling_beam.tscn" id="p_beam"]
+[ext_resource type="PackedScene" path="res://building/props/storage/big_carton.tscn" id="p_carton"]
+[ext_resource type="PackedScene" path="res://building/props/common/cardboard_box_burnt.tscn" id="p_cbox"]
+[ext_resource type="PackedScene" path="res://building/props/hall/hall_doorway.tscn" id="p_door"]
+[ext_resource type="PackedScene" path="res://building/props/factory/emergency_light.tscn" id="p_emerg"]
+[ext_resource type="PackedScene" path="res://building/props/storage/rolling_ladder.tscn" id="p_ladder"]
+[ext_resource type="PackedScene" path="res://building/props/storage/partition_east.tscn" id="p_peast"]
 [ext_resource type="PackedScene" path="res://building/props/storage/wall_pipe_run.tscn" id="p_pipes"]
 [ext_resource type="PackedScene" path="res://building/props/storage/partition_north.tscn" id="p_pnorth"]
-[ext_resource type="PackedScene" path="res://building/props/storage/partition_east.tscn" id="p_peast"]
-[ext_resource type="PackedScene" path="res://building/props/hall/hall_doorway.tscn" id="p_door"]
-[ext_resource type="PackedScene" path="res://building/props/factory/pallet.tscn" id="p_pallet"]
-[ext_resource type="PackedScene" path="res://building/props/factory/barrel.tscn" id="p_barrel"]
-[ext_resource type="PackedScene" path="res://building/props/factory/hazard_barrier.tscn" id="p_barrier"]
-[ext_resource type="PackedScene" path="res://building/props/loading/pallet_jack.tscn" id="p_pjack"]
-[ext_resource type="PackedScene" path="res://building/props/common/fire_extinguisher.tscn" id="p_extg"]
-[ext_resource type="PackedScene" path="res://building/props/factory/warning_sign.tscn" id="p_warn"]
-[ext_resource type="PackedScene" path="res://building/props/factory/emergency_light.tscn" id="p_emerg"]
+[ext_resource type="PackedScene" path="res://building/props/storage/storage_rack_bay.tscn" id="p_rack"]
 [ext_resource type="PackedScene" path="res://building/props/factory/soot_stain.tscn" id="p_soot"]
-[ext_resource type="PackedScene" path="res://building/props/factory/puddle.tscn" id="p_puddle"]
-[ext_resource type="PackedScene" path="res://building/props/factory/burned_teddy_fallen.tscn" id="p_teddy"]
-[ext_resource type="PackedScene" path="res://building/props/loading/ceiling_beam.tscn" id="p_beam"]
+[ext_resource type="PackedScene" uid="uid://c1d8n40rgkafn" path="res://building/props/factory/toy_box_burnt.tscn" id="p_tbox"]
+[ext_resource type="PackedScene" path="res://building/props/storage/wide_crate.tscn" id="p_wcrate"]
 [ext_resource type="PackedScene" path="res://building/props/factory/hanging_light_wreck.tscn" id="p_wreck"]
-[ext_resource type="PackedScene" path="res://building/props/factory/ash_pile.tscn" id="p_ash"]
-[ext_resource type="PackedScene" path="res://building/props/factory/toy_car.tscn" id="p_tcar"]
-[ext_resource type="PackedScene" path="res://building/props/factory/toy_blocks.tscn" id="p_tblocks"]
-[ext_resource type="PackedScene" path="res://building/props/factory/toy_box_burnt.tscn" id="p_tbox"]
-[ext_resource type="PackedScene" path="res://building/props/common/cardboard_box_burnt.tscn" id="p_cbox"]
-[ext_resource type="PackedScene" path="res://building/props/factory/doll_head.tscn" id="p_dhead"]
-[ext_resource type="PackedScene" path="res://building/props/factory/rubble_pile.tscn" id="p_rubble"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f6023"]
 albedo_color = Color(0.28, 0.27, 0.24, 1)
@@ -101,301 +87,193 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -12.
 cast_shadow = 2
 mesh = SubResource("QuadMesh_6dmf1")
 
-[node name="Props" type="Node3D" parent="."]
+[node name="Props" type="Node3D" parent="." unique_id=1711540191]
 
-[node name="PartitionNorth" type="Node3D" parent="Props" instance=ExtResource("p_pnorth")]
-transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, -4.8, 0, -2.7)
+[node name="PartitionNorth" parent="Props" unique_id=251348349 instance=ExtResource("p_pnorth")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8, 0, -2.7)
 
-[node name="PartitionEast" type="Node3D" parent="Props" instance=ExtResource("p_peast")]
-transform = Transform3D(0.00000, -0.00000, -1.00000, 0.00000, 1.00000, -0.00000, 1.00000, 0.00000, 0.00000, 2.8, 0, 4.225)
+[node name="PartitionEast" parent="Props" unique_id=1505621628 instance=ExtResource("p_peast")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 2.8, 0, 4.225)
 
-[node name="Doorway" type="Node3D" parent="Props" instance=ExtResource("p_door")]
-transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, -9.5, 0, -2.6)
+[node name="Doorway" parent="Props" unique_id=2051223377 instance=ExtResource("p_door")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0, -2.6)
 
-[node name="EmergN" type="Node3D" parent="Props" instance=ExtResource("p_emerg")]
-transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, -3.5, 3.2, -2.6)
+[node name="EmergN" parent="Props" unique_id=811628063 instance=ExtResource("p_emerg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 3.2, -2.6)
 
-[node name="Rack_R1_-10.1" type="Node3D" parent="Props" instance=ExtResource("p_rack")]
-transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, -10.1, 0, 7.6)
+[node name="Rack_R1_-10.1" parent="Props" unique_id=1148163933 instance=ExtResource("p_rack")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.1, 0, 7.6)
 
-[node name="Rack_R1_-7.7" type="Node3D" parent="Props" instance=ExtResource("p_rack")]
-transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, -7.7, 0, 7.6)
+[node name="Rack_R1_-7.7" parent="Props" unique_id=1198383302 instance=ExtResource("p_rack")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.7, 0, 7.6)
 
-[node name="Rack_R1_-5.3" type="Node3D" parent="Props" instance=ExtResource("p_rack")]
-transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, -5.3, 0, 7.6)
+[node name="Rack_R1_-5.3" parent="Props" unique_id=872461527 instance=ExtResource("p_rack")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.3, 0, 7.6)
 
-[node name="Rack_R1_-2.9" type="Node3D" parent="Props" instance=ExtResource("p_rack")]
-transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, -2.9, 0, 7.6)
+[node name="Rack_R1_-2.9" parent="Props" unique_id=1537516642 instance=ExtResource("p_rack")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9, 0, 7.6)
 
-[node name="Rack_R1_-0.5" type="Node3D" parent="Props" instance=ExtResource("p_rack")]
-transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, -0.5, 0, 7.6)
+[node name="Rack_R1_-0.5" parent="Props" unique_id=430162977 instance=ExtResource("p_rack")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 7.6)
 
-[node name="R1_B1_-10.1_a" type="Node3D" parent="Props" instance=ExtResource("p_bcrate")]
-transform = Transform3D(0.99849, 0.00000, 0.05486, 0.00000, 1.00000, -0.00000, -0.05486, 0.00000, 0.99849, -10.652, 0.155, 7.576)
+[node name="R1_W1_-7.7" parent="Props" unique_id=1623574200 instance=ExtResource("p_wcrate")]
+transform = Transform3D(0.99922, 0, 0.0395, 0, 1, 0, -0.0395, 0, 0.99922, -7.739, 0.155, 7.63)
 
-[node name="R1_B1_-10.1_b" type="Node3D" parent="Props" instance=ExtResource("p_bcrate")]
-transform = Transform3D(0.99936, 0.00000, 0.03579, 0.00000, 1.00000, -0.00000, -0.03579, 0.00000, 0.99936, -9.531, 0.155, 7.582)
+[node name="R1_B2_-7.7_a" parent="Props" unique_id=490535354 instance=ExtResource("p_bcrate")]
+transform = Transform3D(0.99854, 0, -0.05403, 0, 1, 0, 0.05403, 0, 0.99854, -8.298, 1.215, 7.564)
 
-[node name="R1_C2_-10.1_a" type="Node3D" parent="Props" instance=ExtResource("p_carton")]
-transform = Transform3D(0.99929, 0.00000, 0.03762, 0.00000, 1.00000, -0.00000, -0.03762, 0.00000, 0.99929, -10.692, 1.215, 7.565)
+[node name="R1_C1_-5.3_a" parent="Props" unique_id=1360304850 instance=ExtResource("p_carton")]
+transform = Transform3D(0.99992, 0, 0.01255, 0, 1, 0, -0.01255, 0, 0.99992, -5.876, 0.155, 7.605)
 
-[node name="R1_B2_-10.1_b" type="Node3D" parent="Props" instance=ExtResource("p_bcrate")]
-transform = Transform3D(0.99911, -0.00000, -0.04219, 0.00000, 1.00000, -0.00000, 0.04219, 0.00000, 0.99911, -9.519, 1.215, 7.621)
+[node name="R1_B1_-5.3_b" parent="Props" unique_id=233467414 instance=ExtResource("p_bcrate")]
+transform = Transform3D(0.99982, 0, -0.01871, 0, 1, 0, 0.01871, 0, 0.99982, -4.762, 0.155, 7.608)
 
-[node name="R1_W1_-7.7" type="Node3D" parent="Props" instance=ExtResource("p_wcrate")]
-transform = Transform3D(0.99922, 0.00000, 0.03950, 0.00000, 1.00000, -0.00000, -0.03950, 0.00000, 0.99922, -7.739, 0.155, 7.63)
+[node name="R1_W2_-2.9" parent="Props" unique_id=1456229876 instance=ExtResource("p_wcrate")]
+transform = Transform3D(0.99997, 0, -0.00836, 0, 1, 0, 0.00836, 0, 0.99997, -2.806, 1.215, 7.601)
 
-[node name="R1_B2_-7.7_a" type="Node3D" parent="Props" instance=ExtResource("p_bcrate")]
-transform = Transform3D(0.99854, -0.00000, -0.05403, 0.00000, 1.00000, -0.00000, 0.05403, 0.00000, 0.99854, -8.298, 1.215, 7.564)
+[node name="R1_B2_-0.5_a" parent="Props" unique_id=1109914662 instance=ExtResource("p_bcrate")]
+transform = Transform3D(0.99814, 0, -0.06089, 0, 1, 0, 0.06089, 0, 0.99814, -1.076, 1.215, 7.601)
 
-[node name="R1_C1_-5.3_a" type="Node3D" parent="Props" instance=ExtResource("p_carton")]
-transform = Transform3D(0.99992, 0.00000, 0.01255, 0.00000, 1.00000, -0.00000, -0.01255, 0.00000, 0.99992, -5.876, 0.155, 7.605)
+[node name="Rack_R2_-10.7" parent="Props" unique_id=1787342597 instance=ExtResource("p_rack")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.7, 0, 4.6)
 
-[node name="R1_B1_-5.3_b" type="Node3D" parent="Props" instance=ExtResource("p_bcrate")]
-transform = Transform3D(0.99982, -0.00000, -0.01871, 0.00000, 1.00000, -0.00000, 0.01871, 0.00000, 0.99982, -4.762, 0.155, 7.608)
+[node name="Rack_R2_-8.3" parent="Props" unique_id=1599856615 instance=ExtResource("p_rack")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.3, 0, 4.6)
 
-[node name="R1_B1_-2.9_a" type="Node3D" parent="Props" instance=ExtResource("p_bcrate")]
-transform = Transform3D(0.99997, 0.00000, 0.00831, 0.00000, 1.00000, -0.00000, -0.00831, 0.00000, 0.99997, -3.478, 0.155, 7.635)
+[node name="Rack_R2_-5.9" parent="Props" unique_id=893871222 instance=ExtResource("p_rack")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.9, 0, 4.6)
 
-[node name="R1_C1_-2.9_b" type="Node3D" parent="Props" instance=ExtResource("p_carton")]
-transform = Transform3D(0.99986, -0.00000, -0.01689, 0.00000, 1.00000, -0.00000, 0.01689, 0.00000, 0.99986, -2.274, 0.155, 7.604)
+[node name="Rack_R2_-3.5" parent="Props" unique_id=1498786862 instance=ExtResource("p_rack")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 4.6)
 
-[node name="R1_W2_-2.9" type="Node3D" parent="Props" instance=ExtResource("p_wcrate")]
-transform = Transform3D(0.99997, -0.00000, -0.00836, 0.00000, 1.00000, -0.00000, 0.00836, 0.00000, 0.99997, -2.806, 1.215, 7.601)
+[node name="R2_B1_-10.7_a" parent="Props" unique_id=2028585086 instance=ExtResource("p_bcrate")]
+transform = Transform3D(0.99995, 0, 0.00962, 0, 1, 0, -0.00962, 0, 0.99995, -11.328, 0.155, 4.598)
 
-[node name="R1_C1_-0.5_a" type="Node3D" parent="Props" instance=ExtResource("p_carton")]
-transform = Transform3D(0.99986, -0.00000, -0.01691, 0.00000, 1.00000, -0.00000, 0.01691, 0.00000, 0.99986, -1.123, 0.155, 7.563)
+[node name="R2_B2_-10.7_b" parent="Props" unique_id=1487054491 instance=ExtResource("p_bcrate")]
+transform = Transform3D(0.9994, 0, 0.03478, 0, 1, 0, -0.03478, 0, 0.9994, -10.132, 1.215, 4.561)
 
-[node name="R1_B2_-0.5_a" type="Node3D" parent="Props" instance=ExtResource("p_bcrate")]
-transform = Transform3D(0.99814, -0.00000, -0.06089, 0.00000, 1.00000, -0.00000, 0.06089, 0.00000, 0.99814, -1.076, 1.215, 7.601)
+[node name="R2_C1_-8.3_a" parent="Props" unique_id=1860033499 instance=ExtResource("p_carton")]
+transform = Transform3D(0.99956, 0, 0.02954, 0, 1, 0, -0.02954, 0, 0.99956, -8.844, 0.155, 4.612)
 
-[node name="R1_B2_-0.5_b" type="Node3D" parent="Props" instance=ExtResource("p_bcrate")]
-transform = Transform3D(0.99923, -0.00000, -0.03922, 0.00000, 1.00000, -0.00000, 0.03922, 0.00000, 0.99923, 0.1, 1.215, 7.596)
+[node name="R2_B2_-8.3_b" parent="Props" unique_id=219529695 instance=ExtResource("p_bcrate")]
+transform = Transform3D(0.99988, 0, 0.01529, 0, 1, 0, -0.01529, 0, 0.99988, -7.75, 1.215, 4.631)
 
-[node name="Rack_R2_-10.7" type="Node3D" parent="Props" instance=ExtResource("p_rack")]
-transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, -10.7, 0, 4.6)
+[node name="R2_W1_-5.9" parent="Props" unique_id=1640352300 instance=ExtResource("p_wcrate")]
+transform = Transform3D(0.99898, 0, -0.04517, 0, 1, 0, 0.04517, 0, 0.99898, -5.811, 0.155, 4.573)
 
-[node name="Rack_R2_-8.3" type="Node3D" parent="Props" instance=ExtResource("p_rack")]
-transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, -8.3, 0, 4.6)
+[node name="R2_C2_-5.9_a" parent="Props" unique_id=24805652 instance=ExtResource("p_carton")]
+transform = Transform3D(0.99865, 0, -0.05195, 0, 1, 0, 0.05195, 0, 0.99865, -6.463, 1.215, 4.626)
 
-[node name="Rack_R2_-5.9" type="Node3D" parent="Props" instance=ExtResource("p_rack")]
-transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, -5.9, 0, 4.6)
+[node name="R2_B2_-5.9_b" parent="Props" unique_id=1680195995 instance=ExtResource("p_bcrate")]
+transform = Transform3D(0.99904, 0, 0.04379, 0, 1, 0, -0.04379, 0, 0.99904, -5.376, 1.215, 4.569)
 
-[node name="Rack_R2_-3.5" type="Node3D" parent="Props" instance=ExtResource("p_rack")]
-transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, -3.5, 0, 4.6)
+[node name="R2_B1_-3.5_a" parent="Props" unique_id=746666675 instance=ExtResource("p_bcrate")]
+transform = Transform3D(0.99872, 0, -0.05056, 0, 1, 0, 0.05056, 0, 0.99872, -4.097, 0.155, 4.583)
 
-[node name="R2_B1_-10.7_a" type="Node3D" parent="Props" instance=ExtResource("p_bcrate")]
-transform = Transform3D(0.99995, 0.00000, 0.00962, 0.00000, 1.00000, -0.00000, -0.00962, 0.00000, 0.99995, -11.328, 0.155, 4.598)
+[node name="Rack_R3_-11.3" parent="Props" unique_id=1437176571 instance=ExtResource("p_rack")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.24, 0, 1.6)
 
-[node name="R2_C1_-10.7_b" type="Node3D" parent="Props" instance=ExtResource("p_carton")]
-transform = Transform3D(0.99833, -0.00000, -0.05777, 0.00000, 1.00000, -0.00000, 0.05777, 0.00000, 0.99833, -10.177, 0.155, 4.639)
+[node name="Rack_R3_-8.9" parent="Props" unique_id=1643511012 instance=ExtResource("p_rack")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.9, 0, 1.6)
 
-[node name="R2_B2_-10.7_a" type="Node3D" parent="Props" instance=ExtResource("p_bcrate")]
-transform = Transform3D(0.99945, -0.00000, -0.03303, 0.00000, 1.00000, -0.00000, 0.03303, 0.00000, 0.99945, -11.307, 1.215, 4.562)
+[node name="Rack_R3_-6.5" parent="Props" unique_id=1585135163 instance=ExtResource("p_rack")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 1.6)
 
-[node name="R2_B2_-10.7_b" type="Node3D" parent="Props" instance=ExtResource("p_bcrate")]
-transform = Transform3D(0.99940, 0.00000, 0.03478, 0.00000, 1.00000, -0.00000, -0.03478, 0.00000, 0.99940, -10.132, 1.215, 4.561)
+[node name="Rack_R3_-4.1" parent="Props" unique_id=958921988 instance=ExtResource("p_rack")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.1, 0, 1.6)
 
-[node name="R2_C1_-8.3_a" type="Node3D" parent="Props" instance=ExtResource("p_carton")]
-transform = Transform3D(0.99956, 0.00000, 0.02954, 0.00000, 1.00000, -0.00000, -0.02954, 0.00000, 0.99956, -8.844, 0.155, 4.612)
+[node name="Rack_R3_-1.7" parent="Props" unique_id=1080203418 instance=ExtResource("p_rack")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7, 0, 1.6)
 
-[node name="R2_C1_-8.3_b" type="Node3D" parent="Props" instance=ExtResource("p_carton")]
-transform = Transform3D(0.99998, 0.00000, 0.00567, 0.00000, 1.00000, -0.00000, -0.00567, 0.00000, 0.99998, -7.696, 0.155, 4.566)
+[node name="R3_B2_-11.3_a" parent="Props" unique_id=1448133092 instance=ExtResource("p_bcrate")]
+transform = Transform3D(0.99867, 0, 0.05155, 0, 1, 0, -0.05155, 0, 0.99867, -11.93, 1.215, 1.624)
 
-[node name="R2_B2_-8.3_b" type="Node3D" parent="Props" instance=ExtResource("p_bcrate")]
-transform = Transform3D(0.99988, 0.00000, 0.01529, 0.00000, 1.00000, -0.00000, -0.01529, 0.00000, 0.99988, -7.75, 1.215, 4.631)
+[node name="R3_B1_-8.9_a" parent="Props" unique_id=833134493 instance=ExtResource("p_bcrate")]
+transform = Transform3D(0.99833, 0, 0.05774, 0, 1, 0, -0.05774, 0, 0.99833, -9.437, 0.155, 1.564)
 
-[node name="R2_W1_-5.9" type="Node3D" parent="Props" instance=ExtResource("p_wcrate")]
-transform = Transform3D(0.99898, -0.00000, -0.04517, 0.00000, 1.00000, -0.00000, 0.04517, 0.00000, 0.99898, -5.811, 0.155, 4.573)
+[node name="R3_C2_-8.9_a" parent="Props" unique_id=1957637065 instance=ExtResource("p_carton")]
+transform = Transform3D(0.99964, 0, -0.02687, 0, 1, 0, 0.02687, 0, 0.99964, -9.484, 1.215, 1.63)
 
-[node name="R2_C2_-5.9_a" type="Node3D" parent="Props" instance=ExtResource("p_carton")]
-transform = Transform3D(0.99865, -0.00000, -0.05195, 0.00000, 1.00000, -0.00000, 0.05195, 0.00000, 0.99865, -6.463, 1.215, 4.626)
+[node name="R3_C1_-6.5_a" parent="Props" unique_id=1339575550 instance=ExtResource("p_carton")]
+transform = Transform3D(0.99949, 0, -0.03185, 0, 1, 0, 0.03185, 0, 0.99949, -7.111, 0.155, 1.601)
 
-[node name="R2_B2_-5.9_b" type="Node3D" parent="Props" instance=ExtResource("p_bcrate")]
-transform = Transform3D(0.99904, 0.00000, 0.04379, 0.00000, 1.00000, -0.00000, -0.04379, 0.00000, 0.99904, -5.376, 1.215, 4.569)
+[node name="R3_B1_-6.5_b" parent="Props" unique_id=1179627174 instance=ExtResource("p_bcrate")]
+transform = Transform3D(0.99897, 0, 0.04529, 0, 1, 0, -0.04529, 0, 0.99897, -5.896, 0.155, 1.587)
 
-[node name="R2_B1_-3.5_a" type="Node3D" parent="Props" instance=ExtResource("p_bcrate")]
-transform = Transform3D(0.99872, -0.00000, -0.05056, 0.00000, 1.00000, -0.00000, 0.05056, 0.00000, 0.99872, -4.097, 0.155, 4.583)
+[node name="R3_B1_-4.1_a" parent="Props" unique_id=617468065 instance=ExtResource("p_bcrate")]
+transform = Transform3D(0.99914, 0, -0.04135, 0, 1, 0, 0.04135, 0, 0.99914, -4.738, 0.155, 1.59)
 
-[node name="Rack_R3_-11.3" type="Node3D" parent="Props" instance=ExtResource("p_rack")]
-transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, -11.24, 0, 1.6)
+[node name="R3_B2_-4.1_b" parent="Props" unique_id=62125720 instance=ExtResource("p_bcrate")]
+transform = Transform3D(0.99781, 0, 0.0661, 0, 1, 0, -0.0661, 0, 0.99781, -3.519, 1.215, 1.564)
 
-[node name="Rack_R3_-8.9" type="Node3D" parent="Props" instance=ExtResource("p_rack")]
-transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, -8.9, 0, 1.6)
+[node name="R3_SlotCarton" parent="Props" unique_id=2011921266 instance=ExtResource("p_carton")]
+transform = Transform3D(0.69319, 0, 0.09742, 0, 0.7, 0, -0.09742, 0, 0.69319, -2.45, 0.155, 1.35)
 
-[node name="Rack_R3_-6.5" type="Node3D" parent="Props" instance=ExtResource("p_rack")]
-transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, -6.5, 0, 1.6)
+[node name="TopBoxA" parent="Props" unique_id=2088791425 instance=ExtResource("p_cbox")]
+transform = Transform3D(0.96593, 0, 0.25882, 0, 1, 0, -0.25882, 0, 0.96593, -10, 2.4, 7.6)
 
-[node name="Rack_R3_-4.1" type="Node3D" parent="Props" instance=ExtResource("p_rack")]
-transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, -4.1, 0, 1.6)
+[node name="TopBoxB" parent="Props" unique_id=1900353408 instance=ExtResource("p_tbox")]
+transform = Transform3D(0.93969, 0, -0.34202, 0, 1, 0, 0.34202, 0, 0.93969, -7.9, 2.4, 4.6)
 
-[node name="Rack_R3_-1.7" type="Node3D" parent="Props" instance=ExtResource("p_rack")]
-transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, -1.7, 0, 1.6)
+[node name="TopBoxC" parent="Props" unique_id=1684483110 instance=ExtResource("p_cbox")]
+transform = Transform3D(0.68944, 0, 0.57851, 0, 0.9, 0, -0.57851, 0, 0.68944, -4.2, 2.4, 1.6)
 
-[node name="R3_W1_-11.3" type="Node3D" parent="Props" instance=ExtResource("p_wcrate")]
-transform = Transform3D(0.99953, 0.00000, 0.03057, 0.00000, 1.00000, -0.00000, -0.03057, 0.00000, 0.99953, -11.23, 0.155, 1.57)
+[node name="AshA" parent="Props" unique_id=2138583573 instance=ExtResource("p_ash")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 3.2)
 
-[node name="R3_B2_-11.3_a" type="Node3D" parent="Props" instance=ExtResource("p_bcrate")]
-transform = Transform3D(0.99867, 0.00000, 0.05155, 0.00000, 1.00000, -0.00000, -0.05155, 0.00000, 0.99867, -11.93, 1.215, 1.624)
+[node name="Ladder2" parent="Props" unique_id=1075921512 instance=ExtResource("p_ladder")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9, 0, -1.9)
 
-[node name="R3_C2_-11.3_b" type="Node3D" parent="Props" instance=ExtResource("p_carton")]
-transform = Transform3D(0.99925, 0.00000, 0.03860, 0.00000, 1.00000, -0.00000, -0.03860, 0.00000, 0.99925, -10.662, 1.215, 1.631)
+[node name="CartonBack" parent="Props" unique_id=2018221093 instance=ExtResource("p_carton")]
+transform = Transform3D(0.97815, 0, 0.20791, 0, 1, 0, -0.20791, 0, 0.97815, -8.2, 0, -1.9)
 
-[node name="R3_B1_-8.9_a" type="Node3D" parent="Props" instance=ExtResource("p_bcrate")]
-transform = Transform3D(0.99833, 0.00000, 0.05774, 0.00000, 1.00000, -0.00000, -0.05774, 0.00000, 0.99833, -9.437, 0.155, 1.564)
+[node name="CartonBack2" parent="Props" unique_id=721888840 instance=ExtResource("p_bcrate")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, -2)
 
-[node name="R3_B1_-8.9_b" type="Node3D" parent="Props" instance=ExtResource("p_bcrate")]
-transform = Transform3D(0.99917, -0.00000, -0.04064, 0.00000, 1.00000, -0.00000, 0.04064, 0.00000, 0.99917, -8.277, 0.155, 1.562)
+[node name="SootFloor" parent="Props" unique_id=69069544 instance=ExtResource("p_ash")]
+transform = Transform3D(0.76604, 0, 0.64279, 0, 1, 0, -0.64279, 0, 0.76604, -5, 0, -0.3)
 
-[node name="R3_C2_-8.9_a" type="Node3D" parent="Props" instance=ExtResource("p_carton")]
-transform = Transform3D(0.99964, -0.00000, -0.02687, 0.00000, 1.00000, -0.00000, 0.02687, 0.00000, 0.99964, -9.484, 1.215, 1.63)
+[node name="WallPipes" parent="Props" unique_id=264922588 instance=ExtResource("p_pipes")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -12.5, 4.6, 4)
 
-[node name="R3_C1_-6.5_a" type="Node3D" parent="Props" instance=ExtResource("p_carton")]
-transform = Transform3D(0.99949, -0.00000, -0.03185, 0.00000, 1.00000, -0.00000, 0.03185, 0.00000, 0.99949, -7.111, 0.155, 1.601)
+[node name="WestSoot" parent="Props" unique_id=1175688904 instance=ExtResource("p_soot")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -12.46, 0, 4)
 
-[node name="R3_B1_-6.5_b" type="Node3D" parent="Props" instance=ExtResource("p_bcrate")]
-transform = Transform3D(0.99897, 0.00000, 0.04529, 0.00000, 1.00000, -0.00000, -0.04529, 0.00000, 0.99897, -5.896, 0.155, 1.587)
+[node name="Beam_9.9_a" parent="Props" unique_id=2022484978 instance=ExtResource("p_beam")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 5.82, 9.9)
 
-[node name="R3_W2_-6.5" type="Node3D" parent="Props" instance=ExtResource("p_wcrate")]
-transform = Transform3D(0.99998, -0.00000, -0.00564, 0.00000, 1.00000, -0.00000, 0.00564, 0.00000, 0.99998, -6.482, 1.215, 1.577)
+[node name="Beam_9.9_b" parent="Props" unique_id=2029697869 instance=ExtResource("p_beam")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, 5.82, 9.9)
 
-[node name="R3_B1_-4.1_a" type="Node3D" parent="Props" instance=ExtResource("p_bcrate")]
-transform = Transform3D(0.99914, -0.00000, -0.04135, 0.00000, 1.00000, -0.00000, 0.04135, 0.00000, 0.99914, -4.738, 0.155, 1.59)
+[node name="Beam_6.1_a" parent="Props" unique_id=158982785 instance=ExtResource("p_beam")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 5.82, 6.1)
 
-[node name="R3_C1_-4.1_b" type="Node3D" parent="Props" instance=ExtResource("p_carton")]
-transform = Transform3D(0.99800, -0.00000, -0.06314, 0.00000, 1.00000, -0.00000, 0.06314, 0.00000, 0.99800, -3.505, 0.155, 1.576)
+[node name="Beam_6.1_b" parent="Props" unique_id=1546925079 instance=ExtResource("p_beam")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, 5.82, 6.1)
 
-[node name="R3_B2_-4.1_a" type="Node3D" parent="Props" instance=ExtResource("p_bcrate")]
-transform = Transform3D(0.99993, 0.00000, 0.01166, 0.00000, 1.00000, -0.00000, -0.01166, 0.00000, 0.99993, -4.695, 1.215, 1.615)
+[node name="Beam_3.1_a" parent="Props" unique_id=1076644179 instance=ExtResource("p_beam")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 5.82, 3.1)
 
-[node name="R3_B2_-4.1_b" type="Node3D" parent="Props" instance=ExtResource("p_bcrate")]
-transform = Transform3D(0.99781, 0.00000, 0.06610, 0.00000, 1.00000, -0.00000, -0.06610, 0.00000, 0.99781, -3.519, 1.215, 1.564)
+[node name="Beam_3.1_b" parent="Props" unique_id=1986605809 instance=ExtResource("p_beam")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, 5.82, 3.1)
 
-[node name="R3_SlotCarton" type="Node3D" parent="Props" instance=ExtResource("p_carton")]
-transform = Transform3D(0.69319, 0.00000, 0.09742, 0.00000, 0.70000, -0.00000, -0.09742, 0.00000, 0.69319, -2.45, 0.155, 1.35)
+[node name="Beam_0.2_a" parent="Props" unique_id=873001257 instance=ExtResource("p_beam")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 5.82, 0.2)
 
-[node name="TopBoxA" type="Node3D" parent="Props" instance=ExtResource("p_cbox")]
-transform = Transform3D(0.96593, 0.00000, 0.25882, 0.00000, 1.00000, -0.00000, -0.25882, 0.00000, 0.96593, -10.0, 2.4, 7.6)
+[node name="Beam_0.2_b" parent="Props" unique_id=1221579296 instance=ExtResource("p_beam")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, 5.82, 0.2)
 
-[node name="TopBoxB" type="Node3D" parent="Props" instance=ExtResource("p_tbox")]
-transform = Transform3D(0.93969, -0.00000, -0.34202, 0.00000, 1.00000, -0.00000, 0.34202, 0.00000, 0.93969, -7.9, 2.4, 4.6)
+[node name="SignR1" parent="Props" unique_id=1954249336 instance=ExtResource("p_asign")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 6, 8.4)
 
-[node name="TopBoxC" type="Node3D" parent="Props" instance=ExtResource("p_cbox")]
-transform = Transform3D(0.68944, 0.00000, 0.57851, 0.00000, 0.90000, -0.00000, -0.57851, 0.00000, 0.68944, -4.2, 2.4, 1.6)
+[node name="SignR2" parent="Props" unique_id=1793860331 instance=ExtResource("p_asign")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 6, 5.3)
 
-[node name="BarrelFL1" type="Node3D" parent="Props" instance=ExtResource("p_barrel")]
-transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, -12.0, 0, 10.8)
+[node name="SignR3" parent="Props" unique_id=235090768 instance=ExtResource("p_asign")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 6, 2.3)
 
-[node name="PuddleF" type="Node3D" parent="Props" instance=ExtResource("p_puddle")]
-transform = Transform3D(1.40953, 0.00000, 0.51303, 0.00000, 1.50000, -0.00000, -0.51303, 0.00000, 1.40953, -4.6, 0, 9.6)
+[node name="Wreck1" parent="Props" unique_id=730807218 instance=ExtResource("p_wreck")]
+transform = Transform3D(0.93969, 0, 0.34202, 0, 1, 0, -0.34202, 0, 0.93969, -2.5, 6, 5.5)
 
-[node name="TeddyF" type="Node3D" parent="Props" instance=ExtResource("p_teddy")]
-transform = Transform3D(0.34202, 0.00000, 0.93969, 0.00000, 1.00000, -0.00000, -0.93969, 0.00000, 0.34202, -3.4, 0, 10.3)
-
-[node name="ToyCar" type="Node3D" parent="Props" instance=ExtResource("p_tcar")]
-transform = Transform3D(0.81915, 0.00000, 0.57358, 0.00000, 1.00000, -0.00000, -0.57358, 0.00000, 0.81915, -5.7, 0, 9.2)
-
-[node name="Blocks" type="Node3D" parent="Props" instance=ExtResource("p_tblocks")]
-transform = Transform3D(0.98481, 0.00000, 0.17365, 0.00000, 1.00000, -0.00000, -0.17365, 0.00000, 0.98481, -2.1, 0, 8.8)
-
-[node name="Stripe" type="Node3D" parent="Props" instance=ExtResource("p_stripe")]
-transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, -4.0, 0, 8.75)
-
-[node name="PJack" type="Node3D" parent="Props" instance=ExtResource("p_pjack")]
-transform = Transform3D(0.25882, 0.00000, 0.96593, 0.00000, 1.00000, -0.00000, -0.96593, 0.00000, 0.25882, -0.6, 0, 9.7)
-
-[node name="BarrierA" type="Node3D" parent="Props" instance=ExtResource("p_barrier")]
-transform = Transform3D(0.00000, 0.00000, 1.00000, 0.00000, 1.00000, -0.00000, -1.00000, 0.00000, 0.00000, 1.1, 0, 8.9)
-
-[node name="BarrierB" type="Node3D" parent="Props" instance=ExtResource("p_barrier")]
-transform = Transform3D(0.00000, 0.00000, 1.00000, 0.00000, 1.00000, -0.00000, -1.00000, 0.00000, 0.00000, 1.1, 0, 10.35)
-
-[node name="PalletE" type="Node3D" parent="Props" instance=ExtResource("p_pallet")]
-transform = Transform3D(0.99027, -0.00000, -0.13917, 0.00000, 1.00000, -0.00000, 0.13917, 0.00000, 0.99027, 1.7, 0, 7.0)
-
-[node name="PalletE_B" type="Node3D" parent="Props" instance=ExtResource("p_bcrate")]
-transform = Transform3D(0.84572, 0.00000, 0.30782, 0.00000, 0.90000, -0.00000, -0.30782, 0.00000, 0.84572, 1.7, 0.12, 7.0)
-
-[node name="BarrelE" type="Node3D" parent="Props" instance=ExtResource("p_barrel")]
-transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, 2.2, 0, 9.4)
-
-[node name="DollHead" type="Node3D" parent="Props" instance=ExtResource("p_dhead")]
-transform = Transform3D(0.50000, 0.00000, 0.86603, 0.00000, 1.00000, -0.00000, -0.86603, 0.00000, 0.50000, -6.2, 0, 8.5)
-
-[node name="AshA" type="Node3D" parent="Props" instance=ExtResource("p_ash")]
-transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, -3.0, 0, 3.2)
-
-[node name="Ladder2" type="Node3D" parent="Props" instance=ExtResource("p_ladder")]
-transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, -0.9, 0, -1.9)
-
-[node name="CartonBack" type="Node3D" parent="Props" instance=ExtResource("p_carton")]
-transform = Transform3D(0.97815, 0.00000, 0.20791, 0.00000, 1.00000, -0.00000, -0.20791, 0.00000, 0.97815, -8.2, 0, -1.9)
-
-[node name="CartonBack2" type="Node3D" parent="Props" instance=ExtResource("p_bcrate")]
-transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, -7.0, 0, -2.0)
-
-[node name="SootFloor" type="Node3D" parent="Props" instance=ExtResource("p_ash")]
-transform = Transform3D(0.76604, 0.00000, 0.64279, 0.00000, 1.00000, -0.00000, -0.64279, 0.00000, 0.76604, -5.0, 0, -0.3)
-
-[node name="WallPipes" type="Node3D" parent="Props" instance=ExtResource("p_pipes")]
-transform = Transform3D(0.00000, 0.00000, 1.00000, 0.00000, 1.00000, -0.00000, -1.00000, 0.00000, 0.00000, -12.5, 4.6, 4.0)
-
-[node name="WestExt" type="Node3D" parent="Props" instance=ExtResource("p_extg")]
-transform = Transform3D(0.00000, 0.00000, 1.00000, 0.00000, 1.00000, -0.00000, -1.00000, 0.00000, 0.00000, -12.42, 0, 9.6)
-
-[node name="WestWarn" type="Node3D" parent="Props" instance=ExtResource("p_warn")]
-transform = Transform3D(0.00000, 0.00000, 1.00000, 0.00000, 1.00000, -0.00000, -1.00000, 0.00000, 0.00000, -12.45, 1.7, 8.6)
-
-[node name="WestEmerg" type="Node3D" parent="Props" instance=ExtResource("p_emerg")]
-transform = Transform3D(0.00000, 0.00000, 1.00000, 0.00000, 1.00000, -0.00000, -1.00000, 0.00000, 0.00000, -12.45, 3.4, 9.4)
-
-[node name="WestSoot" type="Node3D" parent="Props" instance=ExtResource("p_soot")]
-transform = Transform3D(0.00000, 0.00000, 1.00000, 0.00000, 1.00000, -0.00000, -1.00000, 0.00000, 0.00000, -12.46, 0, 4.0)
-
-[node name="WestSoot2" type="Node3D" parent="Props" instance=ExtResource("p_soot")]
-transform = Transform3D(0.00000, 0.00000, 0.60000, 0.00000, 0.60000, -0.00000, -0.60000, 0.00000, 0.00000, -12.46, 0, 9.4)
-
-[node name="EastExt" type="Node3D" parent="Props" instance=ExtResource("p_extg")]
-transform = Transform3D(0.00000, -0.00000, -1.00000, 0.00000, 1.00000, -0.00000, 1.00000, 0.00000, 0.00000, 2.65, 0, 8.4)
-
-[node name="EastWarn" type="Node3D" parent="Props" instance=ExtResource("p_warn")]
-transform = Transform3D(0.00000, -0.00000, -1.00000, 0.00000, 1.00000, -0.00000, 1.00000, 0.00000, 0.00000, 2.65, 1.7, 9.9)
-
-[node name="Beam_9.9_a" type="Node3D" parent="Props" instance=ExtResource("p_beam")]
-transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, -8, 5.82, 9.9)
-
-[node name="Beam_9.9_b" type="Node3D" parent="Props" instance=ExtResource("p_beam")]
-transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, -0.2, 5.82, 9.9)
-
-[node name="Beam_6.1_a" type="Node3D" parent="Props" instance=ExtResource("p_beam")]
-transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, -8, 5.82, 6.1)
-
-[node name="Beam_6.1_b" type="Node3D" parent="Props" instance=ExtResource("p_beam")]
-transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, -0.2, 5.82, 6.1)
-
-[node name="Beam_3.1_a" type="Node3D" parent="Props" instance=ExtResource("p_beam")]
-transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, -8, 5.82, 3.1)
-
-[node name="Beam_3.1_b" type="Node3D" parent="Props" instance=ExtResource("p_beam")]
-transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, -0.2, 5.82, 3.1)
-
-[node name="Beam_0.2_a" type="Node3D" parent="Props" instance=ExtResource("p_beam")]
-transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, -8, 5.82, 0.2)
-
-[node name="Beam_0.2_b" type="Node3D" parent="Props" instance=ExtResource("p_beam")]
-transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, -0.2, 5.82, 0.2)
-
-[node name="SignR1" type="Node3D" parent="Props" instance=ExtResource("p_asign")]
-transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, -8.5, 6.0, 8.4)
-
-[node name="SignR2" type="Node3D" parent="Props" instance=ExtResource("p_asign")]
-transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, -7.5, 6.0, 5.3)
-
-[node name="SignR3" type="Node3D" parent="Props" instance=ExtResource("p_asign")]
-transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 1.00000, -0.00000, 0.00000, 0.00000, 1.00000, -6.5, 6.0, 2.3)
-
-[node name="Wreck1" type="Node3D" parent="Props" instance=ExtResource("p_wreck")]
-transform = Transform3D(0.93969, 0.00000, 0.34202, 0.00000, 1.00000, -0.00000, -0.34202, 0.00000, 0.93969, -2.5, 6.0, 5.5)
-
-[node name="Wreck2" type="Node3D" parent="Props" instance=ExtResource("p_wreck")]
-transform = Transform3D(-0.98481, 0.00000, -0.17365, 0.00000, 1.00000, -0.00000, 0.17365, -0.00000, -0.98481, -10.5, 6.0, 3.3)
+[node name="Wreck2" parent="Props" unique_id=832507819 instance=ExtResource("p_wreck")]
+transform = Transform3D(-0.98481, 0, -0.17365, 0, 1, 0, 0.17365, 0, -0.98481, -10.5, 6, 3.3)
