@@ -12,6 +12,8 @@ signal audio_lure_requested(room: StringName)
 ## Emitted when the player starts ([param held] true) or stops holding the "wind up" button.
 signal wind_up_held_changed(held: bool)
 
+const LURE_SOUND_SECONDS := 5.0
+const LURE_SOUND_FADE := 0.5
 const WIND_READY_TEXT := "WIND UP"
 const WIND_HELD_TEXT := "WINDING..."
 
@@ -33,6 +35,8 @@ var _lure_cooldown := 0.0
 var _lure_selecting := false
 var _lure_markers: Array[Control] = []
 var _lure_tween: Tween
+var _lure_sound_tween: Tween
+var _lure_sound_volume_db := 0.0
 
 @onready var cam_ui = $%CameraUI
 @onready var cam_buttons_parent = $%CamButtonsParent
@@ -47,6 +51,7 @@ var _lure_tween: Tween
 
 func _ready():
 	cam_ui.visible = false
+	_lure_sound_volume_db = audio_lure_sound.volume_db
 	audio_lure_button.hide()
 	audio_lure_hint.hide()
 	audio_lure_button.pressed.connect(_on_audio_lure_button_pressed)
@@ -199,9 +204,21 @@ func _set_lure_selecting(active : bool):
 
 func _play_audio_lure(room : String):
 	_set_lure_selecting(false)
-	audio_lure_sound.play()
+	_play_lure_sound()
 	audio_lure_button.start_cooldown(_lure_cooldown)
 	audio_lure_requested.emit(StringName(room))
+
+
+## Plays the lure sound for at most [constant LURE_SOUND_SECONDS], fading out over the last [constant LURE_SOUND_FADE].
+func _play_lure_sound():
+	if _lure_sound_tween:
+		_lure_sound_tween.kill()
+	audio_lure_sound.volume_db = _lure_sound_volume_db
+	audio_lure_sound.play()
+	_lure_sound_tween = create_tween()
+	_lure_sound_tween.tween_interval(LURE_SOUND_SECONDS - LURE_SOUND_FADE)
+	_lure_sound_tween.tween_property(audio_lure_sound, "volume_db", -60.0, LURE_SOUND_FADE)
+	_lure_sound_tween.tween_callback(audio_lure_sound.stop)
 
 
 func _make_lure_marker(cam_button : Control) -> Control:
