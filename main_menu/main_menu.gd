@@ -11,6 +11,7 @@ extends Control
 @onready var settings_close_button: Button = %SettingsCloseButton
 @onready var exit_button: Button = %ExitButton
 
+const NIGHT_SCENE := "res://night/night.tscn"
 const SOUND_HOVER := "res://main_menu/sounds/ui_hover.wav"
 const SOUND_CLICK := "res://main_menu/sounds/ui_click.wav"
 const SOUND_START := "res://main_menu/sounds/ui_start.wav"
@@ -48,11 +49,7 @@ func _ready() -> void:
 	get_window().size_changed.connect(_refresh_settings_labels)
 	_refresh_settings_labels()
 
-	# A browser tab cannot be closed by the game, so the Exit button is only for desktop builds.
-	if OS.has_feature("web"):
-		exit_button.hide()
-	else:
-		exit_button.pressed.connect(get_tree().quit)
+	exit_button.pressed.connect(get_tree().quit)
 
 	_setup_button_sounds()
 	_setup_ambience()
@@ -78,7 +75,27 @@ func start_night(night: int) -> void:
 	create_tween().tween_property(_ambience_player, "volume_db", -60.0, 0.35)
 	if _start_player.stream != null:
 		await get_tree().create_timer(0.35).timeout
-	get_tree().change_scene_to_file("res://night/night.tscn")
+	await _load_and_change_scene(NIGHT_SCENE)
+
+
+## Shows the loading overlay, then loads the scene in the background so the overlay keeps animating.
+func _load_and_change_scene(path: String) -> void:
+	add_child(LoadingOverlay.new())
+	# Let the overlay get drawn before any (possibly blocking) loading begins.
+	await get_tree().process_frame
+	await get_tree().process_frame
+
+	if ResourceLoader.load_threaded_request(path) != OK:
+		get_tree().change_scene_to_file(path)
+		return
+	while ResourceLoader.load_threaded_get_status(path) == ResourceLoader.THREAD_LOAD_IN_PROGRESS:
+		await get_tree().process_frame
+
+	var scene := ResourceLoader.load_threaded_get(path) as PackedScene
+	if scene == null:
+		get_tree().change_scene_to_file(path)
+		return
+	get_tree().change_scene_to_packed(scene)
 
 
 func _on_mute_pressed() -> void:

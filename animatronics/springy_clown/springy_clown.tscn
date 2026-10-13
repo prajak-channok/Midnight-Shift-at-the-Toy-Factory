@@ -1,12 +1,12 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://cwxcis64u55df"]
 
-[ext_resource type="Script" path="res://animatronics/springy_clown/springy_clown.gd" id="1"]
+[ext_resource type="Script" uid="uid://5oquvcjyxuqj" path="res://animatronics/springy_clown/springy_clown.gd" id="1"]
 [ext_resource type="PackedScene" path="res://animatronics/springy_clown/models/springy_clown_model.tscn" id="2"]
 
-[node name="SpringyClown" type="Node3D"]
+[node name="SpringyClown" type="Node3D" unique_id=393502909]
 script = ExtResource("1")
-id = &"springy_clown"
 animation_player_path = NodePath("springy_clown_model/AnimationPlayer")
+id = &"springy_clown"
 
-[node name="springy_clown_model" parent="." instance=ExtResource("2")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
+[node name="springy_clown_model" parent="." unique_id=195537488 instance=ExtResource("2")]
+transform = Transform3D(-1.4, 0, 2.1139412e-07, 0, 1.4, 0, -2.1139412e-07, 0, -1.4, 0, 0, 0)
