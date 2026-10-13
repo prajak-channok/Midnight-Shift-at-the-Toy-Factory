@@ -23,7 +23,7 @@ var _ambience_player: AudioStreamPlayer
 var _starting := false
 
 ## Loudness of the background ambience (more negative = quieter).
-const AMBIENCE_VOLUME_DB := 0
+const AMBIENCE_VOLUME_DB := 5
 
 
 func _ready() -> void:
