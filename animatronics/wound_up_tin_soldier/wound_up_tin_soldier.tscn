@@ -1,0 +1,11 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://animatronics/wound_up_tin_soldier/wound_up_tin_soldier.gd" id="1"]
+[ext_resource type="PackedScene" path="res://animatronics/wound_up_tin_soldier/models/wound_up_tin_soldier_model.tscn" id="2"]
+
+[node name="WoundUpTinSoldier" type="Node3D"]
+script = ExtResource("1")
+id = &"wound_up_tin_soldier"
+animation_player_path = NodePath("wound_up_tin_soldier_model/AnimationPlayer")
+
+[node name="wound_up_tin_soldier_model" parent="." instance=ExtResource("2")]

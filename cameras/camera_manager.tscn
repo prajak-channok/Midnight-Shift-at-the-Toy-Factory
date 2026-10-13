@@ -10,8 +10,13 @@
 [ext_resource type="Texture2D" uid="uid://brrmh86sbskvw" path="res://common/static/static_frame_5.png" id="8_ciquy"]
 [ext_resource type="AudioStream" uid="uid://ch5ikqjcyxkkt" path="res://sounds/cam_click.ogg" id="9_t54n1"]
 [ext_resource type="Script" uid="uid://ba7cdhmwwwj6b" path="res://common/static/static_noise.gd" id="11_noise"]
+[ext_resource type="Script" uid="uid://c5je4jq3t2ned" path="res://cameras/audio_lure_button.gd" id="12_lure"]
+[ext_resource type="AudioStream" uid="uid://cmusopiocnqm4" path="res://sounds/play_audio.ogg" id="14_k5wej"]
+[ext_resource type="FontFile" uid="uid://cnxaexrmbbmvj" path="res://main_menu/fonts/RubikGlitch-Regular.ttf" id="14_rubik"]
+[ext_resource type="AudioStream" uid="uid://bv62v21hdisec" path="res://sounds/wind_up.ogg" id="15_rcsv0"]
+[ext_resource type="Script" uid="uid://01gq0dp27ybv" path="res://cameras/cooldown_ring.gd" id="15_ring"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6ilct"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rcsv0"]
 content_margin_left = 4.0
 content_margin_top = 2.0
 content_margin_right = 4.0
@@ -29,7 +34,7 @@ corner_radius_bottom_left = 2
 shadow_color = Color(0.19500001, 0.2925, 0.468, 0.06)
 shadow_size = 4
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5rghb"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yv0h0"]
 content_margin_left = 4.0
 content_margin_top = 2.0
 content_margin_right = 4.0
@@ -47,7 +52,7 @@ corner_radius_bottom_left = 2
 shadow_color = Color(0.4365, 0.50475, 0.6276, 0.28)
 shadow_size = 4
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qtv1k"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bc27t"]
 content_margin_left = 4.0
 content_margin_top = 2.0
 content_margin_right = 4.0
@@ -65,9 +70,9 @@ corner_radius_bottom_left = 2
 shadow_color = Color(0.4365, 0.50475, 0.6276, 0.18)
 shadow_size = 4
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qf01s"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1w6cb"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k5wej"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kwasj"]
 content_margin_left = 4.0
 content_margin_top = 2.0
 content_margin_right = 4.0
@@ -85,7 +90,7 @@ corner_radius_bottom_left = 2
 shadow_color = Color(0.403, 0.19500001, 0.33799997, 0.06)
 shadow_size = 4
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rcsv0"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ftev0"]
 content_margin_left = 4.0
 content_margin_top = 2.0
 content_margin_right = 4.0
@@ -103,7 +108,7 @@ corner_radius_bottom_left = 2
 shadow_color = Color(0.58210003, 0.4365, 0.5366, 0.28)
 shadow_size = 4
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yv0h0"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kol2s"]
 content_margin_left = 4.0
 content_margin_top = 2.0
 content_margin_right = 4.0
@@ -121,9 +126,9 @@ corner_radius_bottom_left = 2
 shadow_color = Color(0.58210003, 0.4365, 0.5366, 0.18)
 shadow_size = 4
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bc27t"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_imrlk"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1w6cb"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i2xy6"]
 content_margin_left = 4.0
 content_margin_top = 2.0
 content_margin_right = 4.0
@@ -141,7 +146,7 @@ corner_radius_bottom_left = 2
 shadow_color = Color(0.19500001, 0.3575, 0.42249995, 0.06)
 shadow_size = 4
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kwasj"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h1rpf"]
 content_margin_left = 4.0
 content_margin_top = 2.0
 content_margin_right = 4.0
@@ -159,7 +164,7 @@ corner_radius_bottom_left = 2
 shadow_color = Color(0.4365, 0.55025, 0.59575, 0.28)
 shadow_size = 4
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ftev0"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yu7vk"]
 content_margin_left = 4.0
 content_margin_top = 2.0
 content_margin_right = 4.0
@@ -177,9 +182,9 @@ corner_radius_bottom_left = 2
 shadow_color = Color(0.4365, 0.55025, 0.59575, 0.18)
 shadow_size = 4
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kol2s"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mbyu2"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_imrlk"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1p5sd"]
 content_margin_left = 4.0
 content_margin_top = 2.0
 content_margin_right = 4.0
@@ -197,7 +202,7 @@ corner_radius_bottom_left = 2
 shadow_color = Color(0.48749998, 0.31199998, 0.1625, 0.06)
 shadow_size = 4
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i2xy6"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wwyjb"]
 content_margin_left = 4.0
 content_margin_top = 2.0
 content_margin_right = 4.0
@@ -215,7 +220,7 @@ corner_radius_bottom_left = 2
 shadow_color = Color(0.64125, 0.5184, 0.41375, 0.28)
 shadow_size = 4
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h1rpf"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0rtu3"]
 content_margin_left = 4.0
 content_margin_top = 2.0
 content_margin_right = 4.0
@@ -233,9 +238,9 @@ corner_radius_bottom_left = 2
 shadow_color = Color(0.64125, 0.5184, 0.41375, 0.18)
 shadow_size = 4
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yu7vk"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6w8w3"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mbyu2"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sbdq1"]
 content_margin_left = 4.0
 content_margin_top = 2.0
 content_margin_right = 4.0
@@ -253,7 +258,7 @@ corner_radius_bottom_left = 2
 shadow_color = Color(0.31199998, 0.221, 0.45499998, 0.06)
 shadow_size = 4
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1p5sd"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vywqr"]
 content_margin_left = 4.0
 content_margin_top = 2.0
 content_margin_right = 4.0
@@ -271,7 +276,7 @@ corner_radius_bottom_left = 2
 shadow_color = Color(0.5184, 0.4547, 0.6185, 0.28)
 shadow_size = 4
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wwyjb"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l7rjj"]
 content_margin_left = 4.0
 content_margin_top = 2.0
 content_margin_right = 4.0
@@ -289,9 +294,9 @@ corner_radius_bottom_left = 2
 shadow_color = Color(0.5184, 0.4547, 0.6185, 0.18)
 shadow_size = 4
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0rtu3"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g4wq7"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6w8w3"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mcwol"]
 content_margin_left = 4.0
 content_margin_top = 2.0
 content_margin_right = 4.0
@@ -309,7 +314,7 @@ corner_radius_bottom_left = 2
 shadow_color = Color(0.37699997, 0.27299997, 0.182, 0.06)
 shadow_size = 4
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sbdq1"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xiguk"]
 content_margin_left = 4.0
 content_margin_top = 2.0
 content_margin_right = 4.0
@@ -327,7 +332,7 @@ corner_radius_bottom_left = 2
 shadow_color = Color(0.5639, 0.49109998, 0.4274, 0.28)
 shadow_size = 4
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vywqr"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fabkf"]
 content_margin_left = 4.0
 content_margin_top = 2.0
 content_margin_right = 4.0
@@ -345,9 +350,9 @@ corner_radius_bottom_left = 2
 shadow_color = Color(0.5639, 0.49109998, 0.4274, 0.18)
 shadow_size = 4
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l7rjj"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u0vfr"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g4wq7"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4hdh3"]
 content_margin_left = 4.0
 content_margin_top = 2.0
 content_margin_right = 4.0
@@ -365,7 +370,7 @@ corner_radius_bottom_left = 2
 shadow_color = Color(0.1625, 0.37699997, 0.33799997, 0.06)
 shadow_size = 4
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mcwol"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ghmud"]
 content_margin_left = 4.0
 content_margin_top = 2.0
 content_margin_right = 4.0
@@ -383,7 +388,7 @@ corner_radius_bottom_left = 2
 shadow_color = Color(0.41375, 0.5639, 0.5366, 0.28)
 shadow_size = 4
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xiguk"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vklgl"]
 content_margin_left = 4.0
 content_margin_top = 2.0
 content_margin_right = 4.0
@@ -401,9 +406,9 @@ corner_radius_bottom_left = 2
 shadow_color = Color(0.41375, 0.5639, 0.5366, 0.18)
 shadow_size = 4
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fabkf"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j4f6k"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u0vfr"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5eqgx"]
 content_margin_left = 4.0
 content_margin_top = 2.0
 content_margin_right = 4.0
@@ -421,7 +426,7 @@ corner_radius_bottom_left = 2
 shadow_color = Color(0.468, 0.403, 0.182, 0.06)
 shadow_size = 4
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4hdh3"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eq8x2"]
 content_margin_left = 4.0
 content_margin_top = 2.0
 content_margin_right = 4.0
@@ -439,7 +444,7 @@ corner_radius_bottom_left = 2
 shadow_color = Color(0.6276, 0.58210003, 0.4274, 0.28)
 shadow_size = 4
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ghmud"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_270vn"]
 content_margin_left = 4.0
 content_margin_top = 2.0
 content_margin_right = 4.0
@@ -457,9 +462,9 @@ corner_radius_bottom_left = 2
 shadow_color = Color(0.6276, 0.58210003, 0.4274, 0.18)
 shadow_size = 4
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vklgl"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jsnb6"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j4f6k"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_202di"]
 content_margin_left = 4.0
 content_margin_top = 2.0
 content_margin_right = 4.0
@@ -477,7 +482,7 @@ corner_radius_bottom_left = 2
 shadow_color = Color(0.3575, 0.42249995, 0.182, 0.06)
 shadow_size = 4
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5eqgx"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4nxrm"]
 content_margin_left = 4.0
 content_margin_top = 2.0
 content_margin_right = 4.0
@@ -495,7 +500,7 @@ corner_radius_bottom_left = 2
 shadow_color = Color(0.55025, 0.59575, 0.4274, 0.28)
 shadow_size = 4
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eq8x2"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w4moy"]
 content_margin_left = 4.0
 content_margin_top = 2.0
 content_margin_right = 4.0
@@ -513,9 +518,9 @@ corner_radius_bottom_left = 2
 shadow_color = Color(0.55025, 0.59575, 0.4274, 0.18)
 shadow_size = 4
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_270vn"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m0y0a"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jsnb6"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bv86e"]
 content_margin_left = 4.0
 content_margin_top = 2.0
 content_margin_right = 4.0
@@ -533,7 +538,7 @@ corner_radius_bottom_left = 2
 shadow_color = Color(0.20799999, 0.37699997, 0.234, 0.06)
 shadow_size = 4
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_202di"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1fhj4"]
 content_margin_left = 4.0
 content_margin_top = 2.0
 content_margin_right = 4.0
@@ -551,7 +556,7 @@ corner_radius_bottom_left = 2
 shadow_color = Color(0.4456, 0.5639, 0.4638, 0.28)
 shadow_size = 4
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4nxrm"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q0l8m"]
 content_margin_left = 4.0
 content_margin_top = 2.0
 content_margin_right = 4.0
@@ -569,9 +574,9 @@ corner_radius_bottom_left = 2
 shadow_color = Color(0.4456, 0.5639, 0.4638, 0.18)
 shadow_size = 4
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w4moy"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ewd1y"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m0y0a"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lclq2"]
 content_margin_left = 4.0
 content_margin_top = 2.0
 content_margin_right = 4.0
@@ -589,7 +594,7 @@ corner_radius_bottom_left = 2
 shadow_color = Color(0.442, 0.182, 0.20799999, 0.06)
 shadow_size = 4
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bv86e"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cvmdk"]
 content_margin_left = 4.0
 content_margin_top = 2.0
 content_margin_right = 4.0
@@ -607,7 +612,7 @@ corner_radius_bottom_left = 2
 shadow_color = Color(0.60940003, 0.4274, 0.4456, 0.28)
 shadow_size = 4
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1fhj4"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vkdq7"]
 content_margin_left = 4.0
 content_margin_top = 2.0
 content_margin_right = 4.0
@@ -625,7 +630,111 @@ corner_radius_bottom_left = 2
 shadow_color = Color(0.60940003, 0.4274, 0.4456, 0.18)
 shadow_size = 4
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q0l8m"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ad4s7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lure_normal"]
+content_margin_left = 12.0
+content_margin_top = 6.0
+content_margin_right = 12.0
+content_margin_bottom = 8.0
+bg_color = Color(0.085, 0.052, 0.02, 0.92)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 5
+border_color = Color(0.5, 0.34, 0.12, 1)
+shadow_color = Color(0, 0, 0, 0.7)
+shadow_size = 4
+shadow_offset = Vector2(2, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lure_pressed"]
+content_margin_left = 12.0
+content_margin_top = 9.0
+content_margin_right = 12.0
+content_margin_bottom = 5.0
+bg_color = Color(0.45, 0.28, 0.08, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.84, 0.55, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lure_hover"]
+content_margin_left = 12.0
+content_margin_top = 6.0
+content_margin_right = 12.0
+content_margin_bottom = 8.0
+bg_color = Color(0.17, 0.1, 0.035, 0.96)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 5
+border_color = Color(0.82, 0.57, 0.2, 1)
+shadow_color = Color(0.9, 0.6, 0.2, 0.35)
+shadow_size = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lure_disabled"]
+content_margin_left = 12.0
+content_margin_top = 6.0
+content_margin_right = 12.0
+content_margin_bottom = 8.0
+bg_color = Color(0.05, 0.035, 0.018, 0.9)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 5
+border_color = Color(0.27, 0.19, 0.09, 1)
+shadow_color = Color(0, 0, 0, 0.5)
+shadow_size = 3
+shadow_offset = Vector2(2, 3)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lure_focus"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lure_bar_fill"]
+bg_color = Color(0.9, 0.62, 0.22, 1)
+shadow_color = Color(0.95, 0.65, 0.25, 0.6)
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wind_normal"]
+content_margin_left = 12.0
+content_margin_top = 6.0
+content_margin_right = 12.0
+content_margin_bottom = 8.0
+bg_color = Color(0.075, 0.012, 0.014, 0.92)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 5
+border_color = Color(0.55, 0.08, 0.09, 1)
+shadow_color = Color(0, 0, 0, 0.7)
+shadow_size = 4
+shadow_offset = Vector2(2, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wind_pressed"]
+content_margin_left = 12.0
+content_margin_top = 9.0
+content_margin_right = 12.0
+content_margin_bottom = 5.0
+bg_color = Color(0.5, 0.05, 0.06, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.45, 0.4, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wind_hover"]
+content_margin_left = 12.0
+content_margin_top = 6.0
+content_margin_right = 12.0
+content_margin_bottom = 8.0
+bg_color = Color(0.19, 0.025, 0.03, 0.96)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 5
+border_color = Color(0.92, 0.16, 0.14, 1)
+shadow_color = Color(0.95, 0.15, 0.12, 0.35)
+shadow_size = 12
 
 [sub_resource type="Animation" id="Animation_e0ubl"]
 length = 0.001
@@ -745,10 +854,10 @@ theme_override_colors/font_hover_color = Color(0.63775, 0.681625, 0.7606, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 0.85)
 theme_override_constants/outline_size = 4
 theme_override_font_sizes/font_size = 15
-theme_override_styles/normal = SubResource("StyleBoxFlat_6ilct")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_5rghb")
-theme_override_styles/hover = SubResource("StyleBoxFlat_qtv1k")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_qf01s")
+theme_override_styles/normal = SubResource("StyleBoxFlat_rcsv0")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_yv0h0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_bc27t")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_1w6cb")
 text = "Cam 1"
 script = ExtResource("3_k2tk3")
 camera_node_name = "ToyFactory"
@@ -773,10 +882,10 @@ theme_override_colors/font_hover_color = Color(0.73135, 0.63775, 0.70210004, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 0.85)
 theme_override_constants/outline_size = 4
 theme_override_font_sizes/font_size = 15
-theme_override_styles/normal = SubResource("StyleBoxFlat_k5wej")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_rcsv0")
-theme_override_styles/hover = SubResource("StyleBoxFlat_yv0h0")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_bc27t")
+theme_override_styles/normal = SubResource("StyleBoxFlat_kwasj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ftev0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kol2s")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_imrlk")
 text = "Cam 2"
 script = ExtResource("3_k2tk3")
 camera_node_name = "FactoryTransferCorridor"
@@ -801,10 +910,10 @@ theme_override_colors/font_hover_color = Color(0.63775, 0.71087503, 0.740125, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 0.85)
 theme_override_constants/outline_size = 4
 theme_override_font_sizes/font_size = 15
-theme_override_styles/normal = SubResource("StyleBoxFlat_1w6cb")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_kwasj")
-theme_override_styles/hover = SubResource("StyleBoxFlat_ftev0")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_kol2s")
+theme_override_styles/normal = SubResource("StyleBoxFlat_i2xy6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_h1rpf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yu7vk")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_mbyu2")
 text = "Cam 3"
 script = ExtResource("3_k2tk3")
 camera_node_name = "MainStorageHall"
@@ -829,10 +938,10 @@ theme_override_colors/font_hover_color = Color(0.769375, 0.6904, 0.62312496, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 0.85)
 theme_override_constants/outline_size = 4
 theme_override_font_sizes/font_size = 15
-theme_override_styles/normal = SubResource("StyleBoxFlat_imrlk")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_i2xy6")
-theme_override_styles/hover = SubResource("StyleBoxFlat_h1rpf")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_yu7vk")
+theme_override_styles/normal = SubResource("StyleBoxFlat_1p5sd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_wwyjb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0rtu3")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6w8w3")
 text = "Cam 4"
 script = ExtResource("3_k2tk3")
 camera_node_name = "PartsReturnsStorageRoom"
@@ -857,10 +966,10 @@ theme_override_colors/font_hover_color = Color(0.6904, 0.64945, 0.75475, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 0.85)
 theme_override_constants/outline_size = 4
 theme_override_font_sizes/font_size = 15
-theme_override_styles/normal = SubResource("StyleBoxFlat_mbyu2")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_1p5sd")
-theme_override_styles/hover = SubResource("StyleBoxFlat_wwyjb")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_0rtu3")
+theme_override_styles/normal = SubResource("StyleBoxFlat_sbdq1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vywqr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_l7rjj")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_g4wq7")
 text = "Cam 5"
 script = ExtResource("3_k2tk3")
 camera_node_name = "StaffRoom"
@@ -885,10 +994,10 @@ theme_override_colors/font_hover_color = Color(0.71965003, 0.67285, 0.6319, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 0.85)
 theme_override_constants/outline_size = 4
 theme_override_font_sizes/font_size = 15
-theme_override_styles/normal = SubResource("StyleBoxFlat_6w8w3")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_sbdq1")
-theme_override_styles/hover = SubResource("StyleBoxFlat_vywqr")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_l7rjj")
+theme_override_styles/normal = SubResource("StyleBoxFlat_mcwol")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_xiguk")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fabkf")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_u0vfr")
 text = "Cam 6"
 script = ExtResource("3_k2tk3")
 camera_node_name = "PackingRoom"
@@ -913,10 +1022,10 @@ theme_override_colors/font_hover_color = Color(0.62312496, 0.71965003, 0.7021000
 theme_override_colors/font_outline_color = Color(0, 0, 0, 0.85)
 theme_override_constants/outline_size = 4
 theme_override_font_sizes/font_size = 15
-theme_override_styles/normal = SubResource("StyleBoxFlat_g4wq7")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_mcwol")
-theme_override_styles/hover = SubResource("StyleBoxFlat_xiguk")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_fabkf")
+theme_override_styles/normal = SubResource("StyleBoxFlat_4hdh3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ghmud")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vklgl")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_j4f6k")
 text = "Cam 7"
 script = ExtResource("3_k2tk3")
 camera_node_name = "InventoryCheckRoom"
@@ -941,10 +1050,10 @@ theme_override_colors/font_hover_color = Color(0.7606, 0.73135, 0.6319, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 0.85)
 theme_override_constants/outline_size = 4
 theme_override_font_sizes/font_size = 15
-theme_override_styles/normal = SubResource("StyleBoxFlat_u0vfr")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_4hdh3")
-theme_override_styles/hover = SubResource("StyleBoxFlat_ghmud")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_vklgl")
+theme_override_styles/normal = SubResource("StyleBoxFlat_5eqgx")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_eq8x2")
+theme_override_styles/hover = SubResource("StyleBoxFlat_270vn")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_jsnb6")
 text = "Cam 8"
 script = ExtResource("3_k2tk3")
 camera_node_name = "LoadingBay"
@@ -969,10 +1078,10 @@ theme_override_colors/font_hover_color = Color(0.71087503, 0.740125, 0.6319, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 0.85)
 theme_override_constants/outline_size = 4
 theme_override_font_sizes/font_size = 15
-theme_override_styles/normal = SubResource("StyleBoxFlat_j4f6k")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_5eqgx")
-theme_override_styles/hover = SubResource("StyleBoxFlat_eq8x2")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_270vn")
+theme_override_styles/normal = SubResource("StyleBoxFlat_202di")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_4nxrm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_w4moy")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_m0y0a")
 text = "Cam 9"
 script = ExtResource("3_k2tk3")
 camera_node_name = "ElectricalRoom"
@@ -997,10 +1106,10 @@ theme_override_colors/font_hover_color = Color(0.6436, 0.71965003, 0.6553, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 0.85)
 theme_override_constants/outline_size = 4
 theme_override_font_sizes/font_size = 15
-theme_override_styles/normal = SubResource("StyleBoxFlat_jsnb6")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_202di")
-theme_override_styles/hover = SubResource("StyleBoxFlat_4nxrm")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_w4moy")
+theme_override_styles/normal = SubResource("StyleBoxFlat_bv86e")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1fhj4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_q0l8m")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ewd1y")
 text = "Cam 10"
 script = ExtResource("3_k2tk3")
 camera_node_name = "LeftHall"
@@ -1025,17 +1134,134 @@ theme_override_colors/font_hover_color = Color(0.7489, 0.6319, 0.6436, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 0.85)
 theme_override_constants/outline_size = 4
 theme_override_font_sizes/font_size = 15
-theme_override_styles/normal = SubResource("StyleBoxFlat_m0y0a")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_bv86e")
-theme_override_styles/hover = SubResource("StyleBoxFlat_1fhj4")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_q0l8m")
+theme_override_styles/normal = SubResource("StyleBoxFlat_lclq2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_cvmdk")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vkdq7")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ad4s7")
 text = "Cam 11"
 script = ExtResource("3_k2tk3")
 camera_node_name = "RightHall"
 accent_color = Color(0.68, 0.28, 0.32, 1)
+
+[node name="AudioLureButton" type="Button" parent="CameraUI" unique_id=885028566]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -216.0
+offset_top = 96.0
+offset_right = -16.0
+offset_bottom = 142.0
+grow_horizontal = 0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.85, 0.62, 0.28, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.93, 0.78, 1)
+theme_override_colors/font_hover_color = Color(1, 0.84, 0.55, 1)
+theme_override_colors/font_disabled_color = Color(0.5, 0.37, 0.19, 1)
+theme_override_colors/font_outline_color = Color(0.03, 0.02, 0.01, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("14_rubik")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_lure_normal")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_lure_pressed")
+theme_override_styles/hover = SubResource("StyleBoxFlat_lure_hover")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_lure_disabled")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lure_focus")
+text = "PLAY AUDIO"
+script = ExtResource("12_lure")
+
+[node name="CooldownBar" type="ProgressBar" parent="CameraUI/AudioLureButton" unique_id=132249859]
+visible = false
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = -5.0
+offset_right = -2.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+theme_override_styles/background = SubResource("StyleBoxEmpty_lure_focus")
+theme_override_styles/fill = SubResource("StyleBoxFlat_lure_bar_fill")
+max_value = 1.0
+step = 0.0
+show_percentage = false
+
+[node name="WindUpButton" type="Button" parent="CameraUI" unique_id=429890406]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -216.0
+offset_top = 154.0
+offset_right = -16.0
+offset_bottom = 200.0
+grow_horizontal = 0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.9, 0.2, 0.18, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.85, 0.82, 1)
+theme_override_colors/font_hover_color = Color(1, 0.55, 0.5, 1)
+theme_override_colors/font_outline_color = Color(0.02, 0.005, 0.005, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("14_rubik")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_wind_normal")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_wind_pressed")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wind_hover")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lure_focus")
+text = "WIND UP"
+
+[node name="WindCooldownRing" type="Control" parent="CameraUI" unique_id=2055038535]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -278.0
+offset_top = 154.0
+offset_right = -232.0
+offset_bottom = 200.0
+grow_horizontal = 0
+mouse_filter = 2
+script = ExtResource("15_ring")
+
+[node name="AudioLureHint" type="Label" parent="CameraUI" unique_id=1211645449]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -616.0
+offset_top = 27.0
+offset_right = -228.0
+offset_bottom = 53.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0.95, 0.7, 0.25, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.85)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 16
+text = "SELECT A ROOM TO PLAY AUDIO"
+horizontal_alignment = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CameraUI" unique_id=785406415]
 libraries/ = SubResource("AnimationLibrary_c5k7w")
 
 [node name="CamClickSound" type="AudioStreamPlayer" parent="." unique_id=283692509]
 stream = ExtResource("9_t54n1")
+
+[node name="AudioLureSound" type="AudioStreamPlayer" parent="." unique_id=1920664373]
+stream = ExtResource("14_k5wej")
+volume_db = -6.0
+
+[node name="WindUpSound" type="AudioStreamPlayer" parent="." unique_id=568403819]
+stream = ExtResource("15_rcsv0")
+volume_db = -6.0

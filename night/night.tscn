@@ -33,11 +33,13 @@
 [ext_resource type="Resource" uid="uid://dhcugt8nq8cnm" path="res://night/difficulty/night_3.tres" id="night_3"]
 [ext_resource type="Resource" uid="uid://ddni26uyxp4uw" path="res://night/difficulty/night_4.tres" id="night_4"]
 [ext_resource type="Resource" uid="uid://bc4c2e6xr5fjm" path="res://night/difficulty/night_5.tres" id="night_5"]
+[ext_resource type="PackedScene" path="res://animatronics/wound_up_tin_soldier/wound_up_tin_soldier.tscn" id="tin_soldier"]
+[ext_resource type="PackedScene" path="res://animatronics/wound_up_tin_soldier/models/wound_up_tin_soldier_model.tscn" id="tin_soldier_model"]
 
 [node name="Night" type="Node3D" unique_id=1457411669 node_paths=PackedStringArray("clock", "animatronics")]
 script = ExtResource("1")
 clock = NodePath("Clock")
-animatronics = [NodePath("Animatronics/SpringyClown"), NodePath("Animatronics/PorcelainBallerina"), NodePath("Animatronics/BurnedPlushBot")]
+animatronics = [NodePath("Animatronics/SpringyClown"), NodePath("Animatronics/PorcelainBallerina"), NodePath("Animatronics/BurnedPlushBot"), NodePath("Animatronics/WoundUpTinSoldier")]
 difficulties = Array[ExtResource("20")]([ExtResource("22"), ExtResource("23"), ExtResource("night_3"), ExtResource("night_4"), ExtResource("night_5")])
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=315348212]
@@ -283,6 +285,11 @@ animatronic_positions_container = NodePath("../../AnimatronicPositionsContainers
 cam_manager = NodePath("../../CameraManager")
 jumpscare = NodePath("../../AnimatronicJumpscares/BurnedPlushBotJumpscare")
 
+[node name="WoundUpTinSoldier" parent="Animatronics" unique_id=661309142 node_paths=PackedStringArray("cam_manager", "jumpscare") instance=ExtResource("tin_soldier")]
+transform = Transform3D(0.69, 0, 0.72, 0, 1, 0, -0.72, 0, 0.69, -16.8, 0, -16.6)
+cam_manager = NodePath("../../CameraManager")
+jumpscare = NodePath("../../AnimatronicJumpscares/WoundUpTinSoldierJumpscare")
+
 [node name="AnimatronicPositionsContainers" type="Node3D" parent="." unique_id=1447842819]
 
 [node name="SpringyClownPositionsContainer" type="Node3D" parent="AnimatronicPositionsContainers" unique_id=1552480677]
@@ -461,4 +468,15 @@ transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, 0, 0
 visible = false
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="AnimatronicJumpscares/BurnedPlushBotJumpscare" unique_id=881120374]
+stream = ExtResource("15")
+
+[node name="WoundUpTinSoldierJumpscare" type="Node3D" parent="AnimatronicJumpscares" unique_id=489411266]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0271972, -0.3039813, -1.8673385e-08)
+script = ExtResource("12")
+
+[node name="wound_up_tin_soldier_model" parent="AnimatronicJumpscares/WoundUpTinSoldierJumpscare" unique_id=327848067 instance=ExtResource("tin_soldier_model")]
+transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, 0, 0, 0)
+visible = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="AnimatronicJumpscares/WoundUpTinSoldierJumpscare" unique_id=1065401739]
 stream = ExtResource("15")

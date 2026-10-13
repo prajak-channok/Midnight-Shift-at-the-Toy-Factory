@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://ciptxvcinddjg" path="res://animatronics/burned_plush_bot/models/burned_plush_model.tscn" id="8_og6xe"]
 [ext_resource type="FontFile" uid="uid://cnxaexrmbbmvj" path="res://main_menu/fonts/RubikGlitch-Regular.ttf" id="9_kwfav"]
 [ext_resource type="Script" uid="uid://ba7cdhmwwwj6b" path="res://common/static/static_noise.gd" id="10_noise"]
+[ext_resource type="AudioStream" uid="uid://cid58ritdb21j" path="res://sounds/main_menu.ogg" id="menu_music"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_night_mint_normal"]
 content_margin_left = 26.0
@@ -449,6 +450,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_wtisl")
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("menu_music")
 
 [node name="Static" type="TextureRect" parent="." unique_id=1578568325]
 modulate = Color(1, 1, 1, 0.14902)
