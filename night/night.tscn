@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bh4nsbfgh1ov7" path="res://light_button/light_button.tscn" id="9_0mj8d"]
 [ext_resource type="PackedScene" path="res://building/rooms/factory_map.tscn" id="9_24kut"]
 [ext_resource type="PackedScene" path="res://animatronics/porcelain_ballerina/porcelain_ballerina.tscn" id="10"]
-[ext_resource type="PackedScene" path="res://doors/door.tscn" id="11"]
+[ext_resource type="PackedScene" uid="uid://l0ewu38urg07" path="res://doors/door.tscn" id="11"]
 [ext_resource type="Script" uid="uid://dwp4sk0xfkexq" path="res://animatronics/animatronic_utilities/jumpscares/animatronic_jumpscare.gd" id="12"]
 [ext_resource type="PackedScene" path="res://animatronics/springy_clown/models/springy_clown_model.tscn" id="13"]
 [ext_resource type="PackedScene" uid="uid://qgb2mxtxucr1" path="res://animatronics/porcelain_ballerina/models/porcelain_ballerina_model.tscn" id="14"]

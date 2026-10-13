@@ -452,7 +452,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_wtisl")
 
-[node name="Music" type="AudioStreamPlayer" parent="."]
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=6291432]
 stream = ExtResource("menu_music")
 
 [node name="Static" type="TextureRect" parent="." unique_id=1578568325]
