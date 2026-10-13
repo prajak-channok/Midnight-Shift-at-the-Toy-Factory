@@ -17,6 +17,8 @@ const LURE_SOUND_FADE := 0.5
 const WIND_READY_TEXT := "WIND UP"
 const WIND_HELD_TEXT := "WINDING..."
 
+const WIND_UP_CAM := &"StaffRoom" ## Cam 5: the only camera that shows the wind up button and its cooldown ring.
+
 const DEFAULT_CAM_INDEX = 0
 const LURE_MARKER_COLOR := Color(0.95, 0.7, 0.25)
 
@@ -31,6 +33,7 @@ var selected_cam : Camera3D
 var all_cams = {}
 var cam_lights = {}	# Camera3D name -> Array[Light3D]
 
+var _wind_up_enabled := false
 var _lure_cooldown := 0.0
 var _lure_selecting := false
 var _lure_markers: Array[Control] = []
@@ -115,10 +118,18 @@ func setup_audio_lure(cooldown : float):
 	audio_lure_button.show()
 
 
-## Shows the "wind up" button and its cooldown ring.
+## Enables the "wind up" button and its cooldown ring; they only show while the [constant WIND_UP_CAM] camera is watched.
 func setup_wind_up():
-	wind_up_button.show()
-	wind_cooldown_ring.show()
+	_wind_up_enabled = true
+	_update_wind_up_visibility()
+
+
+func _update_wind_up_visibility():
+	var visible_now := _wind_up_enabled and is_watching(WIND_UP_CAM)
+	if not visible_now and wind_up_button.visible:
+		_set_wind_up_held(false)
+	wind_up_button.visible = visible_now
+	wind_cooldown_ring.visible = visible_now
 
 
 ## [param ratio] is the remaining share of the wind-up timer (1 = full); [param urgent] turns the ring red.
@@ -136,6 +147,7 @@ func set_current_cam(cam : String):
 	selected_cam = all_cams[cam.to_lower()]
 	selected_cam.current = true
 	_update_lights()
+	_update_wind_up_visibility()
 	cam_click_sound.play()
 	lose_communication(1.0)
 
@@ -159,6 +171,7 @@ func enable_camera_display():
 		selected_cam.current = true
 	cam_ui.visible = true
 	_update_lights()
+	_update_wind_up_visibility()
 
 
 func disable_camera_display():
@@ -168,6 +181,7 @@ func disable_camera_display():
 	_set_lure_selecting(false)
 	_set_wind_up_held(false)
 	_update_lights()
+	_update_wind_up_visibility()
 
 
 func _set_wind_up_held(held : bool):

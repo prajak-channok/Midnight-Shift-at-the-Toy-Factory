@@ -6,8 +6,8 @@ class_name WoundUpTinSoldier
 ## [constant AWAKE_AT] seconds or less are left; at zero the monitor is forced down, he jumpscares and the night is lost.
 
 const ACTIVE_NIGHTS: Array[int] = [4, 5]
-const START_COOLDOWN := 15.0
-const WIND_RATE := 1.25 ## Timer seconds gained per real second while winding.
+const START_COOLDOWN := 20.0
+const WIND_RATE := 1.5 ## Timer seconds gained per real second while winding.
 const AWAKE_AT := 5.0
 const WARNING_AT := 3.0 ## The monitor's cooldown ring turns red at or below this.
 
