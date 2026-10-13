@@ -48,11 +48,7 @@ func _ready() -> void:
 	get_window().size_changed.connect(_refresh_settings_labels)
 	_refresh_settings_labels()
 
-	# A browser tab cannot be closed by the game, so the Exit button is only for desktop builds.
-	if OS.has_feature("web"):
-		exit_button.hide()
-	else:
-		exit_button.pressed.connect(get_tree().quit)
+	exit_button.pressed.connect(get_tree().quit)
 
 	_setup_button_sounds()
 	_setup_ambience()
