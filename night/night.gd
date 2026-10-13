@@ -118,6 +118,8 @@ func trigger_game_over(animatronic: AnimatronicBase) -> void:
 	right_door.force_open()
 
 	player.lock_view()
+	if animatronic.forces_monitor_down:
+		player.force_monitor_down()
 	while player.is_monitor_on() or player.monitor.refuse_requests:
 		await get_tree().process_frame
 	await get_tree().create_timer(0.25).timeout

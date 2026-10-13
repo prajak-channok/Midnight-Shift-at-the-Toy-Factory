@@ -36,6 +36,14 @@ func pick_destination(from: StringName) -> StringName:
 	return &""
 
 
+## True if the graph has a path from [param from] straight to [param to].
+func can_move(from: StringName, to: StringName) -> bool:
+	for node in nodes:
+		if node.position_name == from:
+			return node.destinations.get(to, 0.0) > 0.0
+	return false
+
+
 func get_return_position() -> StringName:
 	return return_position if return_position != &"" else start_position
 

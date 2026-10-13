@@ -5,7 +5,7 @@ class_name FnafAnimatronic
 ## When the graph picks "Office" the animatronic tries to get in; what happens then is decided by
 ## [method _on_reach_office].[br]
 ## Subclasses customise the walk by overriding the hooks:
-## [method _can_attempt_move], [method _on_reach_office], [method _get_return_position] and [method _validate_setup].
+## [method _can_attempt_move], [method _pick_destination], [method _on_reach_office], [method _get_return_position] and [method _validate_setup].
 
 @export var graph: AnimatronicGraph
 @export var door: Door ## Optional. Only used by [method _attack_through_door]; subclasses decide whether it is required.
@@ -30,7 +30,7 @@ func start_ai() -> void:
 		if not _can_attempt_move():
 			continue
 
-		var destination := graph.pick_destination(current_position.name)
+		var destination := _pick_destination()
 		if destination == AnimatronicGraph.OFFICE:
 			await _on_reach_office()
 		elif destination != &"":
@@ -45,6 +45,11 @@ func stop_ai() -> void:
 ## Hook: return false to skip this movement opportunity (e.g. Freddy while a camera is watching him).
 func _can_attempt_move() -> bool:
 	return true
+
+
+## Hook: where to go on a successful movement opportunity. The default is a weighted random pick from the graph.
+func _pick_destination() -> StringName:
+	return graph.pick_destination(current_position.name)
 
 
 ## Hook: called when the graph picks the reserved Office destination. The default walks straight in.
