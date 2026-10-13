@@ -5,7 +5,12 @@ class_name CameraManager
 ## This node manages a bunch of Camera3D nodes and keeps in its scene a Camera UI
 ## that contains a bunch of camera buttons to allow the player to switch between cameras.
 
+## Emitted when the player picks a room to play audio in. [param room] is the camera node name,
+## which matches the AnimatronicPosition name of that room.
+signal audio_lure_requested(room: StringName)
+
 const DEFAULT_CAM_INDEX = 0
+const LURE_MARKER_COLOR := Color(0.95, 0.7, 0.25)
 
 ## Parent of the room lights. A light belongs to the camera whose node name its own name starts with
 ## (e.g. "ToyFactoryRimLight" -> "ToyFactory") and is only shown while that camera is being watched.
@@ -18,15 +23,26 @@ var selected_cam : Camera3D
 var all_cams = {}
 var cam_lights = {}	# Camera3D name -> Array[Light3D]
 
+var _lure_cooldown := 0.0
+var _lure_selecting := false
+var _lure_markers: Array[Control] = []
+var _lure_tween: Tween
+
 @onready var cam_ui = $%CameraUI
 @onready var cam_buttons_parent = $%CamButtonsParent
 @onready var cam_click_sound = $CamClickSound
 @onready var ui_animation_player = $CameraUI/AnimationPlayer
+@onready var audio_lure_button: AudioLureButton = %AudioLureButton
+@onready var audio_lure_hint: Label = %AudioLureHint
+@onready var audio_lure_sound: AudioStreamPlayer = $AudioLureSound
 
 
 func _ready():
 	cam_ui.visible = false
-	
+	audio_lure_button.hide()
+	audio_lure_hint.hide()
+	audio_lure_button.pressed.connect(_on_audio_lure_button_pressed)
+
 	# Add all cameras to the camera dictionary
 	# Each key is the name of the camera in lowercase and the value is a reference to the Camera3D node.
 	for c in get_children():
@@ -39,6 +55,7 @@ func _ready():
 	for c in cam_buttons_parent.get_children():
 		if c is BaseButton:
 			c.connect("cam_button_pressed", set_current_cam)
+			_lure_markers.append(_make_lure_marker(c))
 	
 	# Set default cam
 	if not all_cams.values().is_empty():
@@ -74,7 +91,16 @@ func _update_lights():
 			light.visible = lit
 
 
+## Shows the "play audio" button; it recharges for [param cooldown] seconds after every use.
+func setup_audio_lure(cooldown : float):
+	_lure_cooldown = cooldown
+	audio_lure_button.show()
+
+
 func set_current_cam(cam : String):
+	if _lure_selecting:
+		_play_audio_lure(cam)
+		return
 	# set the previous camera as not current and hide it, switch to the new one and make that one current
 	selected_cam.current = false
 	selected_cam = all_cams[cam.to_lower()]
@@ -109,4 +135,58 @@ func disable_camera_display():
 	if selected_cam:
 		selected_cam.current = false
 	cam_ui.visible = false
+	_set_lure_selecting(false)
 	_update_lights()
+
+
+func _on_audio_lure_button_pressed():
+	_set_lure_selecting(not _lure_selecting)
+
+
+## While selecting, every cam button shows a pulsing marker and pressing one plays the audio there
+## instead of switching the camera.
+func _set_lure_selecting(active : bool):
+	if _lure_selecting == active:
+		return
+	_lure_selecting = active
+	audio_lure_button.set_selecting(active)
+	audio_lure_hint.visible = active
+
+	if _lure_tween:
+		_lure_tween.kill()
+		_lure_tween = null
+	for marker in _lure_markers:
+		marker.visible = active
+		marker.modulate.a = 1.0
+	if active:
+		_lure_tween = create_tween().set_loops().set_parallel(true)
+		for marker in _lure_markers:
+			_lure_tween.tween_property(marker, "modulate:a", 0.3, 0.5)
+			_lure_tween.tween_property(marker, "modulate:a", 1.0, 0.5).set_delay(0.5)
+
+
+func _play_audio_lure(room : String):
+	_set_lure_selecting(false)
+	audio_lure_sound.play()
+	audio_lure_button.start_cooldown(_lure_cooldown)
+	audio_lure_requested.emit(StringName(room))
+
+
+func _make_lure_marker(cam_button : Control) -> Control:
+	var marker := Panel.new()
+	marker.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	marker.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	var box := StyleBoxFlat.new()
+	box.bg_color = Color(LURE_MARKER_COLOR, 0.18)
+	box.set_border_width_all(3)
+	box.border_color = LURE_MARKER_COLOR
+	box.corner_radius_top_left = 9
+	box.corner_radius_bottom_right = 9
+	box.corner_radius_top_right = 2
+	box.corner_radius_bottom_left = 2
+	box.shadow_color = Color(LURE_MARKER_COLOR, 0.5)
+	box.shadow_size = 8
+	marker.add_theme_stylebox_override("panel", box)
+	marker.hide()
+	cam_button.add_child(marker)
+	return marker
