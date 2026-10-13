@@ -10,7 +10,7 @@ extends Control
 @onready var mute_button: Button = %MuteButton
 @onready var settings_close_button: Button = %SettingsCloseButton
 @onready var exit_button: Button = %ExitButton
-@onready var music: AudioStreamPlayer = $Music
+
 const SOUND_HOVER := "res://main_menu/sounds/ui_hover.wav"
 const SOUND_CLICK := "res://main_menu/sounds/ui_click.wav"
 const SOUND_START := "res://main_menu/sounds/ui_start.wav"
@@ -27,10 +27,6 @@ const AMBIENCE_VOLUME_DB := 0
 
 
 func _ready() -> void:
-	# The music follows the Master bus, so the SOUND ON/OFF button (Global.toggle_mute) mutes it too.
-	(music.stream as AudioStreamOggVorbis).loop = true
-	music.play()
-
 	for i in night_buttons.get_child_count():
 		var button := night_buttons.get_child(i) as Button
 		button.pressed.connect(start_night.bind(i + 1))
