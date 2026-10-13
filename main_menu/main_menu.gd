@@ -9,7 +9,21 @@ extends Control
 @onready var fullscreen_button: Button = %FullScreenButton
 @onready var mute_button: Button = %MuteButton
 @onready var settings_close_button: Button = %SettingsCloseButton
+@onready var exit_button: Button = %ExitButton
 @onready var music: AudioStreamPlayer = $Music
+const SOUND_HOVER := "res://main_menu/sounds/ui_hover.wav"
+const SOUND_CLICK := "res://main_menu/sounds/ui_click.wav"
+const SOUND_START := "res://main_menu/sounds/ui_start.wav"
+const SOUND_AMBIENCE := "res://main_menu/sounds/menu_ambience.wav"
+
+var _hover_player: AudioStreamPlayer
+var _click_player: AudioStreamPlayer
+var _start_player: AudioStreamPlayer
+var _ambience_player: AudioStreamPlayer
+var _starting := false
+
+## Loudness of the background ambience (more negative = quieter).
+const AMBIENCE_VOLUME_DB := 0
 
 
 func _ready() -> void:
@@ -34,6 +48,15 @@ func _ready() -> void:
 	get_window().size_changed.connect(_refresh_settings_labels)
 	_refresh_settings_labels()
 
+	# A browser tab cannot be closed by the game, so the Exit button is only for desktop builds.
+	if OS.has_feature("web"):
+		exit_button.hide()
+	else:
+		exit_button.pressed.connect(get_tree().quit)
+
+	_setup_button_sounds()
+	_setup_ambience()
+
 
 func _unhandled_input(event: InputEvent) -> void:
 	if not event.is_action_pressed("ui_cancel"):
@@ -47,7 +70,14 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func start_night(night: int) -> void:
+	if _starting:
+		return
+	_starting = true
 	Global.current_night = night
+	# Fade the factory ambience out while the start sound plays, then change the scene.
+	create_tween().tween_property(_ambience_player, "volume_db", -60.0, 0.35)
+	if _start_player.stream != null:
+		await get_tree().create_timer(0.35).timeout
 	get_tree().change_scene_to_file("res://night/night.tscn")
 
 
@@ -59,3 +89,47 @@ func _on_mute_pressed() -> void:
 func _refresh_settings_labels() -> void:
 	fullscreen_button.text = "EXIT FULLSCREEN" if Global.is_fullscreen() else "FULLSCREEN"
 	mute_button.text = "SOUND: OFF" if Global.is_muted() else "SOUND: ON"
+
+
+# ---------- button sounds ----------
+
+func _setup_button_sounds() -> void:
+	_hover_player = _make_player(SOUND_HOVER, -10.0)
+	_click_player = _make_player(SOUND_CLICK, -4.0)
+	_start_player = _make_player(SOUND_START, -2.0)
+	for node in find_children("*", "Button", true, false):
+		var button := node as Button
+		button.mouse_entered.connect(_on_button_hover.bind(button))
+		if button.get_parent() == night_buttons:
+			button.pressed.connect(_play.bind(_start_player))  # night buttons get the "start" sound
+		else:
+			button.pressed.connect(_play.bind(_click_player))
+
+
+func _make_player(path: String, volume_db: float) -> AudioStreamPlayer:
+	var player := AudioStreamPlayer.new()
+	if ResourceLoader.exists(path):
+		player.stream = load(path)
+	else:
+		push_warning("Menu sound missing: %s" % path)
+	player.volume_db = volume_db
+	add_child(player)
+	return player
+
+
+func _on_button_hover(button: Button) -> void:
+	if not button.disabled:
+		_play(_hover_player)
+
+
+func _play(player: AudioStreamPlayer) -> void:
+	if player.stream != null:
+		player.play()
+
+
+# ---------- background ambience ----------
+
+func _setup_ambience() -> void:
+	_ambience_player = _make_player(SOUND_AMBIENCE, AMBIENCE_VOLUME_DB)
+	if _ambience_player.stream != null:
+		_ambience_player.play()
