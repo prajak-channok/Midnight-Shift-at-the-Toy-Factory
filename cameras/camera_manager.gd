@@ -36,7 +36,9 @@ var cam_lights = {}	# Camera3D name -> Array[Light3D]
 var _wind_up_enabled := false
 var _lure_cooldown := 0.0
 var _lure_selecting := false
-var _lure_markers: Array[Control] = []
+var _all_lure_markers := {} # lowercase cam name -> marker
+var _lure_markers: Array[Control] = [] # markers of the rooms the audio can be played in
+var _lure_rooms: Array[String] = [] # lowercase names of those rooms
 var _lure_tween: Tween
 var _lure_sound_tween: Tween
 var _lure_sound_volume_db := 0.0
@@ -76,7 +78,7 @@ func _ready():
 	for c in cam_buttons_parent.get_children():
 		if c is BaseButton:
 			c.connect("cam_button_pressed", set_current_cam)
-			_lure_markers.append(_make_lure_marker(c))
+			_all_lure_markers[String(c.camera_node_name).to_lower()] = _make_lure_marker(c)
 	
 	# Set default cam
 	if not all_cams.values().is_empty():
@@ -113,8 +115,16 @@ func _update_lights():
 
 
 ## Shows the "play audio" button; it recharges for [param cooldown] seconds after every use.
-func setup_audio_lure(cooldown : float):
+## Audio can only be played in [param rooms]; the other cameras are neither highlighted nor selectable for it.
+func setup_audio_lure(cooldown : float, rooms : Array[StringName]):
 	_lure_cooldown = cooldown
+	_lure_rooms.clear()
+	_lure_markers.clear()
+	for room in rooms:
+		var key := String(room).to_lower()
+		_lure_rooms.append(key)
+		if _all_lure_markers.has(key):
+			_lure_markers.append(_all_lure_markers[key])
 	audio_lure_button.show()
 
 
@@ -140,7 +150,8 @@ func set_wind_up_progress(ratio : float, urgent : bool):
 
 func set_current_cam(cam : String):
 	if _lure_selecting:
-		_play_audio_lure(cam)
+		if cam.to_lower() in _lure_rooms:
+			_play_audio_lure(cam)
 		return
 	# set the previous camera as not current and hide it, switch to the new one and make that one current
 	selected_cam.current = false

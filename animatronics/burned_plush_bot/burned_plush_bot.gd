@@ -56,6 +56,6 @@ func _setup_audio_lure() -> void:
 	var cooldown: float = LURE_COOLDOWN_BY_NIGHT.get(Global.current_night, 0.0)
 	if cooldown <= 0.0 or cam_manager == null:
 		return
-	cam_manager.setup_audio_lure(cooldown)
+	cam_manager.setup_audio_lure(cooldown, graph.get_all_position_names())
 	if not cam_manager.audio_lure_requested.is_connected(lure_to):
 		cam_manager.audio_lure_requested.connect(lure_to)

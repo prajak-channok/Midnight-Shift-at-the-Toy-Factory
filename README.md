@@ -10,26 +10,36 @@ A 3D first-person survival horror game built with Godot 4.7.
 
 ## Story
 
-WonderMold Inc., a toy factory, was shut down abruptly after a massive fire. Rumors say the discarded toy parts left behind are haunted by restless spirits.
+Many years ago, WonderMold Inc., a famous toy factory, was destroyed by a large fire and had to close forever. The fire left behind an abandoned factory and many toys that were never moved out.
 
-You play as the night-shift security guard, sent to watch over the warehouse from the central control booth. But when midnight arrives, the spirits in the toy wreckage awaken, possess the dolls, and attack you. To survive, you must rely on the CCTV monitor, a powerful flashlight, and the vent doors, while managing a very limited power supply, until 6:00 AM.
+Years later, a nearby warehouse was still used to store the remaining goods. A new night guard was hired to watch over the warehouse from midnight until 6 AM.
+
+But soon, strange things began to happen. Toys that should have stayed still started moving around the warehouse. Some even came out of the old factory.
+
+Now, the guard must use security cameras, a flashlight, and doors to stay safe until morning. But something from the past may still be hiding inside the abandoned factory.
 
 ## How to Play
 
 You can't leave your seat. You can only look around, check the cameras, shine your light into the vents, and close the vent doors.
 
-- Watch the cameras to track where the toys are, and listen for audio cues from the left or right headphone.
-- Use the flashlights to check the vents, and close the vent door when a toy appears.
-- Every action drains the battery. Closing both doors at once drains it 3× faster.
-- Survive from **12:00 AM to 6:00 AM** (about 5 minutes real time) to win.
-- You lose if a toy reaches you or the battery hits **0%**.
+- Move the mouse to the left or right edge of the screen to look around the office.
+- Raise the monitor to watch the cameras and track where the toys are. Click a room on the map to switch cameras.
+- Use the door lights to check the left and right halls, and close the door when a toy is standing there. A closed door holds a toy back for a few seconds before it retreats, but an open door lets it straight in.
+- The monitor, the closed doors and (from Night 2) the lights all drain the battery, and the drain gets heavier every night. Keep them off when you don't need them.
+- If the battery hits **0%** the doors open by themselves and the monitor shuts down, leaving you defenceless.
+- Survive from **12:00 AM to 6:00 AM** (6 minutes real time, 1 minute per hour) to win the night. Beating a night unlocks the next one (5 nights in total).
+- You lose if a toy reaches you.
 
 ## Controls
 
-| Key | Action |
+| Input | Action |
 |:---:|--------|
 | `A` | Left door |
 | `D` | Right door |
 | `Z` | Left light |
 | `C` | Right light |
-| `SPACE` | Monitor |
+| `SPACE` | Raise / lower the monitor |
+| Mouse (screen edges) | Look left / right |
+| Left click | Press the in-office door and light buttons, and the on-screen monitor button |
+
+The doors, lights and monitor can also be used with the mouse. Hover over or click the monitor button on screen to raise or lower it. The **FLEE THE SHIFT** button on the night screen abandons the night (progress isn't saved) and returns to the menu.
