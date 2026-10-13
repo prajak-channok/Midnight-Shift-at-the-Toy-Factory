@@ -1,12 +1,12 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://cwj6j7r1fl4x2"]
 
-[ext_resource type="Script" path="res://animatronics/porcelain_ballerina/porcelain_ballerina.gd" id="1"]
-[ext_resource type="PackedScene" path="res://animatronics/porcelain_ballerina/models/porcelain_ballerina_model.tscn" id="2"]
+[ext_resource type="Script" uid="uid://bf4r6bfn78akm" path="res://animatronics/porcelain_ballerina/porcelain_ballerina.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://qgb2mxtxucr1" path="res://animatronics/porcelain_ballerina/models/porcelain_ballerina_model.tscn" id="2"]
 
-[node name="PorcelainBallerina" type="Node3D"]
+[node name="PorcelainBallerina" type="Node3D" unique_id=124710888]
 script = ExtResource("1")
-id = &"porcelain_ballerina"
 animation_player_path = NodePath("porcelain_ballerina_model/AnimationPlayer")
+id = &"porcelain_ballerina"
 
-[node name="porcelain_ballerina_model" parent="." instance=ExtResource("2")]
+[node name="porcelain_ballerina_model" parent="." unique_id=971742104 instance=ExtResource("2")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)

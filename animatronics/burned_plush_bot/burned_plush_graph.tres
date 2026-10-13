@@ -7,10 +7,10 @@
 script = ExtResource("2_node")
 position_name = &"ToyFactory"
 destinations = Dictionary[StringName, float]({
-&"FactoryTransferCorridor": 70.0,
+&"FactoryTransferCorridor": 50.0,
 &"MainStorageHall": 10.0,
-&"PackingRoom": 10.0,
-&"PartsReturnsStorageRoom": 10.0
+&"PackingRoom": 20.0,
+&"PartsReturnsStorageRoom": 20.0
 })
 
 [sub_resource type="Resource" id="Resource_ftc"]
@@ -28,8 +28,8 @@ script = ExtResource("2_node")
 position_name = &"PartsReturnsStorageRoom"
 destinations = Dictionary[StringName, float]({
 &"FactoryTransferCorridor": 15.0,
-&"InventoryCheckRoom": 35.0,
-&"MainStorageHall": 45.0,
+&"InventoryCheckRoom": 40.0,
+&"MainStorageHall": 40.0,
 &"ToyFactory": 5.0
 })
 
@@ -74,9 +74,8 @@ destinations = Dictionary[StringName, float]({
 [resource]
 script = ExtResource("1_graph")
 start_position = &"ToyFactory"
-return_position = &"InventoryCheckRoom"
-decision_time_min = 4.0
-decision_time_max = 5.0
-blocked_retreat_delay_min = 3.0
-blocked_retreat_delay_max = 7.0
+return_position = &"ToyFactory"
+decision_time_min = 5.5
+decision_time_max = 8.5
+blocked_retreat_delay_max = 10.0
 nodes = Array[ExtResource("2_node")]([SubResource("Resource_toy"), SubResource("Resource_ftc"), SubResource("Resource_parts"), SubResource("Resource_main"), SubResource("Resource_packing"), SubResource("Resource_inv"), SubResource("Resource_rhall")])
