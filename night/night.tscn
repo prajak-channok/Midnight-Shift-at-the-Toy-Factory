@@ -34,7 +34,7 @@
 [ext_resource type="Resource" uid="uid://ddni26uyxp4uw" path="res://night/difficulty/night_4.tres" id="night_4"]
 [ext_resource type="Resource" uid="uid://bc4c2e6xr5fjm" path="res://night/difficulty/night_5.tres" id="night_5"]
 [ext_resource type="PackedScene" path="res://animatronics/wound_up_tin_soldier/wound_up_tin_soldier.tscn" id="tin_soldier"]
-[ext_resource type="PackedScene" path="res://animatronics/wound_up_tin_soldier/models/wound_up_tin_soldier_model.tscn" id="tin_soldier_model"]
+[ext_resource type="PackedScene" uid="uid://dlmbf8opv6n46" path="res://animatronics/wound_up_tin_soldier/models/wound_up_tin_soldier_model.tscn" id="tin_soldier_model"]
 
 [node name="Night" type="Node3D" unique_id=1457411669 node_paths=PackedStringArray("clock", "animatronics")]
 script = ExtResource("1")
@@ -86,25 +86,25 @@ light_specular = 0.0
 omni_range = 4.0
 
 [node name="StaffRoomLight" type="OmniLight3D" parent="Lights" unique_id=1306876858]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.5, 3, -15.935548)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.34282, 2.453691, -14.736234)
 light_color = Color(0.85, 0.78, 0.68, 1)
-light_energy = 0.3
+light_energy = 2.0
 light_specular = 0.0
-omni_range = 3.0
+omni_range = 3.5
 
 [node name="PackingRoomLight" type="OmniLight3D" parent="Lights" unique_id=2117915368]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 3, -26.25)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.29441, 3, -26.25)
 light_color = Color(0.85, 0.9, 1, 1)
 light_energy = 1.1
 light_specular = 0.0
 omni_range = 6.0
 
 [node name="InventoryCheckRoomLight" type="OmniLight3D" parent="Lights" unique_id=1740904217]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 3, -15.75)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.6726, 3, -16.410034)
 light_color = Color(0.85, 0.9, 1, 1)
 light_energy = 1.1
 light_specular = 0.0
-omni_range = 3.0
+omni_range = 4.0
 
 [node name="LoadingBayLight1" type="OmniLight3D" parent="Lights" unique_id=519996175]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.5, 4.5, -27.50255)
@@ -286,7 +286,7 @@ cam_manager = NodePath("../../CameraManager")
 jumpscare = NodePath("../../AnimatronicJumpscares/BurnedPlushBotJumpscare")
 
 [node name="WoundUpTinSoldier" parent="Animatronics" unique_id=661309142 node_paths=PackedStringArray("cam_manager", "jumpscare") instance=ExtResource("tin_soldier")]
-transform = Transform3D(0.69, 0, 0.72, 0, 1, 0, -0.72, 0, 0.69, -16.8, 0, -16.6)
+transform = Transform3D(-0.3479734, 0, 0.9345665, 0, 1, 0, -0.9345665, 0, -0.3479734, -16.513588, 0.7673129, -15.63436)
 cam_manager = NodePath("../../CameraManager")
 jumpscare = NodePath("../../AnimatronicJumpscares/WoundUpTinSoldierJumpscare")
 

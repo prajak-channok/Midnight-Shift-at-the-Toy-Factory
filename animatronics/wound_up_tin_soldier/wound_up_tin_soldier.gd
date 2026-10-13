@@ -6,7 +6,7 @@ class_name WoundUpTinSoldier
 ## [constant AWAKE_AT] seconds or less are left; at zero the monitor is forced down, he jumpscares and the night is lost.
 
 const ACTIVE_NIGHTS: Array[int] = [4, 5]
-const START_COOLDOWN := 20.0
+const START_COOLDOWN := 25.0
 const WIND_RATE := 1.5 ## Timer seconds gained per real second while winding.
 const AWAKE_AT := 5.0
 const WARNING_AT := 3.0 ## The monitor's cooldown ring turns red at or below this.
@@ -32,8 +32,6 @@ func _init() -> void:
 func _ready() -> void:
 	_animation_player = get_node_or_null(animation_player_path)
 	set_process(false)
-	if not is_active_tonight():
-		hide()
 
 
 static func is_active_tonight() -> bool:
