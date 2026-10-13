@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://ciptxvcinddjg" path="res://animatronics/burned_plush_bot/models/burned_plush_model.tscn" id="8_og6xe"]
 [ext_resource type="FontFile" uid="uid://cnxaexrmbbmvj" path="res://main_menu/fonts/RubikGlitch-Regular.ttf" id="9_kwfav"]
 [ext_resource type="Script" uid="uid://ba7cdhmwwwj6b" path="res://common/static/static_noise.gd" id="10_noise"]
+[ext_resource type="Texture2D" uid="uid://jh6ur2owdiwo" path="res://main_menu/menu_background.png" id="11_bg"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_night_mint_normal"]
 content_margin_left = 26.0
@@ -451,6 +452,7 @@ grow_vertical = 2
 script = ExtResource("1_wtisl")
 
 [node name="Static" type="TextureRect" parent="." unique_id=1578568325]
+visible = false
 modulate = Color(1, 1, 1, 0.14902)
 z_index = 2
 layout_mode = 1
@@ -640,6 +642,27 @@ theme = SubResource("Theme_gray_buttons")
 theme_override_fonts/font = ExtResource("9_kwfav")
 theme_override_font_sizes/font_size = 20
 text = "SETTINGS"
+
+[node name="ExitButton" type="Button" parent="." unique_id=1183499300]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -542.0
+offset_top = -66.0
+offset_right = -377.0
+offset_bottom = -16.0
+grow_horizontal = 0
+grow_vertical = 0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = SubResource("Theme_gray_buttons")
+theme_override_fonts/font = ExtResource("9_kwfav")
+theme_override_font_sizes/font_size = 20
+text = "EXIT"
 
 [node name="ControlsPopup" type="Control" parent="." unique_id=814471415]
 unique_name_in_owner = true
@@ -861,6 +884,11 @@ text = "CLOSE"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.26806)
 fov = 38.6
 
+[node name="BackgroundPicture" type="Sprite3D" parent="Background" unique_id=136305100]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+pixel_size = 0.004352
+texture = ExtResource("11_bg")
+
 [node name="OmniLight3D" type="OmniLight3D" parent="Background" unique_id=974690347]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.416245, 0.897024, 2.52208)
 
@@ -868,28 +896,28 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.416245, 0.897024, 2.52208)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5350604, -2.0129304, -0.7098119)
 
 [node name="Body" parent="Background/burned_plush_model" index="0" unique_id=1764290305]
-transform = Transform3D(0.97, 0, 0, 0, 1.0493604, 0.03385251, 0, -0.03664447, 0.96940917, 0, 0, 0)
+transform = Transform3D(0.9986295, 0.044485565, 0, -0.019605398, 0.31797925, -0.92718387, -0.048525058, 0.7870262, 0.37460664, 0, 0, -0.7)
 
 [node name="EmberLight" parent="Background/burned_plush_model/Body" index="7" unique_id=494664836]
-light_energy = 0.7
+light_energy = 0.6
 
 [node name="ArmLeft" parent="Background/burned_plush_model/Body" index="13" unique_id=1388499835]
-transform = Transform3D(0.9975641, -0.06975647, 0, 0.06975647, 0.9975641, 0, 0, 0, 1, 0.5, 1.28, 0)
+transform = Transform3D(0.9945219, -0.104528464, 0, -0.0036479873, -0.03470828, 0.99939084, -0.10446479, -0.9939161, -0.034899462, 0.5, 1.28, 0)
 
 [node name="ArmRight" parent="Background/burned_plush_model/Body" index="14" unique_id=646367527]
-transform = Transform3D(0.9975641, 0.06975647, 0, -0.06975647, 0.9975641, 0, 0, 0, 1, -0.5, 1.28, 0)
+transform = Transform3D(0.9945219, 0.104528464, 0, -0.06435415, 0.61228883, 0.7880107, 0.08236955, -0.7836939, 0.6156615, -0.5, 1.28, 0)
 
 [node name="Head" parent="Background/burned_plush_model/Body" index="15" unique_id=2052066722]
-transform = Transform3D(0.88294756, -0.46947157, 0, 0.46689978, 0.8781107, 0.104528464, -0.04907314, -0.09229315, 0.9945219, 0, 1.9, 0.04)
+transform = Transform3D(0.99619466, 0.08715574, 0, -0.04091714, 0.46768513, 0.88294756, 0.07695394, -0.8795877, 0.4694716, 0, 1.88, 0)
 
 [node name="EyeLeft" parent="Background/burned_plush_model/Body/Head" index="4" unique_id=2112298238]
-transform = Transform3D(1.15, 0, 0, 0, 1.15, 0, 0, 0, 1.15, 0.14, 0.08, 0.31)
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0.14, 0.08, 0.31)
 
 [node name="Antenna" parent="Background/burned_plush_model/Body/Head" index="11" unique_id=1058739843]
-transform = Transform3D(0.98480767, 0.17364816, 0, -0.17364816, 0.98480767, 0, 0, 0, 1, 0.06, 0.33, 0)
+transform = Transform3D(0.9396925, 0.3420201, 0, -0.3420201, 0.9396925, 0, 0, 0, 1, 0.06, 0.33, 0)
 
 [node name="Jaw" parent="Background/burned_plush_model/Body/Head" index="17" unique_id=178216194]
-transform = Transform3D(1, 0, 0, 0, 0.9945219, -0.104528464, 0, 0.104528464, 0.9945219, 0, -0.2, 0.2)
+transform = Transform3D(1, 0, 0, 0, 0.9702957, -0.2419219, 0, 0.2419219, 0.9702957, 0, -0.2, 0.2)
 
 [node name="AnimationPlayer" parent="Background/burned_plush_model" index="1" unique_id=545854173]
 autoplay = &"stare"
