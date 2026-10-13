@@ -37,9 +37,18 @@ const LURE_MARKER_COLOR := Color(0.95, 0.7, 0.25)
 ## Rooms a camera can see besides its own, e.g. the corridor camera looks into the ToyFactory.
 @export var extra_cam_rooms: Dictionary = {"FactoryTransferCorridor": ["ToyFactory"]}
 
+const ANIMATRONIC_SPOT_DISTANCE := 0.5
+const ANIMATRONIC_ROOM_DISTANCE := 2.5
+const ROOM_CULLED_META := &"room_culled"
+
 var selected_cam : Camera3D
 var all_cams = {}
 var cam_lights = {}	# Camera3D name -> Array[Light3D]
+
+var _animatronics: Array[Node3D] = []
+var _spots: Array[Node3D] = []
+var _animatronic_last := {} # animatronic -> last global position
+var _shown_rooms := {} # names of the rooms that are currently rendered
 
 var _wind_up_enabled := false
 var _lure_cooldown := 0.0
@@ -96,6 +105,7 @@ func _ready():
 
 	_collect_cam_lights()
 	_update_lights()
+	_find_animatronics()
 	_update_rooms()
 	_warm_up()
 
@@ -139,12 +149,73 @@ func _update_rooms():
 	var extra: Array = []
 	if watching:
 		extra = extra_cam_rooms.get(String(selected_cam.name), [])
+	_shown_rooms.clear()
 	for room in rooms_root.get_children():
 		if room is Node3D:
 			if watching:
 				room.visible = room.name == selected_cam.name or String(room.name) in extra
 			else:
 				room.visible = office_rooms.has(String(room.name))
+			if room.visible:
+				_shown_rooms[room.name] = true
+	_update_animatronics()
+
+
+func _process(_delta: float):
+	var moved := false
+	for animatronic in _animatronics:
+		if _animatronic_last.get(animatronic) != animatronic.global_position:
+			_animatronic_last[animatronic] = animatronic.global_position
+			moved = true
+	if moved:
+		_update_animatronics()
+
+
+func _find_animatronics():
+	var night := get_parent()
+	for node in night.find_children("*", "AnimatronicBase", true, false):
+		_animatronics.append(node)
+	for node in night.find_children("*", "AnimatronicPosition", true, false):
+		_spots.append(node)
+
+
+## Animatronics are not part of the rooms, so without this they would be drawn through the walls
+## even while the room they stand in is hidden. Animatronics whose room can't be told are always shown.
+func _update_animatronics():
+	for animatronic in _animatronics:
+		var room := _room_of(animatronic)
+		var show_it := room == &"" or _shown_rooms.has(room)
+		if show_it and animatronic.has_meta(ROOM_CULLED_META):
+			animatronic.remove_meta(ROOM_CULLED_META)
+			animatronic.visible = true
+		elif not show_it and animatronic.visible:
+			animatronic.set_meta(ROOM_CULLED_META, true)
+			animatronic.visible = false
+
+
+## The room an animatronic stands in: the room named by the AnimatronicPosition it was placed on,
+## or else the room whose center it is next to. Empty when it isn't clearly in any room.
+func _room_of(animatronic: Node3D) -> StringName:
+	var pos := animatronic.global_position
+	var best := ANIMATRONIC_SPOT_DISTANCE
+	var spot_name := &""
+	for spot in _spots:
+		var d := spot.global_position.distance_to(pos)
+		if d < best:
+			best = d
+			spot_name = spot.name
+	if spot_name != &"":
+		return spot_name if rooms_root.has_node(NodePath(spot_name)) else &""
+
+	best = ANIMATRONIC_ROOM_DISTANCE
+	var room_name := &""
+	for room in rooms_root.get_children():
+		if room is Node3D:
+			var d: float = room.global_position.distance_to(pos)
+			if d < best:
+				best = d
+				room_name = room.name
+	return room_name
 
 
 func _collect_cam_lights():
