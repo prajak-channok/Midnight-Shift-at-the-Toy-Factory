@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://c5je4jq3t2ned" path="res://cameras/audio_lure_button.gd" id="12_lure"]
 [ext_resource type="AudioStream" uid="uid://cmusopiocnqm4" path="res://sounds/play_audio.ogg" id="14_k5wej"]
 [ext_resource type="FontFile" uid="uid://cnxaexrmbbmvj" path="res://main_menu/fonts/RubikGlitch-Regular.ttf" id="14_rubik"]
+[ext_resource type="AudioStream" uid="uid://bv62v21hdisec" path="res://sounds/wind_up.ogg" id="15_rcsv0"]
 [ext_resource type="Script" uid="uid://01gq0dp27ybv" path="res://cameras/cooldown_ring.gd" id="15_ring"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rcsv0"]
@@ -1259,4 +1260,8 @@ stream = ExtResource("9_t54n1")
 
 [node name="AudioLureSound" type="AudioStreamPlayer" parent="." unique_id=1920664373]
 stream = ExtResource("14_k5wej")
+volume_db = -6.0
+
+[node name="WindUpSound" type="AudioStreamPlayer" parent="." unique_id=568403819]
+stream = ExtResource("15_rcsv0")
 volume_db = -6.0

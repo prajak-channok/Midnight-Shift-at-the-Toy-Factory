@@ -45,6 +45,7 @@ var _lure_sound_volume_db := 0.0
 @onready var audio_lure_button: AudioLureButton = %AudioLureButton
 @onready var audio_lure_hint: Label = %AudioLureHint
 @onready var audio_lure_sound: AudioStreamPlayer = $AudioLureSound
+@onready var wind_up_sound: AudioStreamPlayer = $WindUpSound
 @onready var wind_up_button: Button = %WindUpButton
 @onready var wind_cooldown_ring: CooldownRing = %WindCooldownRing
 
@@ -172,7 +173,7 @@ func disable_camera_display():
 func _set_wind_up_held(held : bool):
 	wind_up_button.text = WIND_HELD_TEXT if held else WIND_READY_TEXT
 	if held:
-		cam_click_sound.play()
+		wind_up_sound.play()
 	wind_up_held_changed.emit(held)
 
 
