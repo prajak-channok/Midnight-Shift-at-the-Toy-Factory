@@ -13,6 +13,22 @@ Sound
 - https://freesound.org/people/ZyryTSounds/sounds/219244/
 - https://freesound.org/people/Ev-Dawg/sounds/336355/
 
-Font
+Sound licenses
+- The Freesound sounds above are CC0 1.0 (public domain dedication).
+- The Pixabay sounds are under the Pixabay Content License.
+
+Font (SIL Open Font License 1.1; license texts are in main_menu/fonts/)
 - Nosifer: https://fonts.google.com/specimen/Nosifer
 - Rubik Glitch: https://fonts.google.com/specimen/Rubik+Glitch
+
+3D models, textures and images
+- Generated with AI tools, except a few files inherited from the template below.
+
+Template
+- fnaf-2-godot by bypell (CC0 1.0): https://github.com/bypell/fnaf-2-godot
+
+Engine
+- Made with Godot Engine, https://godotengine.org/license
+  Copyright (c) 2014-present Godot Engine contributors.
+  Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
+  Licensed under the MIT License.

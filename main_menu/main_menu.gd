@@ -28,10 +28,6 @@ const AMBIENCE_VOLUME_DB := 5
 
 
 func _ready() -> void:
-	SaveManager.complete_night(2)
-	SaveManager.complete_night(3)
-	SaveManager.complete_night(4)
-	SaveManager.complete_night(5)
 	for i in night_buttons.get_child_count():
 		var button := night_buttons.get_child(i) as Button
 		button.pressed.connect(start_night.bind(i + 1))
