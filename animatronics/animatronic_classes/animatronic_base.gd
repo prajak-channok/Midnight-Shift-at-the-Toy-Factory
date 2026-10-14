@@ -16,6 +16,11 @@ var ai_level := 0
 var forces_monitor_down := false ## True if the camera monitor must be forced down before the jumpscare plays.
 
 
+## Called when the night loads, before the AI starts, so the animatronic waits in its starting spot.
+func place_at_start() -> void:
+	pass
+
+
 func start_ai() -> void:
 	pass
 

@@ -27,5 +27,5 @@ animatronic_id = &"wound_up_tin_soldier"
 script = ExtResource("1")
 ai_profiles = Array[ExtResource("2")]([SubResource("Resource_springy_clown"), SubResource("Resource_porcelain_ballerina"), SubResource("Resource_plush"), SubResource("Resource_tin_soldier")])
 base_drain = 0.06
-door_drain = 0.1
+door_drain = 0.121
 monitor_drain = 0.03

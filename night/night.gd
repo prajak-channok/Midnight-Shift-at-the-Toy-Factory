@@ -5,6 +5,7 @@ class_name Night
 @export var animatronics: Array[AnimatronicBase] = []
 @export var difficulties: Array[NightDifficulty] ## Index 0 = night 1.
 
+const AI_START_DELAY := 20.0 ## Seconds after the night begins before the toys start moving.
 const NIGHT_HINT_TITLE := "It seems some things are changing..."
 ## Night number -> second line of the start-of-night hint. Nights missing here show no hint.
 const NIGHT_HINT_DETAIL := {
@@ -59,11 +60,17 @@ func _ready() -> void:
 	var lights: Array[DoorLight] = [left_light, right_light]
 	power_system.start(difficulty, doors, lights, player)
 
-	for animatronic in animatronics:
-		animatronic.start_ai()
-
 	if NIGHT_HINT_DETAIL.has(Global.current_night):
 		hud.show_hint(NIGHT_HINT_TITLE, NIGHT_HINT_DETAIL[Global.current_night])
+	
+	for animatronic in animatronics:
+		animatronic.place_at_start()
+
+	await get_tree().create_timer(AI_START_DELAY).timeout
+	if game_over or night_complete:
+		return
+	for animatronic in animatronics:
+		animatronic.start_ai()
 
 
 func _unhandled_input(event: InputEvent) -> void:

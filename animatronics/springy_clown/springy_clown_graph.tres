@@ -54,18 +54,16 @@ script = ExtResource("2_node")
 position_name = &"LoadingBay"
 destinations = Dictionary[StringName, float]({
 &"ElectricalRoom": 10.0,
-&"LeftDoor": 30.0,
-&"LeftHall": 35.0,
+&"LeftHall": 60.0,
 &"PartsReturnsStorageRoom": 15.0,
-&"ToyFactory": 10.0
+&"ToyFactory": 15.0
 })
 
 [sub_resource type="Resource" id="Resource_elec"]
 script = ExtResource("2_node")
 position_name = &"ElectricalRoom"
 destinations = Dictionary[StringName, float]({
-&"LeftDoor": 30.0,
-&"LeftHall": 40.0,
+&"LeftHall": 70.0,
 &"LoadingBay": 10.0,
 &"MainStorageHall": 10.0,
 &"PartsReturnsStorageRoom": 10.0
@@ -75,9 +73,9 @@ destinations = Dictionary[StringName, float]({
 script = ExtResource("2_node")
 position_name = &"LeftHall"
 destinations = Dictionary[StringName, float]({
-&"ElectricalRoom": 10.0,
-&"LeftDoor": 80.0,
-&"MainStorageHall": 10.0
+&"ElectricalRoom": 20.0,
+&"LeftDoor": 60.0,
+&"MainStorageHall": 20.0
 })
 
 [sub_resource type="Resource" id="Resource_ldoor"]

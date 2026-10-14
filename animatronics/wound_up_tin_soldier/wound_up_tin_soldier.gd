@@ -6,7 +6,7 @@ class_name WoundUpTinSoldier
 ## [constant AWAKE_AT] seconds or less are left; at zero the monitor is forced down, he jumpscares and the night is lost.
 
 const ACTIVE_NIGHTS: Array[int] = [4, 5]
-const START_COOLDOWN := 25.0
+const START_COOLDOWN := 20.0
 const WIND_RATE := 2.5 ## Timer seconds gained per real second while winding.
 const AWAKE_AT := 5.0
 const WARNING_AT := 3.0 ## The monitor's cooldown ring turns red at or below this.
@@ -69,7 +69,7 @@ func _process(delta: float) -> void:
 	if _winding:
 		cooldown_left = minf(cooldown_left + WIND_RATE * delta, START_COOLDOWN)
 	else:
-		cooldown_left = maxf(cooldown_left - delta, 0.0)
+		cooldown_left = maxf(cooldown_left - (delta * 0.5), 0.0)
 	_refresh()
 	if cooldown_left <= 0.0:
 		stop_ai()

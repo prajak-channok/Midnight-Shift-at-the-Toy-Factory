@@ -13,6 +13,16 @@ class_name FnafAnimatronic
 var active: bool = false
 
 
+func place_at_start() -> void:
+	if graph == null or animatronic_positions_container == null:
+		return
+	var start := animatronic_positions_container.get_position_by_name(graph.start_position)
+	if start == null:
+		return
+	current_position = start
+	apply_position_to_body(start)
+
+
 func start_ai() -> void:
 	if graph == null:
 		push_error("%s: no AnimatronicGraph assigned." % name)
@@ -21,7 +31,8 @@ func start_ai() -> void:
 		return
 
 	active = true
-	move_to_pos(graph.start_position)
+	if current_position == null:
+		move_to_pos(graph.start_position)
 
 	while active:
 		await wait_for_successful_movement_opportunity(graph.decision_time_min, graph.decision_time_max)

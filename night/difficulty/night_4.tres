@@ -7,19 +7,19 @@
 script = ExtResource("2")
 animatronic_id = &"springy_clown"
 base_ai = 9
-bonus_hours = Array[int]([1, 2, 4, 5])
+bonus_hours = Array[int]([2, 4, 5])
 
 [sub_resource type="Resource" id="Resource_porcelain_ballerina"]
 script = ExtResource("2")
 animatronic_id = &"porcelain_ballerina"
 base_ai = 8
-bonus_hours = Array[int]([1, 3, 5])
+bonus_hours = Array[int]([3, 5])
 
 [sub_resource type="Resource" id="Resource_plush"]
 script = ExtResource("2")
 animatronic_id = &"burned_plush_bot"
 base_ai = 7
-bonus_hours = Array[int]([2, 3, 5])
+bonus_hours = Array[int]([3, 5])
 
 [sub_resource type="Resource" id="Resource_tin_soldier"]
 script = ExtResource("2")
