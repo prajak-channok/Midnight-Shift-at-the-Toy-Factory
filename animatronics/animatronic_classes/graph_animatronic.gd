@@ -4,7 +4,7 @@ class_name GraphAnimatronic
 @export var graph: AnimatronicGraph
 @export var door: Door ## สำหรับหุ่นที่ประตูสามารถป้องกันได้ (For animatronics a door can block)
 @export var animatronic_positions_container: AnimatronicPositionsContainer
-@export var cam_manager: CameraManager ## สำหรับทำจอซ่าห์ (For lose communication)
+@export var cam_manager: CameraManager ## สำหรับทำจอซ่าห์ (For losing communication)
 @export var animation_player_path: NodePath
 
 var current_position: AnimatronicPosition

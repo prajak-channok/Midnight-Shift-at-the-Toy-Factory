@@ -12,9 +12,10 @@ const LURE_COOLDOWN_BY_NIGHT := {
 var _lure_room: StringName = &""
 
 
-func start_ai() -> void:
-	_setup_audio_lure()
+## เปิดปุ่มล่อตั้งแต่เริ่มด่าน ก่อน AI เริ่มทำงาน (Show the lure button from the start of the night, before the AI runs)
+func place_at_start() -> void:
 	super()
+	_setup_audio_lure()
 
 
 ## สำหรับ night ตอนกดปุ่มล่อ (Called by Night when the lure button is pressed)
@@ -39,7 +40,7 @@ func _pick_destination() -> StringName:
 
 func _setup_audio_lure() -> void:
 	var cooldown: float = LURE_COOLDOWN_BY_NIGHT.get(Global.current_night, 0.0)
-	if cooldown <= 0.0 or cam_manager == null:
+	if cooldown <= 0.0 or cam_manager == null or graph == null:
 		return
 	cam_manager.setup_audio_lure(cooldown, graph.get_all_position_names())
 	if not cam_manager.audio_lure_requested.is_connected(lure_to):

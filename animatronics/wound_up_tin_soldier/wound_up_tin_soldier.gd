@@ -30,7 +30,8 @@ func _ready() -> void:
 	set_process(false)
 
 
-func start_ai() -> void:
+## เปิดปุ่มไขลานและวงแหวนตั้งแต่เริ่มด่าน ก่อน AI เริ่มทำงาน (Show the wind up button and ring from the start of the night, before the AI runs)
+func place_at_start() -> void:
 	if ai_level <= 0: # หุ่นตัวนี้ใช้ AI level เป็นแค่สวิตช์เปิด/ปิดตามคืน (AI level is only an on/off switch per night)
 		return
 	if cam_manager == null:
@@ -43,6 +44,12 @@ func start_ai() -> void:
 	if not cam_manager.wind_up_held_changed.is_connected(_on_wind_up_held_changed):
 		cam_manager.wind_up_held_changed.connect(_on_wind_up_held_changed)
 	_update_ui()
+
+
+func start_ai() -> void:
+	if ai_level <= 0 or cam_manager == null:
+		return
+
 	_running = true
 	set_process(true)
 
