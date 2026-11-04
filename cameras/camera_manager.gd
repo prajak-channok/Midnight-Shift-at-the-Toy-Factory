@@ -103,6 +103,7 @@ func _ready():
 	else:
 		printerr("no cameras are under camera manager")
 
+	_update_cam_buttons()
 	_collect_cam_lights()
 	_update_lights()
 	_find_animatronics()
@@ -276,6 +277,15 @@ func set_wind_up_progress(ratio : float, urgent : bool):
 	wind_cooldown_ring.urgent = urgent
 
 
+## Highlights the button of the watched camera so it stands out from the other cam buttons.
+func _update_cam_buttons():
+	if selected_cam == null:
+		return
+	for c in cam_buttons_parent.get_children():
+		if c is BaseButton and "selected" in c:
+			c.selected = String(c.camera_node_name).to_lower() == String(selected_cam.name).to_lower()
+
+
 func set_current_cam(cam : String):
 	if _lure_selecting:
 		if cam.to_lower() in _lure_rooms:
@@ -285,6 +295,7 @@ func set_current_cam(cam : String):
 	selected_cam.current = false
 	selected_cam = all_cams[cam.to_lower()]
 	selected_cam.current = true
+	_update_cam_buttons()
 	_update_lights()
 	_update_rooms()
 	_update_wind_up_visibility()
