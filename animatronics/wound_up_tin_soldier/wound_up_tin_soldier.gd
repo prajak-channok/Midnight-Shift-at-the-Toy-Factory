@@ -1,20 +1,16 @@
 extends AnimatronicBase
 class_name WoundUpTinSoldier
-## Wound-Up Tin Soldier: sits in the staff room and never moves. On nights listed in [constant ACTIVE_NIGHTS]
-## a wind-up timer starts at [constant START_COOLDOWN] seconds and ticks down one second per second. While the
-## monitor's "wind up" button is held the timer instead climbs [constant WIND_RATE] seconds per second (capped at the starting value). He opens his eyes when
-## [constant AWAKE_AT] seconds or less are left; at zero the monitor is forced down, he jumpscares and the night is lost.
 
-const ACTIVE_NIGHTS: Array[int] = [4, 5]
 const START_COOLDOWN := 20.0
-const WIND_RATE := 2.5 ## Timer seconds gained per real second while winding.
+const WIND_RATE := 2.5 ## สเกลการเพิ่มของคูลดาวน์ (Cooldown increase rate)
+const COOLDOWN_RATE := 0.5 ## สเกลการลดลงของคูลดาวน์ (Cooldown decrease rate)
 const AWAKE_AT := 5.0
-const WARNING_AT := 3.0 ## The monitor's cooldown ring turns red at or below this.
+const WARNING_AT := 3.0 ## เวลาในการเปลี่ยนสีวงแหวนเพื่อเตือน (Time at which the ring changes color as a warning)
 
 const ANIM_ASLEEP := &"idle"
 const ANIM_AWAKE := &"awake"
 
-@export var cam_manager: CameraManager ## Hosts the wind-up button and its cooldown ring.
+@export var cam_manager: CameraManager
 @export var animation_player_path: NodePath
 
 var cooldown_left := START_COOLDOWN
@@ -34,12 +30,8 @@ func _ready() -> void:
 	set_process(false)
 
 
-static func is_active_tonight() -> bool:
-	return Global.current_night in ACTIVE_NIGHTS
-
-
 func start_ai() -> void:
-	if not is_active_tonight():
+	if ai_level <= 0: ## หุ่นตัวนี้ใช้ AI level เป็นแค่สวิตช์เปิด/ปิดตามคืน (AI level is only an on/off switch per night)
 		return
 	if cam_manager == null:
 		push_error("%s: no CameraManager assigned." % name)
@@ -69,7 +61,7 @@ func _process(delta: float) -> void:
 	if _winding:
 		cooldown_left = minf(cooldown_left + WIND_RATE * delta, START_COOLDOWN)
 	else:
-		cooldown_left = maxf(cooldown_left - (delta * 0.5), 0.0)
+		cooldown_left = maxf(cooldown_left - (delta * COOLDOWN_RATE), 0.0)
 	_refresh()
 	if cooldown_left <= 0.0:
 		stop_ai()

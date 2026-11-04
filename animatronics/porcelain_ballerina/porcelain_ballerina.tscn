@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cwj6j7r1fl4x2"]
 
-[ext_resource type="Script" uid="uid://bf4r6bfn78akm" path="res://animatronics/porcelain_ballerina/porcelain_ballerina.gd" id="1"]
+[ext_resource type="Script" uid="uid://d4egaad4geme0" path="res://animatronics/animatronic_classes/graph_animatronic.gd" id="1"]
 [ext_resource type="PackedScene" uid="uid://qgb2mxtxucr1" path="res://animatronics/porcelain_ballerina/models/porcelain_ballerina_model.tscn" id="2"]
 
 [node name="PorcelainBallerina" type="Node3D" unique_id=124710888]

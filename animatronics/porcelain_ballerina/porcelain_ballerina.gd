@@ -1,2 +1,0 @@
-extends DoorAnimatronic
-class_name PorcelainBallerina

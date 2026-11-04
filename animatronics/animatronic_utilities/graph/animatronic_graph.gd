@@ -3,7 +3,7 @@ class_name AnimatronicGraph
 ## Movement graph + timing of one animatronic.
 ##
 ## The destination "Office" is reserved: it has no marker and means "attack the office"
-## (what that means is up to the animatronic, see [method FnafAnimatronic._on_reach_office]).
+## (what that means is up to the animatronic, see [method GraphAnimatronic.start_ai]).
 
 const OFFICE := &"Office"
 

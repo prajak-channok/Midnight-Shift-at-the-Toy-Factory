@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cwxcis64u55df"]
 
-[ext_resource type="Script" uid="uid://5oquvcjyxuqj" path="res://animatronics/springy_clown/springy_clown.gd" id="1"]
+[ext_resource type="Script" path="res://animatronics/animatronic_classes/graph_animatronic.gd" id="1"]
 [ext_resource type="PackedScene" path="res://animatronics/springy_clown/models/springy_clown_model.tscn" id="2"]
 
 [node name="SpringyClown" type="Node3D" unique_id=393502909]

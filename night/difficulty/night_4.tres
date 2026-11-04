@@ -24,6 +24,7 @@ bonus_hours = Array[int]([3, 5])
 [sub_resource type="Resource" id="Resource_tin_soldier"]
 script = ExtResource("2")
 animatronic_id = &"wound_up_tin_soldier"
+base_ai = 1
 
 [resource]
 script = ExtResource("1")
