@@ -48,7 +48,7 @@ func start_ai() -> void:
 		if destination == AnimatronicGraph.OFFICE:
 			if door == null:
 				_enter_office()
-			else: ## ถ้าเจอประตู จะรอโจมตีอีกครั้งนึง (If there is a door, wait and attack once more)
+			else: # ถ้าเจอประตู จะรอโจมตีอีกครั้งนึง (If there is a door, wait and attack once more)
 				await _attack_through_door()
 		elif destination != &"":
 			move_to_pos(destination)
@@ -101,7 +101,7 @@ func _pick_destination() -> StringName:
 
 func _enter_office() -> void:
 	active = false
-	reached_office.emit() ## ส่งสัญญาณให้ night รู้ว่าต้องแพ้แล้ว (Tell Night the player has lost)
+	reached_office.emit() # ส่งสัญญาณให้ night รู้ว่าต้องแพ้แล้ว (Tell Night the player has lost)
 
 
 ## สุ่มเวลาในการที่จะโจมตีอีกครั้งนึงก่อนที่จะกลับจุดรีเทิร์น (Random delay before attacking again, otherwise retreat to the return position)

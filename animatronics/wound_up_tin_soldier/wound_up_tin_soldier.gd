@@ -31,7 +31,7 @@ func _ready() -> void:
 
 
 func start_ai() -> void:
-	if ai_level <= 0: ## หุ่นตัวนี้ใช้ AI level เป็นแค่สวิตช์เปิด/ปิดตามคืน (AI level is only an on/off switch per night)
+	if ai_level <= 0: # หุ่นตัวนี้ใช้ AI level เป็นแค่สวิตช์เปิด/ปิดตามคืน (AI level is only an on/off switch per night)
 		return
 	if cam_manager == null:
 		push_error("%s: no CameraManager assigned." % name)

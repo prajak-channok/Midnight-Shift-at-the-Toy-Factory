@@ -7,7 +7,7 @@ const LURE_COOLDOWN_BY_NIGHT := {
 	4: 20.0,
 	5: 15.0 }
 
-@export var frozen_when_watched_at: Array[StringName] = [&"RightHall"] ## Positions where a camera on the plush-bot holds it in place.
+@export var frozen_when_watched_at: Array[StringName] = [&"RightHall"]
 
 var _lure_room: StringName = &""
 
@@ -32,7 +32,7 @@ func _can_attempt_move() -> bool:
 func _pick_destination() -> StringName:
 	var lured := _lure_room
 	_lure_room = &""
-	if lured != &"" and graph.can_move(current_position.name, lured): ## เช็คว่าห้องที่ล่อมีในกราฟ (Check the lured room is reachable in the graph)
+	if lured != &"" and graph.can_move(current_position.name, lured): # เช็คว่าห้องที่ล่อมีในกราฟ (Check the lured room is reachable in the graph)
 		return lured
 	return super()
 
