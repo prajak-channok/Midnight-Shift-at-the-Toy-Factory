@@ -12,8 +12,8 @@ class_name NightDifficulty
 @export var light_drain: float = 0.0 ## อัตราใช้พลังงานต่อวินาทีต่อหนึ่งไฟประตูที่เปิด (Power drain per second per active door light)
 
 @export_group("Night Hint")
-@export var hint_title: String = ""
-@export var hint_detail: String = ""
+@export var hint_title: String = "" ## หัวข้อคำใบ้ตอนเริ่มคืน (Hint title at the start of the night)
+@export var hint_detail: String = "" ## รายละเอียดคำใบ้ตอนเริ่มคืน หากเว้นว่างไว้จะไม่แสดง (Hint detail at night start, hidden if empty)
 
 
 ## คืนค่าโปรไฟล์ AI ของหุ่น หรือ null หากไม่มีในคืนนี้ (Return animatronic AI profile or null if absent this night)

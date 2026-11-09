@@ -1,10 +1,10 @@
 extends Node3D
 class_name Night
 
-const AI_START_DELAY := 20.0 ## Seconds after the night begins before the toys start moving.
+const AI_START_DELAY := 20.0 ## ระยะเวลาหน่วงก่อนหุ่นเริ่มขยับเมื่อเริ่มคืน (Delay in seconds before animatronics start moving)
 const SCENE_SIX_AM := "res://night/six_am/six_am.tscn"
 const SCENE_MAIN_MENU := "res://main_menu/main_menu.tscn"
-const MONITOR_WAIT_TIMEOUT := 2.0
+const MONITOR_WAIT_TIMEOUT := 2.0 ## เวลาสูงสุดที่รอให้มอนิเตอร์พับลงเพื่อป้องกันเกมค้าง (Max timeout waiting for monitor down to prevent soft-lock)
 
 @export_group("Dependencies")
 @export var clock: NightClock
@@ -18,7 +18,7 @@ const MONITOR_WAIT_TIMEOUT := 2.0
 @export var animatronics: Array[AnimatronicBase] = []
 
 @export_group("Settings")
-@export var difficulties: Array[NightDifficulty] = [] ## Index 0 = night 1.
+@export var difficulties: Array[NightDifficulty] = [] ## รายการระดับความยากแต่ละคืน โดย Index 0 คือคืนที่ 1 (List of difficulties per night, index 0 is night 1)
 
 var difficulty: NightDifficulty
 var game_over: bool = false
@@ -29,7 +29,7 @@ func _ready() -> void:
 	difficulty = _pick_difficulty()
 	if clock == null or difficulty == null:
 		push_error("Night: Clock or difficulties are not assigned.")
-		set_process_unhandled_input(false)
+		set_process_unhandled_input(false) # ปิดการรับอินพุตเพื่อป้องกันข้อผิดพลาดจากข้อมูลที่ไม่พร้อม (Disable input to prevent errors from missing setup)
 		return
 
 	if left_light != null:
@@ -160,6 +160,7 @@ func trigger_game_over(animatronic: AnimatronicBase) -> void:
 			player.force_monitor_down()
 
 		var wait_elapsed: float = 0.0
+		# รอให้มอนิเตอร์พับลงจนสุดพร้อมจำกัดเวลาเพื่อป้องกันเกมค้าง (Wait for monitor to lower with timeout guard against freeze)
 		while (player.is_monitor_on() or player.monitor.refuse_requests) and wait_elapsed < MONITOR_WAIT_TIMEOUT:
 			await get_tree().process_frame
 			if not is_inside_tree():
@@ -195,7 +196,7 @@ func night_done() -> void:
 		push_error("Night: Failed to change scene to '%s' (Error %d)" % [SCENE_SIX_AM, err])
 
 
-## Abandons the night without saving progress; the tree must be unpaused or the menu would load frozen.
+## ออกจากคืนนี้ไปยังเมนูหลักโดยไม่บันทึกความคืบหน้า และคืนค่า pause ให้ tree (Quit to menu without saving and unpause the tree)
 func quit_to_menu() -> void:
 	get_tree().paused = false
 	var err := get_tree().change_scene_to_file(SCENE_MAIN_MENU)
