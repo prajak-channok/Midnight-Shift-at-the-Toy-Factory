@@ -15,7 +15,7 @@ var model_anim : AnimationPlayer
 @onready var audio : AudioStreamPlayer = $AudioStreamPlayer as AudioStreamPlayer
 
 
-func _ready():
+func _ready() -> void:
 	for c in get_children():
 		if c is AudioStreamPlayer:
 			audio = c as AudioStreamPlayer
@@ -32,7 +32,7 @@ func _ready():
 		printerr(self.name + " does not have a child animated model.")
 
 
-func play_jumpscare():
+func play_jumpscare() -> void:
 	if not model_anim:
 		return
 	if audio:

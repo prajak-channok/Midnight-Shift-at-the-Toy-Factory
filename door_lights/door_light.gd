@@ -1,10 +1,10 @@
 extends OmniLight3D
 class_name DoorLight
 
-@onready var light_sound = $LightSound
+@onready var light_sound: AudioStreamPlayer3D = $LightSound
 
 
-func _on_visibility_changed():
+func _on_visibility_changed() -> void:
 	if visible:
 		light_sound.play()
 	else:

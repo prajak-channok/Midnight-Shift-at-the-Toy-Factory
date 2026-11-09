@@ -8,17 +8,28 @@ signal six_am_reached
 
 @onready var label: Label = $Label
 var current_hour := 0
+var _running := true
 
-func _ready():
+
+func _ready() -> void:
 	_start_counting.call_deferred()
 
-func _start_counting():
-	while current_hour < 6:
+
+func stop() -> void:
+	_running = false
+
+
+func _start_counting() -> void:
+	while current_hour < 6 and _running:
 		label.text = _get_current_hour_text()
 		await get_tree().create_timer(seconds_between_hours).timeout
+		if not is_inside_tree() or not _running:
+			return
 		current_hour += 1
 		hour_passed.emit()
-	six_am_reached.emit()
+	if _running:
+		six_am_reached.emit()
+
 
 func _get_current_hour_text() -> String:
 	return "12 AM" if current_hour == 0 else str(current_hour) + " AM"

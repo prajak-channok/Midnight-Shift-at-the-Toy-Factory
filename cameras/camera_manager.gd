@@ -60,7 +60,7 @@ var _lure_sound_volume_db := 0.0
 @onready var wind_cooldown_ring: CooldownRing = %WindCooldownRing
 
 
-func _ready():
+func _ready() -> void:
 	cam_ui.visible = false
 	_lure_sound_volume_db = audio_lure_sound.volume_db
 	audio_lure_button.hide()
@@ -80,7 +80,8 @@ func _ready():
 	# เชื่อมสัญญาณกดปุ่มกล้องเข้ากับฟังก์ชันสลับกล้อง (Connect camera button signals to switch camera function)
 	for c in cam_buttons_parent.get_children():
 		if c is BaseButton:
-			c.connect("cam_button_pressed", set_current_cam)
+			if c.has_signal("cam_button_pressed"):
+				c.cam_button_pressed.connect(set_current_cam)
 			_all_lure_markers[String(c.camera_node_name).to_lower()] = _make_lure_marker(c)
 	
 	if not all_cams.values().is_empty():
@@ -97,7 +98,7 @@ func _ready():
 
 
 ## เรนเดอร์กล้องทุกตัวตัวละหนึ่งเฟรมเพื่อคอมไพล์เชดเดอร์ระหว่างหน้าจอโหลด (Pre-render each camera for one frame to compile shaders during loading screen)
-func _warm_up():
+func _warm_up() -> void:
 	var tree := get_tree()
 	if tree.get_nodes_in_group(LoadingOverlay.GROUP).is_empty() or all_cams.is_empty():
 		return
@@ -125,7 +126,7 @@ func _warm_up():
 
 
 ## แสดงเฉพาะห้องที่กำลังดูกล้องหรือมองเห็นจากห้องทำงานเพื่อประหยัดการเรนเดอร์ (Show only watched or office-visible rooms to optimize rendering)
-func _update_rooms():
+func _update_rooms() -> void:
 	if rooms_root == null:
 		return
 	var watching: bool = cam_ui.visible and selected_cam != null
@@ -144,7 +145,7 @@ func _update_rooms():
 	_update_animatronics()
 
 
-func _process(_delta: float):
+func _process(_delta: float) -> void:
 	var moved := false
 	for animatronic in _animatronics:
 		if _animatronic_last.get(animatronic) != animatronic.global_position:
@@ -154,7 +155,7 @@ func _process(_delta: float):
 		_update_animatronics()
 
 
-func _find_animatronics():
+func _find_animatronics() -> void:
 	var night := get_parent()
 	for node in night.find_children("*", "AnimatronicBase", true, false):
 		_animatronics.append(node)
@@ -163,7 +164,7 @@ func _find_animatronics():
 
 
 ## ซ่อนโมเดลหุ่นเมื่อห้องที่หุ่นยืนอยู่ถูกคัดออกจากการเรนเดอร์ (Hide animatronics when their containing room is culled from rendering)
-func _update_animatronics():
+func _update_animatronics() -> void:
 	for animatronic in _animatronics:
 		var room := _room_of(animatronic)
 		var show_it := room == &"" or _shown_rooms.has(room)
@@ -199,7 +200,7 @@ func _room_of(animatronic: Node3D) -> StringName:
 	return room_name
 
 
-func _collect_cam_lights():
+func _collect_cam_lights() -> void:
 	if lights_root == null:
 		return
 	for light in lights_root.get_children():
@@ -214,7 +215,7 @@ func _collect_cam_lights():
 
 
 ## เปิดเฉพาะไฟของห้องที่กำลังดูอยู่เพื่อไม่ให้เกินขีดจำกัดของ Compatibility renderer (Enable only lights of currently watched room to stay within renderer limits)
-func _update_lights():
+func _update_lights() -> void:
 	for cam_name in cam_lights:
 		var lit : bool = cam_name in always_lit_cams \
 			or (cam_ui.visible and selected_cam != null and selected_cam.name == cam_name)
@@ -223,7 +224,7 @@ func _update_lights():
 
 
 ## เปิดใช้งานปุ่มล่อด้วยเสียงและกำหนดห้องที่สามารถเล่นเสียงได้ (Setup audio lure button and designate selectable rooms)
-func setup_audio_lure(cooldown : float, rooms : Array[StringName]):
+func setup_audio_lure(cooldown: float, rooms: Array[StringName]) -> void:
 	_lure_cooldown = cooldown
 	_lure_rooms.clear()
 	_lure_markers.clear()
@@ -236,12 +237,12 @@ func setup_audio_lure(cooldown : float, rooms : Array[StringName]):
 
 
 ## เปิดใช้งานปุ่มไขลานและวงแหวนคูลดาวน์ (Enable wind up button and cooldown ring)
-func setup_wind_up():
+func setup_wind_up() -> void:
 	_wind_up_enabled = true
 	_update_wind_up_visibility()
 
 
-func _update_wind_up_visibility():
+func _update_wind_up_visibility() -> void:
 	var visible_now := _wind_up_enabled and is_watching(WIND_UP_CAM)
 	if not visible_now and wind_up_button.visible:
 		_set_wind_up_held(false)
@@ -250,13 +251,13 @@ func _update_wind_up_visibility():
 
 
 ## อัปเดตสัดส่วนเวลาไขลานที่เหลือและแจ้งเตือนสีแดงเมื่อเข้าขั้นวิกฤต (Update remaining wind up ratio and turn red on urgent warning)
-func set_wind_up_progress(ratio : float, urgent : bool):
+func set_wind_up_progress(ratio: float, urgent: bool) -> void:
 	wind_cooldown_ring.ratio = ratio
 	wind_cooldown_ring.urgent = urgent
 
 
 ## Highlights the button of the watched camera so it stands out from the other cam buttons.
-func _update_cam_buttons():
+func _update_cam_buttons() -> void:
 	if selected_cam == null:
 		return
 	for c in cam_buttons_parent.get_children():
@@ -264,7 +265,7 @@ func _update_cam_buttons():
 			c.selected = String(c.camera_node_name).to_lower() == String(selected_cam.name).to_lower()
 
 
-func set_current_cam(cam : String):
+func set_current_cam(cam: String) -> void:
 	if _lure_selecting:
 		if cam.to_lower() in _lure_rooms:
 			_play_audio_lure(cam)
@@ -281,7 +282,7 @@ func set_current_cam(cam : String):
 	lose_communication(1.0)
 
 
-func lose_communication(time_scale : float):
+func lose_communication(time_scale: float) -> void:
 	ui_animation_player.stop()
 	ui_animation_player.speed_scale = time_scale
 	ui_animation_player.play("lost_communication")
@@ -292,7 +293,7 @@ func is_watching(position_name : StringName) -> bool:
 	return cam_ui.visible and selected_cam != null and selected_cam.name.to_lower() == String(position_name).to_lower()
 
 
-func enable_camera_display():
+func enable_camera_display() -> void:
 	if selected_cam:
 		selected_cam.current = true
 	cam_ui.visible = true
@@ -301,7 +302,7 @@ func enable_camera_display():
 	_update_wind_up_visibility()
 
 
-func disable_camera_display():
+func disable_camera_display() -> void:
 	if selected_cam:
 		selected_cam.current = false
 	cam_ui.visible = false
@@ -312,19 +313,19 @@ func disable_camera_display():
 	_update_wind_up_visibility()
 
 
-func _set_wind_up_held(held : bool):
+func _set_wind_up_held(held: bool) -> void:
 	wind_up_button.text = WIND_HELD_TEXT if held else WIND_READY_TEXT
 	if held:
 		wind_up_sound.play()
 	wind_up_held_changed.emit(held)
 
 
-func _on_audio_lure_button_pressed():
+func _on_audio_lure_button_pressed() -> void:
 	_set_lure_selecting(not _lure_selecting)
 
 
 ## สลับโหมดเลือกห้องเพื่อเปิดเสียงล่อโดยจะแสดงมาร์กเกอร์กระพริบ (Toggle audio lure targeting mode with pulsing markers)
-func _set_lure_selecting(active : bool):
+func _set_lure_selecting(active: bool) -> void:
 	if _lure_selecting == active:
 		return
 	_lure_selecting = active
@@ -344,7 +345,7 @@ func _set_lure_selecting(active : bool):
 			_lure_tween.tween_property(marker, "modulate:a", 1.0, 0.5).set_delay(0.5)
 
 
-func _play_audio_lure(room : String):
+func _play_audio_lure(room: String) -> void:
 	_set_lure_selecting(false)
 	_play_lure_sound()
 	audio_lure_button.start_cooldown(_lure_cooldown)
@@ -352,7 +353,7 @@ func _play_audio_lure(room : String):
 
 
 ## เล่นเสียงดนตรีล่อหุ่นและค่อยๆ หรี่เสียงลงตอนท้าย (Play lure audio stream and fade out at the end)
-func _play_lure_sound():
+func _play_lure_sound() -> void:
 	if _lure_sound_tween:
 		_lure_sound_tween.kill()
 	audio_lure_sound.volume_db = _lure_sound_volume_db

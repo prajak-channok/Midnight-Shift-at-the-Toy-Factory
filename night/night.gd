@@ -147,6 +147,8 @@ func trigger_game_over(animatronic: AnimatronicBase) -> void:
 		hud.hide_quit_button()
 		hud.hide_hint()
 	_stop_animatronics()
+	if clock != null:
+		clock.stop()
 	if power_system != null:
 		power_system.stop()
 	if left_door != null:
@@ -189,6 +191,8 @@ func night_done() -> void:
 	night_complete = true
 	SaveManager.complete_night(Global.current_night)
 	_stop_animatronics()
+	if clock != null:
+		clock.stop()
 	if power_system != null:
 		power_system.stop()
 	var err := get_tree().change_scene_to_file(SCENE_SIX_AM)
@@ -198,6 +202,8 @@ func night_done() -> void:
 
 ## ออกจากคืนนี้ไปยังเมนูหลักโดยไม่บันทึกความคืบหน้า และคืนค่า pause ให้ tree (Quit to menu without saving and unpause the tree)
 func quit_to_menu() -> void:
+	if clock != null:
+		clock.stop()
 	get_tree().paused = false
 	var err := get_tree().change_scene_to_file(SCENE_MAIN_MENU)
 	if err != OK:

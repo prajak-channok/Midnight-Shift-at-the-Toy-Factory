@@ -7,7 +7,7 @@ var refuse_requests: bool = false ## ล็อคไม่ให้รับค�
 @onready var anim: AnimationPlayer = $AnimationPlayer
 
 
-func turn_on():
+func turn_on() -> void:
 	if refuse_requests:
 		return
 	
@@ -18,7 +18,7 @@ func turn_on():
 	refuse_requests = false
 	
 
-func turn_off():
+func turn_off() -> void:
 	if refuse_requests:
 		return
 	

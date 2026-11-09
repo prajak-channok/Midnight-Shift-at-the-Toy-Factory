@@ -21,11 +21,11 @@ class_name Player
 var _view_locked: bool = false
 
 
-func _ready():
+func _ready() -> void:
 	cam.current = true
 
 
-func _process(delta):
+func _process(delta: float) -> void:
 	if _view_locked:
 		return
 	var mouse_pos = get_viewport().get_mouse_position()
@@ -39,7 +39,7 @@ func _process(delta):
 	panning_edge(delta, mouse_x)
 
 
-func panning_edge(delta: float, mouse_x: float):
+func panning_edge(delta: float, mouse_x: float) -> void:
 	var speed_multiplier := 0.0
 
 	if mouse_x <= edge_threshold:
@@ -75,7 +75,7 @@ func snap_view_to_center() -> void:
 	cam.rotation_degrees.y = 0.0
 
 
-func toggle_monitor():
+func toggle_monitor() -> void:
 	if monitor.refuse_requests:
 		return
 	if monitor.monitor_on:
@@ -88,7 +88,7 @@ func toggle_monitor():
 		cam_manager.enable_camera_display()
 
 
-func force_monitor_down():
+func force_monitor_down() -> void:
 	while monitor.refuse_requests:
 		await get_tree().process_frame
 	if monitor.monitor_on:

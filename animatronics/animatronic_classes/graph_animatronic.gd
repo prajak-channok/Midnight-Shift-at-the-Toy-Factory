@@ -82,12 +82,7 @@ func wait_for_successful_movement_opportunity(min_wait: float, max_wait: float) 
 		if ai_level >= randi_range(1, MAX_AI_LEVEL):
 			break
 func wait_seconds(seconds: float) -> void:
-	var timer := Timer.new()
-	timer.one_shot = true
-	add_child(timer)
-	timer.start(seconds)
-	await timer.timeout
-	timer.queue_free()
+	await get_tree().create_timer(seconds, false).timeout
 
 
 ## สำหรับต่อยอดในการสร้างเงื่อนไขให้หุ่นไม่สามารถเดินได้ เช่น Burned Plush Bot (Override to add conditions that block movement, e.g. Burned Plush Bot)

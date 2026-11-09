@@ -19,7 +19,7 @@ var selected := false: ## สวิตช์บอกสถานะว่าป
 			_apply_style()
 
 
-func _ready():
+func _ready() -> void:
 	_apply_style()
 	if Engine.is_editor_hint():
 		return
@@ -28,11 +28,11 @@ func _ready():
 		camera_node_name = text
 
 
-func _pressed():
-	emit_signal("cam_button_pressed", camera_node_name)
+func _pressed() -> void:
+	cam_button_pressed.emit(camera_node_name)
 
 
-func _apply_style():
+func _apply_style() -> void:
 	var base := accent_color.darkened(0.35)
 	var bright := base.lightened(0.3)
 	add_theme_stylebox_override("focus", StyleBoxEmpty.new())
