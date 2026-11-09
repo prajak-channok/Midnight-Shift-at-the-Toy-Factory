@@ -1,12 +1,10 @@
 extends Button
 class_name AudioLureButton
-## The monitor's "play audio" button. It owns its cooldown and shows it as a charging bar plus a countdown.
-## All styling lives in camera_manager.tscn.
 
 const READY_TEXT := "PLAY AUDIO"
 const SELECTING_TEXT := "CANCEL"
 
-var _cooldown_total := 0.0
+var _cooldown_total := 0.0 ## ระยะเวลาคูลดาวน์ทั้งหมดของปุ่มล่อ (Total cooldown duration of lure button)
 var _cooldown_left := 0.0
 
 @onready var _bar: ProgressBar = $CooldownBar

@@ -64,12 +64,12 @@ func panning_edge(delta: float, mouse_x: float):
 		)
 
 
-## Stops mouse panning for good (used when a jumpscare is about to play).
+## ล็อคไม่ให้ผู้เล่นแพนมุมกล้องได้อีกเมื่อกำลังจะเกิดจัมป์สแกร์ (Lock panning view when jumpscare is about to play)
 func lock_view() -> void:
 	_view_locked = true
 
 
-## Locks the view and instantly turns the camera to face straight ahead.
+## ล็อคมุมกล้องและหันหน้าตรงทันทีเพื่อเตรียมรับจัมป์สแกร์ (Lock view and snap camera forward for jumpscare)
 func snap_view_to_center() -> void:
 	_view_locked = true
 	cam.rotation_degrees.y = 0.0

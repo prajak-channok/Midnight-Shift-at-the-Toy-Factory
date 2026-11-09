@@ -9,7 +9,7 @@ const SOUND_OPEN := "res://doors/sounds/door_open.wav"
 @export var closed_height: float = 1.65
 @export var open_height: float = 4.85
 @export var move_time: float = 0.12
-@export var sound_volume_db: float = 0.0 ## Loudness of the door sounds (negative = quieter).
+@export var sound_volume_db: float = 0.0 ## ระดับความดังของเสียงประตู (Loudness of the door sounds)
 
 var is_closed: bool = false
 var _tween: Tween
@@ -52,14 +52,11 @@ func force_open() -> void:
 		state_changed.emit(false)
 
 
-# ---------- sound ----------
-# The sound comes from the door itself (3D), so with headphones you hear
-# the left door on the left and the right door on the right.
-
+# เล่นเสียงประตูแบบ 3D ตามตำแหน่งซ้ายขวาของหูฟัง (3D door audio matching left/right headphone balance)
 func _setup_audio() -> void:
 	_audio = AudioStreamPlayer3D.new()
 	_audio.volume_db = sound_volume_db
-	_audio.unit_size = 10.0  # keeps it loud even when the door is a few metres away
+	_audio.unit_size = 10.0 # รักษาระดับความดังไว้แม้ผู้เล่นจะอยู่ห่างจากประตูไม่กี่เมตร (Keeps it audible even a few metres away)
 	_audio.position = Vector3(0.0, closed_height, 0.0)
 	add_child(_audio)
 	if ResourceLoader.exists(SOUND_CLOSE):

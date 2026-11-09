@@ -10,14 +10,14 @@ func change_scene(path: String, use_loading_screen: bool = true) -> void:
 
 	_show_loading()
 	await get_tree().process_frame
-	await get_tree().process_frame # Wait for building loading scene complete before
+	await get_tree().process_frame # รอให้หน้าจอโหลดสร้างเสร็จสมบูรณ์ก่อนเริ่มโหลดฉาก (Wait for building loading scene complete before loading begins)
 
 	var scene: PackedScene = null
 	if ResourceLoader.load_threaded_request(path) == OK:
 		while ResourceLoader.load_threaded_get_status(path) == ResourceLoader.THREAD_LOAD_IN_PROGRESS:
 			await get_tree().process_frame
 		
-		# Handle loading result
+		# จัดการผลลัพธ์การโหลดฉาก (Handle loading result)
 		var status = ResourceLoader.load_threaded_get_status(path)
 		
 		if status == ResourceLoader.THREAD_LOAD_LOADED:

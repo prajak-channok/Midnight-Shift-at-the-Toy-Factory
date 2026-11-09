@@ -1,15 +1,10 @@
 extends Node
 class_name CameraManager
-## Camera Manager node
-##
-## This node manages a bunch of Camera3D nodes and keeps in its scene a Camera UI
-## that contains a bunch of camera buttons to allow the player to switch between cameras.
 
-## Emitted when the player picks a room to play audio in. [param room] is the camera node name,
-## which matches the AnimatronicPosition name of that room.
+## ส่งสัญญาณเมื่อผู้เล่นเลือกห้องเพื่อเปิดเสียงล่อ (Emitted when player selects room to play audio lure)
 signal audio_lure_requested(room: StringName)
 
-## Emitted when the player starts ([param held] true) or stops holding the "wind up" button.
+## ส่งสัญญาณเมื่อผู้เล่นเริ่มหรือหยุดกดปุ่มไขลานค้างไว้ (Emitted when player starts or stops holding wind up button)
 signal wind_up_held_changed(held: bool)
 
 const LURE_SOUND_SECONDS := 5.0
@@ -17,25 +12,18 @@ const LURE_SOUND_FADE := 0.5
 const WIND_READY_TEXT := "WIND UP"
 const WIND_HELD_TEXT := "WINDING..."
 
-const WIND_UP_CAM := &"StaffRoom" ## Cam 5: the only camera that shows the wind up button and its cooldown ring.
+const WIND_UP_CAM := &"StaffRoom" ## กล้องห้องพักพนักงานสำหรับแสดงปุ่มไขลานและวงแหวนคูลดาวน์ (Staff room camera for showing wind up button and cooldown ring)
 
 const DEFAULT_CAM_INDEX = 0
 const LURE_MARKER_COLOR := Color(0.95, 0.7, 0.25)
 
-## Parent of the room lights. A light belongs to the camera whose node name its own name starts with
-## (e.g. "ToyFactoryRimLight" -> "ToyFactory") and is only shown while that camera is being watched.
-## Lights that match no camera are left untouched.
-@export var lights_root: Node3D
-## Cameras whose lights stay on even when the monitor is down because they are visible from the office.
-@export var always_lit_cams: PackedStringArray = ["LeftHall", "RightHall"]
+@export var lights_root: Node3D ## โหนดรูทของไฟแต่ละห้องในอาคาร (Root node of room lights)
+@export var always_lit_cams: PackedStringArray = ["LeftHall", "RightHall"] ## กล้องที่เปิดไฟทิ้งไว้ตลอดเพราะมองเห็นได้จากห้องทำงาน (Cameras kept lit because visible from office)
 
-## Parent of the room scenes (FactoryMap). Only the rooms visible from the current view are rendered.
-@export var rooms_root: Node3D
-## Rooms that can be seen from the office; the halls stay on because the doors and windows look into them.
-@export var office_rooms: PackedStringArray = ["SecurityRoom", "LeftHall", "RightHall"]
+@export var rooms_root: Node3D ## โหนดรูทของฉากห้องต่างๆ ในโรงงาน (Root node of factory room scenes)
+@export var office_rooms: PackedStringArray = ["SecurityRoom", "LeftHall", "RightHall"] ## ห้องที่มองเห็นได้จากห้องทำงานจึงต้องเรนเดอร์ไว้ตลอด (Rooms visible from office that must stay rendered)
 
-## Rooms a camera can see besides its own, e.g. the corridor camera looks into the ToyFactory.
-@export var extra_cam_rooms: Dictionary = {"FactoryTransferCorridor": ["ToyFactory"]}
+@export var extra_cam_rooms: Dictionary = {"FactoryTransferCorridor": ["ToyFactory"]} ## ห้องเสริมที่กล้องตัวนั้นๆ มองเห็นพ่วงด้วย (Extra rooms visible from specific cameras)
 
 const ANIMATRONIC_SPOT_DISTANCE := 0.5
 const ANIMATRONIC_ROOM_DISTANCE := 2.5
@@ -83,21 +71,18 @@ func _ready():
 	wind_up_button.button_down.connect(_set_wind_up_held.bind(true))
 	wind_up_button.button_up.connect(_set_wind_up_held.bind(false))
 
-	# Add all cameras to the camera dictionary
-	# Each key is the name of the camera in lowercase and the value is a reference to the Camera3D node.
+	# เก็บกล้องทั้งหมดลงดิกชันนารีโดยใช้ชื่อตัวพิมพ์เล็กเป็นคีย์ (Store all cameras in dictionary using lowercase names)
 	for c in get_children():
 		if c is Camera3D:
 			all_cams[c.name.to_lower()] = c
 			c.current = false
 	
-	# Connect the cam_button_pressed signal from each camera button
-	# to the set_current_cam function
+	# เชื่อมสัญญาณกดปุ่มกล้องเข้ากับฟังก์ชันสลับกล้อง (Connect camera button signals to switch camera function)
 	for c in cam_buttons_parent.get_children():
 		if c is BaseButton:
 			c.connect("cam_button_pressed", set_current_cam)
 			_all_lure_markers[String(c.camera_node_name).to_lower()] = _make_lure_marker(c)
 	
-	# Set default cam
 	if not all_cams.values().is_empty():
 		selected_cam = all_cams.values()[DEFAULT_CAM_INDEX]
 	else:
@@ -111,15 +96,13 @@ func _ready():
 	_warm_up()
 
 
-## While the loading overlay is still up, the night is paused and every camera is shown for one frame,
-## so the shaders of each room and light setup compile (one frame at a time) behind the loading screen
-## instead of causing a hitch the first time the player opens that camera.
+## เรนเดอร์กล้องทุกตัวตัวละหนึ่งเฟรมเพื่อคอมไพล์เชดเดอร์ระหว่างหน้าจอโหลด (Pre-render each camera for one frame to compile shaders during loading screen)
 func _warm_up():
 	var tree := get_tree()
 	if tree.get_nodes_in_group(LoadingOverlay.GROUP).is_empty() or all_cams.is_empty():
 		return
 	tree.paused = true
-	await tree.process_frame # the office gets drawn first
+	await tree.process_frame # รอให้ห้องทำงานเรนเดอร์เสร็จก่อน (Wait for office to be drawn first)
 
 	var office_cam := selected_cam
 	cam_ui.visible = true
@@ -141,8 +124,7 @@ func _warm_up():
 	LoadingOverlay.dismiss(tree)
 
 
-## Each camera only sees the room it is named after, and the office only sees [member office_rooms];
-## everything else is hidden so its meshes are not sent to the GPU.
+## แสดงเฉพาะห้องที่กำลังดูกล้องหรือมองเห็นจากห้องทำงานเพื่อประหยัดการเรนเดอร์ (Show only watched or office-visible rooms to optimize rendering)
 func _update_rooms():
 	if rooms_root == null:
 		return
@@ -180,8 +162,7 @@ func _find_animatronics():
 		_spots.append(node)
 
 
-## Animatronics are not part of the rooms, so without this they would be drawn through the walls
-## even while the room they stand in is hidden. Animatronics whose room can't be told are always shown.
+## ซ่อนโมเดลหุ่นเมื่อห้องที่หุ่นยืนอยู่ถูกคัดออกจากการเรนเดอร์ (Hide animatronics when their containing room is culled from rendering)
 func _update_animatronics():
 	for animatronic in _animatronics:
 		var room := _room_of(animatronic)
@@ -194,8 +175,7 @@ func _update_animatronics():
 			animatronic.visible = false
 
 
-## The room an animatronic stands in: the room named by the AnimatronicPosition it was placed on,
-## or else the room whose center it is next to. Empty when it isn't clearly in any room.
+## หาชื่อห้องที่หุ่นยืนอยู่โดยเทียบจากตำแหน่งมาร์กเกอร์หรือจุดศูนย์กลางห้อง (Find room where animatronic stands based on marker or room center)
 func _room_of(animatronic: Node3D) -> StringName:
 	var pos := animatronic.global_position
 	var best := ANIMATRONIC_SPOT_DISTANCE
@@ -233,8 +213,7 @@ func _collect_cam_lights():
 				break
 
 
-## Only the lights of the watched camera (plus the always lit ones) are rendered, so the number
-## of lights hitting the big building mesh stays under the Compatibility renderer's per-object cap.
+## เปิดเฉพาะไฟของห้องที่กำลังดูอยู่เพื่อไม่ให้เกินขีดจำกัดของ Compatibility renderer (Enable only lights of currently watched room to stay within renderer limits)
 func _update_lights():
 	for cam_name in cam_lights:
 		var lit : bool = cam_name in always_lit_cams \
@@ -243,8 +222,7 @@ func _update_lights():
 			light.visible = lit
 
 
-## Shows the "play audio" button; it recharges for [param cooldown] seconds after every use.
-## Audio can only be played in [param rooms]; the other cameras are neither highlighted nor selectable for it.
+## เปิดใช้งานปุ่มล่อด้วยเสียงและกำหนดห้องที่สามารถเล่นเสียงได้ (Setup audio lure button and designate selectable rooms)
 func setup_audio_lure(cooldown : float, rooms : Array[StringName]):
 	_lure_cooldown = cooldown
 	_lure_rooms.clear()
@@ -257,7 +235,7 @@ func setup_audio_lure(cooldown : float, rooms : Array[StringName]):
 	audio_lure_button.show()
 
 
-## Enables the "wind up" button and its cooldown ring; they only show while the [constant WIND_UP_CAM] camera is watched.
+## เปิดใช้งานปุ่มไขลานและวงแหวนคูลดาวน์ (Enable wind up button and cooldown ring)
 func setup_wind_up():
 	_wind_up_enabled = true
 	_update_wind_up_visibility()
@@ -271,7 +249,7 @@ func _update_wind_up_visibility():
 	wind_cooldown_ring.visible = visible_now
 
 
-## [param ratio] is the remaining share of the wind-up timer (1 = full); [param urgent] turns the ring red.
+## อัปเดตสัดส่วนเวลาไขลานที่เหลือและแจ้งเตือนสีแดงเมื่อเข้าขั้นวิกฤต (Update remaining wind up ratio and turn red on urgent warning)
 func set_wind_up_progress(ratio : float, urgent : bool):
 	wind_cooldown_ring.ratio = ratio
 	wind_cooldown_ring.urgent = urgent
@@ -291,7 +269,7 @@ func set_current_cam(cam : String):
 		if cam.to_lower() in _lure_rooms:
 			_play_audio_lure(cam)
 		return
-	# set the previous camera as not current and hide it, switch to the new one and make that one current
+	# สลับการแสดงผลจากกล้องเดิมไปยังกล้องใหม่ที่เลือก (Switch active camera to the newly selected one)
 	selected_cam.current = false
 	selected_cam = all_cams[cam.to_lower()]
 	selected_cam.current = true
@@ -309,10 +287,7 @@ func lose_communication(time_scale : float):
 	ui_animation_player.play("lost_communication")
 
 
-## True while the monitor is up and the selected camera is the one named after [param position_name]
-## (camera node names match AnimatronicPosition names, case-insensitive).
-
-
+## เช็คว่าผู้เล่นกำลังเปิดมอนิเตอร์ดูกล้องที่ห้องนี้อยู่หรือไม่ (Check if player is viewing this room on the monitor)
 func is_watching(position_name : StringName) -> bool:
 	return cam_ui.visible and selected_cam != null and selected_cam.name.to_lower() == String(position_name).to_lower()
 
@@ -348,8 +323,7 @@ func _on_audio_lure_button_pressed():
 	_set_lure_selecting(not _lure_selecting)
 
 
-## While selecting, every cam button shows a pulsing marker and pressing one plays the audio there
-## instead of switching the camera.
+## สลับโหมดเลือกห้องเพื่อเปิดเสียงล่อโดยจะแสดงมาร์กเกอร์กระพริบ (Toggle audio lure targeting mode with pulsing markers)
 func _set_lure_selecting(active : bool):
 	if _lure_selecting == active:
 		return
@@ -377,7 +351,7 @@ func _play_audio_lure(room : String):
 	audio_lure_requested.emit(StringName(room))
 
 
-## Plays the lure sound for at most [constant LURE_SOUND_SECONDS], fading out over the last [constant LURE_SOUND_FADE].
+## เล่นเสียงดนตรีล่อหุ่นและค่อยๆ หรี่เสียงลงตอนท้าย (Play lure audio stream and fade out at the end)
 func _play_lure_sound():
 	if _lure_sound_tween:
 		_lure_sound_tween.kill()

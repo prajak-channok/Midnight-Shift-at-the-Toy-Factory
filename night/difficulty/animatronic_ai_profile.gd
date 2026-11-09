@@ -1,7 +1,7 @@
 extends Resource
 class_name AnimatronicAIProfile
-## AI tuning of one animatronic for one night.
 
-@export var animatronic_id: StringName ## Must match [member AnimatronicBase.id].
-@export_range(0, 20) var base_ai: int = 0
-@export var bonus_hours: Array[int] = [] ## Hours at which [member NightDifficulty.hour_bonus] is added to the AI level.
+@export var animatronic_id: StringName ## ต้องตรงกับ id ของ AnimatronicBase (Must match AnimatronicBase id)
+@export_range(0, 20) var base_ai: int = 0 ## ระดับ AI เริ่มต้นของหุ่นในคืนนี้ (Initial AI level for this night)
+@export var bonus_hours: Array[int] = [] ## ชั่วโมงที่จะเพิ่มระดับ AI ตามโบนัสชั่วโมง (Hours when hourly AI bonus is added)
+

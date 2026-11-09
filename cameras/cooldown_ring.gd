@@ -1,12 +1,10 @@
 extends Control
 class_name CooldownRing
-## A circular ring without any number that empties clockwise as [member ratio] goes from 1 to 0.
-## It turns [member urgent_color] while [member urgent] is true.
 
 @export var ring_width := 7.0
 @export var track_color := Color(0.2, 0.2, 0.22, 1.0)
 @export var fill_color := Color(0.62, 0.63, 0.66, 1.0)
-@export var urgent_color := Color(0.95, 0.12, 0.1, 1.0)
+@export var urgent_color := Color(0.95, 0.12, 0.1, 1.0) ## สีของวงแหวนเมื่อเข้าสู่สถานะแจ้งเตือนฉุกเฉิน (Color of ring in urgent warning state)
 
 var ratio := 1.0:
 	set(value):

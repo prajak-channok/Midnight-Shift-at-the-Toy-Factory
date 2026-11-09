@@ -5,7 +5,7 @@ class_name AnimatronicJumpscare
 @export var jumpscare_anim_name := "jumpscare"
 @export var scene_to_go_after : PackedScene = preload("res://game_over/game_over.tscn")
 @export var audio_delay: float = 0.0
-@export var test_jumpscare: bool = false:
+@export var test_jumpscare: bool = false: ## สวิตช์สำหรับกดทดสอบจัมป์สแกร์ใน Inspector (Toggle to preview jumpscare in inspector)
 	set(value):
 		play_jumpscare()
 
@@ -38,7 +38,7 @@ func play_jumpscare():
 	if audio:
 		_play_audio()
 	model_anim.play(jumpscare_anim_name)
-	await get_tree().process_frame
+	await get_tree().process_frame # รอหนึ่งเฟรมเพื่อให้อนิเมชันเริ่มก่อนแสดงโมเดล (Wait one frame for animation to start before showing model)
 	model.show()
 	await model_anim.animation_finished
 	model.hide()

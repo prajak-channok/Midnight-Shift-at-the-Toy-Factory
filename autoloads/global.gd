@@ -1,7 +1,6 @@
 extends Node
 
-## Browsers only allow the orientation lock while fullscreen, and fullscreen is entered asynchronously, so retry once it changes.
-const WEB_LOCK_LANDSCAPE_JS := "(function(){var l=function(){try{screen.orientation.lock('landscape').catch(function(){});}catch(e){}};l();document.addEventListener('fullscreenchange',l,{once:true});})();"
+const WEB_LOCK_LANDSCAPE_JS := "(function(){var l=function(){try{screen.orientation.lock('landscape').catch(function(){});}catch(e){}};l();document.addEventListener('fullscreenchange',l,{once:true});})();" ## โค้ด JavaScript ล็อคหน้าจอแนวนอนบนเว็บบราวเซอร์เมื่อเข้าสู่โหมดเต็มจอ (Lock screen orientation to landscape on web browsers when fullscreen)
 
 var current_night = 1
 
@@ -12,7 +11,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		get_viewport().set_input_as_handled()
 
 
-## Landscape is never released again: the game is only playable that way, so leaving fullscreen keeps it.
+## สลับโหมดเต็มจอและล็อคแนวนอนไว้เสมอสำหรับอุปกรณ์พกพา (Toggle fullscreen and keep landscape orientation for mobile)
 func toggle_fullscreen() -> void:
 	if OS.has_feature("mobile"):
 		DisplayServer.screen_set_orientation(DisplayServer.SCREEN_LANDSCAPE)

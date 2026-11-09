@@ -1,5 +1,4 @@
 extends Node
-## Persists progress as JSON in user://. Only the unlocked nights are stored.
 
 signal progress_changed
 
@@ -19,7 +18,7 @@ func is_night_unlocked(night: int) -> bool:
 	return night <= unlocked_nights
 
 
-## Call when the player survives [param night]; unlocks the next one (up to [constant LAST_NIGHT]).
+## ปลดล็อคคืนถัดไปเมื่อผู้เล่นผ่านคืนที่กำหนด (Unlock next night when player survives specified night)
 func complete_night(night: int) -> void:
 	var next := mini(night + 1, LAST_NIGHT)
 	if next <= unlocked_nights:

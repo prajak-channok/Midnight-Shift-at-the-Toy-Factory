@@ -4,8 +4,7 @@ class_name NightHud
 signal monitor_requested
 signal quit_confirmed
 
-## A tap on touch screens also fires mouse_entered right before pressed; presses this soon after a hover are ignored.
-const HOVER_PRESS_GRACE_MSEC := 300
+const HOVER_PRESS_GRACE_MSEC := 300 ## ระยะเวลารอเพื่อป้องกันการแตะบนจอทัชสกรีนที่ส่งทั้ง hover และ press พร้อมกัน (Grace period to ignore accidental touch screen tap after hover)
 
 const HINT_DURATION := 12.0
 const HINT_BLINK_PERIOD := 3.0

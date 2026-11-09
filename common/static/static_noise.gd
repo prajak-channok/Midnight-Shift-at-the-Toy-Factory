@@ -1,10 +1,6 @@
 extends TextureRect
 
-# เป็นการทำอนิเมชันจอซ่าห์ด้วยโค้ด โดยไม่ใช้ AnimatedTexture เนื่องจากมีปัญหาเมื่อเรนเดอร์แบบ Compatibility ของตัวเอ็นจิน
-
-## Manually swaps frames instead of relying on AnimatedTexture, whose proxy-texture
-## frame swap doesn't reliably refresh on the Compatibility renderer while this node's
-## other properties (e.g. modulate) are being driven by an AnimationPlayer.
+# เป็นการทำอนิเมชันจอซ่าห์ด้วยโค้ด โดยไม่ใช้ AnimatedTexture เนื่องจากมีปัญหาเมื่อเรนเดอร์แบบ Compatibility ของตัวเอ็นจิน (Code-driven static noise animation avoiding AnimatedTexture on Compatibility renderer)
 @export var frames: Array[Texture2D] = []
 @export var frame_duration: float = 0.05
 

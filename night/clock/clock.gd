@@ -4,7 +4,7 @@ class_name NightClock
 signal hour_passed
 signal six_am_reached
 
-@export var seconds_between_hours := 60.0
+@export var seconds_between_hours := 60.0 ## จำนวนวินาทีต่อ 1 ชั่วโมงในเกม (Seconds per in-game hour)
 
 @onready var label: Label = $Label
 var current_hour := 0

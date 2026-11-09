@@ -1,9 +1,8 @@
 extends MeshInstance3D
 class_name LightBlocker
-## A thin opaque slab that seals a door or window opening of the security room.
-## It is only visible while its [member light] is off, so the hall behind it stays unseen without the light.
 
-@export var light: DoorLight
+@export var light: DoorLight ## หลอดไฟที่ควบคุมการแสดงผลของแผ่นบังสายตานี้ (Light that controls this blocker's visibility)
+
 
 
 func _ready() -> void:

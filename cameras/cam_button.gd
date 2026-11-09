@@ -3,19 +3,16 @@ extends Button
 
 signal cam_button_pressed(cam_node_name:String)
 
-## The name of the related Camera3D node
-@export var camera_node_name : String
+@export var camera_node_name : String ## ชื่อโหนดของ Camera3D ที่เชื่อมกับปุ่มนี้ (Name of related Camera3D node)
 
-## Theme color of the button (border, glow and tinted translucent background)
-@export var accent_color : Color = Color(0.35, 0.6, 1.0):
+@export var accent_color : Color = Color(0.35, 0.6, 1.0): ## สีธีมของปุ่มกล้อง (Theme color of the button)
 	set(value):
 		accent_color = value
 		if is_node_ready():
 			_apply_style()
 
 
-## True while this button's camera is the one being watched
-var selected := false:
+var selected := false: ## สวิตช์บอกสถานะว่าปุ่มกล้องนี้กำลังถูกดูอยู่หรือไม่ (True while this button's camera is being watched)
 	set(value):
 		selected = value
 		if is_node_ready():
@@ -26,7 +23,7 @@ func _ready():
 	_apply_style()
 	if Engine.is_editor_hint():
 		return
-	focus_mode = Control.FOCUS_NONE # a focused button would also react to Space (ui_accept)
+	focus_mode = Control.FOCUS_NONE # ปิดโฟกัสเพื่อป้องกันไม่ให้ปุ่มทำงานเมื่อกดปุ่ม Space (Prevent button from triggering on Space bar)
 	if camera_node_name.is_empty():
 		camera_node_name = text
 
@@ -43,7 +40,7 @@ func _apply_style():
 	add_theme_color_override("font_outline_color", Color(0, 0, 0, 0.85))
 	add_theme_constant_override("outline_size", 4)
 	if selected:
-		# solid, bright fill with a thick white-tinted border and a strong glow
+		# แสดงผลแบบปุ่มสว่างเด่นชัดเมื่อกำลังถูกเลือกดู (Bright highlighted style for currently selected camera button)
 		var rim := accent_color.lightened(0.7)
 		var fill := accent_color.darkened(0.1)
 		add_theme_stylebox_override("normal", _make_box(fill, 0.95, rim, 1.0, 0.55, 3, 8))

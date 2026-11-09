@@ -2,7 +2,7 @@ extends Node3D
 class_name Monitor
 
 var monitor_on: bool = false
-var refuse_requests: bool = false
+var refuse_requests: bool = false ## ล็อคไม่ให้รับคำสั่งเปิดปิดมอนิเตอร์ซ้ำขณะที่อนิเมชันกำลังเล่นอยู่ (Refuse toggle requests while animation is playing)
 
 @onready var anim: AnimationPlayer = $AnimationPlayer
 

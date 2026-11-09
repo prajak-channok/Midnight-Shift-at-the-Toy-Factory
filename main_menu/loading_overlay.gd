@@ -18,21 +18,21 @@ static func dismiss(tree: SceneTree) -> void:
 		overlay.queue_free()
 
 
-## Hides the scene that has not finished loading
+## บังฉากที่ยังโหลดไม่เสร็จเพื่อไม่ให้เห็นการจัดวางโหนด (Hide unfinished loading scene so setup happens unseen)
 func make_opaque() -> void:
 	_dim.color.a = 1.0
 
 
 func _init() -> void:
 	layer = 100
-	process_mode = Node.PROCESS_MODE_ALWAYS  # keeps spinning while the night is paused
+	process_mode = Node.PROCESS_MODE_ALWAYS # หมุนแสดงผลต่อไปได้แม้คืนจะถูก pause (Keeps spinning while game is paused)
 	add_to_group(GROUP)
 
 	var dim := ColorRect.new()
 	_dim = dim
 	dim.color = Color(0, 0, 0, 0.78)
 	dim.set_anchors_preset(Control.PRESET_FULL_RECT)
-	dim.mouse_filter = Control.MOUSE_FILTER_STOP  # swallow clicks so nothing underneath can be pressed
+	dim.mouse_filter = Control.MOUSE_FILTER_STOP # ดักคลิกเมาส์เพื่อไม่ให้กดโดนปุ่มหรือสิ่งของด้านหลัง (Block mouse clicks from interacting underneath)
 	add_child(dim)
 
 	var column := VBoxContainer.new()
