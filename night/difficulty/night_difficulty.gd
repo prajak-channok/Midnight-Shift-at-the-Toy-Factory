@@ -11,6 +11,10 @@ class_name NightDifficulty
 @export var monitor_drain: float = 0.04
 @export var light_drain: float = 0.0 ## อัตราใช้พลังงานต่อวินาทีต่อหนึ่งไฟประตูที่เปิด (Power drain per second per active door light)
 
+@export_group("Night Hint")
+@export var hint_title: String = ""
+@export var hint_detail: String = ""
+
 
 ## คืนค่าโปรไฟล์ AI ของหุ่น หรือ null หากไม่มีในคืนนี้ (Return animatronic AI profile or null if absent this night)
 func get_profile(animatronic_id: StringName) -> AnimatronicAIProfile:

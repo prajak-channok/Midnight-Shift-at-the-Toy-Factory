@@ -36,9 +36,16 @@
 [ext_resource type="PackedScene" path="res://animatronics/wound_up_tin_soldier/wound_up_tin_soldier.tscn" id="tin_soldier"]
 [ext_resource type="PackedScene" uid="uid://dlmbf8opv6n46" path="res://animatronics/wound_up_tin_soldier/models/wound_up_tin_soldier_model.tscn" id="tin_soldier_model"]
 
-[node name="Night" type="Node3D" unique_id=1457411669 node_paths=PackedStringArray("clock", "animatronics")]
+[node name="Night" type="Node3D" unique_id=1457411669 node_paths=PackedStringArray("clock", "player", "hud", "power_system", "left_door", "right_door", "left_light", "right_light", "animatronics")]
 script = ExtResource("1")
 clock = NodePath("Clock")
+player = NodePath("Player")
+hud = NodePath("PlayerControlsGUI")
+power_system = NodePath("PowerSystem")
+left_door = NodePath("Doors/LeftDoor")
+right_door = NodePath("Doors/RightDoor")
+left_light = NodePath("DoorLights/LeftHallButtonLight")
+right_light = NodePath("DoorLights/RightHallButtonLight")
 animatronics = [NodePath("Animatronics/SpringyClown"), NodePath("Animatronics/PorcelainBallerina"), NodePath("Animatronics/BurnedPlushBot"), NodePath("Animatronics/WoundUpTinSoldier")]
 difficulties = Array[ExtResource("20")]([ExtResource("22"), ExtResource("23"), ExtResource("night_3"), ExtResource("night_4"), ExtResource("night_5")])
 

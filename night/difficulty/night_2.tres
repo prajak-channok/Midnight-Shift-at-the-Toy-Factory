@@ -30,3 +30,5 @@ script = ExtResource("1")
 ai_profiles = Array[ExtResource("2")]([SubResource("Resource_springy_clown"), SubResource("Resource_porcelain_ballerina"), SubResource("Resource_plush"), SubResource("Resource_tin_soldier")])
 base_drain = 0.07
 light_drain = 0.08
+hint_title = "It seems some things are changing..."
+hint_detail = "Some of them respond to PLAY AUDIO."

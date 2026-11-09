@@ -33,3 +33,5 @@ base_drain = 0.09
 door_drain = 0.16
 monitor_drain = 0.06
 light_drain = 0.12
+hint_title = "It seems some things are changing..."
+hint_detail = "Try checking CAM 5."
