@@ -10,13 +10,22 @@ func change_scene(path: String, use_loading_screen: bool = true) -> void:
 
 	_show_loading()
 	await get_tree().process_frame
-	await get_tree().process_frame
+	await get_tree().process_frame # Wait for building loading scene complete before
 
 	var scene: PackedScene = null
 	if ResourceLoader.load_threaded_request(path) == OK:
 		while ResourceLoader.load_threaded_get_status(path) == ResourceLoader.THREAD_LOAD_IN_PROGRESS:
 			await get_tree().process_frame
-		scene = ResourceLoader.load_threaded_get(path) as PackedScene
+		
+		# Handle loading result
+		var status = ResourceLoader.load_threaded_get_status(path)
+		
+		if status == ResourceLoader.THREAD_LOAD_LOADED:
+			scene = ResourceLoader.load_threaded_get(path) as PackedScene
+		elif status == ResourceLoader.THREAD_LOAD_FAILED:
+			push_error("Failed to load scene: " + path)
+			dismiss_loading()
+			return
 
 	if _loading_overlay != null and is_instance_valid(_loading_overlay):
 		_loading_overlay.make_opaque()

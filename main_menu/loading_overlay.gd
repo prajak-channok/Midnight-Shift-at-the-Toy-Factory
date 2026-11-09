@@ -1,6 +1,5 @@
 class_name LoadingOverlay
 extends CanvasLayer
-## Full-screen dim with a spinning white ring and a "Loading" caption, drawn above everything else.
 
 const RING_RADIUS := 36.0
 const RING_WIDTH := 5.0
@@ -14,13 +13,12 @@ const GROUP := &"loading_overlay"
 var _dim: ColorRect
 
 
-## Frees every overlay; the night calls this once it has finished warming up.
 static func dismiss(tree: SceneTree) -> void:
 	for overlay in tree.get_nodes_in_group(GROUP):
 		overlay.queue_free()
 
 
-## Hides whatever is behind the overlay, so scene setup can happen unseen.
+## Hides the scene that has not finished loading
 func make_opaque() -> void:
 	_dim.color.a = 1.0
 
