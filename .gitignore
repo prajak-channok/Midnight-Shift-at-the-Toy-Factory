@@ -3,3 +3,7 @@
 
 # Local/manual web export output (CI builds this fresh on every deploy)
 build/
+
+# Antigravity agent customizations
+.agents/
+
