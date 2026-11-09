@@ -1,12 +1,6 @@
 @tool
 extends Node3D
 class_name AnimatronicJumpscare
-## Jumpscare player node.
-##
-## This node can play a jumpscare animation and changes the scene to the game over scene afterwards.
-## [br]Requires a model (Node3D node with an animationplayer as a child) to work.
-## [br]You can also optionally add a AudioStreamPlayer as a child of this node to play a jumpscare sound (or just modify the animation to play audio).
-
 
 @export var jumpscare_anim_name := "jumpscare"
 @export var scene_to_go_after : PackedScene = preload("res://game_over/game_over.tscn")
@@ -56,4 +50,3 @@ func _play_audio() -> void:
 	if audio_delay > 0.0:
 		await get_tree().create_timer(audio_delay).timeout
 	audio.play()
-

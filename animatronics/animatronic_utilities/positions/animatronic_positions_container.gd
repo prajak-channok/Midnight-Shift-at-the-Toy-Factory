@@ -13,7 +13,7 @@ func _ready():
 		set_process(false)
 
 
-func _process(delta):
+func _process(_delta):
 	if Engine.is_editor_hint() and testing_model and testing_model.is_inside_tree() and testing_position_name:
 		var animatronic_pos = get_position_by_name(testing_position_name)
 		if not animatronic_pos:

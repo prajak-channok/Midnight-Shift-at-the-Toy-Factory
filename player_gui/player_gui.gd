@@ -40,7 +40,6 @@ func hide_quit_button() -> void:
 	quit_button.hide()
 
 
-## Shows a blinking two-line hint above the quit button, then hides it after [param duration] seconds.
 func show_hint(title: String, detail: String, duration: float = HINT_DURATION) -> void:
 	hide_hint()
 	hint_title.text = title
@@ -83,7 +82,6 @@ func _on_monitor_pressed() -> void:
 	monitor_requested.emit()
 
 
-## The HUD keeps processing while paused so the popup stays clickable; the rest of the night freezes.
 func _open_quit_popup() -> void:
 	get_tree().paused = true
 	quit_popup.show()

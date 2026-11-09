@@ -11,20 +11,14 @@ extends Control
 @onready var settings_close_button: Button = %SettingsCloseButton
 @onready var exit_button: Button = %ExitButton
 
+@onready var hover_player: AudioStreamPlayer = %HoverPlayer
+@onready var click_player: AudioStreamPlayer = %ClickPlayer
+@onready var start_player: AudioStreamPlayer = %StartPlayer
+@onready var ambience_player: AudioStreamPlayer = %AmbiencePlayer
+
 const NIGHT_SCENE := "res://night/night.tscn"
-const SOUND_HOVER := "res://main_menu/sounds/ui_hover.wav"
-const SOUND_CLICK := "res://main_menu/sounds/ui_click.wav"
-const SOUND_START := "res://main_menu/sounds/ui_start.wav"
-const SOUND_AMBIENCE := "res://main_menu/sounds/menu_ambience.wav"
 
-var _hover_player: AudioStreamPlayer
-var _click_player: AudioStreamPlayer
-var _start_player: AudioStreamPlayer
-var _ambience_player: AudioStreamPlayer
 var _starting := false
-
-## Loudness of the background ambience (more negative = quieter).
-const AMBIENCE_VOLUME_DB := 5
 
 
 func _ready() -> void:
@@ -41,14 +35,12 @@ func _ready() -> void:
 	settings_close_button.pressed.connect(settings_popup.hide)
 	fullscreen_button.pressed.connect(Global.toggle_fullscreen)
 	mute_button.pressed.connect(_on_mute_pressed)
-	# Fullscreen can also be toggled with the key, and the web build enters it asynchronously.
 	get_window().size_changed.connect(_refresh_settings_labels)
 	_refresh_settings_labels()
 
 	exit_button.pressed.connect(get_tree().quit)
 
 	_setup_button_sounds()
-	_setup_ambience()
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -67,35 +59,10 @@ func start_night(night: int) -> void:
 		return
 	_starting = true
 	Global.current_night = night
-	# Fade the factory ambience out while the start sound plays, then change the scene.
-	create_tween().tween_property(_ambience_player, "volume_db", -60.0, 0.35)
-	if _start_player.stream != null:
+	create_tween().tween_property(ambience_player, "volume_db", -60.0, 0.35)
+	if start_player.stream != null:
 		await get_tree().create_timer(0.35).timeout
-	await _load_and_change_scene(NIGHT_SCENE)
-
-
-## Shows the loading overlay, then loads the scene in the background so the overlay keeps animating.
-## The overlay is moved to the root so it survives the scene change; the night dismisses it once it has warmed up.
-func _load_and_change_scene(path: String) -> void:
-	var overlay := LoadingOverlay.new()
-	add_child(overlay)
-	# Let the overlay get drawn before any (possibly blocking) loading begins.
-	await get_tree().process_frame
-	await get_tree().process_frame
-
-	var scene: PackedScene = null
-	if ResourceLoader.load_threaded_request(path) == OK:
-		while ResourceLoader.load_threaded_get_status(path) == ResourceLoader.THREAD_LOAD_IN_PROGRESS:
-			await get_tree().process_frame
-		scene = ResourceLoader.load_threaded_get(path) as PackedScene
-
-	overlay.make_opaque()
-	remove_child(overlay)
-	get_tree().root.add_child(overlay)
-	if scene == null:
-		get_tree().change_scene_to_file(path)
-	else:
-		get_tree().change_scene_to_packed(scene)
+	SceneLoader.change_scene(NIGHT_SCENE)
 
 
 func _on_mute_pressed() -> void:
@@ -108,45 +75,21 @@ func _refresh_settings_labels() -> void:
 	mute_button.text = "SOUND: OFF" if Global.is_muted() else "SOUND: ON"
 
 
-# ---------- button sounds ----------
-
 func _setup_button_sounds() -> void:
-	_hover_player = _make_player(SOUND_HOVER, -10.0)
-	_click_player = _make_player(SOUND_CLICK, -4.0)
-	_start_player = _make_player(SOUND_START, -2.0)
 	for node in find_children("*", "Button", true, false):
 		var button := node as Button
 		button.mouse_entered.connect(_on_button_hover.bind(button))
 		if button.get_parent() == night_buttons:
-			button.pressed.connect(_play.bind(_start_player))  # night buttons get the "start" sound
+			button.pressed.connect(_play.bind(start_player))
 		else:
-			button.pressed.connect(_play.bind(_click_player))
-
-
-func _make_player(path: String, volume_db: float) -> AudioStreamPlayer:
-	var player := AudioStreamPlayer.new()
-	if ResourceLoader.exists(path):
-		player.stream = load(path)
-	else:
-		push_warning("Menu sound missing: %s" % path)
-	player.volume_db = volume_db
-	add_child(player)
-	return player
+			button.pressed.connect(_play.bind(click_player))
 
 
 func _on_button_hover(button: Button) -> void:
 	if not button.disabled:
-		_play(_hover_player)
+		_play(hover_player)
 
 
 func _play(player: AudioStreamPlayer) -> void:
-	if player.stream != null:
+	if player != null and player.stream != null:
 		player.play()
-
-
-# ---------- background ambience ----------
-
-func _setup_ambience() -> void:
-	_ambience_player = _make_player(SOUND_AMBIENCE, AMBIENCE_VOLUME_DB)
-	if _ambience_player.stream != null:
-		_ambience_player.play()

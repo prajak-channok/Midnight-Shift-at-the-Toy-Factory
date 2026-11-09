@@ -11,6 +11,10 @@
 [ext_resource type="FontFile" uid="uid://cnxaexrmbbmvj" path="res://main_menu/fonts/RubikGlitch-Regular.ttf" id="9_kwfav"]
 [ext_resource type="Script" uid="uid://ba7cdhmwwwj6b" path="res://common/static/static_noise.gd" id="10_noise"]
 [ext_resource type="Texture2D" uid="uid://jh6ur2owdiwo" path="res://main_menu/menu_background.png" id="11_bg"]
+[ext_resource type="AudioStream" uid="uid://76660nj0atsw" path="res://main_menu/sounds/ui_hover.wav" id="12_hover"]
+[ext_resource type="AudioStream" uid="uid://c3xp136j5q8eg" path="res://main_menu/sounds/ui_click.wav" id="13_click"]
+[ext_resource type="AudioStream" uid="uid://0gl5v5dhpga3" path="res://main_menu/sounds/ui_start.wav" id="14_start"]
+[ext_resource type="AudioStream" uid="uid://p0ds3pr22ai0" path="res://main_menu/sounds/menu_ambience.wav" id="15_ambience"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_night_mint_normal"]
 content_margin_left = 26.0
@@ -921,5 +925,26 @@ transform = Transform3D(1, 0, 0, 0, 0.9702957, -0.2419219, 0, 0.2419219, 0.97029
 
 [node name="AnimationPlayer" parent="Background/burned_plush_model" index="1" unique_id=545854173]
 autoplay = &"stare"
+
+[node name="HoverPlayer" type="AudioStreamPlayer" parent="." unique_id=1849102001]
+unique_name_in_owner = true
+stream = ExtResource("12_hover")
+volume_db = -10.0
+
+[node name="ClickPlayer" type="AudioStreamPlayer" parent="." unique_id=1849102002]
+unique_name_in_owner = true
+stream = ExtResource("13_click")
+volume_db = -4.0
+
+[node name="StartPlayer" type="AudioStreamPlayer" parent="." unique_id=1849102003]
+unique_name_in_owner = true
+stream = ExtResource("14_start")
+volume_db = -2.0
+
+[node name="AmbiencePlayer" type="AudioStreamPlayer" parent="." unique_id=1849102004]
+unique_name_in_owner = true
+stream = ExtResource("15_ambience")
+volume_db = 5.0
+autoplay = true
 
 [editable path="Background/burned_plush_model"]
